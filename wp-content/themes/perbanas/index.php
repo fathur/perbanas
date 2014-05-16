@@ -1,32 +1,17 @@
 <?php get_header(); ?>	
 	<div class="container">
 		
-		<!-- Latest Post  -->
+		<!-- Latest News  -->
 		<?php get_template_part( 'front', 'news' ); ?>
 		
 		<!-- Latest Photos  -->
-		<div class="row">
-			<div class="col-md-6">c</div>
-			<div class="col-md-6">d</div>
-			<div class="col-md-6">f</div>
-			<div class="col-md-6">g</div>
-		</div>
+		<?php get_template_part( 'front', 'photos' ); ?>
 		
 		<!-- Latest Event  -->		
-		<div class="row">
-			<div class="col-md-6">c</div>
-			<div class="col-md-6">d</div>
-			<div class="col-md-6">f</div>
-			<div class="col-md-6">g</div>
-		</div>
+		<?php get_template_part( 'front', 'events' ); ?>
 		
 		<!-- Latest Magazines -->
-		<div class="row">
-			<div class="col-md-6">c</div>
-			<div class="col-md-6">d</div>
-			<div class="col-md-6">f</div>
-			<div class="col-md-6">g</div>
-		</div>
+		<?php get_template_part( 'front', 'magazines' ); ?>
 		
 	</div>
 <?php get_footer(); ?>

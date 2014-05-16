@@ -1,4 +1,5 @@
 <?php
+add_theme_support( 'post-thumbnails' );
 
 function perbanas_cssjs() {
 	wp_enqueue_style('bootstrap-min', get_template_directory_uri() . '/css/bootstrap.min.css');
