@@ -35,16 +35,20 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">About</a></li>
-					<li><a href="#about">Members</a></li>
-					<li><a href="#contact">Banking Industry</a></li>
-					<li><a href="#contact">Event</a></li>
-					<li><a href="#contact">News & Media</a></li>				
+					<li class="active"><a href="<?php echo get_site_url(); ?>/about">About</a></li>
+					<li><a href="<?php echo get_site_url(); ?>/councils">Council</a></li>
+					<li><a href="<?php echo get_site_url(); ?>/member-bank">Member Banks</a></li>
+					<li><a href="<?php echo get_site_url(); ?>/#">Industry Guidelines</a></li>
+					<li><a href="<?php echo get_site_url(); ?>/events">Events</a></li>	
+					<li><a href="<?php echo get_site_url(); ?>/#">News and Media</a></li>				
+					<li><a href="<?php echo get_site_url(); ?>/contact">Contact</a></li>	
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
 		</div>
 	</div>
+
+	<?php if( is_front_page() ): ?>
 
 	<div id="carousel-example-generic" class="carousel slide"
 		data-ride="carousel">
@@ -83,3 +87,6 @@
 			class="glyphicon glyphicon-chevron-right"></span>
 		</a>
 	</div>
+
+	<?php endif; // End if is_front_page?>
+	<div class="container">
