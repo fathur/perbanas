@@ -1,7 +1,7 @@
 <?php
 add_theme_support( 'post-thumbnails' );
 
-/*
+/**
  * Registering menu in admin panel
  */
 function register_my_menu() {
@@ -15,7 +15,9 @@ function register_my_menu() {
 }
 add_action( 'init', 'register_my_menu' );
 
-
+/**
+ * Registering style and javascript in wordpress
+ */
 function perbanas_cssjs() {
 	wp_enqueue_style('bootstrap-min', get_template_directory_uri() . '/css/bootstrap.min.css');
 	wp_enqueue_style('perbanas', get_template_directory_uri() . '/css/perbanas.css');
@@ -23,11 +25,13 @@ function perbanas_cssjs() {
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',array('jquery'),'1.3.1',FALSE);
 	
 }
-
 add_action('wp_enqueue_scripts','perbanas_cssjs');
 
-// Add filter custom taxonomy in post type
-// http://wordpress.org/support/topic/show-categories-filter-on-custom-post-type-list?replies=15
+
+/**
+ * Add filter custom taxonomy in post type
+ * http://wordpress.org/support/topic/show-categories-filter-on-custom-post-type-list?replies=15
+ */
 function restrict_manage_post_type() {
 	
 	global $typenow;
@@ -62,4 +66,13 @@ function request_sectors( $request ) {
 }
 add_action( 'restrict_manage_posts','restrict_manage_post_type' );
 add_action( 'request', 'request_sectors' );
+
+/**
+ * Custumize permalink becomes
+ * http://perbanas.org/[main_menu]/[post_type]/[taxonomy]/[term]/[post_content]
+ */
+function route_council()
+{
+	
+}
 

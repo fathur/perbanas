@@ -34,15 +34,12 @@
 
 			</div>
 			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="<?php echo get_site_url(); ?>/about">About</a></li>
-					<li><a href="<?php echo get_site_url(); ?>/councils">Council</a></li>
-					<li><a href="<?php echo get_site_url(); ?>/member-bank">Member Banks</a></li>
-					<li><a href="<?php echo get_site_url(); ?>/#">Industry Guidelines</a></li>
-					<li><a href="<?php echo get_site_url(); ?>/events">Events</a></li>	
-					<li><a href="<?php echo get_site_url(); ?>/#">News and Media</a></li>				
-					<li><a href="<?php echo get_site_url(); ?>/contact">Contact</a></li>	
-				</ul>
+				<?php 
+				wp_nav_menu( array(
+					'theme_location'  	=> 'header-menu',
+					'menu_class'	=> 'nav navbar-nav'
+				) );
+				?>
 			</div>
 			<!--/.nav-collapse -->
 		</div>
