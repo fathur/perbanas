@@ -15,7 +15,7 @@ get_header(); ?>
 	<?php 
 		while ( have_posts() ) : the_post();
 		
-			get_template_part( 'content', get_post_format() );
+			get_template_part( 'content', 'event' );
 			
 			if ( comments_open() || get_comments_number() ) {
 				comments_template();
