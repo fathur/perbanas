@@ -32,7 +32,7 @@ dll
 
 		foreach ($sectors as $sector) :?>
 
-			<li><a href="<?php echo get_site_url() . "/" . $taxonomy . "/" . $sector->slug; ?>"><?php echo $sector->name; ?></a></li>
+			<li><a href="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>"><?php echo $sector->name; ?></a></li>
 
 	<?php endforeach; ?>	
 		</ul>

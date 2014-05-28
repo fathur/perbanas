@@ -41,7 +41,11 @@ yang ditampilkan adalah nama orangnya -->
 
         <ul>
         <?php while($loop->have_posts()) : $loop->the_post(); ?>
-            <li><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+            <li>
+                <a href="<?php echo get_permalink( get_the_ID() ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
+                    <?php echo get_the_post_thumbnail(); ?>
+                </a>
+            </li>
         <?php endwhile; ?>
         </ul>
 
