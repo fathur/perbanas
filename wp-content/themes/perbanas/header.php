@@ -6,84 +6,79 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico" />
 
 <title><?php wp_title( '|', FALSE, 'right' ); ?></title>
+    
+    <?php wp_head(); ?>
 
-<?php wp_head(); ?>
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
-
-	<!-- Static navbar -->
-	<div class="navbar navbar-default navbar-static-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-
-			</div>
-			<div class="navbar-collapse collapse">
-				<?php 
-				wp_nav_menu( array(
-					'theme_location'  	=> 'header-menu',
-					'menu_class'	=> 'nav navbar-nav'
-				) );
-				?>
-			</div>
-			<!--/.nav-collapse -->
-		</div>
-	</div>
-
-	<?php if( is_front_page() ): ?>
-
-	<div id="carousel-example-generic" class="carousel slide"
-		data-ride="carousel">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#carousel-example-generic" data-slide-to="0"
-				class="active"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-		</ol>
-
-		<!-- Wrapper for slides -->
-		<div class="carousel-inner">
-			<div class="item active">
-				<img
-					src="img/114854644-man-using-cash-machine-close-up-gettyimages.jpg"
-					alt="image">
-				<div class="carousel-caption">...</div>
-			</div>
-			<div class="item">
-				<img src="img/123400946-canary-wharf-gettyimages.jpg" alt="image">
-				<div class="carousel-caption">...</div>
-			</div>
-			<div class="item">
-				<img src="img/123400946-canary-wharf-gettyimages.jpg" alt="image">
-				<div class="carousel-caption">...</div>
-			</div>
-			.
-		</div>
-
-		<!-- Controls -->
-		<a class="left carousel-control" href="#carousel-example-generic"
-			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span>
-		</a> <a class="right carousel-control" href="#carousel-example-generic"
-			data-slide="next"> <span
-			class="glyphicon glyphicon-chevron-right"></span>
-		</a>
-	</div>
-
-	<?php endif; // End if is_front_page?>
 	<div class="container">
+		<div class="row header hidden-sm hidden-xs">
+			<div class="col-xs-12 header-inner">
+				<div class="row">
+					<div class="col-xs-12 block text-center">
+						<div class="row top-nav">
+							<div class="col-xs-8"></div>
+							<div class="col-xs-4">
+								<ul>
+									<li><a href="#">Login</a></li>
+									<li><a href="#">Search</a></li>
+									<li class="last"><a href="#">Bahasa Indonesia</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="logo-container">
+							<img width="214px" height="149px" class="logo"
+								src="<?php echo get_template_directory_uri(); ?>/img/LOGO_PERBANAS_EN.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-container">
+		<div id="navbar-main" class="navbar navbar-default navbar-static-top"
+			role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<div class="navbar-main-collapsed-menu-logo hidden-md hidden-lg">
+						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo-collapsed.png"></a>
+					</div>
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<!--<a class="navbar-brand" href="#">Project name</a>-->
+				</div>
+				<div class="navbar-collapse collapse">
+					<div class="nav-large-wrapper-outer">
+						<div class="nav-large-wrapper-inner">
+							<div class="navbar-main-scrolled-menu-logo hidden-sm hidden-xs">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo-scrolled.png" />
+							</div>
+							<ul class="nav navbar-nav">
+								<!--<li class=""><a href="#" style="margin: 0; padding: 0;"><div class="navbar-main-home-logo-lg" style="width:50px; height: 50px; background: black;">d</div></a></li>-->
+								<li class="active first"><a href="#">About</a></li>
+								<li><a href="#about">Council</a></li>
+								<li><a href="#contact">Member Banks</a></li>
+								<li><a href="#contact">Industry Guidelines</a></li>
+								<li><a href="#contact">Events</a></li>
+								<li><a href="#contact">News &amp; Media</a></li>
+								<li class="last"><a href="#contact">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>

@@ -20,10 +20,14 @@ add_action( 'init', 'register_my_menu' );
  */
 function perbanas_cssjs() {
 	wp_enqueue_style('bootstrap-min', get_template_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style('font-open-sans', get_template_directory_uri() . '/css/font-open-sans.css');
+	wp_enqueue_style('flex-height', get_template_directory_uri() . '/css/flex-height.css');
 	wp_enqueue_style('perbanas', get_template_directory_uri() . '/css/perbanas.css');
 	//wp_enqueue_script( 'jquery');
-	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',array('jquery'),'1.3.1',FALSE);
-	
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',array('jquery'),'1.3.1',TRUE);
+	wp_enqueue_script('jquery-easing', get_template_directory_uri() . '/js/jquery.easing.min.js',array(),'',TRUE);
+	wp_enqueue_script('function', get_template_directory_uri() . '/js/functions.js',array(),'',TRUE);
+	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js',array(),'',TRUE);
 }
 add_action('wp_enqueue_scripts','perbanas_cssjs');
 
