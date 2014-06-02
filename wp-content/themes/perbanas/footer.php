@@ -30,9 +30,14 @@
 </div>
 <?php wp_footer(); ?>
 <script>
-   $(document).ready(function(){
-       init();
-   });
+	$(document).ready(function(){
+		init();
+	});
+
+	<?php if( is_page('contact') || is_page('kontak') ): ?>
+	// When the window has finished loading create our google map below
+	google.maps.event.addDomListener(window, 'load', initGoogleMaps);
+	<?php endif; ?>
 </script>
 
 </script>

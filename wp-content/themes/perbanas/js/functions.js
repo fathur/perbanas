@@ -91,12 +91,14 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
 function initGoogleMaps() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+	
+	var coordinate	= new google.maps.LatLng(-6.217537,106.82892);
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
         zoom: 16,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(-6.217537,106.82892), // New York
+        center: coordinate, 
 
         // How you would like to style the map.
         // This is where you would paste any style found on Snazzy Maps.
@@ -136,4 +138,10 @@ function initGoogleMaps() {
 
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
+    
+    var marker = new google.maps.Marker({
+    	  position: coordinate,
+    	  map: map,
+    	  title:"Perbanas"
+    	});
 }

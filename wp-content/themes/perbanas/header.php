@@ -65,16 +65,8 @@
 							<div class="navbar-main-scrolled-menu-logo hidden-sm hidden-xs">
 								<img src="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo-scrolled.png" />
 							</div>
-							<ul class="nav navbar-nav">
-								<!--<li class=""><a href="#" style="margin: 0; padding: 0;"><div class="navbar-main-home-logo-lg" style="width:50px; height: 50px; background: black;">d</div></a></li>-->
-								<li class="active first"><a href="#">About</a></li>
-								<li><a href="#about">Council</a></li>
-								<li><a href="#contact">Member Banks</a></li>
-								<li><a href="#contact">Industry Guidelines</a></li>
-								<li><a href="#contact">Events</a></li>
-								<li><a href="#contact">News &amp; Media</a></li>
-								<li class="last"><a href="#contact">Contact</a></li>
-							</ul>
+							
+							<?php echo perbanas_header_menu(); ?>
 						</div>
 					</div>
 				</div>
