@@ -70,6 +70,110 @@ function perbanas_header_menu() {
 	return $generated_menu;
 }
 
+function perbanas_side_menu( $menu_name ) {
+	
+	if ( ($locations = get_nav_menu_locations()) AND (isset( $locations[$menu_name] )) ) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+	
+		print_r($menu_items);
+	
+	}
+	
+	// return $generated_menu;
+}
+
+function __generate_menu( $id = 'menu' ) {
+	$menus = __find_all_thread();
+	
+	if ( $menus && count( $menus ) > 0 ) {
+		$list_menus = "<ul id=\"$id\">";
+	
+		foreach ( $menus as $menu ) {
+			// if current top menu has children
+			if ( $this->__has_child( $menu['children'] ) ) {
+				// 1st li or top parent
+				$list_menus .= "<li class='rootnav'><a href='#' id='m" . $menu['id'] . "' class='menuais' title='" . $menu['name'] . "'>" . $menu['name'] . "</a>";
+				$this->__generate_child_menu( $menu['children'], $list_menus,0 );
+			} else {
+				$list_menus .= "<li><a href='" . $menu['path'] ."' title='" . $menu['name'] . "' >" . $menu['name'] . "</a>";
+			}
+	
+			$list_menus .= "</li>";
+		}
+	
+		return $list_menus . "</ul>";
+	}
+}
+
+function __generate_child_menu( &$menus, &$list_menus, $level ) {
+	
+	/* $CIPATH = $this->config->item('base_url')."/index.php";
+	$AISPATH = $this->config->item('base_url_ais'); */
+	
+	$list_menus .= "<ul>";
+	
+	foreach ( $menus as $menu ) {
+	
+		// if child has children, iterate its childs!!
+		if ( $this->__has_child( $menu['children'] ) ) {
+	
+			// first output its child parent
+			$list_menus .= "<li class='subnav$level haschild close'><a href='#' title='" . $menu['name'] . "'>" .
+					$menu['name'] . "</a>";
+			// generate again
+			$this->__generate_child_menu( $menu['children'], $list_menus,$level+1);
+	
+		} else {
+			if($menu['class']=='menu-ais'){
+				$href = $CIPATH . $menu['path'];
+			}else{
+				$href = $AISPATH . $menu['path'];
+			}
+			$list_menus .= "<li class='subnav$level nohaschild'><a href='" . $href . "' title='" . $menu['name'] . "' class='" . $menu['class'] . "' >" .
+					$menu['name'] . "</a>";
+		}
+		$list_menus .= "</li>";
+	}
+	
+	$list_menus .= "</ul>";
+}
+
+function __has_child( $child ) {
+	
+	if ( $child AND count($child) ) {
+		return TRUE;
+	}
+	
+	return FALSE;
+}
+
+function __find_all_thread() {
+	
+}
+
+function __do_thread( $data, $root ) {
+	$out 	= array();
+	$sizeOf = sizeof( $data );
+	
+	for ($ii = 0; $ii < $sizeOf; $ii++) {
+		
+		if (($data[$ii]['menu_item_parent'] == $root) || (($root === NULL) && ($data[$ii]['menu_item_parent'] == '0'))) {
+			$tmp = $data[$ii];
+	
+			if (isset($data[$ii]['id'])) {
+				$tmp['children'] = $this->__do_thread($data, $data[$ii]['ID']);
+			} else {
+				$tmp['children'] = NULL;
+			}
+	
+			$out[] = $tmp;
+		}
+	}
+	
+	return $out;
+}
+
 /**
  * Add filter custom taxonomy in post type
  * http://wordpress.org/support/topic/show-categories-filter-on-custom-post-type-list?replies=15
