@@ -313,6 +313,65 @@ a:hover {
 .section-title h1 span {
     background: white;
 }
+/* start select (using jquery select2) */
+    select {
+        margin-bottom: 60px;
+    }
+    .select2-container {
+        width: 240px;
+        text-align: left;
+    }
+
+    .select2-container .select2-choice, .select2-container .select2-dropdown-open {
+        height: auto;
+        padding: 15px;
+        background-color: #004987;
+        background-image: none;
+        border: none;
+        border-radius: 0;
+        color: white;
+    }
+    .select2-drop-active, .select2-results .select2-no-results {
+        border: none;
+        background: #004987;
+        color: white;
+        border-radius: 0;
+    }
+    .select2-result {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .select2-search input {
+        border: 0;
+        color: #004987;
+        background: white;
+    }
+    .select2-container .select2-choice > .select2-chosen {
+        line-height: 1;
+    }
+    .select2-container .select2-choice .select2-arrow {
+        border: 0;
+        border-radius: 0;
+        background: none;
+        width: 50px;
+    }
+    .select2-container .select2-choice .select2-arrow b {
+        background: url('img/select-arrow.png') !important;
+        background-size: 16px 8px !important;
+        background-repeat: no-repeat !important;
+        background-position: 50% 50% !important;
+    }
+    .select2-drop {
+
+    }
+    @media screen and (max-width: 768px) {
+        .select2-container {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+    /* end select */
+/* end general */
 
 /* main layout */
 .main-layout .section-title {
@@ -426,10 +485,45 @@ a:hover {
     }
 }
 
-.sectors .item h3 {
+.sectors .item h3, .sectors .item h3 a, .sectors .item h3 a:hover, .sectors .item h3 a:visited, .sectors .item h3 a:active {
     font-size: 16px;
+    color: white;
 }
+
 /* end main layout / sectors */
+
+/* TODO: main layout / member banks */
+.member-banks-detail .main-content-pane-logo {
+    margin-bottom: 60px;
+}
+.member-banks-detail .main-content-pane p {
+    color: #707170;
+}
+
+.member-banks-detail .main-content-pane-left-column h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.member-banks-detail .main-content-pane-left-column-paragraph-heading {
+    color: #004b89;
+}
+.member-banks-detail .main-content-pane-left-column p {
+    color: #009ADD;
+    margin-bottom: 15px;
+}
+
+.member-banks-detail .main-content-pane-left-column p a {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.member-banks-detail .main-content-pane-right-column h2 {
+    font-size: 26px;
+}
+
+/* end TODO: main layout / member banks */
+
 
 /* main layout / organization sector */
     .organization-sector .item .overlay {
@@ -508,7 +602,7 @@ a:hover {
 .regional-board-inside .member-list tr {
     border-bottom: 1px solid #C3D500;
 }
-.colon-separator {
+.regional-board-inside .colon-separator {
     padding-left: 30px;
     padding-right: 10px;
 }
@@ -711,8 +805,7 @@ a:hover {
         color:    #56b4e7;
         padding-top: 3px;
     }
-    .contact-form input[type="text"],
-    .contact-form input[type="email"] {
+    .contact-form input[type="text"] {
         border: 1px solid #56b4e7;
         width: 100%;
         height: 47px;
@@ -720,7 +813,7 @@ a:hover {
         line-height: 1;
         margin-bottom: 40px;
         color:    #56b4e7;
-	}
+    }
     .contact-form textarea {
         width: 100%;
         border: 1px solid #56b4e7;

@@ -39,12 +39,14 @@ get_header(); ?>
 						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/sector02.png" />						
 					</div>
 					
+					
 					<div class="overlay">
 						<div class="overlay-bottom-aligned">
-							<h3><?php echo $sector->name; ?></h3>
+							<h3><a href="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>">
+						<?php echo $sector->name; ?></a></h3>
 						</div>
-					</div>
-					<a href="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>">L</a>
+					
+					</div>									
 				</div>			
 				<?php endforeach; ?>
             </div>
