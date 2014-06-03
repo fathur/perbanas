@@ -35,8 +35,9 @@ get_header(); ?>
 				
 				foreach ($sectors as $sector) :?>
 				<div class="col-sm-6 col-md-3 block item">
-					<div class="img">						
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/sector02.png" />						
+					<div class="img">				
+						<?php $s8_img = s8_get_taxonomy_image_src( get_term_by('slug',$sector->slug,$sector->taxonomy), 'full'); ?>		
+						<img class="img-responsive" src="<?php echo $s8_img['src']; ?>" />						
 					</div>
 					
 					
