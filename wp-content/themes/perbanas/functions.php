@@ -10,6 +10,7 @@ function perbanas_cssjs() {
 
 		wp_enqueue_style('bootstrap-min', get_template_directory_uri() . '/css/bootstrap.min.css');
 		wp_enqueue_style('font-open-sans', get_template_directory_uri() . '/css/font-open-sans.css');
+		wp_enqueue_style('reset', get_template_directory_uri() . '/css/reset.css');
 		wp_enqueue_style('flex-height', get_template_directory_uri() . '/css/flex-height.css');
 		wp_enqueue_style('perbanas', get_template_directory_uri() . '/css/perbanas.css');
 
@@ -70,73 +71,86 @@ function perbanas_header_menu() {
 	return $generated_menu;
 }
 
-function perbanas_side_menu( $menu_name ) {
+function perbanas_side_menu( $menu_name, $id ) {
 	
-	if ( ($locations = get_nav_menu_locations()) AND (isset( $locations[$menu_name] )) ) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
 	
-		print_r($menu_items);
 	
-	}
-	
-	// return $generated_menu;
-}
-
-function __generate_menu( $id = 'menu' ) {
-	$menus = __find_all_thread();
+	$menus = __find_all_thread( $menu_name );
 	
 	if ( $menus && count( $menus ) > 0 ) {
-		$list_menus = "<ul id=\"$id\">";
+		$list_menus = "<div class='accordion' id='$id'>";
 	
 		foreach ( $menus as $menu ) {
-			// if current top menu has children
-			if ( $this->__has_child( $menu['children'] ) ) {
-				// 1st li or top parent
-				$list_menus .= "<li class='rootnav'><a href='#' id='m" . $menu['id'] . "' class='menuais' title='" . $menu['name'] . "'>" . $menu['name'] . "</a>";
-				$this->__generate_child_menu( $menu['children'], $list_menus,0 );
+			
+			if ( __has_child( $menu->children )) {
+				
+				
+				 $list_menus .= '<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
+								<i class="icon-home"></i> '. $menu->title .
+							'</a>
+							<hr class="active" />
+						</div>';
+				
+				__generate_child_menu( $menu->children, $list_menus, 0, $menu->url );
+				
+				$list_menus .= '</div>';
+				
 			} else {
-				$list_menus .= "<li><a href='" . $menu['path'] ."' title='" . $menu['name'] . "' >" . $menu['name'] . "</a>";
+				
+				$list_menus .= '<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
+								<i class="icon-home"></i> '. $menu->title .
+												'</a>
+							<hr class="active" />
+						</div></div>';
 			}
-	
-			$list_menus .= "</li>";
-		}
-	
-		return $list_menus . "</ul>";
+		}	
+		return $list_menus . "</div>";
+		
+		
 	}
 }
 
-function __generate_child_menu( &$menus, &$list_menus, $level ) {
+function __generate_child_menu( &$menus, &$list_menus, $level, $url_collapse = '' ) {
 	
-	/* $CIPATH = $this->config->item('base_url')."/index.php";
-	$AISPATH = $this->config->item('base_url_ais'); */
+	// Mengahapus simbol # (kres) pada string pertama
+	$kres = substr($url_collapse, 0, 1);
+	if ('#' == $kres) $url_collapse = substr($url_collapse, 1);
 	
-	$list_menus .= "<ul>";
+	$list_menus .= '<div id="'.$url_collapse.'" class="accordion-body collapse" style="height: 0px; ">
+		<div class="accordion-inner">
+			<ul class="list-unstyled" >';
 	
 	foreach ( $menus as $menu ) {
 	
-		// if child has children, iterate its childs!!
-		if ( $this->__has_child( $menu['children'] ) ) {
+		/* // if child has children, iterate its childs!!
+		if ( __has_child( $menu->children ) ) {
 	
 			// first output its child parent
-			$list_menus .= "<li class='subnav$level haschild close'><a href='#' title='" . $menu['name'] . "'>" .
-					$menu['name'] . "</a>";
+			$list_menus .= "<li><a href='#' title='" . $menu->title . "'>" .
+					$menu->title . "</a>";
 			// generate again
-			$this->__generate_child_menu( $menu['children'], $list_menus,$level+1);
+			__generate_child_menu( $menu->children, $list_menus,$level+1);
 	
 		} else {
-			if($menu['class']=='menu-ais'){
-				$href = $CIPATH . $menu['path'];
-			}else{
-				$href = $AISPATH . $menu['path'];
-			}
-			$list_menus .= "<li class='subnav$level nohaschild'><a href='" . $href . "' title='" . $menu['name'] . "' class='" . $menu['class'] . "' >" .
-					$menu['name'] . "</a>";
+			
+			$list_menus .= "<li class='subnav$level nohaschild'>
+				<a href='" . $menu->url . "' title='" . $menu->title . "' class='' >" . 
+					$menu->title . 
+				"</a>";
 		}
-		$list_menus .= "</li>";
+		$list_menus .= "</li>"; */
+		
+		$list_menus .= '<li>
+				<a href="'.$menu->url.'" class="item">'.$menu->title.'</a>
+				<hr class="active" />
+			</li>';
 	}
 	
-	$list_menus .= "</ul>";
+	$list_menus .= "</ul></div></div>";
 }
 
 function __has_child( $child ) {
@@ -148,23 +162,29 @@ function __has_child( $child ) {
 	return FALSE;
 }
 
-function __find_all_thread() {
+function __find_all_thread( $menu_name ) {
 	
+	if ( ($locations = get_nav_menu_locations()) AND (isset( $locations[$menu_name] )) ) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+	
+		return __do_thread( $menu_items, 0 );
+	}
 }
 
 function __do_thread( $data, $root ) {
 	$out 	= array();
 	$sizeOf = sizeof( $data );
 	
-	for ($ii = 0; $ii < $sizeOf; $ii++) {
-		
-		if (($data[$ii]['menu_item_parent'] == $root) || (($root === NULL) && ($data[$ii]['menu_item_parent'] == '0'))) {
-			$tmp = $data[$ii];
+	for ($i = 0; $i < $sizeOf; $i++) {
+				
+		if ( ($data[$i]->menu_item_parent == $root) || (($root === NULL) && ($data[$i]->menu_item_parent == 0)) ) {
+			$tmp = $data[$i];
 	
-			if (isset($data[$ii]['id'])) {
-				$tmp['children'] = $this->__do_thread($data, $data[$ii]['ID']);
+			if ( isset($data[$i]->ID) ) {
+				$tmp->children = __do_thread( $data, $data[$i]->ID );
 			} else {
-				$tmp['children'] = NULL;
+				$tmp->children = NULL;
 			}
 	
 			$out[] = $tmp;
