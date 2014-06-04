@@ -92,10 +92,6 @@ function perbanas_header_menu() {
 
 function perbanas_side_menu( $menu_name, $id ) {
 	
-	$protocol 	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-	$url		= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-	$currenturl	= $protocol . $url;
-	
 	$menus = __find_all_thread( $menu_name );
 	
 	if ( $menus && count( $menus ) > 0 ) {
@@ -103,12 +99,16 @@ function perbanas_side_menu( $menu_name, $id ) {
 	
 		foreach ( $menus as $menu ) {
 			
-			if ($menu->url == $currenturl) 
+			if ($menu->url == __getCurrentUrl()) 
 				$class_active	= 'active';
 			else 
 				$class_active	= '';			
 			
 			if ( __has_child( $menu->children )) {
+				
+				if ( __have_active_menu( $menu->children ) ) {
+					$class_active = 'active';
+				}
 				
 				$list_menus .= '<div class="accordion-group">
 						<div class="accordion-heading">
@@ -137,11 +137,9 @@ function perbanas_side_menu( $menu_name, $id ) {
 	}
 }
 
-function __generate_child_menu( &$menus, &$list_menus, $level, $url_collapse = '' ) {
+function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = '' ) {
 	
-	$protocol 	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-	$url		= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-	$currenturl	= $protocol . $url;
+	
 	
 	// Mengahapus simbol # (kres) pada string pertama
 	$kres = substr($url_collapse, 0, 1);
@@ -153,7 +151,7 @@ function __generate_child_menu( &$menus, &$list_menus, $level, $url_collapse = '
 	
 	foreach ( $menus as $menu ) {
 		
-		if ($menu->url == $currenturl) 
+		if ($menu->url == __getCurrentUrl()) 
 			$class_active	= 'active';
 		else 
 			$class_active	= '';	
@@ -193,6 +191,25 @@ function __has_child( $child ) {
 	return FALSE;
 }
 
+function __have_active_menu( &$menus ) {
+	
+	$tmp	= array();
+	
+	foreach ( $menus as $menu ) {
+	
+		if ($menu->url == __getCurrentUrl())
+			array_push($tmp, TRUE);
+		else
+			array_push($tmp, FALSE);
+	}
+	
+	if (in_array(TRUE, $tmp)) {
+		return TRUE;
+	} else {
+		return FALSE;
+	}
+}
+
 function __find_all_thread( $menu_name ) {
 	
 	if ( ($locations = get_nav_menu_locations()) AND (isset( $locations[$menu_name] )) ) {
@@ -221,6 +238,17 @@ function __do_thread( $data, $root ) {
 		}
 	}
 	return $out;
+}
+
+/**
+ * Mendapatkan url sekarang yang sedang dibuka
+ * @return string url
+ */
+function __getCurrentUrl() {
+	$protocol 	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+	$url		= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+	
+	return $protocol . $url;
 }
 
 /**
