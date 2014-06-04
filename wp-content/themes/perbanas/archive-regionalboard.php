@@ -3,47 +3,57 @@ $menu_post_type = 'council'; // Karena regional board merupakan bagian dari menu
 
 get_header(); ?>
 
-<!-- http://localhost/perbanas/regionalboard/
-
-
-Menampilkan daftar regional board
-seperti
-1. NAD
-2. Bali
-3. dll -->
-
-<div class="row">
-	<div class="col-md-4">
-		<?php // echo get_post_type(); 
-		
-		wp_nav_menu( array(
-			'theme_location'  => $menu_post_type . '-menu'
-		) );
-		?>
-	</div>
-	<div class="col-md-8">
-	<?php 
-	$args = array(
-		'post_type' => get_post_type()
-	);
-	$query = new WP_Query( $args );
-
-	// The Loop
-	if ( $query->have_posts() ) {
-		echo '<ul>';
-		while ( $query->have_posts() ) {
-			$query->the_post();
-			echo '<li><a href="'.get_permalink().'">' . get_the_title() . '</a></li>';
-		}
-		echo '</ul>';
-	} else {
-		// no posts found
-	}
-	/* Restore original Post Data */
-	wp_reset_postdata();
-
-    ?> 
-	</div>
+<div class="container main-layout regional-board">
+    <div class="row breadcrumbs">
+        <div class="col-xs-12">
+            <a href="#" class="elem">Home</a> > <a href="#" class="elem">Council</a> > <a href="#" class="elem">Central Board</a> > <a href="#" class="elem">Sectors</a> > <a href="#" class="elem">Organizational Sector</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 sidebar">
+            <div class="sidebar-title">
+                <h2>Council</h2>
+            </div>
+            
+            <?php echo perbanas_side_menu('council-menu', 'leftMenu'); ?>
+        </div>
+        <div class="col-xs-12 col-sm-9 main-content-pane">
+            <div class="row">
+                <div class="col-xs-12 section-title">
+                    <h1><span>Regional Board</span></h1>
+                </div>
+            </div>
+            <div class="row ">
+				<div class="col-xs-12">
+					<div class="row">
+						<ul>
+						<?php 
+							$args = array( 'post_type' => get_post_type() );
+							$query = new WP_Query( $args );
+						
+							if ( $query->have_posts() ) {
+								
+								while ( $query->have_posts() ) {
+									$query->the_post(); ?>
+									
+									<li class="col-xs-12 col-sm-6"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+									<?php 
+								}
+								
+							} else {
+								// no posts found
+							}
+							/* Restore original Post Data */
+							wp_reset_postdata();
+						
+						?> 
+							
+						</ul>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php get_footer(); ?>

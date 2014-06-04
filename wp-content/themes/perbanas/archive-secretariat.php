@@ -32,14 +32,7 @@ get_header(); ?>
 				wp_reset_query();
 				
 				$args = array(
-					'post_type' => get_post_type(),
-					/* 'tax_query' => array(
-						array(
-							'taxonomy'  => $taxonomy,
-							'field'     => 'slug',
-							'terms'     => $term
-						),
-					), */
+					'post_type' => get_post_type()
 				);
 				
 				$loop = new WP_Query($args);
@@ -67,7 +60,5 @@ get_header(); ?>
         </div>
     </div>
 </div>
-
-
 
 <?php get_footer(); ?>

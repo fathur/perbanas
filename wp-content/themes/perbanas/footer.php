@@ -32,6 +32,10 @@
 <script>
 	$(document).ready(function(){
 		init();
+		
+		<?php if ( get_post_type() == 'regionalboard' ) :?>
+		$('select').select2();
+		<?php endif; ?>
 	});
 
 	<?php if( is_page('contact') || is_page('kontak') ): ?>

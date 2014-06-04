@@ -51,6 +51,7 @@ p {
     line-height: 1.5;
 }
 /* end general: font */
+
 /* general: links */
 a, a:visited, a:active {
     color: #004987;
@@ -234,19 +235,15 @@ a:hover {
 @media screen and (min-width: 992px) {
     .nav-large-wrapper-outer {
         line-height: 0;
-        /* text-align: center;*/
     }
 }
-/*
-.nav-large-wrapper-inner {
-    display: inline-block;
-}*/
 .nav-top a {
     font-size: 10px;
     font-weight: 400;
     color: #004987;
 }
 /* end general: navbar */
+
 /* general: footer */
 .footer, .footer-links a {
     background: #f5f5f5;
@@ -283,6 +280,7 @@ a:hover {
     min-width: 0;
 }
 /* end general: footer */
+
 /* general: components (buttons, date, description) */
 .btn {
     font-size: 10px;
@@ -477,6 +475,7 @@ a:hover {
         display: table-cell;
     }
 }
+
 @media screen and (min-width: 1200px) {
     .sectors .item .overlay .overlay-bottom-aligned {
         height: 207px;
@@ -491,39 +490,6 @@ a:hover {
 }
 
 /* end main layout / sectors */
-
-/* TODO: main layout / member banks */
-.member-banks-detail .main-content-pane-logo {
-    margin-bottom: 60px;
-}
-.member-banks-detail .main-content-pane p {
-    color: #707170;
-}
-
-.member-banks-detail .main-content-pane-left-column h2 {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.member-banks-detail .main-content-pane-left-column-paragraph-heading {
-    color: #004b89;
-}
-.member-banks-detail .main-content-pane-left-column p {
-    color: #009ADD;
-    margin-bottom: 15px;
-}
-
-.member-banks-detail .main-content-pane-left-column p a {
-    display: inline-block;
-    margin-top: 15px;
-}
-
-.member-banks-detail .main-content-pane-right-column h2 {
-    font-size: 26px;
-}
-
-/* end TODO: main layout / member banks */
-
 
 /* main layout / organization sector */
     .organization-sector .item .overlay {
@@ -608,6 +574,63 @@ a:hover {
 }
 /* end main layout / regional board inside */
 
+/* main layout / member banks */
+/* end main layout / member banks */
+
+/* main layout / member banks (detail) */
+.member-banks-detail .main-content-pane-logo {
+    margin-bottom: 60px;
+}
+.member-banks-detail .main-content-pane p {
+    color: #707170;
+}
+.member-banks-detail .main-content-pane-left-column h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.member-banks-detail .main-content-pane-left-column-paragraph-heading {
+    color: #004b89;
+}
+.member-banks-detail .main-content-pane-left-column p {
+    color: #009ADD;
+    margin-bottom: 15px;
+}
+
+.member-banks-detail .main-content-pane-left-column p a {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.member-banks-detail .main-content-pane-right-column h2 {
+    font-size: 26px;
+}
+/* end main layout / member banks (detail) */
+
+/* event upcoming */
+.event-upcoming .main-content-pane hr {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: 1px;
+    color: #7fa4c3;
+    background: #7fa4c3;
+    border: 0;
+}
+.event-upcoming .main-content-pane-left-column p {
+    font-size: 10px;
+    color: #009ADD;
+}
+.event-upcoming .main-content-pane-left-column .event-day {
+    font-size: 14px;
+}
+.event-upcoming .main-content-pane-left-column .event-date {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #C3D500;
+}
+.event-upcoming .main-content-pane-right-column  {
+    background: #808080;
+}
 /* homepage layout: main slider, news, events, gallery, partner slider */
     /* main slider */
     .slider-background {
@@ -805,7 +828,8 @@ a:hover {
         color:    #56b4e7;
         padding-top: 3px;
     }
-    .contact-form input[type="text"] {
+    .contact-form input[type="text"],
+    .contact-form input[type="email"] {
         border: 1px solid #56b4e7;
         width: 100%;
         height: 47px;

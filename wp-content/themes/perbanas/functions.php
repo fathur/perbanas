@@ -9,10 +9,21 @@ function perbanas_cssjs() {
 	if ( !is_admin()) {
 
 		wp_enqueue_style('bootstrap-min', get_template_directory_uri() . '/css/bootstrap.min.css');
+		
+		// Add select bootstrap script and style
+		if ( get_post_type() == 'regionalboard' ) {
+			wp_enqueue_style('select2', get_template_directory_uri() . '/js/select2-3.4.8/select2.css');
+		}
+		
 		wp_enqueue_style('font-open-sans', get_template_directory_uri() . '/css/font-open-sans.css');
 		wp_enqueue_style('reset', get_template_directory_uri() . '/css/reset.css');
 		wp_enqueue_style('flex-height', get_template_directory_uri() . '/css/flex-height.css');
 		wp_enqueue_style('perbanas', get_template_directory_uri() . '/css/perbanas.css');
+		
+		// Add select bootstrap script and style
+		if ( get_post_type() == 'regionalboard' ) {
+			wp_enqueue_style('select2-bootstrap', get_template_directory_uri() . '/js/select2-3.4.8/select2-bootstrap.css');
+		}
 
 		wp_enqueue_script('jquery-1.11.1', get_template_directory_uri() . '/js/jquery.min.js',array(),'1.11.1',TRUE);
 		wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',array(),'1.3.1',TRUE);
@@ -20,13 +31,21 @@ function perbanas_cssjs() {
 		wp_enqueue_script('function', get_template_directory_uri() . '/js/functions.js',array(),'',TRUE);
 		wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js',array(),'',TRUE);
 
+		// Add select bootstrap script and style
+		if ( get_post_type() == 'regionalboard' ) {
+			wp_enqueue_script('select2-js', get_template_directory_uri() . '/js/select2-3.4.8/select2.min.js',array(),'',TRUE);
+		}
+		
 		// Add script for contact page
 		if ( is_page('contact') || is_page('kontak') ) {
 			wp_enqueue_script('contact-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false',array(),'',TRUE);
 		}
+		
+		
 	}
 }
 add_action('wp_enqueue_scripts','perbanas_cssjs');
+
 
 /**
  * Registering menu in admin panel
@@ -73,8 +92,6 @@ function perbanas_header_menu() {
 
 function perbanas_side_menu( $menu_name, $id ) {
 	
-	
-	
 	$menus = __find_all_thread( $menu_name );
 	
 	if ( $menus && count( $menus ) > 0 ) {
@@ -109,8 +126,6 @@ function perbanas_side_menu( $menu_name, $id ) {
 			}
 		}	
 		return $list_menus . "</div>";
-		
-		
 	}
 }
 
@@ -155,9 +170,8 @@ function __generate_child_menu( &$menus, &$list_menus, $level, $url_collapse = '
 
 function __has_child( $child ) {
 	
-	if ( $child AND count($child) ) {
+	if ( $child AND count($child) )
 		return TRUE;
-	}
 	
 	return FALSE;
 }
@@ -186,11 +200,9 @@ function __do_thread( $data, $root ) {
 			} else {
 				$tmp->children = NULL;
 			}
-	
 			$out[] = $tmp;
 		}
 	}
-	
 	return $out;
 }
 
