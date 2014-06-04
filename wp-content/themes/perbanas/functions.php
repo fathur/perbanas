@@ -46,6 +46,15 @@ function perbanas_cssjs() {
 }
 add_action('wp_enqueue_scripts','perbanas_cssjs');
 
+/**
+ * Remove login logo in wordpress admin
+ * http://stanislav.it/how-to-remove-wordpress-logo-from-admin-bar/
+ */
+function remove_wp_logo( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node('wp-logo');
+}
+add_action('admin_bar_menu', 'remove_wp_logo', 999);
+
 
 /**
  * Registering menu in admin panel
