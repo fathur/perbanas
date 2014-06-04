@@ -92,6 +92,10 @@ function perbanas_header_menu() {
 
 function perbanas_side_menu( $menu_name, $id ) {
 	
+	$protocol 	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+	$url		= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+	$currenturl	= $protocol . $url;
+	
 	$menus = __find_all_thread( $menu_name );
 	
 	if ( $menus && count( $menus ) > 0 ) {
@@ -99,15 +103,19 @@ function perbanas_side_menu( $menu_name, $id ) {
 	
 		foreach ( $menus as $menu ) {
 			
+			if ($menu->url == $currenturl) 
+				$class_active	= 'active';
+			else 
+				$class_active	= '';			
+			
 			if ( __has_child( $menu->children )) {
 				
-				
-				 $list_menus .= '<div class="accordion-group">
+				$list_menus .= '<div class="accordion-group">
 						<div class="accordion-heading">
 							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
 								<i class="icon-home"></i> '. $menu->title .
 							'</a>
-							<hr class="active" />
+							<hr class="'.$class_active.'" />
 						</div>';
 				
 				__generate_child_menu( $menu->children, $list_menus, 0, $menu->url );
@@ -121,7 +129,7 @@ function perbanas_side_menu( $menu_name, $id ) {
 							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
 								<i class="icon-home"></i> '. $menu->title .
 												'</a>
-							<hr class="active" />
+							<hr class="'.$class_active.'" />
 						</div></div>';
 			}
 		}	
@@ -130,6 +138,10 @@ function perbanas_side_menu( $menu_name, $id ) {
 }
 
 function __generate_child_menu( &$menus, &$list_menus, $level, $url_collapse = '' ) {
+	
+	$protocol 	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+	$url		= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+	$currenturl	= $protocol . $url;
 	
 	// Mengahapus simbol # (kres) pada string pertama
 	$kres = substr($url_collapse, 0, 1);
@@ -140,6 +152,11 @@ function __generate_child_menu( &$menus, &$list_menus, $level, $url_collapse = '
 			<ul class="list-unstyled" >';
 	
 	foreach ( $menus as $menu ) {
+		
+		if ($menu->url == $currenturl) 
+			$class_active	= 'active';
+		else 
+			$class_active	= '';	
 	
 		/* // if child has children, iterate its childs!!
 		if ( __has_child( $menu->children ) ) {
@@ -161,7 +178,7 @@ function __generate_child_menu( &$menus, &$list_menus, $level, $url_collapse = '
 		
 		$list_menus .= '<li>
 				<a href="'.$menu->url.'" class="item">'.$menu->title.'</a>
-				<hr class="active" />
+				<hr class="'.$class_active.'" />
 			</li>';
 	}
 	
