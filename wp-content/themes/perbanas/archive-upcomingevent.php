@@ -65,7 +65,7 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="col-sm-3 hidden-xs main-content-pane-right-column">
-					<?php echo get_the_post_thumbnail(); ?>
+					<?php echo get_the_post_thumbnail( get_the_ID(),'thumbnail'); ?>
 				</div>
 			</div>
 			
