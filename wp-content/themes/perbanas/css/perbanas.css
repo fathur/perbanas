@@ -289,6 +289,10 @@ a:hover {
     background: #C3D500;
     border-radius: 0;
 }
+a.btn, a.btn:hover, a.btn:active, a.btn:visited {
+    color: white;
+    text-decoration: none;
+}
 .btn .arrow {
     font-size: 0.7em;
     font-weight: bold;
@@ -608,6 +612,9 @@ a:hover {
 /* end main layout / member banks (detail) */
 
 /* event upcoming */
+.event-upcoming {
+    margin-bottom: 100px;
+}
 .event-upcoming .main-content-pane hr {
     margin-top: 60px;
     margin-bottom: 60px;
@@ -628,9 +635,47 @@ a:hover {
     font-size: 14px;
     color: #C3D500;
 }
-.event-upcoming .main-content-pane-right-column  {
+.event-upcoming .main-content-pane-middle-column h2 {
+    margin-bottom: 25px;
+}
+@media screen and (max-width: 768px) {
+    .event-upcoming .main-content-pane-middle-column {
+        margin-top: 30px;
+    }
+}
+.event-upcoming .main-content-pane-right-column div {
     background: #808080;
 }
+.event-upcoming .main-content-pane .accordion-inner {
+    margin-left: 0;
+}
+/* end main layout / event upcoming */
+
+/* main layout / event seminar */
+.event-seminar .main-content-pane-right-column h2 {
+    margin-bottom: 25px;
+}
+.event-seminar .logo {
+    margin-bottom: 60px;
+}
+.event-seminar .logo img {
+    min-width: 100%;
+}
+.event-seminar .main-content-pane-left-column p {
+    font-size: 10px;
+    color: #009ADD;
+}
+.event-seminar .main-content-pane-left-column .event-day {
+    font-size: 14px;
+}
+.event-seminar .main-content-pane-left-column .event-date {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #C3D500;
+}
+
+/* end main layout / event seminar */
+
 /* homepage layout: main slider, news, events, gallery, partner slider */
     /* main slider */
     .slider-background {
@@ -703,12 +748,12 @@ a:hover {
     .homepage-news-item .date {
         margin-top: 10px;
     }
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: 991px) { /* tablet and mobile screen */
         .homepage-news-item .homepage-desc-bottom {
             margin-top: 12px;
         }
     }
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 992px) { /* desktop screen */
         .homepage-news-item .homepage-news-desc-top {
             height: 100px;
         }
@@ -782,9 +827,124 @@ a:hover {
     color: #004987;
 }
 
-/* end */
+/* end homepage */
 
-/* start of contact */
+/* start of main layout / news */
+.news .news-item .news-desc-top h3 {
+    font-size: 18px;
+}
+.news .news-item .news-desc-top .date {
+    margin-bottom: 25px;
+}
+.news .news-item .news-desc-bottom {
+    margin-top: 12px;
+}
+@media screen and (max-width: 991px) { /* tablet and mobile screen */
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) { /* desktop screen */
+    .news .news-item .news-desc-top {
+        height: 194px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    /* desktop screen */
+    .news .news-item .news-desc-top {
+        height: 206px;
+    }
+
+}
+
+.news .news-item {
+    margin-bottom: 30px;
+}
+.news .main-content-pane hr {
+    margin-bottom: 30px;
+    height: 1px;
+    border: 0;
+    color: #B3BAC1;
+    background: #B3BAC1;
+}
+/* end main layout / news */
+
+/* main layout / news single */
+.news-single .main-content-pane h1 {
+    margin-bottom: 30px;
+}
+.news-single .main-content-pane .top-row .back-link {
+    margin-bottom: 30px;
+}
+.news-single .main-content-pane .top-row h2 {
+    margin-bottom: 15px;
+    font-size: 36px;
+    font-weight: normal;
+}
+.news-single .top-row .date {
+    font-size: 20px;
+}
+.news-single .news-content p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #717271;
+    font-size: 12px;
+    font-weight: normal;
+}
+.news-single .other-news {
+    margin-bottom: 90px;
+}
+.news-single .other-news img {
+    margin-bottom: 20px;
+}
+.news-single .other-news h3 {
+    /* font-size: 12px; */
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+/* end main layout / news single */
+
+/* main layout / press releases */
+.press-releases .press-release-item h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.press-releases .press-release-item .date {
+    margin-bottom: 25px;
+}
+.press-releases .press-release-item .desc {
+    margin-bottom: 30px;
+}
+/* end main layout / press releases */
+
+/* main layout / downloads */
+.downloads .downloads-item h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.downloads .downloads-item .date {
+    margin-bottom: 25px;
+}
+.downloads .downloads-item .desc {
+    margin-bottom: 30px;
+}
+/* end main layout / downloads */
+
+/* main layout / industry guidelines syariah business */
+.industry-guidelines-syariah-business .industry-guidelines-syariah-business-item h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.industry-guidelines-syariah-business .industry-guidelines-syariah-business-item .date {
+    margin-bottom: 25px;
+}
+.industry-guidelines-syariah-business .industry-guidelines-syariah-business-item .desc {
+    margin-bottom: 30px;
+}
+.industry-guidelines-syariah-business .industry-guidelines-syariah-business-item .desc-detailed {
+    color: #717271;
+}
+/* end main layout / industry guidelines syariah business */
+
+/* start of main layout / contact */
     .contact-logo {
         margin-bottom: 40px;
     }
