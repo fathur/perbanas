@@ -65,7 +65,8 @@ function perbanas_register_menu() {
 		'extra-menu' 	=> 'Footer Menu',
 		'council-menu'	=> 'Council Menu',
 		'events-menu'	=> 'Events Menu',
-		'member-bank-menu'	=> 'Member Bank Menu'
+		'member-bank-menu'	=> 'Member Bank Menu',
+		'news-menu'		=> 'News Menu'
 	));
 }
 add_action( 'init', 'perbanas_register_menu' );
