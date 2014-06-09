@@ -20,7 +20,10 @@
                 </div>
             </div>
             
-            <?php while ( have_posts() ) : the_post(); ?>
+            <?php 
+            while ( have_posts() ) : the_post(); 
+            $id_post = get_the_ID(); ?>
+            
             
             <div class="row">
                 <div class="col-xs-12">
@@ -54,26 +57,43 @@
                 </div>
             </div>
             <div class="row other-news">
-                <div class="col-xs-6 col-md-3 block">
-                    <img class="img-responsive" src="content/img/166835121-business-people-watching-screens-in-gettyimages.jpg" width="255px" height="170px">
-                    <h3>Lorem Ipsum Is Simply Dummy Text</h3>
-                    <p class="date">22 April 2014 17:00</p>
-                </div>
-                <div class="col-xs-6 col-md-3 block">
-                    <img class="img-responsive" src="content/img/158570170-party-time-at-a-concert-gettyimages.jpg" width="255px" height="170px">
-                    <h3>Lorem Ipsum Is Simply Dummy Text</h3>
-                    <p class="date">22 April 2014 17:00</p>
-                </div>
-                <div class="col-xs-6 col-md-3 block">
-                    <img class="img-responsive" src="content/img/174403788-speaker-at-seminar-gesturing-to-crowd-gettyimages.jpg" width="255px" height="170px">
-                    <h3>Lorem Ipsum Is Simply Dummy Text</h3>
-                    <p class="date">22 April 2014 17:00</p>
-                </div>
-                <div class="col-xs-6 col-md-3 block">
-                    <img class="img-responsive" src="content/img/174601330-cocktail-hour-after-a-business-conference-gettyimages.jpg" width="255px" height="170px">
-                    <h3>Lorem Ipsum Is Simply Dummy Text</h3>
-                    <p class="date">22 April 2014 17:00</p>
-                </div>
+            
+            <?php 
+            
+            $rp = array(
+				'post_type'			=> get_post_type(),
+            	'post__not_in'		=> array($id_post),
+				'posts_per_page'	=> 4,
+				'ignore_sticky_posts' => TRUE
+            );
+            
+            $relateds = new WP_Query($rp);
+            
+           // The Loop
+			if ( $relateds->have_posts() ) {
+				
+				while ( $relateds->have_posts() ) :
+					$relateds->the_post();
+				?>
+				
+				<div class="col-xs-6 col-md-3 block">
+					<?php the_post_thumbnail('post-thumbnail',array('class'=>'img-responsive','width'=>225,'height'=>170)); ?>
+					<h3><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h3>
+					<p class="date"><?php the_date(); ?></p>
+				</div>
+				
+				<?php 
+					//echo get_the_title();
+				endwhile;
+				
+			} else {
+				// no posts found
+			}
+			/* Restore original Post Data */
+			wp_reset_postdata();
+            ?>
+            
+              
             </div>
         </div>
     </div>
