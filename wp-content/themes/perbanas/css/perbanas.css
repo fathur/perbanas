@@ -431,7 +431,18 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         width: 100%;
     }
     /* end main layout: sidebar navigation */
+
+@media screen and (max-width: 767px) {
+    .main-layout .main-content-pane {
+        margin-top: 50px;
+    }
+}
+
 /* end main layout */
+
+/* main layout (single view) */
+
+/* end main layout (single view) */
 
 /* main layout / sectors */
 .sectors .main-content-pane .item {
@@ -673,7 +684,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     font-size: 14px;
     color: #C3D500;
 }
-
 /* end main layout / event seminar */
 
 /* homepage layout: main slider, news, events, gallery, partner slider */
@@ -829,7 +839,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 
 /* end homepage */
 
-/* start of main layout / news */
+/* main layout / news */
 .news .news-item .news-desc-top h3 {
     font-size: 18px;
 }
@@ -853,7 +863,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
 
 }
-
 .news .news-item {
     margin-bottom: 30px;
 }
@@ -876,7 +885,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .news-single .main-content-pane .top-row h2 {
     margin-bottom: 15px;
     font-size: 36px;
-    font-weight: normal;
 }
 .news-single .top-row .date {
     font-size: 20px;
@@ -927,6 +935,117 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     margin-bottom: 30px;
 }
 /* end main layout / downloads */
+
+/* main layout / probank magazine */
+.probank .main-content-pane .item {
+    position: relative;
+    margin-bottom: 30px;
+    color: white;
+}
+.probank .main-content-pane .img img {
+    min-width: 100%;
+}
+.probank .item .overlay {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    left: 15px;
+    background: #004987;
+    -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+.probank .item:hover .overlay {
+    visibility: visible;
+    -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+    opacity: 0.9;
+}
+.probank .item .overlay .overlay-top-aligned, .probank .item .overlay .overlay-bottom-aligned {
+    padding-top: 25%;
+    height: 50%;
+    text-align: center;
+}
+.probank .item .overlay .overlay-top-aligned:hover, .probank .item .overlay .overlay-bottom-aligned:hover {
+    background: #009BDE;
+}
+
+.probank .item h3, .probank .item h3 a, .probank .item h3 a:hover, .probank .item h3 a:visited, .probank .item h3 a:active {
+    font-size: 16px;
+    color: white;
+}
+/* end main layout / probank magazine */
+
+/* main layout / photo gallery (general) */
+.photo-gallery .photo-gallery-album-item {
+    margin-bottom: 30px;
+}
+.photo-gallery .photo-gallery-album-item h3 {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+/* end main layout / photo gallery (general) */
+
+/* main layout / photo gallery (album list) */
+/* end main layout / photo gallery (album list) */
+
+/* main layout / photo gallery (album list) */
+.photo-gallery-photo-list .main-content-pane h1 {
+    margin-bottom: 30px;
+}
+.photo-gallery-photo-list .main-content-pane .top-row .back-link {
+    margin-bottom: 30px;
+}
+.photo-gallery .photo-gallery-photo-list-item .square {
+    width: 100%;
+    height: 0;
+    margin-bottom: 30px;
+    padding-bottom: 81%;
+    padding-top: 15%;
+    border: 1px solid #b9bab9;
+}
+
+/* end main layout / photo gallery (album list) */
+
+
+/* main layout / perbanas corner education */
+.perbanas-corner-education .perbanas-corner-education-item .perbanas-corner-education-desc-top h3 {
+    font-size: 18px;
+}
+.perbanas-corner-education .perbanas-corner-education-item .perbanas-corner-education-desc-top .date {
+    margin-bottom: 25px;
+}
+.perbanas-corner-education .perbanas-corner-education-item .perbanas-corner-education-desc-bottom {
+    margin-top: 12px;
+}
+.perbanas-corner-education .perbanas-corner-education-item {
+    margin-bottom: 30px;
+}
+.perbanas-corner-education .main-content-pane hr {
+    margin-bottom: 30px;
+    height: 1px;
+    border: 0;
+    color: #B3BAC1;
+    background: #B3BAC1;
+}
+/* end main layout / perbanas corner education */
+
+/* main layout / perbanas corner FAQ */
+.perbanas-corner-faq .main-content-pane .accordion-inner {
+    margin-left: 0;
+}
+.perbanas-corner-faq .main-content-pane h2 {
+    margin-bottom: 30px;
+}
+/* end main layout / perbanas corner FAQ */
 
 /* main layout / industry guidelines syariah business */
 .industry-guidelines-syariah-business .industry-guidelines-syariah-business-item h2 {
@@ -1018,17 +1137,26 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin-bottom: 140px;
     }
     /* end form */
-/* end contact page */
+/* end main layout / contact page */
 
-/* testing */
-.block-dis {
-    border: 1px solid black;
-    background: #1e5799; /* Old browsers */
-    background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+/* main layout / members' area */
+.members-area .members-area-item .members-area-desc-top h3 {
+    font-size: 18px;
 }
+.members-area .members-area-item .members-area-desc-top .date {
+    margin-bottom: 25px;
+}
+.members-area .members-area-item .members-area-desc-bottom {
+    margin-top: 12px;
+}
+.members-area .members-area-item {
+    margin-bottom: 30px;
+}
+.members-area .main-content-pane hr {
+    margin-bottom: 30px;
+    height: 1px;
+    border: 0;
+    color: #B3BAC1;
+    background: #B3BAC1;
+}
+/* end main layout / members' area */
