@@ -36,15 +36,17 @@
 				?>
 
 				<div class="col-sm-6 col-md-3 block item">
-                    <div class="img"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" /></div>
+                    <div class="img">                    
+                    	<?php echo the_post_thumbnail('large',array('class' => 'img-responsive')); ?>
+                    </div>
                     <div class="overlay">
                         <div class="overlay-top-aligned">
-                            <a href="#"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-download.png" /></a>
-                            <h3><a href="#">Download</a></h3>
+                            <a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE) ; ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-download.png" /></a>
+                            <h3><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE) ; ?>">Download</a></h3>
                         </div>
                         <div class="overlay-bottom-aligned">
-                            <a href="#"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-read.png" /></a>
-                            <h3><a href="#">Read</a></h3>
+                            <a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE) ; ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-read.png" /></a>
+                            <h3><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE) ; ?>">Read</a></h3>
                         </div>
                     </div>
                 </div>
