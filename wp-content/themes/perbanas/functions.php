@@ -301,3 +301,40 @@ function perbanas_request_sectors( $request ) {
 add_action( 'restrict_manage_posts','perbanas_restrict_manage_post_type' );
 add_action( 'request', 'perbanas_request_sectors' );
 
+
+/**
+ * For admin gallery
+ */
+function gallery_columns($columns) {
+	$columns = array(
+		'cb'				=> '<input type="checkbox"',
+		'gal_post_thumb'	=> 'Thumbnail',
+		'title'				=> 'Title',
+		'photo_type'		=> 'Type',
+		'author'			=> 'Author',
+		'date'				=> 'Date'
+	);
+	
+	return $columns;
+}
+
+function custom_gallery_columns($column) {
+	global $post;
+	
+	switch ($column) {
+		case 'gal_post_thumb':
+			echo the_post_thumbnail('admin-list-thumb');
+		break;
+		
+		case 'description':
+			the_excerpt();
+		break;
+		
+		case 'photo_type':
+			echo get_the_term_list( $post->ID, 'photo_type', '', ', ','');
+		break;
+	}
+}
+
+add_action('manage_posts_custom_column', 'gallery_columns');
+add_filter('manage_edit-gallery_columns', 'custom_gallery_columns');

@@ -1006,10 +1006,10 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 }
 .photo-gallery .photo-gallery-photo-list-item .square {
     width: 100%;
-    height: 0;
+    /*height: 0;*/
     margin-bottom: 30px;
-    padding-bottom: 81%;
-    padding-top: 15%;
+    /*padding-bottom: 81%;
+    padding-top: 15%;*/
     border: 1px solid #b9bab9;
 }
 
