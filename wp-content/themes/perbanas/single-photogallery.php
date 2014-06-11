@@ -32,21 +32,23 @@
 			
 			while ( have_posts() ) : the_post(); 
 			if ( get_post_gallery() ) :
-				$photos = get_post_gallery_images( get_the_ID() );
-				foreach ($photos as $photo):
+			
+				echo do_shortcode(get_the_content());
+				//$photos = get_post_gallery_images( get_the_ID() );
+				//foreach ($photos as $photo):
 			?>
 				
-				<div class="col-xs-6 col-md-3 block photo-gallery-photo-list-item">
-					<div class="square">
-						<a href="#">
-							<img class="img-responsive" src="<?php echo $photo; ?>" width="255" height="170">
-						</a>
-					</div>
-				</div>
+<!-- 				<div class="col-xs-6 col-md-3 block photo-gallery-photo-list-item"> -->
+<!-- 					<div class="square"> -->
+<!-- 						<a href="#"> -->
+<!-- 							<img class="img-responsive" src="<?php// echo $photo; ?>" width="255" height="170"> -->
+<!-- 						</a> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 			
 			<?php 
-			// echo get_post_gallery();
-				endforeach;
+	
+			//	endforeach;
 			endif; // end if get_post_gallery()
 			endwhile; ?>
 			

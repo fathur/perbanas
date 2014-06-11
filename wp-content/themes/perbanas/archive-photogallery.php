@@ -38,6 +38,7 @@
                     <h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                     <p class="date"><?php echo get_the_date(); ?></p>
                 </div>
+                
              	<?php 
 				endwhile;
 				endif; 
