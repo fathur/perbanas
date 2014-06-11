@@ -367,3 +367,23 @@ function perbanas_force_members_area() {
 		auth_redirect();
 	}
 }
+
+/**
+ * Get Meta ID from Meta Key
+ * */
+function perbanas_get_metaid_by_key( $post_id, $meta_key ) {
+	global $wpdb;
+	$mid = $wpdb->get_var( $wpdb->prepare("SELECT meta_id FROM $wpdb->postmeta WHERE post_id = %d AND meta_key = %s", $post_id, $meta_key) );
+	if( $mid != '' )
+		return (int)$mid;
+
+	return false;
+}
+function perbanas_get_metaval_by_id( $meta_id ) {
+	global $wpdb;
+	$mval = $wpdb->get_row( "SELECT meta_value FROM $wpdb->postmeta WHERE meta_id = $meta_id" );
+	if( $mval != '' )
+		return $mval->meta_value;
+
+	return false;
+}

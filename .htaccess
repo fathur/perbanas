@@ -10,3 +10,8 @@ RewriteRule . /perbanas/index.php [L]
 </IfModule>
 
 # END WordPress
+
+#<FilesMatch "\.(pdf|PDF)">
+#  ForceType application/pdf
+#  Header set Content-Disposition attachment
+#</FilesMatch>
