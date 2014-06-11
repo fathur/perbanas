@@ -51,6 +51,18 @@ function perbanas_cssjs() {
 add_action('wp_enqueue_scripts','perbanas_cssjs');
 
 /**
+ * Add Title to Titlebar
+ */
+add_filter( 'wp_title', 'perbanas_title_for_home' );
+function perbanas_title_for_home( $title )
+{
+	if( empty( $title ) && ( is_home() || is_front_page() ) ) {
+		return __( 'Home', 'perbanas' ) . ' | ' . get_bloginfo( 'description' );
+	}
+	return $title;
+}
+
+/**
  * Remove login logo in wordpress admin
  * http://stanislav.it/how-to-remove-wordpress-logo-from-admin-bar/
  */

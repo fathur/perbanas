@@ -10,7 +10,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="favicon.ico" />
 
-<title><?php wp_title( '|', FALSE, 'right' ); ?></title>
+<title><?php wp_title( '|', TRUE, 'right' ); ?></title>
     
     <?php wp_head(); ?>
 
@@ -40,8 +40,10 @@
 							</div>
 						</div>
 						<div class="logo-container">
+							<a href="<?php echo get_bloginfo('siteurl'); ?>">
 							<img width="214px" height="149px" class="logo"
 								src="<?php echo get_template_directory_uri(); ?>/img/LOGO_PERBANAS_EN.png" />
+							</a>
 						</div>
 					</div>
 				</div>
@@ -68,7 +70,9 @@
 					<div class="nav-large-wrapper-outer">
 						<div class="nav-large-wrapper-inner">
 							<div class="navbar-main-scrolled-menu-logo hidden-sm hidden-xs">
+								<a href="<?php echo get_bloginfo('siteurl'); ?>">
 								<img src="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo-scrolled.png" />
+								</a>
 							</div>
 							
 							<?php echo perbanas_header_menu(); ?>
