@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<div class="wrapper top-margin">
-        <div class="row slider">
+        <div class="row slider homepage-slider">
             <div id="featured-slider" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="col-xs-12 block slider-background item active">
