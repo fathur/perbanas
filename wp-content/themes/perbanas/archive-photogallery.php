@@ -20,7 +20,7 @@
             </div>
             <div class="row">
 				<?php 
-				wp_reset_query();
+				// wp_reset_query();
 				
 				$args = array(
 						'post_type' => get_post_type()
@@ -42,6 +42,8 @@
              	<?php 
 				endwhile;
 				endif; 
+				
+				wp_reset_postdata();
 				?>
             </div>
         </div>

@@ -70,7 +70,7 @@
         <div class="row homepage-news">
 			<?php 
 		
-			wp_reset_query();
+			//wp_reset_query();
 			
 			$args = array(
 				'post_type' => 'news',
@@ -113,26 +113,33 @@
             </div>
         </div>
         <div class="row homepage-gallery">
+        	<?php 
+				// wp_reset_query();
+				
+				$args = array(
+					'post_type' => 'photogallery',
+					'posts_per_page' => 4
+				);
+				
+				$loop = new WP_Query($args);
+				
+				if( $loop->have_posts() ) :
+				while($loop->have_posts()) : $loop->the_post();
+			?>
             <div class="col-xs-6 col-md-3 block">
-                <img class="img-responsive" src="<?=get_template_directory_uri()?>/img/166835121-business-people-watching-screens-in-gettyimages.jpg" width="255px" height="170px" />
-                <h3>Lorem Ipsum Is Simply Dummy Text</h3>
-                <p class="date">22 April 2014 17:00</p>
+            	<a href="<?php echo get_permalink(); ?>">
+                 <?php the_post_thumbnail(array(255,170),array('class' => "img-responsive",)); ?>
+                </a>
+                <h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
+                <p class="date"><?php echo get_the_date(); ?></p>
             </div>
-            <div class="col-xs-6 col-md-3 block">
-                <img class="img-responsive" src="<?=get_template_directory_uri()?>/img/158570170-party-time-at-a-concert-gettyimages.jpg" width="255px" height="170px" />
-                <h3>Lorem Ipsum Is Simply Dummy Text</h3>
-                <p class="date">22 April 2014 17:00</p>
-            </div>
-            <div class="col-xs-6 col-md-3 block">
-                <img class="img-responsive" src="<?=get_template_directory_uri()?>/img/174403788-speaker-at-seminar-gesturing-to-crowd-gettyimages.jpg" width="255px" height="170px" />
-                <h3>Lorem Ipsum Is Simply Dummy Text</h3>
-                <p class="date">22 April 2014 17:00</p>
-            </div>
-            <div class="col-xs-6 col-md-3 block">
-                <img class="img-responsive" src="<?=get_template_directory_uri()?>/img/174601330-cocktail-hour-after-a-business-conference-gettyimages.jpg" width="255px" height="170px" />
-                <h3>Lorem Ipsum Is Simply Dummy Text</h3>
-                <p class="date">22 April 2014 17:00</p>
-            </div>
+            <?php 
+				endwhile;
+				endif; 
+				
+				wp_reset_postdata();
+			?>
+           
         </div>
         <div class="row">
             <div class="col-sm-6 block">
