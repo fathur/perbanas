@@ -1,3 +1,5 @@
+<?php perbanas_force_members_area(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

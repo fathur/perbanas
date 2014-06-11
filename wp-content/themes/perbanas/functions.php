@@ -305,7 +305,7 @@ add_action( 'request', 'perbanas_request_sectors' );
 /**
  * For admin gallery
  */
-function gallery_columns($columns) {
+/* function gallery_columns($columns) {
 	$columns = array(
 		'cb'				=> '<input type="checkbox"',
 		'gal_post_thumb'	=> 'Thumbnail',
@@ -337,4 +337,16 @@ function custom_gallery_columns($column) {
 }
 
 add_action('manage_posts_custom_column', 'gallery_columns');
-add_filter('manage_edit-gallery_columns', 'custom_gallery_columns');
+add_filter('manage_edit-gallery_columns', 'custom_gallery_columns'); */
+
+/**
+ * 
+ * Custom restriction for post type member area
+ * 
+ * */
+function perbanas_force_members_area() {
+	
+	if ( 'memberarea' == get_post_type() && !is_user_logged_in() ) {
+		auth_redirect();
+	}
+}
