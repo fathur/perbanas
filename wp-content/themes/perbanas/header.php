@@ -30,7 +30,10 @@
 							<div class="col-xs-8"></div>
 							<div class="col-xs-4">
 								<ul>
-									<li><a href="#">Login</a></li>
+									<li><?php echo wp_loginout( get_permalink() ); ?></li>
+									<?php if ( is_user_logged_in() ) { ?>
+									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>">Member Area</a></li>
+									<?php } ?>
 									<li><a href="#">Search</a></li>
 									<li class="last"><a href="#">Bahasa Indonesia</a></li>
 								</ul>
