@@ -1,0 +1,203 @@
+/*-------------------------------------------------------------------------
+LAYOUT - SIA (modern browsers)
+
+Version: 	1.0 - 2013
+author: 	Burocratik (alexandre r. gomes)
+email: 		alex@burocratik.com
+website: 	http://www.burocratik.com
+-------------------------------------------------------------------------*/
+@import url(http://www.siaperitivos.com/scripts/body.css);
+
+/*-----------------------------------------------------------------------*/
+#headerBg{background-color: #030303;}
+#headerBg .bg{background: transparent url(../imgs/about-header-bg.jpg) no-repeat center top;}
+.wrapperCenter{width: 910px;}
+aside .wrapperCenter{width: 980px;}
+h2.whiskers{padding-top: 60px;}
+
+
+
+/*-------------------------------------------------------------------------
+=INFO
+-------------------------------------------------------------------------*/
+#info {padding-bottom: 110px;}
+#info p{font: normal 400 20px/26px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif; color: #333333; padding-bottom: 22px; text-align: center;}
+#info strong{font-family: "Text-medium", Helvetica, Arial, sans-serif;}
+#info .marcas{
+	display: block; position: relative; width: 750px; height: 122px; 
+	padding: 50px 80px; overflow: hidden;
+}
+#info .marcas li{display: block; position: relative; float: left; height: 122px; margin-right: 120px;}
+#info .marcas li:nth-child(1){width: 235px;}
+#info .marcas li:nth-child(2){width: 170px;}
+#info .marcas li:nth-child(3){width: 105px; margin-right: 0px;}
+#info .marcas li a{
+	display: block; position: relative; float: left; width: 100%; height: 100%; text-indent: -5555px;
+	background: transparent url(../imgs/marca-propria-ids.png) no-repeat; background-size: auto 122px;
+}
+#info .marcas li:nth-child(1) a{background-position: 0 0;}
+#info .marcas li:nth-child(2) a{background-position: -247px 0;}
+#info .marcas li:nth-child(3) a{background-position: -427px 0;}
+
+/*-------------------------------------------------------------------------
+=QUALIDADE
+-------------------------------------------------------------------------*/
+#qualidade{min-height: 410px!important; padding-bottom: 0px; background: #fa040d;}
+#qualidade .wrapperCenter{width: 790px; padding: 0 150px 70px;}
+#qualidade h2, #qualidade h2 span, #qualidade p{color: #FFF;}
+#qualidade h2.whiskers span span{background-image: url(../imgs/whiskers-symbol-white-bg.png);}
+#qualidade .certificados{display: block; width: 527px; height: 90px; margin: 60px auto 10px;}
+#qualidade .certificados li{display: block; position: relative; float: left; height: 85px; text-indent: -5555px; margin-right: 10px;}
+#qualidade .certificados li:nth-child(1){
+	background: transparent url(../imgs/about-certificacao-pmelider.svg) no-repeat center top;
+	width: 58px; background-size: auto 83px; margin-right: 25px;
+}
+#qualidade .certificados li:nth-child(2){
+	background: transparent url(../imgs/about-certificacao-sgs1.svg) no-repeat -5px top;
+	width: 75px; background-size: auto 83px;
+}
+#qualidade .certificados li:nth-child(3){
+	background: transparent url(../imgs/about-certificacao-sgs2.svg) no-repeat -5px top;
+	width: 75px; background-size: auto 83px;
+}
+#qualidade .certificados li:nth-child(4){
+	background: transparent url(../imgs/about-certificacao-sgs3.svg) no-repeat -5px top;
+	width: 75px; background-size: auto 83px;
+}
+#qualidade .certificados li:nth-child(5){
+	background: transparent url(../imgs/about-certificacao-sgs4.svg) no-repeat center top;
+	width: 77px; background-size: auto 83px; margin-right: 25px;
+}
+#qualidade .certificados li:nth-child(6){
+	background: transparent url(../imgs/about-certificacao-foodsgs.svg) no-repeat center top;
+	width: 87px; background-size: auto 83px; margin-right: 0;
+}
+
+/*-------------------------------------------------------------------------
+=HISTÓRIA
+-------------------------------------------------------------------------*/
+#historia{
+    overflow: hidden;
+    background: transparent url(../imgs/bg-main-light.png) repeat;
+    
+}
+#historia .wrapperCenter{margin-bottom: -300px;}
+#historia .bg{
+	display: block; position: absolute; top: 0; left: 0; width: 100%; height: 640px;
+	background: #030303 url(../imgs/about-historia-bg.jpg) no-repeat center 0;
+	-webkit-backface-visibility: hidden; -webkit-transform: translate3d(0,0,0);
+}
+#historia .separador{
+	display: block; position: absolute; left: 0; top: 0px; width: 100%; height: 10px; z-index: 610;
+	background: transparent url(../imgs/bg-main-red-inverse-top.png) repeat-x left top;
+}
+#historia ul{margin: 320px 0 30px;}
+#historia ul li{
+	position: relative; width: 100%; height: 100px; padding-bottom: 100px;
+	background: transparent url(../imgs/about-timeline-bg.png) no-repeat center top;
+}
+#historia ul li.light li{color: #FFF; text-shadow: 1px 1px 0px rgba(0,0,0,.3);}
+#historia ul li:last-child{background: transparent url(../imgs/about-timeline-end-bg.png) no-repeat center top;}
+#historia ul ul li:last-child{background: none;}
+#historia ul li h3{
+	display: block; position: absolute; left: 50%; top: 0; margin-left: -70px; width: 140px; height: 140px; text-align: center; vertical-align: middle; margin-top: -20px;
+	font: normal 600 18px/140px 'Idlewild A', 'Idlewild B', Helvetica, Arial, sans-serif; color: #fff;
+}
+#historia ul li h3 strong{
+	position: absolute; top:0; left: 0; width: 100%; height: 100%; 
+	display: block; color: #fff; z-index: 5;
+}
+#historia ul li h3 span.bg{
+	display: block;	position: absolute; width: 140px; height: 140px; top:0; left:0; z-index: 1;
+	border-radius: 214px; background: #fa040d;
+	-webkit-transition: -webkit-transform .17s ease-out; transition: transform .17s ease-out; 
+	-webkit-transform: scale(.7); transform: scale(.7); -webkit-backface-visibility: hidden;
+}
+#historia ul li.goPop h3 span.bg{-webkit-transform: scale(1); transform: scale(1);}
+#historia ul li div{display: table; width: 285px; height: 100px; margin-left: 100px;}
+#historia ul li div ul{
+	display: table-cell; vertical-align: middle; width: 100%;
+	-moz-transition: all 0.5s 0.3s; -webkit-transition: all 0.5s 0.3s; -o-transition: all 0.5s 0.3s; transition: all 0.5s 0.3s; 
+	font: normal 400 15px/18px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif;
+}
+#historia ul li.left div{margin-left: 550px;}
+#historia ul li ul li{
+	display: block; width: 300px; background: none;
+	height: auto; margin: 0; /*padding: 0 0 0 20px;*/ padding: 0 0 7px 0;
+}
+
+/*-------------------------------------------------------------------------
+=MAPA
+-------------------------------------------------------------------------*/
+#mapa{background: #e6dfd5 url(../imgs/about-mapa-bg.jpg) no-repeat center top;}
+#mapa .wrapperCenter{min-height: 1200px;}
+#mapa .separador{background: transparent url(../imgs/bg-main-inverse-top.png) repeat-x left top;}
+
+/* TRANSPORTES */
+#mapa ul#mapTransports{
+	display: block; position: raletive; width: 344px; height: 105px; 
+	background: #FA040D; margin: 0 auto;
+}
+#mapa ul#mapTransports li{
+	display: block; position: relative; float: left; width: 33.3333333%; height: 35px;
+	padding-top: 70px; text-shadow: 1px 1px 0px #d22931;
+	font: 13px "Text-medium", Helvetica, Arial, sans-serif;  color: #FFF; text-align: center;
+}
+#mapa ul#mapTransports li:nth-child(1){
+	background: url(../imgs/about-transportes-trem.svg) no-repeat center 20px;
+	background-size: auto 44px; 
+}
+#mapa ul#mapTransports li:nth-child(2){
+	background: url(../imgs/about-transportes-barco.svg) no-repeat center 20px;
+	background-size: auto 44px;
+}
+#mapa ul#mapTransports li:nth-child(3){
+	background: url(../imgs/about-transportes-tir.svg) no-repeat center 20px;
+	background-size: auto 44px;
+}
+
+/* ANIMAÇÃO */
+#mapa h3{
+	display: none; position: absolute; left: 364px; top: 385px; width: 86px; height: 127px;
+	z-index: 10; text-indent: -5555px;
+	background: url(../imgs/about-mapa-balao.png) no-repeat right top;
+}
+/*#mapa h3:hover{background-position: -688px 0!important;}*/
+#mapa h3 a{
+	display: none; position: absolute; left: 10px; top: 34px; width: 48px; height: 67px;
+	background: url(../imgs/about-mapa-balao-alone.png) no-repeat right top;
+	-moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#mapa h3 a:hover{margin-top: 2px;}
+
+#mapa ul#mapAnim{display: block; position: absolute; left: 0; top: 380px; width: 910px; height: 520px; z-index: 5;}
+#mapa ul#mapAnim li{display: none; position: absolute; width: 50px; height: 50px; text-indent: -5555px;}
+#mapa ul#mapAnim li.mEs{
+	width: 89px; height: 35px; left: 386px; top: 79px;
+	background: url(../imgs/about-mapa-es.png) no-repeat 0 0;
+}
+#mapa ul#mapAnim li.mEur{
+	width: 140px; height: 110px; left: 387px; top: 2px;
+	background: url(../imgs/about-mapa-europa.png) no-repeat 0 0;
+}
+#mapa ul#mapAnim li.mAfrica{
+	width: 94px; height: 127px; left: 390px; top: 98px;
+	background: url(../imgs/about-mapa-africa.png) no-repeat 0 0;
+}
+#mapa ul#mapAnim li.mAng{
+	width: 233px; height: 480px; left: 388px; top: 93px;
+	background: url(../imgs/about-mapa-angola.png) no-repeat 0 0;
+}
+#mapa ul#mapAnim li.mMoc{
+	width: 368px; height: 531px; left: 392px; top: 94px;
+	background: url(../imgs/about-mapa-mocambique.png) no-repeat 0 0;
+}
+
+/* BOTÃO CONTACTOS */
+#mapaFooter{
+	display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 180px;
+	z-index: 100;
+	background: url(../imgs/bg-main-top.png) repeat-x top;
+}
+#mapaFooter .bolaTop{position: absolute; left:50%; bottom: 50px; margin-left: -83px; z-index: 51;} 

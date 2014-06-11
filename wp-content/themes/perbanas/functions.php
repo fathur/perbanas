@@ -29,7 +29,7 @@ function perbanas_cssjs() {
 		wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',array(),'1.3.1',TRUE);
 		wp_enqueue_script('jquery-easing', get_template_directory_uri() . '/js/jquery.easing.min.js',array(),'',TRUE);
 		wp_enqueue_script('function', get_template_directory_uri() . '/js/functions.js',array(),'',TRUE);
-		wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js',array(),'',TRUE);
+		wp_enqueue_script('main', get_template_directory_uri() . '/js/page.general.js',array(),'',TRUE);
 
 		// Add select bootstrap script and style
 		if ( get_post_type() == 'regionalboard' ) {
@@ -41,7 +41,11 @@ function perbanas_cssjs() {
 			wp_enqueue_script('contact-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false',array(),'',TRUE);
 		}
 		
-		
+		if ( is_page('who-we-are')) {
+			wp_enqueue_script('jquery-parallax', get_template_directory_uri() . '/js/jquery.parallax-1.1.3.js',array(),'',TRUE);
+			wp_enqueue_script('jquery-viewport', get_template_directory_uri() . '/js/jquery.viewport.mini.js',array(),'',TRUE);
+			wp_enqueue_script('page-about', get_template_directory_uri() . '/js/page.about.js',array(),'',TRUE);
+		}
 	}
 }
 add_action('wp_enqueue_scripts','perbanas_cssjs');
@@ -61,6 +65,7 @@ add_action('admin_bar_menu', 'remove_wp_logo', 999);
  */
 function perbanas_register_menu() {
 	register_nav_menus( array(
+		'about-menu'	=> 'About Menu',
 		'header-menu' 	=> 'Header Menu',
 		'extra-menu' 	=> 'Footer Menu',
 		'council-menu'	=> 'Council Menu',

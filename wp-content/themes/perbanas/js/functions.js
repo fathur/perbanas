@@ -30,7 +30,7 @@ function onNavbarMenuThresholdReached() {
     var paddingNarrow;
     var paddingWide;
     if ($(window).width() > 1199) {
-        paddingNarrow = '30px';
+        paddingNarrow = '40px';
         paddingWide = '46px';
     }
     else if ($(window).width() > 992 && $(window).width() <= 1199) {
@@ -93,7 +93,6 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
 
 // event upcoming
 function toggleEventDetailVisibility() {
-    $('event-link-toggle-description-js')
 }
 
 // contact

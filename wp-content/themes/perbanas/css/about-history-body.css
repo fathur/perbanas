@@ -1,0 +1,541 @@
+/*-----------------------------------------------------------------------
+LAYOUT - SIA(modern browsers)
+
+Version:    1.0 - 2012
+author:     Burocratik (alexandre r. gomes)
+email:      alex@burocratik.com
+website:    http://www.burocratik.com
+-----------------------------------------------------------------------*/
+@import url(reset.css);
+
+/*----------------------------------------------------------------------*/
+html, body{ /* need html and min-height and not just height for ipad*/
+    width: 100%; min-height: 100%;  color: #505050; overflow-x: hidden;
+    background:#ede8df url(../imgs/bg-main.png) repeat; 
+    text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-smoothing: antialiased;
+    -moz-font-feature-settings:"calt=1, liga=1, clig=1, kern=1"; -moz-font-feature-settings:"calt" 1, "liga" 1, "clig" 1, "kern" 1,;
+    -ms-font-feature-settings:"calt", "liga", "clig", "kern"; -o-font-feature-settings:"calt", "liga", "clig", "kern";
+    -webkit-font-feature-settings:"calt", "liga", "clig", "kern"; font-feature-settings:"calt", "liga", "clig", "kern";
+}
+@font-face {
+    /*font-family: 'siaUNIul';*/
+    font-family: 'Condensed-ul';
+    src: url('../fonts/sia-uniUL.eot');
+    src: url('../fonts/sia-uniUL.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-uniUL.woff') format('woff'),
+         url('../fonts/sia-uniUL.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    /*font-family: 'siaUNIcn';*/
+    font-family: 'Condensed-cn';
+    src: url('../fonts/sia-uniCN.eot');
+    src: url('../fonts/sia-uniCN.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-uniCN.woff') format('woff'),
+         url('../fonts/sia-uniCN.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    /*font-family: 'siaUNIlcn';*/
+    font-family: 'Condensed-lcn';
+    src: url('../fonts/sia-uniLCN.eot');
+    src: url('../fonts/sia-uniLCN.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-uniLCN.woff') format('woff'),
+         url('../fonts/sia-uniLCN.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+
+ /*
+@font-face {
+   font-family: 'siaPOLb'; 
+    font-family: 'Text-bold'; 
+    src: url('../fonts/sia-polB.eot');
+    src: url('../fonts/sia-polB.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-polB.woff') format('woff'),
+         url('../fonts/sia-polB.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'siaPOLm';
+    font-family: 'Text-medium';
+    src: url('../fonts/sia-polM.eot');
+    src: url('../fonts/sia-polM.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-polM.woff') format('woff'),
+         url('../fonts/sia-polM.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    /*font-family: 'siaPOLl';
+    font-family: 'Text-light';
+    src: url('../fonts/sia-polL.eot');
+    src: url('../fonts/sia-polL.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-polL.woff') format('woff'),
+         url('../fonts/sia-polL.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'siaHand';
+    font-family: 'Hand';
+    src: url('../fonts/sia-handwriting.eot');
+    src: url('../fonts/sia-handwriting.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-handwriting.woff') format('woff'),
+         url('../fonts/sia-handwriting.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'siaIDLE';
+    font-family: 'Title';
+    src: url('../fonts/sia-idle.eot');
+    src: url('../fonts/sia-idle.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-idle.woff') format('woff'),
+         url('../fonts/sia-idle.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'siaIDLEl';
+    font-family: 'Title-light';
+    src: url('../fonts/sia-idleL.eot');
+    src: url('../fonts/sia-idleL.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sia-idleL.woff') format('woff'),
+         url('../fonts/sia-idleL.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+}
+*/
+
+
+
+/*-------------------------------------------------------------------------
+=HEADER
+-------------------------------------------------------------------------*/
+header{
+    position: relative; width: 1400px; height: 65px; margin:30px auto 10px auto; z-index: 900;
+    font: 13px Georgia, Helvetica, Arial, sans-serif; color:#3c3c3c; background: #ffffff;
+    -webkit-box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .10); box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .10);
+ /*   -webkit-transition: background .5s ease-out; transition: background .5s ease-out;*/
+}
+
+header h1{
+    position: absolute; top:0; left:0; width:151px; height:65px; margin: 0; text-indent: -5555px;
+}
+header h1 a{
+    position: absolute; display: block; width:100%; height:100%;
+    background: transparent url(../imgs/header-id.png) no-repeat; background-size: 151px 65px;
+}
+header a{color:#3c3c3c;}
+header a:hover{color:#ffffff;}
+
+/* for index small hights spoons*/
+.smallH header{background: transparent; box-shadow: none;}
+header .hideNav{
+    position: absolute; width: 134px; height: 65px; top:0; left: 151px; background: #ffffff; display: none;
+    text-align: center; line-height: 65px;  -webkit-box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .10);  box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .10);
+}
+.smallH .hideNav{display: block;}
+
+/******* MAIN NAVIGATION *******/
+header nav{position:relative; margin-left: 151px;}
+#mainNav li{
+    position:relative; float: left; width: 134px; height: 65px; text-align: center; line-height: 65px; border-right: 1px solid #f1f1f1;
+}
+#mainNav li a, header .hideNav a{
+    display: block; background: transparent url(../imgs/nav-main-bg.gif) repeat-x 0 -70px;
+    -webkit-transition: background .2s ease; transition: background .2s ease;
+}
+#mainNav li a:hover, header .hideNav a:hover{display: block; background-position:  0 0;}
+#mainNav li.active a{background: none; text-decoration: underline; cursor: default; pointer-events: none; }
+#mainNav li.active a:hover{color:#3c3c3c;}
+header nav p{position: relative; float: right; width:139px; height: 65px; line-height: 65px;}
+header nav div{position: relative; float: right; width:139px;}
+
+/* linguas */
+ul#lingMenu{
+    position: relative; float:right; width: 138px; height: 65px; text-align: left;
+    padding: 0; line-height:65px; overflow: hidden; background: #272727;
+}
+ul#lingMenu li{position: relative; width: 138px; height: 35px; display: block; padding: 0; line-height: 35px;}
+ul#lingMenu li.active{
+    width: 138px; height: 65px; padding: 0; line-height: 65px;
+    background: #FFF url(../imgs/nav-main-bg.gif) repeat-x 0 -70px; margin-bottom: 20px;
+    -webkit-transition: background 0s linear .05s; transition: background 0s linear .05s;
+}
+ul#lingMenu li.active.over{background-position: 0 0; -webkit-transition: background 0s linear 0s; transition: background 0s linear 0s;}
+
+ul#lingMenu li.active a{color: #3c3c3c; background: transparent url(../imgs/linguas-seta.png) no-repeat left top; background-size: 138px auto; pointer-events:none;}
+ul#lingMenu:hover li.active a{color: #ffffff; background: transparent url(../imgs/linguas-seta.png) no-repeat left bottom; background-size: 138px auto;}
+ul#lingMenu li.active.over a{color: #ffffff;}
+ul#lingMenu li a{position: absolute; display:block; width: 100%; height: 100%; background: #272727; color:#ffffff;}
+ul#lingMenu li a span{padding-left: 34px; }
+ul#lingMenu li a:hover{text-decoration: underline;}
+ul#lingMenu li.off{display: none;}
+
+.sep{display: block; position: absolute; right: 138px; top: 0px; width: 1px; height: 65px; background: #f1f1f1;}
+
+/*-------------------------------------------------------------------------
+=HEADER BG
+-------------------------------------------------------------------------*/
+#headerBg{position: relative; width: 100%; min-height: 444px; margin-top: -105px; z-index: 100; -webkit-backface-visibility: hidden; /* BUG webkit fliquers before animation + 3d accelaration */}
+#headerBg .bg{
+    position: fixed; top: 0; left:0; width: 100%; min-height: 444px;
+    -webkit-transform: translateY(0); transform: translateY(0);
+}
+.mobile #headerBg .bg{
+    position: relative; -webkit-transition: none; transition: none;
+}
+#headerBg p{
+  position: absolute; width: 300px; left:50%; top:219px; margin: 0 0 0 -150px;
+  font: italic 17px/22px Georgia, Helvetica, Arial, sans-serif; color:#ffffff;  text-align: center;
+  -webkit-transform: translateY(0); transform: translateY(0);
+}
+
+/*-------------------------------------------------------------------------
+=CONTENT
+-------------------------------------------------------------------------*/
+.fullH, .wrapperbg{position: relative; width: 100%; height: 100%;}
+.wrapperCenter{position: relative; width: 980px; height: 100%; margin: 0 auto;}
+
+
+/* SECTION */
+section{
+    position: relative; width: 100%; min-height: 510px; z-index: 600; margin-top: -10px;
+    background: transparent url(../imgs/bg-main-top.png) repeat-x left top;
+}
+section .separador{
+    display: block; position: absolute; left: 0; top: 0px; width: 100%; height: 10px; z-index: 610;
+    background: transparent url(../imgs/bg-pic-top.png) repeat-x left top;
+}
+
+/* WHISKERS */
+h2.whiskers{
+    position: relative; padding: 100px 0 30px 0; z-index: 50;
+    font: normal 400 70px/60px 'Idlewild A', 'Idlewild B', Helvetica, Arial, sans-serif; color: #fa040d; text-align: center;
+}
+h2.whiskers span{
+    display: block; color: #fa040d; text-align: center;
+    font: 42px/42px "HipsterScriptPro", Helvetica, Arial, sans-serif;
+}
+h2.whiskers span span{
+    display: inline-block; width: 60px; height: 20px; margin-right: 15px;
+    background: transparent url(../imgs/whiskers-symbol-bg.png) no-repeat center left; background-size: 208px 10px;
+}
+h2.whiskers span span.right{margin: 0 0 0 15px; background-position: center right;}
+h2.whiskers + p{
+    display: block; font: normal 400 20px/26px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif;
+    color: #333333; text-align: center;
+}
+
+
+/* BOLA TOP*/
+.bolaTop{
+    position: relative; width:167px; height: 208px;  -webkit-backface-visibility: hidden; /* BUG webkit fliquers before animation + 3d accelaration */
+    font: normal 600 15px/18px 'Idlewild A', 'Idlewild B', Helvetica, Arial, sans-serif; color: #fff; text-align: center;
+    background: transparent url(../imgs/index-create-createyourcrips-shadow.png) no-repeat center bottom; background-size: 139px 19px;
+}
+.bolaTop .round{position: absolute; top:0; left: 0; width: 100%; height: 100%;display: block; color: #fff;}
+.bolaTop em{display: block; font: 40px/80px "HipsterScriptPro", Helvetica, Arial, sans-serif;  color: #fff;}
+.bolaTop span{display: block;   position: absolute; width:167px; height: auto; top: 43px; left:3px; z-index: 3;}
+.es.products .bolaTop span, .es.about .bolaTop span{font-size: 12px;}
+.bolaTop span.bg{
+    display: block; position: absolute; width:175px; height: 175px; top:0; left:0; z-index: 1;
+    background: transparent url(../imgs/index-create-createyourcrips.svg) no-repeat; background-size: 175px 175px;
+    -webkit-transition: -webkit-transform .2s ease; transition: transform .2s ease;
+    -webkit-transform: scale(.943); transform: scale(.943); -webkit-backface-visibility: hidden; /* BUG webkit fliquers before animation + 3d accelaration */
+}
+.bolaTop .round:hover span.bg{-webkit-transform: scale(1); transform: scale(1);}
+.bolaTop.grey span.bg{background: transparent url(../imgs/index-create-createyourcrips-cinza.svg) no-repeat; background-size: 175px 175px;}
+
+/* TECLAS DE NAVEGAÇÃO — gif animado*/
+#teclas{
+    display: block; position: relative; width: 78px; height: 50px;
+    text-indent: -5555px; margin: 30px auto 10px;
+    background: transparent url(../imgs/nav-info-teclas.gif) no-repeat center center;
+}
+.sustain #teclas{position: absolute; top: 70px; left: 50%; margin: 0 0 0 -39px;}
+.mobile #teclas, .mobile .sustain #teclas{display: none;}
+
+/*-------------------------------------------------------------------------
+=FOOTER
+-------------------------------------------------------------------------*/
+#wrapperFooter{
+    position: relative; width: 100%; height:210px; padding-top: 80px; z-index: 100; margin-top: -30px;
+    background: transparent url(../imgs/footer-bg.png) repeat-x 0 -100px;
+}
+#wrapperFooter.ohboy{background: transparent url(../imgs/footer-bg-shadow.png) repeat-x 0 -100px;}
+.mobile #wrapperFooter{height: 110px;}
+
+footer{
+    position: relative; width: 1400px; height: 65px; margin: 0 auto;
+    font: normal 500 14px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif; color: #6b6b6b; background: #FFF;
+    -webkit-box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .10); box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .10);
+ /*   -webkit-transition: background .5s ease-out; transition: background .5s ease-out;*/
+}
+footer a{color: #6b6b6b;}
+footer p.copy{position: absolute; right: 40px; line-height: 65px; width:400px; text-align: right;}
+footer ul{
+    position: absolute; left: 27px; top:18px; line-height: 28px; padding: 0;
+}
+footer ul li{position: relative; display: inline-block;  padding-right: 8px; width: 28px; height:28px;}
+footer ul li a, footer ul li span{
+    width: 28px; height: 28px; display: block; position: absolute; top: 0; left: 0; text-indent: -5555px;
+    background: transparent url(../imgs/asset-twitter.png) no-repeat; background-size: 28px 28px;
+}
+footer ul li span{
+    background: transparent url(../imgs/asset-twitter-bg.png) no-repeat; background-size: 28px 28px;
+    -webkit-transition: -webkit-transform .1s ease-out; transition: transform .1s ease-out;
+    -webkit-transform: scale(1); transform: scale(1);
+}
+footer ul li:hover span{-webkit-transform: scale(1.15); transform: scale(1.15);}
+footer ul li:first-child a{background: transparent url(../imgs/asset-facebook.png) no-repeat; background-size: 28px 28px; }
+footer ul li:first-child span{background: transparent url(../imgs/asset-facebook-bg.png) no-repeat; background-size: 28px 28px; }
+footer ul a{padding-left: 35px;}
+
+footer ul li.last{border-left: 1px solid #dadada; margin-left: 9px; -webkit-transform: none; transform: none;}
+footer ul li.last a{text-indent: inherit; padding:0; margin-left: 15px;}
+footer ul li.last a:hover{text-decoration: underline; color: #1d1d1d;}
+
+footer a.popupQuern{
+    display: block; position: absolute; top: 0; left: 50%; margin-left: -103px;
+    width: 206px; height:65px;text-indent: -5555px;
+    background: transparent url(../imgs/footer-apoios.png) no-repeat center top;
+}
+footer a.popupQuern:hover, footer a.popupQuern:focus{background-position: center bottom;}
+
+
+hr{display: block; height: 282px; border: none; } /*need for link in the aside*/
+.mobile hr {display: none;}
+
+.madeBy{font: normal 400 15px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif; color: #7a7670; text-align: center; padding-top: 19px; position: relative;}
+footer .madeBy{display: none;}
+.mobile footer .madeBy{display: block; top: 60px;}
+.products .madeBy, .page404 .madeBy{top: 80px; display: block;}
+.madeBy a{color:#7a7670;}
+.madeBy a:hover, .madeBy a:focus{color:#0a0a0a;}
+
+
+/*-------------------------------------------------------------------------
+=ASIDE
+-------------------------------------------------------------------------*/
+aside{
+    position: fixed; left: 0; bottom:0; width: 100%; height: 398px;  z-index: 10;
+    background: transparent url(../imgs/aside-bg.png) repeat-x 0 0;
+}
+.mobile aside{display: none;}
+aside .himalayas{
+    position: absolute; left: 0; bottom:0; width: 100%; height: 50px;  z-index: 10;
+    background: transparent url(../imgs/aside-hymalaias-bg.png) repeat-x 0 0;
+}
+aside h2.whiskers{padding: 58px 0 0 0;}
+aside h2.whiskers+p{
+    position: absolute; top:80px; right:55px; width:194px; text-align: left; padding-left: 85px;
+    font: 19px/21px "CorradineHandwriting", Helvetica, Arial, sans-serif; color: #797258;
+    background: transparent url(../imgs/asset-arrow-aside.png) no-repeat 3px 25px; background-size: 64px 32px;
+}
+
+aside ul{
+   position: absolute; bottom:20px; left: 95px; width:722px; height: 251px;
+   -webkit-backface-visibility: hidden; /* BUG webkit fliquers before animation */
+   -webkit-transform: translateZ(0); -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); transform: translateZ(0); /* Force Hardware Acceleration */
+}
+
+aside ul li{
+   position: absolute; top:0; left: 0;
+   -webkit-transform: translate(0,0) rotate(0); transform: translate(0,0) rotate(0);
+}
+aside ul li a{
+    display: block; -webkit-transform: translate(0,0); transform: translate(0,0);
+    -webkit-transition: -webkit-transform .25s cubic-bezier(.17,.67,.4,1.22); transition: transform .25s cubic-bezier(.17,.67,.4,1.22);
+}
+aside ul li a:hover{-webkit-transform: translate(0,-15px); transform: translate(0,-15px);}
+aside ul li.mleft a{-webkit-transform: translate(-20px,0); transform: translate(-20px,0);}
+aside ul li.mright a{-webkit-transform: translate(20px,0); transform: translate(20px,0);}
+
+aside ul li.bag1{left: 277px;  z-index: 8;}
+aside ul li.bag2{top:24px; left: 127px;  z-index: 6;}
+aside ul li.bag3{top:24px; left: 420px;  z-index: 6;}
+aside ul li.bag4{top:54px; left: -3px;  z-index: 4;}
+aside ul li.bag5{top:51px; left: 537px;  z-index: 4;}
+
+/*-------------------------------------------------------------------------
+=@MEDIA
+-------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1500px) {
+    header, footer{
+        position: relative; width: 90%;
+    }
+}
+@media only screen and (max-width: 1220px) {
+    header nav p{display: none;}
+    #mainNav li:last-child{border-right: none; }
+}
+@media only screen and (max-width: 1100px) {
+    header, footer{
+        position: relative; width: 978px;
+    }
+}
+
+/*-------------------------------------------------------------------------
+=COMUNS
+-------------------------------------------------------------------------*/
+#lightBoxWrapper{position: fixed; top: 0; left:0; width: 100%; height: 100%; background: #ffffff; z-index: 1000; opacity:1; display: block;}
+
+/******* PRELOADING *******/
+#preload{position: absolute; top: -9999px; left: -9999px; width: 106px; height: 106px; overflow: hidden;}
+#holderLoad{display: none;} /*used for external loading content*/
+#preloadDesign{position: fixed; top: 50%; left:50%; margin: -100px 0 0 -100px;  height: 200px; width: 211px; z-index: 1001; opacity: 1;  display: none;}
+#preloadDesign span.logo{
+    position: absolute; top: 0; left:0; display:block; height: 149px; width: 211px; opacity:1;
+    background: transparent url(../imgs/loading-id.png) no-repeat; background-size: 211px 149px;
+    -webkit-transition: all .4s ease-out .4s; transition: all .4s ease-out .4s;
+}
+#preloadDesign span.anim{
+    position: absolute; top: 165px; left:92px; display:block; height: 25px; width: 25px; opacity:1;
+    background: transparent url(../imgs/loading-anim.gif) no-repeat; background-size: 25px 25px;
+    -webkit-transition: all .5s ease-out; transition: all .5s ease-out;
+}
+#preloadDesign.off span.logo{opacity:0; top:10px;}
+#preloadDesign.off span.anim{opacity:0;}
+
+/* btnUp*/
+.btnScrollUp{
+    position: fixed; bottom: 10px; right: 10px; width: 45px; height: 42px; opacity:0; z-index: -1;
+    -webkit-transition: opacity .2s linear; transition: opacity .2s linear;
+}
+.btnScrollUp.on{opacity:1; z-index: 650;}
+.btnScrollUp a{
+   position: absolute; left:0; top:0; width: 100%; height: 100%; text-indent: -5555px; opacity:.75;
+   background: transparent url(../imgs/asset-btn-up.png) no-repeat; background-size: 45px 42px;
+   -webkit-transition: opacity .1s linear; transition: opacity .1s linear;
+}
+.btnScrollUp a:hover{opacity:1;}
+@media only screen and (max-width: 1100px) {
+    .btnScrollUp.on{opacity:0; z-index: -1;}
+}
+
+/* btnUp*/
+.btnDown{position: absolute; bottom: 30px; left:50%; width: 62px; height: 62px; margin-left: -31px;}
+.mobile .btnDown{display: none;}
+.btnDown a, .btnDown span{
+   position: absolute; left:0; top:0; width: 100%; height: 100%; text-indent: -5555px;  display: block;
+   background: transparent url(../imgs/asset-arrow-down.png) no-repeat 1px 0 ; background-size: 62px 62px;
+}
+.btnDown span{
+    border-radius: 50%; background: #fa040d; -webkit-transform: scale(1); transform: scale(1);
+    -webkit-transition: -webkit-transform .15s ease-out; transition: transform .15s ease-out;
+}
+.btnDown:hover span{-webkit-transform: scale(1.1); transform: scale(1.1);}
+
+
+/******* MOBILE ORIENTATION *******/
+#lightBoxOrientation{position: fixed; top: 0; left:0; width: 100%; height: 100%; background: rgba(250,4,13,.9); z-index: 1010; opacity:1; display: none;}
+#lightBoxOrientation p{
+    position: absolute; top: 50%; left:50%; margin: -169px 0 0 -296px; width: 593px; height: 338px;
+    font: 34px/34px  Helvetica, Arial, sans-serif; color: #ffffff; text-align: center;
+    background: transparent url(../imgs/tablet-landscape.png) no-repeat 180px 0; background-size: 212px 210px;
+}
+#lightBoxOrientation p span{display: block; padding-top: 250px;}
+/*
+@media only screen and (orientation : landscape) {
+    .mobile #lightBoxOrientation{display: block;}
+    .mobile #preloadDesign{display:none;}
+}
+*/
+
+/******* FORMS *******/
+a{text-decoration: none;}
+a:hover, a:focus{text-decoration: none;}
+a[href^="tel:"]{cursor: default;}
+.btnGoto{cursor: pointer;}
+::-moz-selection{background: #fa040d;color: #ffffff;}
+::selection{background: #fa040d;color: #ffffff;}
+img{
+  -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;
+  -webkit-user-drag: none; -moz-user-drag: none;
+}
+
+/******* LINKS *******/
+input:focus {outline: none;}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {/*no arrows on input number*/ /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+/*-------------------------------------------------------------------------
+=APOIOS
+-------------------------------------------------------------------------*/
+.apoios{background: #ffffff; height: 100%;}
+.apoios header{
+    position: relative; height: 66px; background: #fa040d; margin: 0; padding: 0; width: 100%; text-align: center;
+}
+.apoios header h1{
+    position: relative; width: 150px; height: 60px;
+    border: 0; margin: 0 auto;
+}
+.apoios header h1 a{
+    position: absolute; display: block; width: 150px; height: 60px;
+    background: yellow url(../imgs/header-id-apoios.png) no-repeat; background-size: 150px 60px;
+
+}
+.apoios section{background: #ffffff;}
+.apoios .wrapperCenter{
+    width:450px; height: auto;
+    font: normal 300 18px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif; color:#3c3c3c;
+}
+.apoios .wrapperCenter img{margin-top: 30px;}
+
+.apoios h2{
+    padding: 50px 0;
+    font: normal 500 32px/38px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif; color:#f6001c;
+}
+.apoios h2 strong{font: normal 500 32px/38px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif;}
+
+
+/*-------------------------------------------------------------------------
+=OUTDATED BROWSER
+-------------------------------------------------------------------------*/
+#outdated{
+    position: fixed; top: -333px; left: 0; width: 100%; height: 332px;
+    background: transparent url(../imgs/outdatedBrowser-bg.png) repeat; z-index: 1500;
+    font: normal 400 18px/22px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif; color:#fff; text-align: center; display: none;
+}
+#outdated a{color: #fff; text-decoration: underline;}
+#outdated a:hover,#outdated a:focus{text-decoration: none;}
+#outdated .btnClose{
+    position: absolute; top: 30px; right: 40px; padding-left: 26px;
+    background: transparent url(../imgs/outdatedBrowser-close.gif) no-repeat left center;
+}
+#outdated .wrapperCenter{width: 850px; background: transparent url(../imgs/outdatedBrowser-sign.png) no-repeat center 35px;}
+#outdated h6{font-size: 30px; line-height: 42px; padding: 125px 0 0 0;}
+#outdated ul{overflow: hidden; margin: 35px 0 0 115px;}
+#outdated li{
+    float: left; width: 146px; height: 41px; padding-left: 55px; margin-left: 10px; line-height: 37px;
+    background: transparent url(../imgs/outdatedBrowser-browsers.png) no-repeat 0 0; text-align: left;
+}
+#outdated li.mz{background-position: 0 0; margin: 0;}
+#outdated li.ch{background-position: 0 -70px;}
+#outdated li.ie{background-position: 0 -140px;}
+
+/*-------------------------------------------------------------------------
+=LIGHTBOX HELP KEYS AND MOUSE
+-------------------------------------------------------------------------*/
+#lightBoxNav{
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height:100%;
+    background: rgba(0,0,0,.5); z-index: 1500; cursor: pointer;
+}
+#lightBoxNav div{
+    display: block; position: fixed; top: 50%; left: 50%; width: 354px; height: 235px;
+    padding: 38px 50px 25px; margin: -150px 0 0 -227px;
+    background: #fa040d url(../imgs/outdatedBrowser-bg.png) repeat;
+    font: normal 400 20px/20px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif; color:#fff; text-align: center;
+}
+#lightBoxNav div ul{
+    display: block; position: relative; width: 100%; height: auto; overflow:hidden;
+    font: normal 400 16px/16px 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid #d10000; margin: 20px 0 28px; padding-bottom: 30px;
+}
+#lightBoxNav div ul li{display: block; position: relative; float:left; width: 155px; height: auto; padding-top: 107px;}
+#lightBoxNav div ul li:nth-child(1){
+    background: transparent url(../imgs/nav-info-teclas.gif) no-repeat center top;
+    margin: 0 25px 0 15px;
+}
+#lightBoxNav div ul li:nth-child(2){background: transparent url(../imgs/nav-info-mouse.gif) no-repeat center 3px;}
+#lightBoxNav div h5{font: normal 400 15px/15px 'Idlewild A', 'Idlewild B', Helvetica, Arial, sans-serif;}

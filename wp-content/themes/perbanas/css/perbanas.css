@@ -45,6 +45,9 @@ h3 {
     line-height: 1.2;
     margin-bottom: 15px;
 }
+hr {
+    border: 0;
+}
 p {
     font-size: 12px;
     font-weight: 300;
@@ -244,6 +247,14 @@ a:hover {
 }
 /* end general: navbar */
 
+/* general: main content pane */
+.main-content-pane p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #717271;
+    font-size: 12px;
+    font-weight: normal;
+}
 /* general: footer */
 .footer, .footer-links a {
     background: #f5f5f5;
@@ -255,6 +266,9 @@ a:hover {
 .footer {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+.footer img {
+    min-width: 0;
 }
 .footer-A{
     position: relative;
@@ -277,7 +291,6 @@ a:hover {
 .footer-right img {
     max-height: 15px;
     max-width: 15px;
-    min-width: 0;
 }
 /* end general: footer */
 
@@ -376,6 +389,9 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* end general */
 
 /* main layout */
+.main-layout {
+    margin-bottom: 100px;
+}
 .main-layout .section-title {
     margin-top: 0;
 }
@@ -443,6 +459,260 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* main layout (single view) */
 
 /* end main layout (single view) */
+
+/* main layout / about - who we are */
+.about-who-we-are .subsection-title {
+    margin-bottom: 60px;
+    font-size: 36px;
+    color: #C4D600;
+}
+.about-who-we-are .subsection-title-container {
+    display: inline-block;
+    position: relative;
+    width: 137px;
+}
+.about-who-we-are .subsection-title h2 {
+    margin: 0;
+}
+.about-who-we-are .subsection-title hr {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #C4D600;
+    background: #C4D600;
+    height: 3px;
+}
+
+    /* about - who we are history */
+    .timeline-outer-container {
+        margin: 0 auto;
+        width: 100%;
+        margin-bottom: 100px;
+        position: relative;
+        top: 20px;
+    }
+    .timeline-outer-container ul.timeline-container {
+        list-style: none;
+        padding-left:0;
+    }
+    .timeline-outer-container .item {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        padding-bottom: 100px;
+        box-sizing: content-box;
+        background: url('img/about-history-timeline.png') transparent no-repeat center top;
+    }
+    .timeline-outer-container .bubble {
+        position:absolute;
+        top: -20px;
+        left: 50%;
+        margin: 0;
+        margin-left: -70px;
+        padding-top: 60px;
+        width: 140px;
+        height: 80px;
+        text-align: center;
+        font-size: 24px;
+
+    }
+    .timeline-outer-container .bubble .text {
+        position: relative;
+        z-index: 10;
+        color: white;
+    }
+
+    .timeline-outer-container .bubble .background {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 140px;
+        background: #009BDE;
+        border-radius: 100px;
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+        -webkit-transition: -webkit-transform .17s ease-out;
+        transition: -webkit-transform .17s ease-out;
+    }
+    .timeline-outer-container .goPop .background {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    .timeline-outer-container .item .description h3 {
+        font-size: 24px;
+    }
+    .timeline-outer-container .item .description p {
+        color: #717271;
+        font-size: 14px;
+    }
+    .timeline-outer-container .item .description.left {
+        margin-left: 0;
+        margin-right: 60%;
+    }
+    .timeline-outer-container .item .description.right {
+        margin-left: 60%;
+        margin-right: 0;
+    }
+    @media screen and (max-width: 768px) {
+        .timeline-outer-container {
+            width: 100%;
+        }
+        .timeline-outer-container .item {
+            background: none;;
+        }
+        .timeline-outer-container .item .description.right {
+            margin-left: 0;
+        }
+        .timeline-outer-container .bubble {
+            margin-left: -140px;
+            left: 100%;
+        }
+    }
+    .timeline-outer-container .vertical-align {
+        display: table-cell;
+        margin: 0;
+        height: 100px;
+        vertical-align: middle;
+    }
+    /* end who we are history */
+
+    /* former chairmen */
+    #former-chairmen {
+        background: #74bfe8;
+        dbackground: black;
+        background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.15) 100%);
+        background-repeat: repeat-x;
+    }
+    #former-chairmen, #former-chairmen .carousel-inner, #former-chairmen .carousel-inner .item, #former-chairmen .carousel-inner .item .desc {
+        height: 400px;
+    }
+    #former-chairmen .carousel-inner .item .desc {
+        position: relative;
+        z-index: 2;
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 70px;
+    }
+    #former-chairmen .carousel-inner img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 400px;
+    }
+    #former-chairmen .carousel-inner h3 {
+        font-size: 60px;
+        color: white;
+        font-weight: 400;
+    }
+    #former-chairmen .carousel-inner h4 {
+        font-size: 26px;
+        color: white;
+        font-weight: lighter;
+    }
+    #former-chairmen .carousel-control-container .carousel-control.left, #former-chairmen .carousel-control-container .carousel-control.right {
+        background: none;
+    }
+    #former-chairmen .carousel-control-container {
+        position: absolute;
+        right: 28px;
+        width: 26px;
+        top: 15px;
+    }
+    #former-chairmen .carousel-indicators-container {
+        position: relative;
+    }
+    #former-chairmen .carousel-indicators-container .border {
+        height: 3px;
+        position: absolute;
+        top: -32px;
+        width: 100%;
+        background: white;
+        padding: 0 107px;
+        background-clip: content-box;
+    }
+    @media screen and (max-width: 1200px) {
+        #former-chairmen .carousel-indicators-container .border {
+            padding: 0 30px;
+        }
+    }
+    #former-chairmen .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: inherit;
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #former-chairmen .carousel-indicators ul {
+        display: inline-block;
+        text-align: left;
+    }
+    #former-chairmen .carousel-indicators li {
+        margin-left: 13px;
+        margin-right: 13px;
+        width: 15px;
+        height: 15px;
+        background: white;
+    }
+    #former-chairmen .carousel-indicators li.active {
+        background: #004987;
+    }
+    /* end former chairmen */
+
+.about-who-we-are .vision-mission-container {
+    margin-bottom: 100px;
+}
+.about-who-we-are .vm-title {
+    padding-top: 95px;
+    padding-bottom: 100px;
+}
+.about-who-we-are .vm-title h2 {
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+.about-who-we-are .vm-title hr {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 36px;
+    height: 3px;
+    background: #004987;
+    color: #004987;
+}
+.about-who-we-are .vision {
+    color: white;
+    background: url('img/about-who-we-are-vision.jpg') 75%  fixed;
+}
+.about-who-we-are .mission {
+    background: #f5f5f5;
+}
+.about-who-we-are .mission p {
+    color: #707170;
+}
+.about-who-we-are .column-background {
+    background: #009ADD;
+    background-clip: content-box;
+}
+.about-who-we-are .column .vm-title {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.about-who-we-are .column h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 17px;
+}
+.about-who-we-are .column hr {
+    height: 1px;
+    margin-bottom: 17px;
+}
+
+.about-who-we-are .column p {
+    color: white;
+}
+/* end main layout / about - who we are */
 
 /* main layout / sectors */
 .sectors .main-content-pane .item {
@@ -623,9 +893,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* end main layout / member banks (detail) */
 
 /* event upcoming */
-.event-upcoming {
-    margin-bottom: 100px;
-}
 .event-upcoming .main-content-pane hr {
     margin-top: 60px;
     margin-bottom: 60px;
@@ -688,22 +955,22 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 
 /* homepage layout: main slider, news, events, gallery, partner slider */
     /* main slider */
-    .slider-background {
+    .homepage-slider .slider-background {
         background-image: url('../content/img/91156628-businessmen-having-meeting-in-office-gettyimages.jpg');
         background-size: cover;
     }
-    .slider-content {
+    .homepage-slider .slider-content {
         display: table-cell;
         vertical-align: middle;
         height: 424px;
     }
-    .slider-content-text {
+    .homepage-slider .slider-content-text {
         max-width: 50%;
     }
-    .slider-pager {
+    .homepage-slider .slider-pager {
         position: relative;
     }
-    .slider-pager-border {
+    .homepage-slider .slider-pager-border {
         margin:0 1px;
         height: 10px;
         bottom: 20px;
@@ -711,7 +978,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         left: 0;
         border-top:1px solid #009ADD;
     }
-    .carousel-indicators {
+    .homepage-slider .carousel-indicators {
         position: absolute;
         left: 0;
         margin-left:0;
@@ -720,7 +987,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         text-align: left;
         bottom: 20px;
     }
-    .carousel-indicators li {
+    .homepage-slider .carousel-indicators li {
         margin:0;
         width: 33%;
         border-radius: 0;
@@ -728,17 +995,17 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         background: none;
         text-indent: 0;
     }
-    .carousel-indicators .page-number {
+    .homepage-slider .carousel-indicators .page-number {
         position: relative;
         font-size: 12px;
         color: #009ADD;
     }
-    .carousel-indicators .page-number .offset-container {
+    .homepage-slider .carousel-indicators .page-number .offset-container {
         position: relative;
         top: -15px;
 
     }
-    .carousel-indicators li.active {
+    .homepage-slider .carousel-indicators li.active {
         margin:0;
         width: 33%;
         border-radius: 0;
@@ -1006,10 +1273,10 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 }
 .photo-gallery .photo-gallery-photo-list-item .square {
     width: 100%;
-    /*height: 0;*/
+    height: 0;
     margin-bottom: 30px;
-    /*padding-bottom: 81%;
-    padding-top: 15%;*/
+    padding-bottom: 81%;
+    padding-top: 15%;
     border: 1px solid #b9bab9;
 }
 
