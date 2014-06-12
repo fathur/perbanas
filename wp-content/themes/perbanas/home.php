@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-xs-12 block section-title">
                 <h1>
-                    <span>Latest News</span>
+                    <div></div><span>Latest News</span>
                 </h1>
             </div>
         </div>
@@ -145,7 +145,7 @@
             <div class="col-sm-6 block">
                 <div class="row section-title homepage-probank-title">
                     <div class="col-sm-12">
-                        <h1><span>Probank <span class="hidden-sm">Magazine</span></span></h1>
+                        <h1><div></div><span>Probank <span class="hidden-sm">Magazine</span></span></h1>
                     </div>
                 </div>
                 
@@ -186,7 +186,7 @@
             <div class="col-sm-6 block">
                 <div class="row section-title homepage-events-title">
                     <div class="col-sm-12">
-                        <h1><span>Upcoming Events</span></h1>
+                        <h1><div></div><span>Upcoming Events</span></h1>
                     </div>
                 </div>
                 <div class="row homepage-events">
@@ -236,7 +236,7 @@
         </div>
         <div class="row section-title">
             <div class="col-xs-12 block">
-                <h1><span>Our Members</span></h1>
+                <h1><div></div><span>Our Members</span></h1>
             </div>
             <div id="partner-slider" class="col-xs-12 block carousel slide">
                 <div class="carousel-inner">
