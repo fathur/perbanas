@@ -42,12 +42,12 @@
                     <div class="overlay">
                         <div class="overlay-top-aligned">
                         
-                            <a href="<?php echo get_permalink(); ?>?id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-download.png" /></a>
-                            <h3><a href="<?php echo get_permalink(); ?>?id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>">Download</a></h3>
+                            <a href="<?php echo get_permalink(); ?>?action=download&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-download.png" /></a>
+                            <h3><a href="<?php echo get_permalink(); ?>?action=download&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>">Download</a></h3>
                         </div>
                         <div class="overlay-bottom-aligned">
-                            <a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE) ; ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-read.png" /></a>
-                            <h3><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE) ; ?>">Read</a></h3>
+                            <a href="<?php echo get_permalink(); ?>?action=read&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-read.png" /></a>
+                            <h3><a href="<?php echo get_permalink(); ?>?action=read&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>">Read</a></h3>
                         </div>
                     </div>
                 </div>
