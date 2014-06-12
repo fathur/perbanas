@@ -164,7 +164,7 @@
 				?>
                 <div class="row homepage-probank">
                     <div class="col-xs-6 col-md-4 homepage-probank-image-container">
-                    	<?php echo the_post_thumbnail(array(140,187),array('class' => 'img-responsive')); ?>
+                    	<?php echo the_post_thumbnail('large',array('class' => 'img-responsive')); ?>
                     
 
                         <p class="text-center">
