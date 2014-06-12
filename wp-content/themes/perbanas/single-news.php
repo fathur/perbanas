@@ -53,7 +53,7 @@
             
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>Other News</span></h1>
+                    <div></div><h1><span>Other News</span></h1>
                 </div>
             </div>
             <div class="row other-news">

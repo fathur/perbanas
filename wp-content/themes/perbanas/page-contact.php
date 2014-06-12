@@ -54,7 +54,7 @@
     <div class="row section-title">
         <div class="col-xs-12 block">
             <h1>
-                <span>Send Us A Message</span>
+                <div></div><span>Send Us A Message</span>
             </h1>
         </div>
     </div>
