@@ -24,7 +24,7 @@
 		
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>
+                    <h1><div></div><span>
                     <?php 
                     if ( is_single() ) :
                     the_title();
