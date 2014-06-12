@@ -15,7 +15,7 @@
         <div class="col-xs-12 col-sm-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>Photo Gallery</span></h1>
+                    <h1><div></div><span>Photo Gallery</span></h1>
                 </div>
             </div>
             <div class="row">

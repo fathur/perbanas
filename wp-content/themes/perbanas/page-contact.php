@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-xs-12 block section-title">
             <h1>
-                <span>Contact</span>
+                <div></div><span>Contact</span>
             </h1>
         </div>
     </div>
