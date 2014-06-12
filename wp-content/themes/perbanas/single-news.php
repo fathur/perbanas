@@ -42,7 +42,7 @@
                     </div>
                     <div class="news-content">
                         <p>
-                           <?php the_post_thumbnail('large',array('class' => "img-no-responsive",'style'=>"min-width: 100%")); ?>
+                           <?php the_post_thumbnail('large',array('class' => "img-responsive",'style'=>"min-width: 100%")); ?>
                         </p>
                        <?php the_content(); ?>
                     </div>
