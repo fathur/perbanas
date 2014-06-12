@@ -1206,6 +1206,12 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         font-weight: 400;
         margin-bottom: 15px;
     }
+    #gallery-2 img {
+		border: 2px solid #cfcfcf ;
+		min-width: 250px !important;
+		height: 165px !important;
+		border: 0 !important;
+    }
     /* end gallery */
 
     /* probank and events */
