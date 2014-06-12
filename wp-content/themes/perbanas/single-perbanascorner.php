@@ -28,7 +28,7 @@
                 <div class="col-xs-12">
                     <div class="top-row">
                         <p class="text-right back-link">
-                            <a href="#"><span class="arrow">&lang;</span> Back to Press Releases</a>
+                            <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow">&lang;</span> Back to Perbanas Corner</a>
                         </p>
                         <h2><?php 
                     if ( is_single() ) :
