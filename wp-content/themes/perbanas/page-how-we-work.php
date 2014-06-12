@@ -18,7 +18,7 @@
         <?php if (have_posts()) : while (have_posts()) : the_post();?>
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span><?php the_title(); ?></span></h1>
+                    <h1><div></div><span><?php the_title(); ?></span></h1>
                 </div>
             </div>
             <div class="row">

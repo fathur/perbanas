@@ -109,7 +109,7 @@
         </div>
         <div class="row section-title">
             <div class="col-xs-12 block">
-                <h1><span>Latest Photos</span></h1>
+                <h1><div></div><span>Latest Photos</span></h1>
             </div>
         </div>
         <div class="row homepage-gallery">
