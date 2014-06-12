@@ -272,7 +272,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="img-responsive" src="css/img/about-who-we-are-organization-structure.png" />
+                        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.png" />
                     </div>
                 </div>
             </div>
@@ -284,56 +284,56 @@
             <div id="former-chairmen" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="content/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="content/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="content/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="content/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="content/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="content/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="content/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="content/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
