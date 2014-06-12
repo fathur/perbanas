@@ -154,7 +154,7 @@ function perbanas_side_menu( $menu_name, $id ) {
 				
 				$list_menus .= '<div class="accordion-group">
 						<div class="accordion-heading">
-							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
+							<a class="item" href="'.$menu->url.'">
 								<i class="icon-home"></i> '. $menu->title .
 												'</a>
 							<hr class="'.$class_active.'" />

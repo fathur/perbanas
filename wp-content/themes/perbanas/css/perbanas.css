@@ -87,8 +87,8 @@ a:hover {
     }
 /* general: navbar */
     /* start bootstrap affix adjustments */
-    #navbar-main {
-        width: 100%; /* for bootstrap affix */
+    .navbar-header {
+        kbackground: #074980;
     }
     .affix {
         top: 0;
@@ -151,10 +151,96 @@ a:hover {
     }
     /* end change breakpoints */
 
+    /* navbar general settings (applies to all screen sizes) */
+    .navbar {
+        margin-bottom: 0;
+    }
+    .navbar-nav {
+        margin: 0;
+    }
+    #navbar-main .nav a {
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+        background: none;
+    }
+    .navbar-static-top {
+        border: 0;
+    }
+    #navbar-main {
+        width: 100%; /* for bootstrap affix */
+        background: #004a85;
+        background: #335877; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzNTg3NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNzQ5ODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #335877 0%, #074980 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#335877), color-stop(100%,#074980)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #335877 0%,#074980 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #335877 0%,#074980 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #335877 0%,#074980 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #335877 0%,#074980 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#335877', endColorstr='#074980',GradientType=0 ); /* IE6-8 */
+    }
+    .arrow {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 17px;
+    }
+    .arrow img {
+        width: 7px;
+    }
+    /* end navbar general settings */
+
     /* navbar adjustments for showing logo and moving text to the right when it is scrolled down (desktop) */
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 768px) {
+        .navbar-container {
+            height: 52px;
+        }
+        #navbar-main {
+            height: 52px;
+        }
+        .navbar-collapse {
+            border: 0;
+            text-align: right;
+        }
+        .nav-large-wrapper-outer {
+            /*width: 100%;*/
+        }
+        .nav-large-wrapper-outer {
+            display: inline-block;
+            width: 250px;
+            background: #074980;
+            text-align: left;
+        }
+        .nav>li:hover {
+            background: #009ADD;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        /* floating navbar collapsible */
+        .navbar-container {
+            height: 52px;
+        }
+        #navbar-main {
+            height: 52px;
+        }
+        .navbar-collapse {
+            border: 0;
+            text-align: right;
+        }
+        .nav-large-wrapper-outer {
+            display: inline-block;
+            width: 250px;
+            background: #074980;
+            text-align: left;
+        }
+        /* end floating navbar collapsible */
         .navbar-main-scrolled-menu-logo img {
             min-width: initial;
+        }
+        .navbar-nav>li:hover {
+            background: #009ADD;
         }
     }
     @media screen and (min-width: 992px) {
@@ -203,48 +289,87 @@ a:hover {
     }
     /* navbar equal width when on desktop (large) */
 
-.navbar {
-    margin-bottom: 0;
-}
-#navbar-main .nav a {
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
-    background: none;
-}
-.navbar-static-top {
-    border: 0;
-}
-#navbar-main {
-    background: #004a85;
-    background: #335877; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzNTg3NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNzQ5ODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top,  #335877 0%, #074980 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#335877), color-stop(100%,#074980)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #335877 0%,#074980 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #335877 0%,#074980 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #335877 0%,#074980 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #335877 0%,#074980 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#335877', endColorstr='#074980',GradientType=0 ); /* IE6-8 */
-
-}
-
-@media screen and (max-width: 992px) {
-    .nav-large-wrapper-outer {
-        line-height: 0;
+    @media screen and (max-width: 992px) {
+        .nav-large-wrapper-outer {
+            line-height: 0;
+        }
     }
-}
-@media screen and (min-width: 992px) {
-    .nav-large-wrapper-outer {
-        line-height: 0;
+    @media screen and (min-width: 992px) {
+        .nav-large-wrapper-outer {
+            line-height: 0;
+        }
     }
-}
-.nav-top a {
-    font-size: 10px;
-    font-weight: 400;
-    color: #004987;
-}
+    .open .arrow img {
+        -webkit-animation: spin .15s linear 1;
+        -moz-animation: spin .15s linear 1;
+        animation: spin .15s linear 1;
+
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+    }
+    @-moz-keyframes spin { 100% { -moz-transform: rotate(90deg); } }
+    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(90deg); } }
+    @keyframes spin { 100% { -webkit-transform: rotate(90deg); transform:rotate(90deg); } }
+    .open > .dropdown-menu {
+        animation-name: slidenavAnimation;
+        animation-duration:1.4s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-name: slidenavAnimation;
+        -webkit-animation-duration:1.4s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-fill-mode: forwards;
+
+        -moz-animation-name: slidenavAnimation;
+        -moz-animation-duration:1.4s;
+        -moz-animation-iteration-count: 1;
+        -moz-animation-timing-function: ease;
+        -moz-animation-fill-mode: forwards;
+    }
+    @keyframes slidenavAnimation {
+        from {
+            max-height: 0;
+        }
+        to {
+            max-height: 10000px;
+        }
+    }
+    @-webkit-keyframes slidenavAnimation {
+        from {
+            max-height: 0;
+        }
+        to {
+            max-height: 10000px;
+        }
+    }
+    /* nested menu */
+    .dropdown-menu {
+        position: static;
+        float: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        background: #074980;
+        box-shadow: none;
+        border: 0;
+        overflow-y: hidden;
+    }
+    .dropdown-menu li {
+        padding-left: 20px;
+    }
+    .dropdown-menu li:hover {
+        background: #009ADD;
+    }
+    .dropdown-menu li a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    /* end nested menu */
+
+
 /* end general: navbar */
 
 /* general: main content pane */
@@ -321,9 +446,17 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     margin-top: 90px;
 }
 .section-title h1 {
+    position: relative;
     margin-bottom: 60px;
+    /*border-bottom: 1px solid #7fa4c3;
+    height: 37px;*/
+}
+.section-title h1 div {
     border-bottom: 1px solid #7fa4c3;
-    height: 37px;
+    position: absolute;
+    width: 100%;
+    bottom: 6px;
+    z-index: -4;
 }
 .section-title h1 span {
     background: white;
@@ -386,6 +519,33 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         }
     }
     /* end select */
+
+    /* start table */
+    .member-list {
+        font-size: 14px;
+        color: #707170;
+    }
+    .member-list thead {
+        padding: 0;
+        background: #C3D500;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+    }
+    .member-list thead td {
+        border-right: 1px solid white;
+    }
+    .member-list td {
+        padding-top: 15px;
+        padding-left: 10px;
+        padding-bottom: 15px;
+        width: 239px;
+    }
+    .member-list tr {
+        border-bottom: 1px solid #C3D500;
+    }
+    /* end table */
+
 /* end general */
 
 /* main layout */
@@ -480,6 +640,15 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: #C4D600;
     background: #C4D600;
     height: 3px;
+}
+
+.about-who-we-are .hr {
+    height:1px;
+    background: #7fa4c3;
+    width: 200px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display:inline-block;
 }
 
     /* about - who we are history */
@@ -677,12 +846,17 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     margin-bottom: 40px;
     width: 36px;
     height: 3px;
-    background: #004987;
-    color: #004987;
+    background: white;
+    color: #FFFFFF;
 }
 .about-who-we-are .vision {
     color: white;
     background: url('img/about-who-we-are-vision.jpg') 75%  fixed;
+}
+.about-who-we-are .vision p {
+    padding-left: 34px;
+    padding-right: 34px;
+    color: white;
 }
 .about-who-we-are .mission {
     background: #f5f5f5;
@@ -721,29 +895,31 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: white;
 }
 .sectors .item .overlay {
-    visibility: hidden;
-    opacity: 0;
+    /*visibility: hidden;
+    opacity: 0;*/
     position: absolute;
     top: 10px;
     left: 25px;
     bottom: 10px;
     right: 25px;
-    background: #009ADD;
-    -o-transition:.2s;
-    -ms-transition:.2s;
-    -moz-transition:.2s;
-    -webkit-transition:.2s;
-    transition:.2s;
+    /*background: #009ADD;*/
+    background-color: rgba(0, 73, 135, 0.6);
+    -o-transition:background .2s;
+    -ms-transition:background .2s;
+    -moz-transition:background .2s;
+    -webkit-transition:background .2s;
+    transition:background .2s;
     padding: 18px;
 }
 .sectors .item:hover .overlay {
-    visibility: visible;
-    -o-transition:.2s;
-    -ms-transition:.2s;
-    -moz-transition:.2s;
-    -webkit-transition:.2s;
-    transition:.2s;
-    opacity: 1;
+    /*visibility: visible;*/
+    -o-transition:background .2s;
+    -ms-transition:background .2s;
+    -moz-transition:background .2s;
+    -webkit-transition:background .2s;
+    transition:background .2s;
+    /*opacity: 1;*/
+    background: rgba(0, 154, 221, 1);
 }
 @media screen and (min-width: 768px) {
     .sectors .item .overlay .overlay-bottom-aligned {
@@ -777,6 +953,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* end main layout / sectors */
 
 /* main layout / organization sector */
+
     .organization-sector .item .overlay {
         background: white;
     }
@@ -787,6 +964,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         font-size: 14px;
         font-weight: bold;
         margin: 0;
+        color: rgb(0, 73, 135);
     }
     .organization-sector.item-title p {
         margin: 0;
@@ -799,6 +977,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     .organization-sector .item-address {
         font-size: 10px;
+        color: rgb(0, 73, 135);
     }
 /* end main layout / organization sector */
 
@@ -829,29 +1008,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 }
 .regional-board-inside .contact-detail td {
     padding-bottom: 6px;
-}
-.regional-board-inside .member-list {
-    font-size: 14px;
-    color: #707170;
-}
-.regional-board-inside .member-list thead {
-    padding: 0;
-    background: #C3D500;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-}
-.regional-board-inside .member-list thead td {
-    border-right: 1px solid white;
-}
-.regional-board-inside .member-list td {
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-bottom: 15px;
-    width: 239px;
-}
-.regional-board-inside .member-list tr {
-    border-bottom: 1px solid #C3D500;
 }
 .regional-board-inside .colon-separator {
     padding-left: 30px;
@@ -1103,7 +1259,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     font-weight: 700;
     color: #004987;
 }
-
 /* end homepage */
 
 /* main layout / news */
@@ -1128,7 +1283,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .news .news-item .news-desc-top {
         height: 206px;
     }
-
 }
 .news .news-item {
     margin-bottom: 30px;
@@ -1282,7 +1436,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 
 /* end main layout / photo gallery (album list) */
 
-
 /* main layout / perbanas corner education */
 .perbanas-corner-education .perbanas-corner-education-item .perbanas-corner-education-desc-top h3 {
     font-size: 18px;
@@ -1329,6 +1482,23 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: #717271;
 }
 /* end main layout / industry guidelines syariah business */
+
+/* main layout / industry guidelines banking in indonesia */
+.industry-guidelines-banking-in-indonesia .section {
+    margin-bottom: 60px;
+}
+.industry-guidelines-banking-in-indonesia .section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+.industry-guidelines-banking-in-indonesia .section h3 {
+    margin-bottom: 18px;
+}
+.industry-guidelines-banking-in-indonesia .section p:last-child {
+    margin-bottom: 0;
+}
+/* end main layout / industry guidelines banking in indonesia */
+
 
 /* start of main layout / contact */
     .contact-logo {
