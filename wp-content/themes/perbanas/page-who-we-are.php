@@ -12,54 +12,7 @@
             <div class="sidebar-title">
                 <h2>About</h2>
             </div>
-            <div class="accordion" id="leftMenu">
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle item" data-toggle="collapse" data-parent="#leftMenu" href="#collapseOne">
-                            <i class="icon-home"></i> Who We Are
-                        </a>
-                        <hr class="active" />
-                    </div>
-                    <div id="collapseOne" class="accordion-body collapse" style="height: 0px; ">
-                        <div class="accordion-inner">
-                            <ul>
-                                <li>
-                                    <a href="#history" class="item">History</a>
-                                    <hr class="active" />
-                                </li>
-                                <li>
-                                    <a href="#vision-mission" class="item">Vision &amp; Mission</a>
-                                    <hr />
-                                </li>
-                                <li>
-                                    <a href="#organization-structure" class="item">Organization Structure</a>
-                                    <hr />
-                                </li>
-                                <li>
-                                    <a href="#former-chairmen-title" class="item">Former Chairmen</a>
-                                    <hr />
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="item" href="#">
-                            <i class="icon-th"></i> What We Do
-                        </a>
-                        <hr />
-                    </div>
-                </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="item" href="#">
-                            <i class="icon-th"></i> How We Work
-                        </a>
-                        <hr />
-                    </div>
-                </div>
-            </div>
+            <?php echo perbanas_side_menu('about-menu', 'leftMenu'); ?>
         </div>
         <div class="col-xs-12 col-sm-9 main-content-pane">
             <div class="row">
