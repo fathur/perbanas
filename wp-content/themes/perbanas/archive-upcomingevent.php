@@ -31,12 +31,13 @@ get_header(); ?>
 			$args = array( 'post_type' => get_post_type() );				
 			$query = new WP_Query( $args );
 			
-			if ( $query->have_posts() ) :					
+			if ( $query->have_posts() ) :		
+			$i = 1;
 				while ( $query->have_posts() ) :
 				
 					$query->the_post(); 
 			
-					$i = 1;
+					
 					
 					$unixdate	= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE); ?>
 					
