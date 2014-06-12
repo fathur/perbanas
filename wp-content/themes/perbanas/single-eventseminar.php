@@ -32,7 +32,7 @@ get_header(); ?>
 		?>
             <div class="row">
                 <div class="col-xs-12 logo">
-                    <?php the_post_thumbnail(get_the_ID(),'large'); ?>
+                    <?php the_post_thumbnail('large',array('class' => "img-responsive")); ?>
                 </div>
             </div>
             <div class="row">

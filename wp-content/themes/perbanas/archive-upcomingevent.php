@@ -35,6 +35,9 @@ get_header(); ?>
 				while ( $query->have_posts() ) :
 				
 					$query->the_post(); 
+			
+					$i = 1;
+					
 					$unixdate	= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE); ?>
 					
 			<div class="row item">
@@ -50,14 +53,14 @@ get_header(); ?>
 					</p>
 				</div>
 				
-				<div class="col-xs-12 col-sm-6 col-md-6 main-content-pane-middle-column accordion" id="event-id-1"> <!-- id attributed is used by the accordion -->
+				<div class="col-xs-12 col-sm-6 col-md-6 main-content-pane-middle-column accordion" id="event-id-<?php echo $i; ?>"> <!-- id attributed is used by the accordion -->
 					<div class="accordion-group">
 						<div class="accordion-heading">
 							<h2>
-								<a class="accordion-toggle event-upcoming-toggle-description-js" data-toggle="collapse" data-parent="#event-id-1" href="#event-id-1-body"><?php echo get_the_title(); ?></a>
+								<a class="accordion-toggle event-upcoming-toggle-description-js" data-toggle="collapse" data-parent="#event-id-<?php echo $i; ?>" href="#event-id-<?php echo $i; ?>-body"><?php echo get_the_title(); ?></a>
 							</h2>
 						</div>
-						<div class="accordion-body collapse" id="event-id-1-body">
+						<div class="accordion-body collapse" id="event-id-<?php echo $i; ?>-body">
 							<div class="accordion-inner">
 								<?php echo get_the_content();?>
 							</div>
@@ -72,6 +75,7 @@ get_header(); ?>
 			<hr />
  
 			<?php
+					$i++;
 				endwhile;
 			else:
 				// no posts found
