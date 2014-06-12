@@ -35,7 +35,7 @@
 									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>">Member Area</a></li>
 									<?php } ?>
 									<li><a href="#">Search</a></li>
-									<li class="last"><a href="#">Bahasa Indonesia</a></li>
+									<li class="last"><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a></li>
 								</ul>
 							</div>
 						</div>
