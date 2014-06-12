@@ -15,7 +15,7 @@ get_header(); ?>
     <div class="row">
         <div class="col-xs-12 col-sm-3 sidebar">
             <div class="sidebar-title">
-                <h2>Member Banks</h2>
+                <h2>Industry Guidelines</h2>
             </div>
             
             <?php echo perbanas_side_menu('industryguidelines-menu', 'leftMenu'); ?>
