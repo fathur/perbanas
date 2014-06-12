@@ -12,19 +12,69 @@
             <div class="sidebar-title">
                 <h2>About</h2>
             </div>
-            <?php echo perbanas_side_menu('about-menu', 'leftMenu'); ?>
+            <div class="accordion" id="leftMenu">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle item" data-toggle="collapse" data-parent="#leftMenu" href="#collapseOne">
+                            <i class="icon-home"></i> Who We Are
+                        </a>
+                        <hr class="active" />
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse" style="height: 0px; ">
+                        <div class="accordion-inner">
+                            <ul>
+                                <li>
+                                    <a href="#history" class="item">History</a>
+                                    <hr class="active" />
+                                </li>
+                                <li>
+                                    <a href="#vision-mission" class="item">Vision &amp; Mission</a>
+                                    <hr />
+                                </li>
+                                <li>
+                                    <a href="#organization-structure" class="item">Organization Structure</a>
+                                    <hr />
+                                </li>
+                                <li>
+                                    <a href="#former-chairmen-title" class="item">Former Chairmen</a>
+                                    <hr />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="item" href="#">
+                            <i class="icon-th"></i> What We Do
+                        </a>
+                        <hr />
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="item" href="#">
+                            <i class="icon-th"></i> How We Work
+                        </a>
+                        <hr />
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-xs-12 col-sm-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>Who We Are</span></h1>
+                    <h1><span>Who We Are</span></h1>
                 </div>
             </div>
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-xs-12">
                     <p>PERBANAS as the primary organization of the national banking industry, acts as a facilitator for its members to convey its aspirations concerning the banking industry, to the government, House of Representatives and Bank Indonesia. </p>
                     <p>To its members, PERBANAS is the foundation in which they can contribute to the development of the national banking sector. Active and positive ideas towards the industry’s development should not be monopolized by Bank Indonesia, but also come from practitioners of the industry, through PERBANAS. </p>
                 </div>
+            </div>
+            <div class="text-center">
+                <div class="hr" id="history"></div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
@@ -157,7 +207,7 @@
 
                 </div>
             </div>
-            <div class="vision-mission-container">
+            <div class="vision-mission-container" id="vision-mission">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="vision vm-title text-center">
@@ -205,7 +255,7 @@
                                 <div class="vm-title text-center">
                                     <h2>Environment</h2>
                                     <hr />
-                                    <p>Create harmony between the banking industry and the environment <emph>(good corporate citizenship).</emph></p>
+                                    <p id="organization-structure">Create harmony between the banking industry and the environment <emph>(good corporate citizenship).</emph></p>
                                 </div>
                             </div>
                         </div>
@@ -222,63 +272,68 @@
                         </div>
                     </div>
                     <div>
-                        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.png" />
+                        <img class="img-responsive" src="css/img/about-who-we-are-organization-structure.png" />
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 section-title" style="margin-top: 60px; " id="former-chairmen-title">
+                    <h1><div></div><span style="font-size: 36px;">Former Chairmen</span></h1>
                 </div>
             </div>
             <div id="former-chairmen" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="content/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="content/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="content/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="content/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="content/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="content/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="content/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="content/img/chairman-1.png" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
