@@ -62,7 +62,7 @@ get_header(); ?>
 						</div>
 						<div class="accordion-body collapse" id="event-id-<?php echo $i; ?>-body">
 							<div class="accordion-inner">
-								<?php echo get_the_content();?>
+								<p><?php echo get_the_content();?></p>
 							</div>
 						</div>
 					</div>
