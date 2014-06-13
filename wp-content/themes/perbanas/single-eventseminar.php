@@ -7,7 +7,7 @@ get_header(); ?>
 <div class="container main-layout event-seminar">
     <div class="row breadcrumbs">
         <div class="col-xs-12">
-            <a href="#" class="elem">Home</a> > <a href="#" class="elem">Council</a> > <a href="#" class="elem">Central Board</a> > <a href="#" class="elem">Sectors</a> > <a href="#" class="elem">Organizational Sector</a>
+			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
         </div>
     </div>
     <div class="row">
