@@ -4,54 +4,88 @@
         <div class="row slider homepage-slider">
             <div id="featured-slider" class="carousel slide">
                 <div class="carousel-inner">
-                    <div class="col-xs-12 block slider-background item active">
+	                <?php 
+	                								
+					$args = array(
+						'post_type' => 'carousel',
+						'posts_per_page' => 3
+					);
+					
+					$loop = new WP_Query($args);
+					
+					if( $loop->have_posts() ) :
+					
+						$i = 0;
+					
+						while($loop->have_posts()) : $loop->the_post();
+					
+							$thumb_id = get_post_thumbnail_id();
+					
+							$thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+
+							if ('2' == $i) {
+								$active = 'active';
+							}
+					?>
+					
+                    <div class="col-xs-12 block slider-background item <?php echo $active; ?>" style="background-image: url('<?php echo $thumb_url[0]; ?>'); background-size: cover;">
                         <div class="container">
                             <div class="row slider-content">
                                 <div class="col-xs-12 block slider-content-text">
                                     <h1>
-                                        Lorem ipsum is simply dummy text of the printing
+                                       <?php the_title(); ?>
                                     </h1>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 block slider-background item">
-                        <div class="container">
-                            <div class="row slider-content">
-                                <div class="col-xs-12 block slider-content-text">
-                                    <h1>
-                                        Lorem ipsum is simply dummy text of the printing
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 block slider-background item">
-                        <div class="container">
-                            <div class="row slider-content">
-                                <div class="col-xs-12 block slider-content-text">
-                                    <h1>
-                                        Lorem ipsum is simply dummy text of the printing
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                   <?php 
+                   
+                   		$i++;
+                   		endwhile;
+                   endif;
+                   
+                   wp_reset_postdata();
+                   ?>
+                    
                 </div>
                 
                 <div class="col-xs-12">
                     <div class="container slider-pager">
                         <div class="slider-pager-border"></div>
                         <ol class="carousel-indicators">
-                            <li data-target="#featured-slider" data-slide-to="0" class="active">
-                                <span class="page-number"><span class="offset-container">1</span></span>
+                        
+                         <?php 
+	                								
+					$args = array(
+						'post_type' => 'carousel',
+						'posts_per_page' => 3
+					);
+					
+					$loop = new WP_Query($args);
+					
+					if( $loop->have_posts() ) :
+					
+						$j = 0;
+					
+						while($loop->have_posts()) : $loop->the_post();											
+
+							if ('2' == $j) {
+								$activex = 'active';
+							}
+					?>
+                            <li data-target="#featured-slider" data-slide-to="<?php echo $j; ?>" class="<?php echo $activex; ?>">
+                                <span class="page-number"><span class="offset-container"><?php echo $j+1; ?></span></span>
                             </li>
-                            <li data-target="#featured-slider" data-slide-to=1>
-                            <span class="page-number"><span class="offset-container">2</span></span>
-                            </li>
-                            <li data-target="#featured-slider" data-slide-to="2">
-                                <span class="page-number"><span class="offset-container">3</span></span>
-                            </li>
+                            <?php 
+                   
+                   		$j++;
+                   		endwhile;
+                   endif;
+                   
+                   wp_reset_postdata();
+                   ?>
                         </ol>
                     </div>
                 </div>
