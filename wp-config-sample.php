@@ -1,90 +1,89 @@
 <?php
-/**
- * The base configurations of the WordPress.
+/** 
+ * Konfigurasi dasar WordPress.
  *
- * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, WordPress Language, and ABSPATH. You can find more information
- * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php} Codex page. You can get the MySQL settings from your web host.
+ * Berkas ini berisi konfigurasi-konfigurasi berikut: Pengaturan MySQL, Awalan Tabel,
+ * Kunci Rahasia, Bahasa WordPress, dan ABSPATH. Anda dapat menemukan informasi lebih
+ * lanjut dengan mengunjungi Halaman Codex {@link http://codex.wordpress.org/Editing_wp-config.php
+ * Menyunting wp-config.php}. Anda dapat memperoleh pengaturan MySQL dari web host Anda.
  *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
+ * Berkas ini digunakan oleh skrip penciptaan wp-config.php selama proses instalasi.
+ * Anda tidak perlu menggunakan situs web, Anda dapat langsung menyalin berkas ini ke
+ * "wp-config.php" dan mengisi nilai-nilainya.
  *
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+// ** Pengaturan MySQL - Anda dapat memperoleh informasi ini dari web host Anda ** //
+/** Nama basis data untuk WordPress */
+define('DB_NAME', 'nama_basis_data_di_sini');
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
+/** Nama pengguna basis data MySQL */
+define('DB_USER', 'nama_pengguna_di_sini');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+/** Kata sandi basis data MySQL */
+define('DB_PASSWORD', 'kata_sandi_di_sini');
 
-/** MySQL hostname */
+/** Nama host MySQL */
 define('DB_HOST', 'localhost');
 
-/** Database Charset to use in creating database tables. */
+/** Set Karakter Basis Data yang digunakan untuk menciptakan tabel basis data. */
 define('DB_CHARSET', 'utf8');
 
-/** The Database Collate type. Don't change this if in doubt. */
+/** Jenis Collate Basis Data. Jangan ubah ini jika ragu. */
 define('DB_COLLATE', '');
 
 /**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ * Kunci Otentifikasi Unik dan Garam.
+ * 
+ * Ubah baris berikut menjadi frase unik!
+ * Anda dapat menciptakan frase-frase ini menggunakan {@link https://api.wordpress.org/secret-key/1.1/salt/ Layanan kunci-rahasia WordPress.org}
+ * Anda dapat mengubah baris-baris berikut kapanpun untuk mencabut validasi seluruh cookies. Hal ini akan memaksa seluruh pengguna untuk masuk log ulang.
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'letakkan frase unik Anda di sini');
+define('SECURE_AUTH_KEY',  'letakkan frase unik Anda di sini');
+define('LOGGED_IN_KEY',    'letakkan frase unik Anda di sini');
+define('NONCE_KEY',        'letakkan frase unik Anda di sini');
+define('AUTH_SALT',        'letakkan frase unik Anda di sini');
+define('SECURE_AUTH_SALT', 'letakkan frase unik Anda di sini');
+define('LOGGED_IN_SALT',   'letakkan frase unik Anda di sini');
+define('NONCE_SALT',       'letakkan frase unik Anda di sini');
 
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
+ * Awalan Tabel Basis Data WordPress.
+ * 
+ * Anda dapat memiliki beberapa instalasi di dalam satu basis data jika Anda memberikan awalan unik 
+ * kepada masing-masing tabel. Harap hanya masukkan angka, huruf, dan garis bawah!
  */
 $table_prefix  = 'wp_';
 
 /**
- * WordPress Localized Language, defaults to English.
+ * Bahasa Lokal WordPress. Bila nilainya kosong secara standar Bahasa Inggris akan digunakan.
  *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
+ * Ubah ini untuk melokalkan WordPress. Berkas MO yang bersangkutan harus 
+ * diinstal di wp-content/languages. Sebagai contoh, instal
+ * id_ID.mo ke wp-content/languages dan tentukan WPLANG ke "id_ID" untuk mengaktifkan
+ * dukungan Bahasa Indonesia. Dalam paket distribusi ini berkas id_ID.mo sudah terinstal.
  */
-define('WPLANG', '');
+define ('WPLANG', 'id_ID');
 
 /**
- * For developers: WordPress debugging mode.
+ * Untuk pengembang: Moda pengawakutuan WordPress.
  *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
+ * Ubah ini menjadi "true" untuk mengaktifkan tampilan peringatan selama pengembangan.
+ * Sangat disarankan agar pengembang plugin dan tema menggunakan WP_DEBUG
+ * di lingkungan pengembangan mereka.
 define('WP_DEBUG', false);
 
-/* That's all, stop editing! Happy blogging. */
+/* Cukup, berhenti menyunting! Selamat ngeblog. */
 
-/** Absolute path to the WordPress directory. */
+/** Lokasi absolut direktori WordPress. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
+/** Menentukan variabel-variabel WordPress berkas-berkas yang disertakan. */
 require_once(ABSPATH . 'wp-settings.php');
