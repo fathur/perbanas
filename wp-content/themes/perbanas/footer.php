@@ -16,11 +16,7 @@
 								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/footer-facebook.png" /></a></li>
 							</ul>
 						</div>
-						<div class="footer-links">
-							<a href="#">Home</a> | <a href="#">Site Map</a> | <a href="#">Terms
-								of Use</a> | <a href="#">Privacy Policy</a> | <a href="#">Accessibility</a>
-							| <a href="#">Contact Us</a>
-						</div>
+						<?php echo perbanas_footer_menu('extra-menu', 'bottomMenu'); ?>
 						<div>&copy; 2014 Perbanas. All rights reserved.</div>
 					</div>
 				</div>
