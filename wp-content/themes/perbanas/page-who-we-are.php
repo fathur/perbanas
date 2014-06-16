@@ -30,6 +30,7 @@
                 <div class="hr" id="history"></div>
             </div>
             <div class="row">
+                <div id="history" class="anchor-with-offset"></div>
                 <div class="col-xs-12">
                     <div class="timeline-outer-container">
                         <ul class="timeline-container animate">
@@ -82,7 +83,18 @@
                                         <p>In the 3rd Congress, the word OPS was omitted, and the name of the organization became Perbankan Nasional Swasta (PERBANAS).</p>
                                     </div>
                                 </div>
+                                <div class="description right">
+                                    <div class="vertical-align">
+                                        <div class="subsection-title text-center subsection-title-history">
+                                            <div class="subsection-title-container">
+                                                <h2 class=""><span>H</span>istory</h2>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </li>
+
                             <li class="item">
                                 <h3 class="bubble">
                                     <span class="text">1968</span>
@@ -160,6 +172,7 @@
 
                 </div>
             </div>
+            <div id="vision-mission" class="anchor-with-offset"></div>
             <div class="vision-mission-container" id="vision-mission">
                 <div class="row">
                     <div class="col-xs-12">
@@ -215,6 +228,7 @@
                     </div>
                 </div>
             </div>
+            <div id="organization-structure" class="anchor-with-offset"></div>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="subsection-title text-center">
@@ -229,11 +243,14 @@
                     </div>
                 </div>
             </div>
+            <div id="former-chairmen-title" class="anchor-with-offset"></div>
             <div class="row">
-                <div class="col-xs-12 section-title" style="margin-top: 60px; " id="former-chairmen-title">
-                    <h1><div></div><span style="font-size: 36px;">Former Chairmen</span></h1>
+                <div class="col-xs-12">
+                    <h2 class="subsection-title-former-chairmen">
+                        <span>Former</span> Chairmen</h2>
                 </div>
             </div>
+
             <div id="former-chairmen" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="item active">
