@@ -22,7 +22,7 @@
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-address">
                     <p>
                     <span class="contact-section-title hidden-md hidden-lg">Address:</span><br class="hidden-md hidden-lg" />
-                    Jl. Pahlawan III Blok A1 No. 15<br />
+                    Jl. Perbanas III Blok A1 No. 15<br />
                     Kuningan, Jakarta Pusat<br />
                     Jakarta 12345
                     </p>
