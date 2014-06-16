@@ -19,5 +19,6 @@ function page_general_init() {
         //onScroll(onNavbarMenuThresholdReached);
     });
 
+    setupTopNav();
     /* end desktop only */
 }
