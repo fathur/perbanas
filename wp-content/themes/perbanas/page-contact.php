@@ -22,9 +22,9 @@
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-address">
                     <p>
                     <span class="contact-section-title hidden-md hidden-lg">Address:</span><br class="hidden-md hidden-lg" />
-                    Jl. Perbanas III Blok A1 No. 15<br />
-                    Kuningan, Jakarta Pusat<br />
-                    Jakarta 12345
+                    Griya Perbanas Lt. 1 <br/>
+                    Jl. Perbanas Karet Kuningan, Kuningan, Setiabudi, <br/>
+                    Jakarta Selatan, DKI Jakarta Raya
                     </p>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-phone">
