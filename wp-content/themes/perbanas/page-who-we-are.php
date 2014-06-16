@@ -231,7 +231,7 @@
             <div id="organization-structure" class="anchor-with-offset"></div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="subsection-title text-center">
+                    <div class="subsection-title text-center hide">
                         <div class="subsection-title-container">
                             <h2>Organization</h2>
                             <hr />
