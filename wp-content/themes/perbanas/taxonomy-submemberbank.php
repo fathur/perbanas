@@ -32,6 +32,7 @@ get_header(); ?>
 				wp_reset_query();
 	           
 				$args = array('post_type' => get_post_type(),
+					'posts_per_page'	=> -1,
 					'tax_query' => array(
 						array(
 							'taxonomy'  => $taxonomy,

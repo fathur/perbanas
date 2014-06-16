@@ -20,5 +20,5 @@ function page_general_init() {
     });
 
     setupTopNav();
-    /* end desktop only */
+
 }
