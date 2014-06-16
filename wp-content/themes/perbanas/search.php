@@ -1,4 +1,27 @@
 <?php get_header(); ?>
+
+<?php 
+
+$search_results = new WP_Query( array(
+	's'			=> $_GET['s'],
+	'post_type'	=> array('pressrelease','news','upcomingevent','eventseminar')
+) );
+
+// The Loop
+if ( $search_results->have_posts() ) {
+	echo '<ul>';
+	while ( $search_results->have_posts() ) {
+		$search_results->the_post();
+		echo '<li>' . get_the_title() . '</li>';
+	}
+	echo '</ul>';
+} else {
+	// no posts found
+}
+/* Restore original Post Data */
+wp_reset_postdata()
+
+?>
 <div class="container main-layout members-area">
     <div class="row breadcrumbs hidden-xs">
         <div class="col-xs-12">
@@ -15,16 +38,13 @@
             
             <?php 
 			
-				wp_reset_query();
+				$search_results = new WP_Query( array(
+					's'			=> sanitize_text_field( $_GET['s'] ),
+					'post_type'	=> array('pressrelease','news','upcomingevent','eventseminar')
+				) );
 				
-				$args = array(
-					'post_type' => get_post_type()
-				);
-				
-				$loop = new WP_Query($args);
-				
-				if( $loop->have_posts() ) :
-					while($loop->have_posts()) : $loop->the_post();
+				if( $search_results->have_posts() ) :
+					while($search_results->have_posts()) : $search_results->the_post();
 			?>
 			
             <div class="row members-area-item">
