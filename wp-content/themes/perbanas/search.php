@@ -1,27 +1,5 @@
 <?php get_header(); ?>
 
-<?php 
-
-$search_results = new WP_Query( array(
-	's'			=> $_GET['s'],
-	'post_type'	=> array('pressrelease','news','upcomingevent','eventseminar')
-) );
-
-// The Loop
-if ( $search_results->have_posts() ) {
-	echo '<ul>';
-	while ( $search_results->have_posts() ) {
-		$search_results->the_post();
-		echo '<li>' . get_the_title() . '</li>';
-	}
-	echo '</ul>';
-} else {
-	// no posts found
-}
-/* Restore original Post Data */
-wp_reset_postdata()
-
-?>
 <div class="container main-layout members-area">
     <div class="row breadcrumbs hidden-xs">
         <div class="col-xs-12">
@@ -32,7 +10,7 @@ wp_reset_postdata()
         <div class="col-xs-12 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>Members' Area</span></h1>
+                    <h1><span>Search</span></h1>
                 </div>
             </div>
             
@@ -64,6 +42,8 @@ wp_reset_postdata()
 			<?php 
 					endwhile;
 				endif; 
+				
+				wp_reset_postdata();
 			?>
             
         </div>
