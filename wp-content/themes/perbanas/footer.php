@@ -47,7 +47,11 @@
 
 		<?php if( is_page('who-we-are') ) :?>
 		page_about_who_we_are_init();
-		<?php endif;?>
+		<?php endif; ?>
+
+		<?php if (is_tax('subsector') ) : ?>
+		page_subsector_single_init();
+		<?php endif; ?>
 	});
 
 	<?php if( is_page('contact') || is_page('kontak') ): ?>
