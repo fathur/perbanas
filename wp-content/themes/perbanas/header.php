@@ -40,6 +40,20 @@
 								</ul>
 							</div>
 						</div>
+						<div class="row top-nav-extra">
+							<div class="col-xs-8"></div>
+							<div class="col-xs-4 text-right">
+								<input type="text" id="search-textbox" style="
+							    position: absolute;
+							    font-size: 12px;
+							    padding: 5px;
+							    top: 15px;
+							    right: 0;
+							    width: 256px;
+							    margin-right: 15px;
+							    border: 1px solid #009BDE;" />
+							</div>
+						</div>
 						<div class="logo-container">
 							<a href="<?php echo get_bloginfo('siteurl'); ?>">
 							<img width="214px" height="149px" class="logo"
