@@ -72,6 +72,16 @@ function remove_wp_logo( $wp_admin_bar ) {
 }
 add_action('admin_bar_menu', 'remove_wp_logo', 999);
 
+function perbanas_login_logo() {
+	echo '<style type="text/css">
+3
+h1 a {background-image: url('.get_bloginfo('template_directory').'/images/login_logo.png) !important; }
+4
+</style>';
+	
+}
+add_action('login_head','perbanas_login_logo');
+
 
 /**
  * Registering menu in admin panel
@@ -162,6 +172,31 @@ function perbanas_side_menu( $menu_name, $id ) {
 						</div></div>';
 			}
 		}	
+		return $list_menus . "</div>";
+	}
+}
+
+function perbanas_footer_menu($menu_name, $id) {
+	$menus = __find_all_thread( $menu_name );
+	
+	if ( $menus && count( $menus ) > 0 ) {
+		$list_menus = "<div class='footer-links' id='$id'>";
+		
+		$cnt = count( $menus );
+		
+		for ($i = 0; $i < ($cnt -1); $i++) {
+			if ( __has_child( $menus[$i]->children )) {
+			
+				// Do nothing
+			
+			} else {
+			
+				$list_menus .= '<a href="'.$menus[$i]->url.'">'. $menus[$i]->title . '</a> | ';
+			}
+		}
+	
+		$list_menus .= '<a href="'.$menus[$cnt-1]->url.'">'. $menus[$cnt-1]->title . '</a>';
+		
 		return $list_menus . "</div>";
 	}
 }

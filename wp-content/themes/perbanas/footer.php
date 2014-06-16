@@ -6,8 +6,20 @@
 				<div class="row">
 					<div class="col-sm-6 block footer-A">
 						<br class="visible-sm visible-md visible-lg" /> <span
-							class="footer-B">Our partners</span> <img
-							src="<?php echo get_template_directory_uri(); ?>/img/footer-partner-list.jpg" />
+							class="footer-B">Our partners</span> 
+							
+							<a href="http://www.bi.go.id/" target="__blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" />
+							</a>
+							<a href="http://www.ojk.go.id/" target="__blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-ojk.jpg" />
+							</a>
+							<a href="#" target="__blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-3p.jpg" />
+							</a>
+							<a href="http://www.lps.go.id/" target="__blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-lps.jpg" />
+							</a>
 					</div>
 					<div class="col-sm-6 block footer-right">
 						<div>
@@ -16,11 +28,7 @@
 								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/footer-facebook.png" /></a></li>
 							</ul>
 						</div>
-						<div class="footer-links">
-							<a href="#">Home</a> | <a href="#">Site Map</a> | <a href="#">Terms
-								of Use</a> | <a href="#">Privacy Policy</a> | <a href="#">Accessibility</a>
-							| <a href="#">Contact Us</a>
-						</div>
+						<?php echo perbanas_footer_menu('extra-menu', 'bottomMenu'); ?>
 						<div>&copy; 2014 Perbanas. All rights reserved.</div>
 					</div>
 				</div>

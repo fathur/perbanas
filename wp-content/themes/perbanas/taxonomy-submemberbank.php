@@ -47,7 +47,7 @@ get_header(); ?>
 				
 				<div class="col-xs-6 col-sm-3">
 					<a href="<?php echo get_permalink( get_the_ID() ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
-						<?php echo get_the_post_thumbnail(); ?>
+						<?php echo the_post_thumbnail(array(141,141),array('class'=>'img-responsive')); ?>
 					</a>
                 </div>
 				
