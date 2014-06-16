@@ -42,12 +42,16 @@
 		page_general_init();
 		
 		<?php if ( get_post_type() == 'regionalboard' ) :?>
-		$('select').select2();
+		page_regional_board_single_init();
 		<?php endif; ?>
 
 		<?php if( is_page('who-we-are') ) :?>
 		page_about_who_we_are_init();
-		<?php endif;?>
+		<?php endif; ?>
+
+		<?php if (is_tax('subsector') ) : ?>
+		page_subsector_single_init();
+		<?php endif; ?>
 	});
 
 	<?php if( is_page('contact') || is_page('kontak') ): ?>

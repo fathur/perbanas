@@ -209,7 +209,7 @@ a:hover {
         }
         .nav-large-wrapper-outer {
             display: inline-block;
-            width: 250px;
+            width: 280px;
             background: #074980;
             text-align: left;
         }
@@ -231,7 +231,7 @@ a:hover {
         }
         .nav-large-wrapper-outer {
             display: inline-block;
-            width: 250px;
+            width: 280px;
             background: #074980;
             text-align: left;
         }
@@ -308,46 +308,28 @@ a:hover {
         -webkit-animation-fill-mode: forwards;
         -moz-animation-fill-mode: forwards;
     }
-    @-moz-keyframes spin { 100% { -moz-transform: rotate(90deg); } }
-    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(90deg); } }
-    @keyframes spin { 100% { -webkit-transform: rotate(90deg); transform:rotate(90deg); } }
     .open > .dropdown-menu {
         animation-name: slidenavAnimation;
-        animation-duration:1.4s;
+        animation-duration:3s;
         animation-iteration-count: 1;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
 
         -webkit-animation-name: slidenavAnimation;
-        -webkit-animation-duration:1.4s;
+        -webkit-animation-duration:3s;
         -webkit-animation-iteration-count: 1;
         -webkit-animation-timing-function: ease;
         -webkit-animation-fill-mode: forwards;
 
         -moz-animation-name: slidenavAnimation;
-        -moz-animation-duration:1.4s;
+        -moz-animation-duration:2.4s;
         -moz-animation-iteration-count: 1;
         -moz-animation-timing-function: ease;
         -moz-animation-fill-mode: forwards;
     }
-    @keyframes slidenavAnimation {
-        from {
-            max-height: 0;
-        }
-        to {
-            max-height: 10000px;
-        }
-    }
-    @-webkit-keyframes slidenavAnimation {
-        from {
-            max-height: 0;
-        }
-        to {
-            max-height: 10000px;
-        }
-    }
     /* nested menu */
-    .dropdown-menu {
+
+    .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
         padding-top: 0;
@@ -356,6 +338,16 @@ a:hover {
         box-shadow: none;
         border: 0;
         overflow-y: hidden;
+    }
+    .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .navbar-nav .open .dropdown-menu>li>a {
+        sline-height: 1.42857143;
+    }
+    .navbar-collapse {
+        max-height: inherit;
     }
     .dropdown-menu li {
         padding-left: 20px;
@@ -545,7 +537,12 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         border-bottom: 1px solid #C3D500;
     }
     /* end table */
-
+.anchor-with-offset {
+    display: block;
+    content: "";
+    height: 100px;
+    margin: -100px 0 0;
+}
 /* end general */
 
 /* main layout */
@@ -556,8 +553,9 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     margin-top: 0;
 }
 .main-layout h2 {
-    font-size: 24px;
-    margin-bottom: 60px;
+    /*font-size:
+    /*font-size: 24px;
+    margin-bottom: 60px;*/
 }
     /* breadcrumbs */
     .breadcrumbs {
@@ -572,10 +570,17 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     /* end breadcrumbs */
     /* main layout: sidebar navigation */
+
+    /*
+    why is this necessary??
     @media screen and (min-width: 1200px) {
         .main-layout .sidebar {
             padding-right: 65px;
         }
+    }*/
+    /* sidebar affix */
+    .sidebar.affix {
+        top: 68px;
     }
     .main-layout .sidebar-title h2 {
         font-size: 26px;
@@ -851,6 +856,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 }
 .about-who-we-are .vision {
     color: white;
+    background-color: #009ADD;
     background: url('img/about-who-we-are-vision.jpg') 75%  fixed;
 }
 .about-who-we-are .vision p {
@@ -895,8 +901,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: white;
 }
 .sectors .item .overlay {
-    /*visibility: hidden;
-    opacity: 0;*/
     position: absolute;
     top: 10px;
     left: 25px;
@@ -912,13 +916,11 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     padding: 18px;
 }
 .sectors .item:hover .overlay {
-    /*visibility: visible;*/
     -o-transition:background .2s;
     -ms-transition:background .2s;
     -moz-transition:background .2s;
     -webkit-transition:background .2s;
     transition:background .2s;
-    /*opacity: 1;*/
     background: rgba(0, 154, 221, 1);
 }
 @media screen and (min-width: 768px) {
@@ -953,8 +955,30 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* end main layout / sectors */
 
 /* main layout / organization sector */
-
     .organization-sector .item .overlay {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 10px;
+        left: 25px;
+        bottom: 10px;
+        right: 25px;
+        background: white;
+        -o-transition:opacity .2s;
+        -ms-transition:opacity .2s;
+        -moz-transition:opacity .2s;
+        -webkit-transition:opacity .2s;
+        transition:opacity .2s;
+        padding: 18px;
+    }
+    .organization-sector .item:hover .overlay {
+        visibility: visible;
+        -o-transition:opacity .2s;
+        -ms-transition:opacity .2s;
+        -moz-transition:opacity .2s;
+        -webkit-transition: opacity .2s;
+        transition: opacity .2s;
+        opacity: 1;
         background: white;
     }
     .organization-sector .item {
@@ -1205,12 +1229,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         font-size: 18px;
         font-weight: 400;
         margin-bottom: 15px;
-    }
-    #gallery-2 img {
-		border: 2px solid #cfcfcf ;
-		min-width: 250px !important;
-		height: 165px !important;
-		border: 0 !important;
     }
     /* end gallery */
 
@@ -1603,3 +1621,43 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     background: #B3BAC1;
 }
 /* end main layout / members' area */
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(90deg);
+    }
+}
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(90deg);
+    }
+}
+@keyframes spin {
+    100% {
+        transform:rotate(90deg);
+    }
+}
+@keyframes slidenavAnimation {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: 5000px;
+    }
+}
+@-webkit-keyframes slidenavAnimation {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: 5000px;
+    }
+}
+@-moz-keyframes slidenavAnimation {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: 5000px;
+    }
+}

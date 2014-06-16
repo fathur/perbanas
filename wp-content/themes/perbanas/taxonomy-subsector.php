@@ -20,6 +20,23 @@ get_header(); ?>
             <?php echo perbanas_side_menu('council-menu', 'leftMenu'); ?>
         </div>
         <div class="col-xs-12 col-sm-9 main-content-pane">
+        	<div class="row">
+                <div class="col-xs-12 text-right">
+                    <select>
+                    	<option>Other Sectors</option>
+                        <?php 
+													$sectors = get_terms( $taxonomy , array(
+														'orderby'		=> 'name', 
+														'order'			=> 'ASC',
+														'hide_empty'	=> FALSE, 
+													));
+												?>
+												<?php foreach ($sectors as $sector) :?>
+													<option value="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>"><?php echo $sector->name; ?></option>
+												<?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xs-12 section-title">
                     <h1><div></div><span>Sectors</span></h1>
