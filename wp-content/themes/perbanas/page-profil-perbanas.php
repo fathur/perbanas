@@ -22,11 +22,12 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <p>PERBANAS as the primary organization of the national banking industry, acts as a facilitator for its members to convey its aspirations concerning the banking industry, to the government, House of Representatives and Bank Indonesia. </p>
-                    <p>To its members, PERBANAS is the foundation in which they can contribute to the development of the national banking sector. Active and positive ideas towards the industry’s development should not be monopolized by Bank Indonesia, but also come from practitioners of the industry, through PERBANAS. </p>
+                    <p>PERBANAS merupakan organisasi yang memayungi industri perbankan nasional, yang dapat menjadi jembatan bagi anggotanya untuk menyalurkan aspirasi perbankan kepada pemerintah, DPR dan Bank Indonesia.</p>
+                    <p>Bagi anggotanya, keberadaan PERBANAS dapat menjadi wadah untuk ikut menyehatkan sektor perbankan nasional. Pemikiran-pemikiran aktif dan positif bagi pengembangan industri bukan hanya monopoli Bank Indonesia, tetapi juga dapat datang dari kalangan praktisi, tentunya melalui PERBANAS.</p>
                 </div>
             </div>
             <div class="row">
+                <div id="history" class="anchor-with-offset"></div>
                 <div class="col-xs-12">
                     <div class="timeline-outer-container">
                         <ul class="timeline-container animate">
@@ -37,8 +38,7 @@
                                 </h3>
                                 <div class="description right">
                                     <div class="vertical-align">
-                                        <!--<h3>Perbanas</h3>-->
-                                        <p>Perhimpunan Bank-Bank Nasional Indonesia (PERBANA) was established as an association for national banks in Indonesia.</p>
+                                        <p>Hari lahir Perhimpunan Bank-Bank Nasional Indonesia (PERBANA) sebagai wadah asosiasi bank-bank nasional di Indonesia.</p>
                                     </div>
                                 </div>
                             </li>
@@ -49,8 +49,7 @@
                                 </h3>
                                 <div class="description left">
                                     <div class="vertical-align">
-                                        <!--<h3>OPS Perbanas</h3>-->
-                                        <p>PERBANA formed Yayasan Pendidikan Kadar Bank (YPKB) as an effort to increase the amount of well-educated manpower, specifically in the national banking industry.</p>
+                                        <p>PERBANA membentuk Yayasan Pendidikan Kadar Bank (YPKB) sebagai upaya meningkatkan jumlah tenaga terdidik, khususnya dalam dunia perbankan nasional.</p>
                                     </div>
                                 </div>
                             </li>
@@ -62,9 +61,7 @@
                                 <div class="description right">
                                     <div class="vertical-align">
                                         <!--<h3>Perbanas</h3>-->
-                                        <p>In the 2nd
-
-                                            Congress held in Jakarta, the name PERBANA was revised to Organisasi Perusahaan Sejenis Perbankan Nasional Swasta (OPS PERBANAS).</p>
+                                        <p>Dalam Kongres II di Jakarta, PERBANA mengalami penyesuaian nama menjadi Organisasi Perusahaan Sejenis Perbankan Nasional Swasta (OPS PERBANAS).</p>
                                     </div>
                                 </div>
                             </li>
@@ -75,8 +72,17 @@
                                 </h3>
                                 <div class="description left">
                                     <div class="vertical-align">
-                                        <!--<h3>OPS Perbanas</h3>-->
-                                        <p>In the 3rd Congress, the word OPS was omitted, and the name of the organization became Perbankan Nasional Swasta (PERBANAS).</p>
+                                        <p>Dalam Kongres III, kata OPS dihilangkan, sehingga nama organisasi menjadi Perbankan Nasional Swasta (PERBANAS).</p>
+                                    </div>
+                                </div>
+                                <div class="description right">
+                                    <div class="vertical-align">
+                                        <div class="subsection-title text-center subsection-title-history">
+                                            <div class="subsection-title-container">
+                                                <h2 class=""><span>H</span>istory</h2>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </li>
@@ -88,7 +94,7 @@
                                 <div class="description right">
                                     <div class="vertical-align">
                                         <!--<h3>Perbanas</h3>-->
-                                        <p>PERBANAS established Yayasan Pendidikan PERBANAS to initiate formal education in the form of an academy, which is Akademi Ilmu Perbankan Perbanas.</p>
+                                        <p>PERBANAS mendirikan Yayasan Pendidikan PERBANAS untuk mengembangkan pendidikan formal dalam bentuk akademi, yakni Akademi Ilmu Perbankan Perbanas.</p>
                                     </div>
                                 </div>
                             </li>
@@ -100,7 +106,7 @@
                                 <div class="description left">
                                     <div class="vertical-align">
                                         <!--<h3>OPS Perbanas</h3>-->
-                                        <p>In the 6th Congress, the name PERBANAS was revised once again to Perhimpunan Bank-Bank Nasional Swasta, however the acronym remained the same.</p>
+                                        <p>Dalam Kongres VI, kepanjangan PERBANAS sendiri dirubah menjadi Perhimpunan Bank-Bank Nasional Swasta, namun singkatannya tidak berubah.</p>
                                     </div>
                                 </div>
                             </li>
@@ -112,7 +118,7 @@
                                 <div class="description right">
                                     <div class="vertical-align">
                                         <!--<h3>Perbanas</h3>-->
-                                        <p>In the 12th Congress, the word ‘umum’ was inserted to the name of PERBANAS and became Perhimpunan Bank-Bank Umum Nasional Swasta.</p>
+                                        <p>Dalam Kongres XII, dimasukkan kata umum dalam kepanjangan PERBANAS menjadi Perhimpunan Bank-Bank Umum Nasional Swasta.</p>
                                     </div>
                                 </div>
                             </li>
@@ -123,8 +129,7 @@
                                 </h3>
                                 <div class="description left">
                                     <div class="vertical-align">
-                                        <!--<h3>OPS Perbanas</h3>-->
-                                        <p>In the 15th Congress, the word ‘swasta’ was omitted from the name of the organization, thus becoming Perhimpunan Bank-Bank Umum Nasional. The acronym remained the same.</p>
+                                        <p>Dalam Kongres XV, kata swasta dihilangkan dari kepanjangan PERBANAS sehingga menjadi Perhimpunan Bank-Bank Umum Nasional.</p>
                                     </div>
                                 </div>
                             </li>
@@ -135,8 +140,7 @@
                                 </h3>
                                 <div class="description right">
                                     <div class="vertical-align">
-                                        <!--<h3>Perbanas</h3>-->
-                                        <p>Bank BNI became a member of PERBANAS.</p>
+                                        <p>Bank BNI ditetapkan sebagai anggota PERBANAS.</p>
                                     </div>
                                 </div>
                             </li>
@@ -148,7 +152,7 @@
                                 <div class="description left">
                                     <div class="vertical-align">
                                         <!--<h3>Perbanas</h3>-->
-                                        <p>Bank Mandiri and BRI became a member of PERBANAS.</p>
+                                        <p>Bank Mandiri dan BRI ditetapkan sebagai anggota PERBANAS.</p>
                                     </div>
                                 </div>
                             </li>
@@ -212,9 +216,10 @@
                     </div>
                 </div>
             </div>
+            <div id="organization-structure" class="anchor-with-offset"></div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="subsection-title text-center">
+                    <div class="subsection-title text-center hide">
                         <div class="subsection-title-container">
                             <h2>Organization</h2>
                             <hr />
@@ -224,6 +229,13 @@
                     <div>
                         <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.png" />
                     </div>
+                </div>
+            </div>
+            <div id="former-chairmen-title" class="anchor-with-offset"></div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="subsection-title-former-chairmen">
+                        <span>Former</span> Chairmen</h2>
                 </div>
             </div>
             <div id="former-chairmen" class="carousel slide">

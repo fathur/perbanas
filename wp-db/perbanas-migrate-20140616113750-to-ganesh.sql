@@ -1,3 +1,4 @@
+use perbanas;
 # WordPress MySQL database migration
 # From http://localhost/perbanas to http://localhost/perbanas
 #
