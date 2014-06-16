@@ -163,16 +163,46 @@ function initGoogleMaps() {
 }
 
 var searchTextboxVisible = false;
+var languageMenuVisible = false;
 function setupTopNav() {
     $('#search-button').click(function() {
+        toggleSearchTextBox(searchTextboxVisible);
         if (searchTextboxVisible) {
-            $('#search-textbox').fadeOut('fast');
             searchTextboxVisible = false;
         }
         else {
-            $('#search-textbox').fadeIn('fast');
             searchTextboxVisible = true;
-            $('#search-textbox').focus();
         }
     });
+    $('#language-button').click(function() {
+        toggleLanguageMenu(languageMenuVisible);
+        if (languageMenuVisible) {
+            languageMenuVisible = false;
+        }
+        else {
+            languageMenuVisible = true;
+        }
+    });
+}
+
+function toggleSearchTextBox(makeVisible) {
+    if (makeVisible) {
+        toggleLanguageMenu(false);
+        languageMenuVisible = false;
+        $('#search-textbox').fadeIn('fast');
+        $('#search-textbox').focus();
+    }
+    else {
+        $('#search-textbox').fadeOut('fast');
+    }
+}
+function toggleLanguageMenu(makeVisible) {
+     if (makeVisible) {
+        toggleSearchTextBox(false);
+        searchTextboxVisible = false;
+        $('#language-dropdown').fadeIn('fast');
+    }
+    else {
+        $('#language-dropdown').fadeOut('fast');
+    }   
 }

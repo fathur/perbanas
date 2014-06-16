@@ -85,6 +85,30 @@ a:hover {
     .top-nav li.last {
         margin-right: 0;
     }
+    #search-textbox {
+        display: none;
+        position: absolute;
+        font-size: 12px;
+        padding: 5px;
+        top: 15px;
+        right: 0;
+        width: 256px;
+        margin-right: 15px;
+        border: 1px solid #009BDE;
+    }
+    #language-dropdown {
+        position: absolute;
+        float: none;
+        top: 15px;
+        right: 0;
+    }
+    #language-dropdown li {
+        display: block;
+        margin-top: 10px;
+    }
+    .language-dropdown-container {
+        position: relative;
+    }
 /* general: navbar */
     /* start bootstrap affix adjustments */
     .navbar-header {

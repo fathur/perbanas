@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-3 sidebar hidden-xs">
             <div class="sidebar-title">
-                <h2>About</h2>
+                <h2>Lingkup Kerja</h2>
             </div>
             <?php echo perbanas_side_menu('about-menu', 'leftMenu'); ?>
         </div>
