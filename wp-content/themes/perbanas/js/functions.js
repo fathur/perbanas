@@ -20,12 +20,12 @@ function onScrollOff(callback) {
 }
 // callback actions
 function resetAffixNavigation() {
-    $(window).off('.affix');
+    $('#navbar-main').off('.affix');
     $('#navbar-main').removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     $('#navbar-main').affix({ offset: $('.header').outerHeight(true)});
 }
 
-var state = false;
+var isNavbarMenuThresholdReached = false;
 function onNavbarMenuThresholdReached() {
     var paddingNarrow;
     var paddingWide;
@@ -41,14 +41,15 @@ function onNavbarMenuThresholdReached() {
         // do nothing
     }
     var currentPosition = $(this).scrollTop();
-    if (currentPosition > NAVBAR_THRESHOLD && state) {
+    if (currentPosition > NAVBAR_THRESHOLD && isNavbarMenuThresholdReached) {
         adjustNavbarMenu(true, paddingNarrow, paddingWide);
-        state = !state;
+        isNavbarMenuThresholdReached = !isNavbarMenuThresholdReached;
     }
-    else if (currentPosition < NAVBAR_THRESHOLD && !state) {
+    else if (currentPosition < NAVBAR_THRESHOLD && !isNavbarMenuThresholdReached) {
         adjustNavbarMenu(false, paddingNarrow, paddingWide);
-        state = !state;
+        isNavbarMenuThresholdReached = !isNavbarMenuThresholdReached;
     }
+
 }
 
 function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
@@ -66,7 +67,9 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
         'fast', // how fast we are animating
         'swing', // the type of easing
         function() {
-            // Animation complete.
+            if (!expand) {
+                $('#navbar-main li.first').css('padding-right', '');
+            }
         }
     );
     $('#navbar-main li.last').animate({
@@ -75,7 +78,9 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
         'fast', // how fast we are animating
         'swing', // the type of easing
         function() {
-            // Animation complete.
+            if (!expand) {
+                $('#navbar-main li.last').css('padding-left', '');
+            }
         }
     );
     $('#navbar-main li').not('.first').not('.last').animate({
@@ -85,14 +90,20 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
         'fast', // how fast we are animating
         'swing', // the type of easing
         function() {
-            // Animation complete.
+            if (!expand) {
+                $('#navbar-main li').css('padding-left', '');
+                $('#navbar-main li').css('padding-right', '');
+            }
         }
     );
 }
 
 
 // event upcoming
-function toggleEventDetailVisibility() {
+function sidebarAffix() {
+    var offset = $('.website-header').outerHeight(true) + $('.navbar-container').outerHeight(true) + $('.breadcrumbs').outerHeight(true);
+    //$('.sidebar').affix({'offset': 301});
+
 }
 
 // contact

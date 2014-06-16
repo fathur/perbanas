@@ -39,7 +39,6 @@ h2 {
     font-weight: 300;
 }
 h3 {
-    /* font-size: 18px; */
     font-size: 22px;
     font-weight: 400;
     line-height: 1.2;
@@ -646,7 +645,19 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     background: #C4D600;
     height: 3px;
 }
-
+.about-who-we-are .subsection-title.subsection-title-history span {
+    border-bottom: 2px solid #C4D600;
+}
+.about-who-we-are .subsection-title-former-chairmen {
+    font-size: 52px;
+    margin-bottom: 45px;
+}
+.about-who-we-are .subsection-title-former-chairmen span {
+    font-size: 36px;
+    border-bottom: 2px solid #004987;
+    position: relative;
+    top: -13px;
+}
 .about-who-we-are .hr {
     height:1px;
     background: #7fa4c3;
