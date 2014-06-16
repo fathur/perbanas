@@ -161,3 +161,18 @@ function initGoogleMaps() {
         map = new google.maps.Map(mapElement, mapOptions);
     }
 }
+
+var searchTextboxVisible = false;
+function setupTopNav() {
+    $('#search-button').click(function() {
+        if (searchTextboxVisible) {
+            $('#search-textbox').fadeOut('fast');
+            searchTextboxVisible = false;
+        }
+        else {
+            $('#search-textbox').fadeIn('fast');
+            searchTextboxVisible = true;
+            $('#search-textbox').focus();
+        }
+    });
+}

@@ -34,10 +34,24 @@
 									<?php if ( is_user_logged_in() ) { ?>
 									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>">Member Area</a></li>
 									<?php } ?>
-									<li><a href="#">Search</a></li>
+									<li><a id="search-button" href="#">Search</a></li>
 									<li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a></li>
 									<li class="last"><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>
 								</ul>
+							</div>
+						</div>
+						<div class="row top-nav-extra">
+							<div class="col-xs-8"></div>
+							<div class="col-xs-4 text-right">
+								<input type="text" id="search-textbox" style="
+							    position: absolute;
+							    font-size: 12px;
+							    padding: 5px;
+							    top: 15px;
+							    right: 0;
+							    width: 256px;
+							    margin-right: 15px;
+							    border: 1px solid #009BDE;" />
 							</div>
 						</div>
 						<div class="logo-container">

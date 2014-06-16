@@ -13,8 +13,12 @@ function page_general_init() {
 
     /* desktop only */
     onScroll(onNavbarMenuThresholdReached);
-    onResize(onNavbarMenuThresholdReached);
-    /* end desktop only */
 
-    sidebarAffix();
+    // what was this code for?
+    onResize(function() {
+        //onScroll(onNavbarMenuThresholdReached);
+    });
+
+    setupTopNav();
+
 }
