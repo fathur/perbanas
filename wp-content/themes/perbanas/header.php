@@ -27,8 +27,8 @@
 				<div class="row">
 					<div class="col-xs-12 block text-center">
 						<div class="row top-nav">
-							<div class="col-xs-8"></div>
-							<div class="col-xs-4">
+							<div class="col-xs-6"></div>
+							<div class="col-xs-6">
 								<ul>
 									<li><?php echo wp_loginout( get_permalink() ); ?></li>
 									<?php if ( is_user_logged_in() ) { ?>
