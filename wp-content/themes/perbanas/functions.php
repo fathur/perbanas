@@ -34,6 +34,7 @@ function perbanas_cssjs() {
 		// Add select bootstrap script and style
 		if ( get_post_type() == 'regionalboard' ) {
 			wp_enqueue_script('select2-js', get_template_directory_uri() . '/js/select2-3.4.8/select2.min.js',array(),'',TRUE);
+			wp_enqueue_script('page-council', get_template_directory_uri() . '/js/page.council.js',array(),'',TRUE);
 		}
 		
 		// Add script for contact page

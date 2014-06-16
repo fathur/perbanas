@@ -34,7 +34,7 @@
 		page_general_init();
 		
 		<?php if ( get_post_type() == 'regionalboard' ) :?>
-		$('select').select2();
+		page_regional_board_single_init();
 		<?php endif; ?>
 
 		<?php if( is_page('who-we-are') ) :?>
