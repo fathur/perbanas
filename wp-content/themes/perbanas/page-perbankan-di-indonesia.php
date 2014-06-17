@@ -8,14 +8,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 sidebar">
+        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm">
             <div class="sidebar-title">
                 <h2>Member Banks</h2>
             </div>
             
             <?php echo perbanas_side_menu('industryguidelines-menu', 'leftMenu'); ?>
         </div>
-        <div class="col-xs-12 col-sm-9 main-content-pane">
+        <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
                     <h1><div></div><span>Banking In Indonesia</span></h1>

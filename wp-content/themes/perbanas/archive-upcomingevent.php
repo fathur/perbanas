@@ -11,7 +11,7 @@ get_header(); ?>
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 sidebar">
+        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm">
             <div class="sidebar-title">
                 <h2>Events</h2>
             </div>
@@ -19,7 +19,7 @@ get_header(); ?>
             <?php echo perbanas_side_menu('event-menu', 'leftMenu'); ?>
             
         </div>
-        <div class="col-xs-12 col-sm-9 main-content-pane">
+        <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
                     <h1><div></div><span>Upcoming Events</span></h1>

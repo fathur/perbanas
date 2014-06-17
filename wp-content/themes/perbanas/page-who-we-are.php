@@ -8,13 +8,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 sidebar hidden-xs">
+        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm hidden-xs">
             <div class="sidebar-title">
                 <h2>About</h2>
             </div>
             <?php echo perbanas_side_menu('about-menu', 'leftMenu'); ?>
         </div>
-        <div class="col-xs-12 col-sm-9 main-content-pane">
+        <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
                     <h1><span>Who We Are</span></h1>
