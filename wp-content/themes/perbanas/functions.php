@@ -130,8 +130,6 @@ function perbanas_header_menu() {
 			$args_gpm = get_post_type();
 		}
 		
-		
-		
 		$generated_menu = '<ul class="nav navbar-nav">';
 
 		// First items
@@ -180,7 +178,12 @@ function perbanas_header_menu() {
 }
 
 /**
- * post_name => lists
+ * Melakukan asosiasi antara menu utama dengan menu side.
+ * array key utama menandakan slug menu name yang tersimpan di database
+ * array value dari page adalah halaman2 page yang diasosiasikan dengan menu utama
+ * array value dari post_type adalah halaman2 post type yang diasosiasikan dengan menu utama
+ * location adalah sesuai dengan lokasi dari funsi perbanas_register_menu()
+ * 
  */
 function __get_postname_menu( $cari ) {
 	
@@ -283,24 +286,16 @@ function __perbanas_header_mobile_menu( $menu_name, $id) {
 	if ( $menus && count( $menus ) > 0 ) {
 	
 		$list_menus		= "<ul class='hidden-md hidden-lg dropdown-menu' >";
-	
+		
 		foreach ( $menus as $menu ) {
-				
-			
-				
+	
 			if ( __has_child( $menu->children )) {
-	
-				/*$list_menus .= '<div class="accordion-group">
-						<div class="accordion-heading">
-							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
-								<i class="icon-home"></i> '. $menu->title .
-									'</a>
-							<hr class="'.$class_active.'" />
-						</div>';
-	
-				__generate_child_menu( $menu->children, $list_menus, 0, $menu->url );
-	
-				$list_menus .= '</div>';*/
+				
+				$list_menus .= "<li>";
+				$list_menus .= "<a class='hidden-xs hidden-sm' href='".$menu->url."'>".$menu->title."</a>";
+				$list_menus .= "<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu->url."'>".$menu->title." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
+				$list_menus .= __generate_child_mobile_menu( $menu->children, $list_menus, 0, $menu->url );
+				$list_menus .= "</li>";
 	
 			} else {
 	
@@ -381,6 +376,28 @@ function perbanas_footer_menu($menu_name, $id) {
 		
 		return $list_menus . "</div>";
 	}
+}
+
+function __generate_child_mobile_menu( &$menus, &$list_menus, $level, &$url_collapse = '' ) {
+
+	// Mengahapus simbol # (kres) pada string pertama
+	$kres = substr($url_collapse, 0, 1);
+	if ('#' == $kres) $url_collapse = substr($url_collapse, 1);
+
+	$list_menus .= '<ul class="hidden-md hidden-lg dropdown-menu" >';
+
+	foreach ( $menus as $menu ) {
+		
+		if ( __has_child( $menu->children ) ) {
+			
+		} else {
+			$list_menus .= '<li><a href="'.$menu->url.'" class="item">'.$menu->title.'</a></li>';
+		}
+
+		
+	}
+
+	$list_menus .= "</ul>";
 }
 
 function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = '' ) {
