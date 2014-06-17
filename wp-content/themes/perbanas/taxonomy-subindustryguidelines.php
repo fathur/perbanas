@@ -48,7 +48,7 @@ get_header(); ?>
 					<div class="col-xs-10">
 						<h2><a href="<?php echo get_permalink( get_the_ID() ); ?>"><?php echo esc_attr( get_the_title() ); ?></a></h2>
 						
-						<p class="desc">Size: 13,55 KB <span class="divider">|</span> <?php the_date(); ?> <span class="divider">|</span> Format: .pdf</p>
+						<p class="desc">Size: <?php echo perbanas_get_postmeta_size( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') ); ?> <span class="divider">|</span> <?php the_date(); ?> <span class="divider">|</span> Format: <?php echo perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') ); ?></p>
 						<p class="desc-detailed">
 							<?php the_content(); ?>
 						</p>
