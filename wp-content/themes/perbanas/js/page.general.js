@@ -6,9 +6,7 @@ function page_general_init() {
 
     // init bootstrap affix for both mobile and desktop. call resetAffixNavigation again at breakpoints
     resetAffixNavigation();
-    onResize(function() {
-        resetAffixNavigation();
-    });
+    onResize(resetAffixNavigation);
     /* end ALL screen sizes */
 
     /* desktop only */
@@ -16,9 +14,10 @@ function page_general_init() {
 
     // what was this code for?
     onResize(function() {
-        //onScroll(onNavbarMenuThresholdReached);
+        onScroll(onNavbarMenuThresholdReached);
     });
 
+    sidebarAffix();
     setupTopNav();
 
 }

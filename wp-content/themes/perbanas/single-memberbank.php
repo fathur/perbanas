@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm">
+        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm sidebar">
             <div class="sidebar-title">
                 <h2>Member Banks</h2>
             </div>

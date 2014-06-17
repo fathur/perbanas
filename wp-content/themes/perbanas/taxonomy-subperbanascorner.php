@@ -9,7 +9,7 @@ $term = get_query_var( $wp_query->query_vars['taxonomy'] );
 		</div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm hidden-xs">
+        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm sidebar hidden-xs">
             <div class="sidebar-title">
                 <h2>News &amp; Media</h2>
             </div>
