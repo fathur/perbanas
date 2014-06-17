@@ -35,14 +35,8 @@
 									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>">Member Area</a></li>
 									<?php } ?>
 									<li><a id="search-button" href="#">Search</a></li>
-									<li class="last language-dropdown-container"><a id="language-button" href="#">Language</a>
-										<ul id="language-dropdown">
-									    <li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa</a></li>
-									    <li><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>
-									  </ul>
-									</li>
-									<!--<li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a></li>
-									<li class="last"><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>-->
+									<li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a></li>
+									<li class="last"><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>
 								</ul>
 							</div>
 						</div>
@@ -50,8 +44,16 @@
 							<div class="col-xs-8"></div>
 							<div class="col-xs-4 text-right">
 								<form action="<?php echo get_bloginfo('siteurl'); ?>" method="get">
-									<input type="text" name="s" id="search-textbox" />
-						    </form>
+									<input type="text" name="s" id="search-textbox" style="
+								    position: absolute;
+								    font-size: 12px;
+								    padding: 5px;
+								    top: 15px;
+								    right: 0;
+								    width: 256px;
+								    margin-right: 15px;
+								    border: 1px solid #009BDE;" />
+							    </form>
 							</div>
 						</div>
 						<div class="logo-container">

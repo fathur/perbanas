@@ -123,24 +123,25 @@ function perbanas_header_menu() {
 	if ( ($locations = get_nav_menu_locations()) AND (isset( $locations[$menu_name] )) ) {
 		$menu = wp_get_nav_menu_object($locations[$menu_name]);
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
-		
+
 		//print_r($menu_items);
 		
-		// Check jika adalah page
+		if (is_page()) {
+			$args_gpm = $pagename;
+		} elseif (is_post_type_archive()) {
+			$args_gpm = get_post_type();
+		}
 		
-		
-		// Check jika adalah post_type
-		
-		// Check jika adalah search results
+		echo $args_gpm;
 		
 		$generated_menu = '<ul class="nav navbar-nav">';
 
 		// First items
 		$generated_menu .= '<li class="first">';
-		if ( is_page( $pagename ) AND $menu_items[0]->post_name == __get_postname_menu( $pagename )->menu_key ) {
+		if ( (is_page( $pagename ) || is_post_type_archive( get_post_type() ) ) AND $menu_items[0]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
 			$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[0]->url."'>".$menu_items[0]->title."</a>".
 				"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[0]->url."'>".$menu_items[0]->title." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
-			$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu('who-we-are')->location,'hm');
+			$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu( $args_gpm )->location,'hm');
 		} else {
 			$generated_menu .= '<a href="'.$menu_items[0]->url.'">'.$menu_items[0]->title.'</a>';
 		}
@@ -149,10 +150,10 @@ function perbanas_header_menu() {
 		// All middle items
 		for ($i = 1; $i < count($menu_items)-1; $i++) {
 			$generated_menu .= '<li>';
-			if ( is_page( $pagename ) AND  $menu_items[$i]->post_name == __get_postname_menu( $pagename )->menu_key ) {
+			if ( (is_page( $pagename ) || is_post_type_archive( get_post_type() ) ) AND  $menu_items[$i]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
 				$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[$i]->url."'>".$menu_items[$i]->title."</a>".
 					"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[$i]->url."'>".$menu_items[$i]->title.$menu_items[$i]->post_name." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
-				$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu('who-we-are')->location,'hm');
+				$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu( $args_gpm )->location,'hm');
 			} else {
 				$generated_menu .= '<a href="'.$menu_items[$i]->url.'">'.$menu_items[$i]->title.'</a>';
 			}
@@ -161,10 +162,10 @@ function perbanas_header_menu() {
 		
 		// Last item
 		$generated_menu .= '<li class="last">';
-		if ( is_page( $pagename ) AND $menu_items[count($menu_items)-1]->post_name == __get_postname_menu( $pagename )->menu_key ) {
+		if ( (is_page( $pagename ) || is_post_type_archive( get_post_type() ) ) AND $menu_items[count($menu_items)-1]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
 			$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[count($menu_items)-1]->url."'>".$menu_items[count($menu_items)-1]->title."</a>".
 				"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[count($menu_items)-1]->url."'>".$menu_items[count($menu_items)-1]->title." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
-			$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu('who-we-are')->location,'hm');
+			$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu( $args_gpm )->location,'hm');
 		} else {
 			$generated_menu .= '<a href="'.$menu_items[count($menu_items)-1]->url.'">'.$menu_items[count($menu_items)-1]->title.'</a>';
 		}
@@ -196,12 +197,50 @@ function __get_postname_menu( $cari ) {
 				'kegiatan-perbanas',
 				'profil-perbanas'
 			),
-			'post_type'	=> array('p1','p2','p3'),
+			'post_type'	=> array(),
 			'location'	=> 'about-menu'
-		),
-		'about'	=> array(
-			'page'	=> array('who-wde-are','who-arde-you','who-ids-she'),
-			'post_type'	=> array('pd1','pd2','pd3')
+		),'council'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array(
+				'sector',
+				'regionalboard',
+				'advisoryboard',
+				'supervisoryboard',
+				'boardmember',
+				'secretariat'
+			),
+			'location'	=> 'council-menu'
+		),'member-banks'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array(
+				'memberbank'
+			),
+			'location'	=> 'member-bank-menu'
+		),'industry-guidelines'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array(
+				'industryguidelines'
+			),
+			'location'	=> 'industryguidelines-menu'
+		),'events'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array('upcomingevent','eventseminar'),
+			'location'	=> 'events-menu'
+		),'news-and-media'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array(
+				'news',
+				'pressrelease',
+				'probankmagazine',
+				'photogallery',
+				'download',
+				'perbanascorner'
+			),
+			'location'	=> 'news-menu'
+		),'contact'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array(),
+			'location'	=> ''
 		)
 	);
 	
