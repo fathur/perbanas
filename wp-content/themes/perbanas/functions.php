@@ -124,21 +124,19 @@ function perbanas_header_menu() {
 		$menu = wp_get_nav_menu_object($locations[$menu_name]);
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
 
-		//print_r($menu_items);
-		
 		if (is_page()) {
 			$args_gpm = $pagename;
 		} elseif (is_post_type_archive()) {
 			$args_gpm = get_post_type();
 		}
 		
-		// echo $args_gpm;
+		
 		
 		$generated_menu = '<ul class="nav navbar-nav">';
 
 		// First items
 		$generated_menu .= '<li class="first">';
-		if ( (is_page( $pagename ) || is_post_type_archive( get_post_type() ) ) AND $menu_items[0]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
+		if ( (is_page( $pagename ) || get_post_type() ) AND $menu_items[0]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
 			$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[0]->url."'>".$menu_items[0]->title."</a>".
 				"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[0]->url."'>".$menu_items[0]->title." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
 			$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu( $args_gpm )->location,'hm');
@@ -149,10 +147,13 @@ function perbanas_header_menu() {
 			
 		// All middle items
 		for ($i = 1; $i < count($menu_items)-1; $i++) {
+			/* var_dump( $menu_items[$i]->post_name );
+			var_dump( __get_postname_menu( $args_gpm )->menu_key ); */
+			
 			$generated_menu .= '<li>';
-			if ( (is_page( $pagename ) || is_post_type_archive( get_post_type() ) ) AND  $menu_items[$i]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
+			if ( (is_page( $pagename ) || get_post_type() ) AND  $menu_items[$i]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
 				$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[$i]->url."'>".$menu_items[$i]->title."</a>".
-					"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[$i]->url."'>".$menu_items[$i]->title.$menu_items[$i]->post_name." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
+					"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[$i]->url."'>".$menu_items[$i]->title." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
 				$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu( $args_gpm )->location,'hm');
 			} else {
 				$generated_menu .= '<a href="'.$menu_items[$i]->url.'">'.$menu_items[$i]->title.'</a>';
@@ -162,7 +163,7 @@ function perbanas_header_menu() {
 		
 		// Last item
 		$generated_menu .= '<li class="last">';
-		if ( (is_page( $pagename ) || is_post_type_archive( get_post_type() ) ) AND $menu_items[count($menu_items)-1]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
+		if ( (is_page( $pagename ) || get_post_type() ) AND $menu_items[count($menu_items)-1]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
 			$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[count($menu_items)-1]->url."'>".$menu_items[count($menu_items)-1]->title."</a>".
 				"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[count($menu_items)-1]->url."'>".$menu_items[count($menu_items)-1]->title." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
 			$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu( $args_gpm )->location,'hm');
@@ -246,20 +247,27 @@ function __get_postname_menu( $cari ) {
 	
 	// Main search 
 	foreach ($lists_menu_header as $menu_key => $menu_val) {
-		foreach ($menu_val as $key => $val ) {			
-			if (in_array($cari, $val )) {
-				$return->menu_key = $menu_key;
-				$return->location = $lists_menu_header[$menu_key]['location'];
-			} else {
-				$return->menu_key = FALSE;
-				$return->location = FALSE;
+		
+		foreach ($menu_val as $key => $val ) {
+			
+			if ('page' == $key) {
+				
+				if (in_array($cari, $val )) {
+					$return->menu_key = $menu_key;
+					$return->location = $lists_menu_header[$menu_key]['location'];
+				} 
 			}
 			
-			return $return;
+			if ('post_type' == $key) {
+				if (in_array($cari, $val )) {
+					$return->menu_key = $menu_key;
+					$return->location = $lists_menu_header[$menu_key]['location'];
+				}
+			}
 		}
 	}
 	
-	
+	return $return;
 }
 
 /**
