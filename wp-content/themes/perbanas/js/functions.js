@@ -102,7 +102,7 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
 // event upcoming
 function sidebarAffix() {
     var offset = $('.website-header').outerHeight(true) + $('.navbar-container').outerHeight(true) + $('.breadcrumbs').outerHeight(true);
-    $('.sidebar').affix({'offset': {'top': 301, 'bottom': 130}});
+    $('.sidebar').affix({'offset': {'top': 301, 'bottom': 0}});
 
 }
 
