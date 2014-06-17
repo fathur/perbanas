@@ -55,12 +55,14 @@
 						<div class="row top-nav-login-dialog-container">
 							<div class="col-xs-8"></div>
 							<div class="col-xs-4">
-								<form action="http://localhost/perbanas/en" method="get" class="top-nav-login-dialog-form">
-									<input type="text" placeholder="Username" name="username-textbox" id="username-textbox" />
-									<input type="text" placeholder="Password" name="password-textbox" id="password-textbox" />
+								<form action="<?php echo get_option('siteurl');?>/wp-login.php" method="post" class="top-nav-login-dialog-form">
+									<input type="text" placeholder="Username" name="log" id="user_login" />
+									<input type="password" placeholder="Password" name="pwd" id="user_pass" />
 									<div class="login-dialog-buttons">
-										<a class="forgot-password" href="#">Forgot password?</a>
-										<input type="submit" name="submit" class="btn" value="submit" />
+										<a class="forgot-password" href="<?php echo wp_lostpassword_url(); ?>">Forgot password?</a>
+										<input type="submit" name="wp-submit" id="wp-submit" class="btn" value="submit" />
+										<input type="hidden" name="redirect_to" value="http://localhost/perbanas/wp-admin/" />
+										<input type="hidden" name="testcookie" value="1" />
 									</div>
 						    </form>
 						  </div>
