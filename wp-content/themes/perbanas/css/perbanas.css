@@ -85,6 +85,12 @@ a:hover {
     .top-nav li.last {
         margin-right: 0;
     }
+    .top-nav-login-dialog input[type="text"] {
+        display: block;
+        border: 1px solid #009BDE;        
+        font-size: 12px;
+        padding: 5px;
+    }
     #search-textbox {
         display: none;
         position: absolute;
@@ -101,6 +107,7 @@ a:hover {
         float: none;
         top: 15px;
         right: 0;
+        display: none;
     }
     #language-dropdown li {
         display: block;

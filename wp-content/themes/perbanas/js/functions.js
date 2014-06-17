@@ -166,7 +166,7 @@ var searchTextboxVisible = false;
 var languageMenuVisible = false;
 function setupTopNav() {
     $('#search-button').click(function() {
-        toggleSearchTextBox(searchTextboxVisible);
+        toggleSearchTextBox(!searchTextboxVisible);
         if (searchTextboxVisible) {
             searchTextboxVisible = false;
         }
@@ -175,7 +175,7 @@ function setupTopNav() {
         }
     });
     $('#language-button').click(function() {
-        toggleLanguageMenu(languageMenuVisible);
+        toggleLanguageMenu(!languageMenuVisible);
         if (languageMenuVisible) {
             languageMenuVisible = false;
         }
