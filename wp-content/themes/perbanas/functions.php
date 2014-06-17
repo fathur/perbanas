@@ -116,24 +116,152 @@ add_action( 'init', 'perbanas_register_menu' );
  */
 function perbanas_header_menu() {
 	
+	global $pagename;
+	
 	$menu_name = 'header-menu';
 	
 	if ( ($locations = get_nav_menu_locations()) AND (isset( $locations[$menu_name] )) ) {
 		$menu = wp_get_nav_menu_object($locations[$menu_name]);
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
 		
-		$generated_menu = '<ul class="nav navbar-nav">';
-		$generated_menu .= '<li class="first"><a href="'.$menu_items[0]->url.'">'.$menu_items[0]->title.'</a></li>';
-			
-		for ($i = 1; $i < count($menu_items)-1; $i++)
-			$generated_menu .= '<li><a href="'.$menu_items[$i]->url.'">'.$menu_items[$i]->title.'</a></li>';			
+		//print_r($menu_items);
 		
-		$generated_menu .= '<li class="last"><a href="'.$menu_items[count($menu_items)-1]->url.'">'.$menu_items[count($menu_items)-1]->title.'</a></li>';
+		// Check jika adalah page
+		
+		
+		// Check jika adalah post_type
+		
+		// Check jika adalah search results
+		
+		$generated_menu = '<ul class="nav navbar-nav">';
+
+		// First items
+		$generated_menu .= '<li class="first">';
+		if ( is_page( $pagename ) AND $menu_items[0]->post_name == __get_postname_menu( $pagename )->menu_key ) {
+			$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[0]->url."'>".$menu_items[0]->title."</a>".
+				"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[0]->url."'>".$menu_items[0]->title." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
+			$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu('who-we-are')->location,'hm');
+		} else {
+			$generated_menu .= '<a href="'.$menu_items[0]->url.'">'.$menu_items[0]->title.'</a>';
+		}
+		$generated_menu .= '</li>';
+			
+		// All middle items
+		for ($i = 1; $i < count($menu_items)-1; $i++) {
+			$generated_menu .= '<li>';
+			if ( is_page( $pagename ) AND  $menu_items[$i]->post_name == __get_postname_menu( $pagename )->menu_key ) {
+				$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[$i]->url."'>".$menu_items[$i]->title."</a>".
+					"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[$i]->url."'>".$menu_items[$i]->title.$menu_items[$i]->post_name." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
+				$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu('who-we-are')->location,'hm');
+			} else {
+				$generated_menu .= '<a href="'.$menu_items[$i]->url.'">'.$menu_items[$i]->title.'</a>';
+			}
+			$generated_menu .= '</li>';
+		}
+		
+		// Last item
+		$generated_menu .= '<li class="last">';
+		if ( is_page( $pagename ) AND $menu_items[count($menu_items)-1]->post_name == __get_postname_menu( $pagename )->menu_key ) {
+			$generated_menu .= "<a class='hidden-xs hidden-sm' href='".$menu_items[count($menu_items)-1]->url."'>".$menu_items[count($menu_items)-1]->title."</a>".
+				"<a class='hidden-md hidden-lg dropdown-toggle' data-toggle='dropdown' href='".$menu_items[count($menu_items)-1]->url."'>".$menu_items[count($menu_items)-1]->title." <span class='arrow'><img class='hidden-md hidden-lg' src='".get_template_directory_uri()."/img/menu-arrow.png' /></span></a>";
+			$generated_menu .= __perbanas_header_mobile_menu( __get_postname_menu('who-we-are')->location,'hm');
+		} else {
+			$generated_menu .= '<a href="'.$menu_items[count($menu_items)-1]->url.'">'.$menu_items[count($menu_items)-1]->title.'</a>';
+		}
+		$generated_menu .= '</li>';
+	
 		$generated_menu .= '</ul>';
 		
 	}
 	
 	return $generated_menu;
+}
+
+/**
+ * post_name => lists
+ */
+function __get_postname_menu( $cari ) {
+	
+	// Create empty object
+	$return = new stdClass();
+	
+	// Register assiciated all menu content page, post or whatever here
+	$lists_menu_header = array(
+		'about-2'	=> array(
+			'page'	=> array(
+				'who-we-are',
+				'how-we-work',
+				'what-we-do',
+				'lingkup-kerja',
+				'kegiatan-perbanas',
+				'profil-perbanas'
+			),
+			'post_type'	=> array('p1','p2','p3'),
+			'location'	=> 'about-menu'
+		),
+		'about'	=> array(
+			'page'	=> array('who-wde-are','who-arde-you','who-ids-she'),
+			'post_type'	=> array('pd1','pd2','pd3')
+		)
+	);
+	
+	// Main search 
+	foreach ($lists_menu_header as $menu_key => $menu_val) {
+		foreach ($menu_val as $key => $val ) {			
+			if (in_array($cari, $val )) {
+				$return->menu_key = $menu_key;
+				$return->location = $lists_menu_header[$menu_key]['location'];
+			} else {
+				$return->menu_key = FALSE;
+				$return->location = FALSE;
+			}
+			
+			return $return;
+		}
+	}
+	
+	
+}
+
+/**
+ * Sama dengan perbanas_side_menu()
+ * @param unknown $menu_name
+ * @param unknown $id
+ * @return string
+ */
+function __perbanas_header_mobile_menu( $menu_name, $id) {
+
+	$menus = __find_all_thread( $menu_name );
+	
+	if ( $menus && count( $menus ) > 0 ) {
+	
+		$list_menus		= "<ul class='hidden-md hidden-lg dropdown-menu' >";
+	
+		foreach ( $menus as $menu ) {
+				
+			
+				
+			if ( __has_child( $menu->children )) {
+	
+				/*$list_menus .= '<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
+								<i class="icon-home"></i> '. $menu->title .
+									'</a>
+							<hr class="'.$class_active.'" />
+						</div>';
+	
+				__generate_child_menu( $menu->children, $list_menus, 0, $menu->url );
+	
+				$list_menus .= '</div>';*/
+	
+			} else {
+	
+				$list_menus .= "<li><a href='".$menu->url."'>".$menu->title."</a></li>";
+			}
+		}
+		return $list_menus . "</ul>";
+	}
 }
 
 function perbanas_side_menu( $menu_name, $id ) {
