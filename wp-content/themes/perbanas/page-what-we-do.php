@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm hidden-xs">
+        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm sidebar hidden-xs">
             <div class="sidebar-title">
                 <h2>About</h2>
             </div>

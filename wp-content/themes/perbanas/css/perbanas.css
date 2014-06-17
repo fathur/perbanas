@@ -86,7 +86,7 @@ a:hover {
         margin-right: 0;
     }
     .top-nav-login-dialog-container {
-        ddisplay: none;
+        display: none;
     }
     .top-nav-login-dialog-container input[type="text"], .top-nav-login-dialog-container input[type="password"] {
         display: block;

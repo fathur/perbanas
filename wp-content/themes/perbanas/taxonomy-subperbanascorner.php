@@ -9,16 +9,28 @@ $term = get_query_var( $wp_query->query_vars['taxonomy'] );
 		</div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 hidden-xs hidden-sm hidden-xs">
-            <div class="sidebar-title">
-                <h2>News &amp; Media</h2>
+        <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
+            <div class="sidebar">
+                <div class="sidebar-title">
+                    <h2>News &amp; Media</h2>
+                </div>
+    			<?php echo perbanas_side_menu('news-menu', 'leftMenu'); ?>
             </div>
-			<?php echo perbanas_side_menu('news-menu', 'leftMenu'); ?>
-        </div>
+        </nav>
         <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>Education</span></h1>
+                    <h1>
+                        <div></div>
+                        <?php
+                        if ( $term == 'education' ) {
+                            echo '<span>Education</span>';
+                        }
+                        elseif ( $term == 'faq' ) {
+                            echo '<span>FAQ</span>';
+                        }
+                        ?>
+                    </h1>
                 </div>
             </div>
             <?php if ( $term == 'education' ) {
