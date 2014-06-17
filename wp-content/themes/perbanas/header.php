@@ -30,9 +30,12 @@
 							<div class="col-xs-6"></div>
 							<div class="col-xs-6">
 								<ul>
-									<li><a id="login-button" href="#">Log In</a><?php //echo wp_loginout( get_permalink() ); ?></li>
+									
 									<?php if ( is_user_logged_in() ) { ?>
+									<li><a href="<?php echo wp_logout_url( get_bloginfo('siteurl') ); ?>">Log Out</a><?php //echo wp_loginout( get_permalink() ); ?></li>
 									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>">Member Area</a></li>
+									<?php } else { ?>
+									<li><a id="login-button" href="#">Log In</a></li>
 									<?php } ?>
 									<li><a id="search-button" href="#">Search</a></li>
 									<li class="last language-dropdown-container"><a id="language-button" href="#">Language</a>
@@ -52,21 +55,24 @@
 						    </form>
 							</div>
 						</div>
+						<?php if ( ! is_user_logged_in() ) { ?>
 						<div class="row top-nav-login-dialog-container">
 							<div class="col-xs-8"></div>
 							<div class="col-xs-4">
 								<form action="<?php echo get_option('siteurl');?>/wp-login.php" method="post" class="top-nav-login-dialog-form">
 									<input type="text" placeholder="Username" name="log" id="user_login" />
 									<input type="password" placeholder="Password" name="pwd" id="user_pass" />
+
 									<div class="login-dialog-buttons">
 										<a class="forgot-password" href="<?php echo wp_lostpassword_url(); ?>">Forgot password?</a>
 										<input type="submit" name="wp-submit" id="wp-submit" class="btn" value="submit" />
-										<input type="hidden" name="redirect_to" value="http://localhost/perbanas/wp-admin/" />
+										<input type="hidden" name="redirect_to" value="<?php echo get_bloginfo('siteurl'); // ( $_SERVER['REQUEST_URI'] ); ?>" />
 										<input type="hidden" name="testcookie" value="1" />
 									</div>
 						    </form>
 						  </div>
 						</div>
+						<?php } ?>
 						<div class="logo-container text-center">
 							<a href="<?php echo get_bloginfo('siteurl'); ?>">
 							<img width="214px" height="149px" class="logo"
