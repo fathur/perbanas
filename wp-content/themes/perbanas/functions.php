@@ -132,7 +132,7 @@ function perbanas_header_menu() {
 			$args_gpm = get_post_type();
 		}
 		
-		echo $args_gpm;
+		// echo $args_gpm;
 		
 		$generated_menu = '<ul class="nav navbar-nav">';
 
