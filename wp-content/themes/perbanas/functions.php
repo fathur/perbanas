@@ -126,7 +126,7 @@ function perbanas_header_menu() {
 
 		if (is_page()) {
 			$args_gpm = $pagename;
-		} elseif (is_post_type_archive()) {
+		} elseif (get_post_type()) {
 			$args_gpm = get_post_type();
 		}
 		
@@ -145,8 +145,6 @@ function perbanas_header_menu() {
 			
 		// All middle items
 		for ($i = 1; $i < count($menu_items)-1; $i++) {
-			/* var_dump( $menu_items[$i]->post_name );
-			var_dump( __get_postname_menu( $args_gpm )->menu_key ); */
 			
 			$generated_menu .= '<li>';
 			if ( (is_page( $pagename ) || get_post_type() ) AND  $menu_items[$i]->post_name == __get_postname_menu( $args_gpm )->menu_key ) {
@@ -393,8 +391,6 @@ function __generate_child_mobile_menu( &$menus, &$list_menus, $level, &$url_coll
 		} else {
 			$list_menus .= '<li><a href="'.$menu->url.'" class="item">'.$menu->title.'</a></li>';
 		}
-
-		
 	}
 
 	$list_menus .= "</ul>";
