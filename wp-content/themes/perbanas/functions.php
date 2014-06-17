@@ -219,7 +219,10 @@ function __get_postname_menu( $cari ) {
 			),
 			'location'	=> 'member-bank-menu'
 		),'industry-guidelines'	=> array(
-			'page'	=> array(),
+			'page'	=> array(
+				'banking-in-indonesia',
+				'perbankan-di-indonesia'
+			),
 			'post_type'	=> array(
 				'industryguidelines'
 			),
