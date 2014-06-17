@@ -621,3 +621,41 @@ function perbanas_get_metaval_by_id( $meta_id ) {
 
 	return false;
 }
+
+/**
+ * Fungsi ini hanya untuk post meta saja tidak yang lainnya
+ * @param unknown $id
+ */
+function perbanas_get_postmeta_extension( $id ) {
+	
+	$fileloc 	= perbanas_get_metaval_by_id( $id );
+	$ext 		= pathinfo($fileloc, PATHINFO_EXTENSION);
+	return '.'.$ext;
+}
+
+function perbanas_get_postmeta_size( $id ) {
+	$bytes = filesize(str_replace( get_option('siteurl').'/', ABSPATH, perbanas_get_metaval_by_id($id)));
+	//$bytes = 10000;
+	$precision = 2;
+	
+	$units = array('B', 'KB', 'MB', 'GB', 'TB');
+	
+	$bytes = max($bytes, 0);
+	$pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+	$pow = min($pow, count($units) - 1);
+	
+	// Uncomment one of the following alternatives
+	$bytes /= pow(1024, $pow);
+	// $bytes /= (1 << (10 * $pow));
+	
+	return round($bytes, $precision) . ' ' . $units[$pow];
+}
+
+function dhgjds($id='') {
+	/* print_r( ABSPATH );
+	echo "<br/>";
+	print_r(perbanas_get_metaval_by_id($id)); */
+	// echo get_home_path();
+	
+	print_r( str_replace( get_option('siteurl').'/', ABSPATH, perbanas_get_metaval_by_id($id)) );
+}

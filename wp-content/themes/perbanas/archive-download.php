@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-xs-9">
                     <h2><a href="<?php echo get_permalink(); ?>?id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><?php echo get_the_title(); ?></a></h2>
-                    <p class="desc">Size: 13,55 KB <span class="divider">|</span> <?php echo get_the_date(); ?> <span class="divider">|</span> Format: .pdf</p>
+                    <p class="desc">Size: <?php echo perbanas_get_postmeta_size( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') ); ?> <span class="divider">|</span> <?php echo get_the_date(); ?> <span class="divider">|</span> Format: <?php echo perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') ); ?></p>
                 </div>
                 <div class="col-xs-2 text-center">
                     <a href="<?php echo get_permalink(); ?>?id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/download-button-05.png"></a>
@@ -53,7 +53,7 @@
             </div>
             <hr />
 				
-				<?php 
+				<?php 					
 					endwhile;
 				endif; 
 			?>
@@ -65,4 +65,5 @@
         </div>
     </div>
 </div>
+
 <?php get_footer(); ?>
