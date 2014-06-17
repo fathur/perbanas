@@ -57,7 +57,7 @@
 							<div class="col-xs-4">
 								<form action="http://localhost/perbanas/en" method="get" class="top-nav-login-dialog-form">
 									<input type="text" placeholder="Username" name="username-textbox" id="username-textbox" />
-									<input type="text" placeholder="Password" name="password-textbox" id="password-textbox" />
+									<input type="password" placeholder="Password" name="password-textbox" id="password-textbox" />
 									<div class="login-dialog-buttons">
 										<a class="forgot-password" href="#">Forgot password?</a>
 										<input type="submit" name="submit" class="btn" value="submit" />

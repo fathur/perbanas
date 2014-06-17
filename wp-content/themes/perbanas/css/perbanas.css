@@ -88,7 +88,7 @@ a:hover {
     .top-nav-login-dialog-container {
         ddisplay: none;
     }
-    .top-nav-login-dialog-container input[type="text"] {
+    .top-nav-login-dialog-container input[type="text"], .top-nav-login-dialog-container input[type="password"] {
         display: block;
         border: 1px solid #009BDE;        
         font-size: 10px;
