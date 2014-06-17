@@ -54,7 +54,7 @@
 						    </form>
 							</div>
 						</div>
-						<div class="row top-nav-login-dialog">
+						<!--<div class="row top-nav-login-dialog">
 							<div class="col-xs-8"></div>
 							<div class="col-xs-4 text-right">
 								<form action="http://localhost/perbanas/en" method="get">
@@ -64,7 +64,7 @@
 									<input type="submit" name="submit" value="submit" />
 						    </form>
 						  </div>
-						</div>
+						</div>-->
 						<div class="logo-container">
 							<a href="<?php echo get_bloginfo('siteurl'); ?>">
 							<img width="214px" height="149px" class="logo"
