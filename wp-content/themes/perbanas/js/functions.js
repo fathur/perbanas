@@ -164,6 +164,7 @@ function initGoogleMaps() {
 
 var searchTextboxVisible = false;
 var languageMenuVisible = false;
+var loginDialogVisible = false;
 function setupTopNav() {
     $('#search-button').click(function() {
         toggleSearchTextBox(!searchTextboxVisible);
@@ -183,12 +184,24 @@ function setupTopNav() {
             languageMenuVisible = true;
         }
     });
+    $('#login-button').click(function(e) {
+        toggleLoginDialog(!loginDialogVisible);
+        if (loginDialogVisible) {
+            loginDialogVisible = false;
+        }
+        else {
+            loginDialogVisible = true;
+        }
+        e.preventDefault();
+    });
 }
 
 function toggleSearchTextBox(makeVisible) {
     if (makeVisible) {
         toggleLanguageMenu(false);
         languageMenuVisible = false;
+        toggleLoginDialog(false);
+        loginDialogVisible = false;
         $('#search-textbox').fadeIn('fast');
         $('#search-textbox').focus();
     }
@@ -200,9 +213,24 @@ function toggleLanguageMenu(makeVisible) {
      if (makeVisible) {
         toggleSearchTextBox(false);
         searchTextboxVisible = false;
+        toggleLoginDialog(false);
+        loginDialogVisible = false;
         $('#language-dropdown').fadeIn('fast');
     }
     else {
         $('#language-dropdown').fadeOut('fast');
     }   
+}
+function toggleLoginDialog(makeVisible) {
+    toggleSearchTextBox(false);
+    searchTextboxVisible = false;
+    toggleLanguageMenu(false);
+    languageMenuVisible = false;
+    if (makeVisible) {
+
+        $('.top-nav-login-dialog-container').fadeIn('fast');
+    }
+    else {
+        $('.top-nav-login-dialog-container').fadeOut('fast');
+    }    
 }

@@ -25,12 +25,12 @@
 		<div class="row header hidden-sm hidden-xs">
 			<div class="col-xs-12 header-inner">
 				<div class="row">
-					<div class="col-xs-12 block text-center">
+					<div class="col-xs-12 block">
 						<div class="row top-nav">
 							<div class="col-xs-6"></div>
 							<div class="col-xs-6">
 								<ul>
-									<li><?php echo wp_loginout( get_permalink() ); ?></li>
+									<li><a id="login-button" href="#">Log In</a><?php //echo wp_loginout( get_permalink() ); ?></li>
 									<?php if ( is_user_logged_in() ) { ?>
 									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>">Member Area</a></li>
 									<?php } ?>
@@ -41,8 +41,6 @@
 									    <li><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>
 									  </ul>
 									</li>
-									<!--<li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a></li>
-									<li class="last"><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>-->
 								</ul>
 							</div>
 						</div>
@@ -54,18 +52,20 @@
 						    </form>
 							</div>
 						</div>
-						<!--<div class="row top-nav-login-dialog">
+						<div class="row top-nav-login-dialog-container">
 							<div class="col-xs-8"></div>
-							<div class="col-xs-4 text-right">
-								<form action="http://localhost/perbanas/en" method="get">
-									<input type="text" name="username-textbox" id="username-textbox" />
-									<input type="text" name="password-textbox" id="password-textbox" />
-									<a href="#">Forgot password?</a>
-									<input type="submit" name="submit" value="submit" />
+							<div class="col-xs-4">
+								<form action="http://localhost/perbanas/en" method="get" class="top-nav-login-dialog-form">
+									<input type="text" placeholder="Username" name="username-textbox" id="username-textbox" />
+									<input type="text" placeholder="Password" name="password-textbox" id="password-textbox" />
+									<div class="login-dialog-buttons">
+										<a class="forgot-password" href="#">Forgot password?</a>
+										<input type="submit" name="submit" class="btn" value="submit" />
+									</div>
 						    </form>
 						  </div>
-						</div>-->
-						<div class="logo-container">
+						</div>
+						<div class="logo-container text-center">
 							<a href="<?php echo get_bloginfo('siteurl'); ?>">
 							<img width="214px" height="149px" class="logo"
 								src="<?php echo get_template_directory_uri(); ?>/img/LOGO_PERBANAS_EN.png" />

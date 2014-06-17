@@ -85,18 +85,33 @@ a:hover {
     .top-nav li.last {
         margin-right: 0;
     }
-    .top-nav-login-dialog input[type="text"] {
+    .top-nav-login-dialog-container {
+        ddisplay: none;
+    }
+    .top-nav-login-dialog-container input[type="text"] {
         display: block;
         border: 1px solid #009BDE;        
-        font-size: 12px;
+        font-size: 10px;
         padding: 5px;
+        margin-top: 10px;
+    }
+    .top-nav-login-dialog-container .login-dialog-buttons {
+        margin-top: 10px;
+    }
+    .top-nav-login-dialog-container .forgot-password {
+        font-size: 10px;
+    }
+    .top-nav-login-dialog-container .top-nav-login-dialog-form {
+        position: absolute;
+        right: 15px;
     }
     #search-textbox {
         display: none;
         position: absolute;
-        font-size: 12px;
+        font-size: 10px;
         padding: 5px;
-        top: 15px;
+        margin-top: 10px;
+        top: 0;
         right: 0;
         width: 256px;
         margin-right: 15px;
