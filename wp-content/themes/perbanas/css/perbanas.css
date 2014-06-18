@@ -37,10 +37,21 @@ h1 {
     font-size: 42px;
     font-weight: 300;
 }
+@media screen and (max-width: 992px) {
+    h1 {
+        font-size: 30px;
+    }
+}
 h2 {
     font-size: 36px;
     font-weight: 300;
 }
+@media screen and (max-width: 992px) {
+    h2 {
+        font-size: 24px;
+    }
+}
+
 h3 {
     /* font-size: 18px; */
     font-size: 22px;
@@ -48,6 +59,12 @@ h3 {
     line-height: 1.2;
     margin-bottom: 15px;
 }
+@media screen and (max-width: 992px) {
+    h3 {
+        font-size: 18px;
+    }
+}
+
 hr {
     border: 0;
 }
@@ -746,6 +763,19 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     position: relative;
     top: -13px;
 }
+@media screen and (max-width: 991px) {
+    .about-who-we-are .subsection-title-former-chairmen {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }    
+    .about-who-we-are .subsection-title-former-chairmen span {
+        font-size: 24px;
+        border-bottom: 2px solid #004987;
+        position: relative;
+        top: -9px;
+    }
+
+}
 .about-who-we-are .hr {
     height:1px;
     background: #7fa4c3;
@@ -984,6 +1014,12 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .about-who-we-are .vm-title h2 {
     margin-bottom: 40px;
     font-size: 48px;
+}
+@media screen and (max-width: 991px) {
+    .about-who-we-are .vm-title h2 {
+        margin-bottom: 40px;
+        font-size: 36px;
+    }    
 }
 .about-who-we-are .vm-title hr {
     margin: 0 auto;
