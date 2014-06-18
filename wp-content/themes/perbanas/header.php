@@ -90,7 +90,7 @@
 			<div class="container">
 				<div class="navbar-header">
 					<div class="navbar-main-collapsed-menu-logo hidden-md hidden-lg">
-						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo-collapsed.png"></a>
+						<a href="<?php echo get_option('siteurl'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo-collapsed.png"></a>
 					</div>
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target=".navbar-collapse">
