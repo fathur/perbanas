@@ -17,6 +17,30 @@
         </nav>
         <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
+                <div class="col-xs-12 text-right">
+                    <select>
+                        <option>Other Regional Board</option>
+                        <?php 
+                            $args = array( 'post_type' => get_post_type() );
+                            $query = new WP_Query( $args );
+                        
+                            if ( $query->have_posts() ) {
+                                
+                                while ( $query->have_posts() ) {
+                                    $query->the_post(); ?>
+                                    
+                                    <option value="<?php echo basename(get_permalink()); ?>"><?php echo get_the_title(); ?></option>
+                                    <?php 
+                                }
+                                
+                            } 
+                            wp_reset_postdata();
+                        
+                        ?> 
+                    </select>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-xs-12 section-title">
                     <h1><div></div><span>Probank Magazine</span></h1>
                 </div>

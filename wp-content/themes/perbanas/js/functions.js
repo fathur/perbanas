@@ -234,3 +234,8 @@ function toggleLoginDialog(makeVisible) {
         $('.top-nav-login-dialog-container').fadeOut('fast');
     }    
 }
+function select2_init() {
+    $('select').select2().on("change", function (e) {
+        window.location.href = e.val;
+    });
+}

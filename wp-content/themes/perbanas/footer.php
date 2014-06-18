@@ -45,6 +45,10 @@
 		page_regional_board_single_init();
 		<?php endif; ?>
 
+		<?php if ( get_post_type() == 'probankmagazine' ) :?>
+		page_probank_magazine_init();
+		<?php endif; ?>
+
 		<?php if( is_page('who-we-are') ) :?>
 		page_about_who_we_are_init();
 		<?php endif; ?>
