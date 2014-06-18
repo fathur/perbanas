@@ -11,7 +11,7 @@
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>Member Banks</h2>
+                    <h2>Industry Guidelines</h2>
                 </div>
                 
                 <?php echo perbanas_side_menu('industryguidelines-menu', 'leftMenu'); ?>

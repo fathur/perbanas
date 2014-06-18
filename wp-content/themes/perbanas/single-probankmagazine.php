@@ -21,6 +21,8 @@ if ('download' == $action) {
 	endwhile;
 } elseif ('read' == $action) {
 	get_template_part('news','magazine');
+} else {
+	echo "www";
 }
 
 

@@ -29,7 +29,10 @@ get_header(); ?>
 					<div class="row">
 						<ul>
 						<?php 
-							$args = array( 'post_type' => get_post_type() );
+							$args = array( 
+								'post_type' => get_post_type(),
+								'posts_per_page' => -1
+							 );
 							$query = new WP_Query( $args );
 						
 							if ( $query->have_posts() ) {

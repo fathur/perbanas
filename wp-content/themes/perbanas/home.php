@@ -208,7 +208,7 @@
                     </div>
                     <div class="col-xs-6 col-md-8">
                         <p class="homepage-probank-desc-top"><?php echo get_the_content('...'); ?></p>
-                        <p><a href="<?php echo get_permalink(); ?>" class="btn">View more <span class="arrow">&rang;</span></a></p>
+                        <p><a href="<?php echo get_post_type_archive_link('probankmagazine'); ?>" class="btn">View more <span class="arrow">&rang;</span></a></p>
                     </div>
                 </div>
                 <?php 
