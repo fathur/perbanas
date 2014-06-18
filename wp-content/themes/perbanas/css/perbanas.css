@@ -750,11 +750,20 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     height:1px;
     background: #7fa4c3;
     width: 200px;
-    margin-top: 60px;
-    margin-bottom: 60px;
     display:inline-block;
 }
-
+@media screen and (max-width: 991px) {
+    .about-who-we-are .hr {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }    
+}
+@media screen and (min-width: 992px) {
+    .about-who-we-are .hr {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }    
+}
     /* about - who we are history */
     .timeline-outer-container {
         margin: 0 auto;
@@ -819,23 +828,40 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         color: #717271;
         font-size: 14px;
     }
-    .timeline-outer-container .item .description.left {
-        margin-left: 0;
-        margin-right: 60%;
+    @media screen and (min-width: 768px) {
+        .timeline-outer-container .item .description.left {
+            margin-left: 0;
+            margin-right: 60%;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .timeline-outer-container .item .description.left {
+            margin-left: 0;
+            margin-right: 30%;
+        }
     }
     .timeline-outer-container .item .description.right {
         margin-left: 60%;
         margin-right: 0;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
+        .timeline-outer-container .item .description.right {
+            margin-left: 0;
+            margin-right: 30%;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        .timeline-outer-container .item .description.right {
+            margin-left: 60%;
+            margin-right: 0;
+        }
+    }
+    @media screen and (max-width: 767px) {
         .timeline-outer-container {
             width: 100%;
         }
         .timeline-outer-container .item {
             background: none;;
-        }
-        .timeline-outer-container .item .description.right {
-            margin-left: 0;
         }
         .timeline-outer-container .bubble {
             margin-left: -140px;
@@ -932,12 +958,28 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     /* end former chairmen */
 
-.about-who-we-are .vision-mission-container {
-    margin-bottom: 100px;
+@media screen and (min-width: 992px) {
+    .about-who-we-are .vision-mission-container {
+        margin-bottom: 100px;
+    }
 }
-.about-who-we-are .vm-title {
-    padding-top: 95px;
-    padding-bottom: 100px;
+@media screen and (max-width: 991px) {
+    .about-who-we-are .vision-mission-container {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .about-who-we-are .vm-title {
+        padding-top: 95px;
+        padding-bottom: 100px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .about-who-we-are .vm-title {
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
 }
 .about-who-we-are .vm-title h2 {
     margin-bottom: 40px;
@@ -975,9 +1017,18 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     background: #009ADD;
     background-clip: content-box;
 }
-.about-who-we-are .column .vm-title {
-    padding-top: 50px;
-    padding-bottom: 50px;
+@media screen and (max-width: 991px) {
+    .about-who-we-are .column .vm-title {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+}
+@media screen and (min-width: 992px) {
+    .about-who-we-are .column .vm-title {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }    
 }
 .about-who-we-are .column h2 {
     font-size: 14px;
