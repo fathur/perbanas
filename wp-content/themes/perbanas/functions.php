@@ -615,9 +615,9 @@ function perbanas_get_metaid_by_key( $post_id, $meta_key ) {
 	global $wpdb;
 	$mid = $wpdb->get_var( $wpdb->prepare("SELECT meta_id FROM $wpdb->postmeta WHERE post_id = %d AND meta_key = %s", $post_id, $meta_key) );
 	if( $mid != '' )
-		return (int)$mid;
+		return intval($mid);
 
-	return false;
+	return FALSE;
 }
 function perbanas_get_metaval_by_id( $meta_id ) {
 	global $wpdb;
@@ -626,6 +626,14 @@ function perbanas_get_metaval_by_id( $meta_id ) {
 		return $mval->meta_value;
 
 	return false;
+}
+function perbanas_get_metaval_by_key( $meta_key ) {
+	global $wpdb;
+	$mid = $wpdb->get_col( $wpdb->prepare("SELECT DISTINCT(meta_value) AS tahun FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY tahun ASC", $meta_key) );
+	if( $mid != '' )
+		return $mid;
+	
+	return FALSE;
 }
 
 /**
