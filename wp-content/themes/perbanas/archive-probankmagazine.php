@@ -81,7 +81,7 @@
                     </div>
                     <div class="description">
                         <p>Edisi</p>
-                        <p class="date">Juni - Juli 2012</p>
+                        <p class="date"><?php echo get_post_meta(get_the_ID(), 'wpcf-magazine-edition', TRUE); ?></p>
                     </div>
                 </div>
 				
