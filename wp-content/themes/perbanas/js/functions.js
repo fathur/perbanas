@@ -98,7 +98,7 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
     );
 }
 function sidebarAffix() {
-    $('.main-content-pane').css('height', 864);
+    //$('.main-content-pane').css('height', 864);
     var mainContentPaneHeight = $('.main-content-pane').outerHeight();
     if (mainContentPaneHeight > 700) {
         console.log($('.sidebar')[0]);

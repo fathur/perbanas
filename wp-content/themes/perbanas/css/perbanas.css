@@ -612,8 +612,15 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* end general */
 
 /* main layout */
-.main-layout {
-    margin-bottom: 100px;
+@media screen and (min-width: 992px) {
+    .main-layout {
+        margin-bottom: 100px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .main-layout {
+        margin-bottom: 50px;
+    }
 }
 .main-layout .section-title {
     margin-top: 0;
