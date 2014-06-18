@@ -39,7 +39,7 @@
             </div>
             <div class="row main-content-pane-logo">
                 <div class="col-xs-12">
-					<?php the_post_thumbnail('',array('class' => "img-no-responsive",)); ?>
+					<?php the_post_thumbnail('',array('class' => "img-no-responsive img-max-100p",)); ?>
 				</div>
             </div>
             <div class="row">
