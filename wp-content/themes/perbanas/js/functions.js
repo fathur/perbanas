@@ -98,12 +98,12 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
     );
 }
 
-
-// event upcoming
 function sidebarAffix() {
-    var offset = $('.website-header').outerHeight(true) + $('.navbar-container').outerHeight(true) + $('.breadcrumbs').outerHeight(true);
-    $('.sidebar').affix({'offset': {'top': 301, 'bottom': 0}});
-
+    var mainContentPaneHeight = $('.main-content-pane').outerHeight();
+    if (mainContentPaneHeight > 700) {
+        var offset = $('.website-header').outerHeight(true) + $('.navbar-container').outerHeight(true) + $('.breadcrumbs').outerHeight(true);
+        $('.sidebar').affix({'offset': {'top': 301, 'bottom': 0}});
+    }
 }
 
 // contact
