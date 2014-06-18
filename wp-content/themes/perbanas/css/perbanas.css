@@ -1773,7 +1773,8 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     /* start of map */
     #map {
-        height: 400px;
+        height: 500px;
+        width: 100%;
     }
     /* end map */
 

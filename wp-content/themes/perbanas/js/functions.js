@@ -158,7 +158,7 @@ function initGoogleMaps() {
         };
 
         // Create the Google Map using out element and options defined above
-        map = new google.maps.Map(mapElement, mapOptions);
+        //map = new google.maps.Map(mapElement, mapOptions);
     }
 }
 
