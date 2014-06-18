@@ -867,7 +867,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     @media screen and (max-width: 767px) {
         .timeline-outer-container .item .description.left {
             margin-left: 0;
-            margin-right: 40%;
+            margin-right: 43%;
         }
     }
     .timeline-outer-container .item .description.right {
@@ -877,7 +877,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     @media screen and (max-width: 767px) {
         .timeline-outer-container .item .description.right {
             margin-left: 0;
-            margin-right: 40%;
+            margin-right: 43%;
         }
     }
     @media screen and (min-width: 768px) {
@@ -1420,13 +1420,13 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     @media screen and (max-width: 991px) {
         .homepage-gallery div {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .homepage-gallery h3 {
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         .homepage-gallery img {
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
     }
     /* end gallery */
