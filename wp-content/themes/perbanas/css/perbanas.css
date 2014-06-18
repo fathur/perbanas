@@ -598,14 +598,14 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         background-repeat: no-repeat !important;
         background-position: 50% 50% !important;
     }
-    .select2-drop {
-
-    }
     @media screen and (max-width: 768px) {
         .select2-container {
             width: 100%;
             margin-bottom: 10px;
         }
+    }
+    .select2-container .select2-choice > .select2-chosen {
+        line-height: 1.2;
     }
     /* end select */
 
@@ -1225,6 +1225,19 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     padding-left: 30px;
     padding-right: 10px;
 }
+.regional-board-inside h2 {
+    font-size: 24px;
+}
+@media screen and (max-width: 991px) {
+    .regional-board-inside h2 {
+        margin-bottom: 15px;    
+    }
+}
+@media screen and (min-width: 992px) {
+    .regional-board-inside h2 {
+        margin-bottom: 60px;
+    }
+}
 /* end main layout / regional board inside */
 
 /* main layout / member banks */
@@ -1760,7 +1773,8 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     /* start of map */
     #map {
-        height: 400px;
+        height: 500px;
+        width: 100%;
     }
     /* end map */
 
