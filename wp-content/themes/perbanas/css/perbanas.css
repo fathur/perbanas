@@ -598,14 +598,14 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         background-repeat: no-repeat !important;
         background-position: 50% 50% !important;
     }
-    .select2-drop {
-
-    }
     @media screen and (max-width: 768px) {
         .select2-container {
             width: 100%;
             margin-bottom: 10px;
         }
+    }
+    .select2-container .select2-choice > .select2-chosen {
+        line-height: 1.2;
     }
     /* end select */
 
