@@ -498,13 +498,24 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: #707170;
 }
 
-.section-title {
-    margin-top: 90px;
+@media screen and (min-width: 992px) {
+    .section-title {
+        margin-top: 90px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .section-title {
+        margin-top: 30px;
+    }
 }
 .section-title h1 {
-    position: relative;
-    margin-bottom: 60px;
-    line-height: 1.4;
+        position: relative;
+        line-height: 1.4;
+}
+@media screen and (min-width: 992px) {
+    .section-title h1 {
+        margin-bottom: 60px;
+    }
 }
 @media screen and (max-width: 991px) {
     .section-title h1 {
