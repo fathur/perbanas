@@ -63,19 +63,25 @@
 				?>
 
 				<div class="col-sm-6 col-md-3 block item">
-                    <div class="img">                    
-                    	<?php echo the_post_thumbnail('large',array('class' => 'img-responsive')); ?>
+                    <div class="overlay-container">
+                        <div class="img">                    
+                        	<?php echo the_post_thumbnail('large',array('class' => 'img-responsive')); ?>
+                        </div>
+                        <div class="overlay">
+                            <div class="overlay-top-aligned">
+                            
+                                <a href="<?php echo get_permalink(); ?>?action=download&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-download.png" /></a>
+                                <h3><a href="<?php echo get_permalink(); ?>?action=download&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>">Download</a></h3>
+                            </div>
+                            <div class="overlay-bottom-aligned">
+                                <a href="<?php echo get_permalink(); ?>?action=read&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>" target="_blank"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-read.png" /></a>
+                                <h3><a href="<?php echo get_permalink(); ?>?action=read&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>" target="_blank" >Read</a></h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="overlay">
-                        <div class="overlay-top-aligned">
-                        
-                            <a href="<?php echo get_permalink(); ?>?action=download&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-download.png" /></a>
-                            <h3><a href="<?php echo get_permalink(); ?>?action=download&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>">Download</a></h3>
-                        </div>
-                        <div class="overlay-bottom-aligned">
-                            <a href="<?php echo get_permalink(); ?>?action=read&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>" target="_blank"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-read.png" /></a>
-                            <h3><a href="<?php echo get_permalink(); ?>?action=read&id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>" target="_blank" >Read</a></h3>
-                        </div>
+                    <div class="description">
+                        <p>Edisi</p>
+                        <p class="date">Juni - Juli 2012</p>
                     </div>
                 </div>
 				

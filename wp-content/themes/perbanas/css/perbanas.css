@@ -1589,14 +1589,17 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .probank .main-content-pane .img img {
     min-width: 100%;
 }
+.probank .overlay-container {
+    position: relative;
+}
 .probank .item .overlay {
     visibility: hidden;
     opacity: 0;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 15px;
-    left: 15px;
+    right: 0;
+    left: 0;
     background: #004987;
     -o-transition:.2s;
     -ms-transition:.2s;
@@ -1626,6 +1629,19 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     font-size: 16px;
     color: white;
 }
+.probank .description {
+    margin-top: 5px;
+    text-align: center;
+}
+.probank .description p {
+    margin: 0;
+    font-weight: normal;
+    color: #a2a3a2;
+}
+.probank .description .date {
+    font-weight: bold;
+}
+
 /* end main layout / probank magazine */
 
 /* main layout / photo gallery (general) */
