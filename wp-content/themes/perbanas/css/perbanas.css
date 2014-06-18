@@ -146,6 +146,14 @@ a:hover {
     .navbar-main-collapsed-menu-logo {
         float:left;
     }
+    @media screen and (max-width: 991px) {
+        .navbar-main-collapsed-menu-logo {
+            padding: 8px;
+        }
+        .navbar-main-collapsed-menu-logo img {
+            width: 130px;
+        }
+    }
     /* bootstrap collapsed menu */
     .navbar-default .navbar-toggle {
         border: 0;
@@ -159,7 +167,7 @@ a:hover {
     /* end bootstrap collapsed menu */
 
     /* change breakpoints at 992px */
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
         .navbar-header {
             float: none;
         }
@@ -209,6 +217,12 @@ a:hover {
         font-weight: 400;
         color: white;
         background: none;
+    }
+    @media screen and (min-width: 992px) {
+        #navbar-main .nav a:hover, #navbar-main .nav a:active {
+            border-bottom: 3px solid #009ADD;
+            height: 50px;
+        }
     }
     .navbar-static-top {
         border: 0;
@@ -480,6 +494,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     font-weight: 400;
     color: #707170;
 }
+
 .section-title {
     margin-top: 90px;
 }
@@ -487,8 +502,12 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     position: relative;
     margin-bottom: 60px;
     line-height: 1.4;
-    /*border-bottom: 1px solid #7fa4c3;
-    height: 37px;*/
+}
+@media screen and (max-width: 991px) {
+    .section-title h1 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
 }
 .section-title h1 div {
     border-bottom: 1px solid #7fa4c3;
@@ -662,7 +681,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 
 @media screen and (max-width: 767px) {
     .main-layout .main-content-pane {
-        margin-top: 50px;
+        /*margin-top: 50px;*/
     }
 }
 
@@ -1078,7 +1097,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* end main layout / regional board */
 
 /* main layout / regional board inside */
-.regional-board-inside hr {
+.regional-board-inside .main-content-pane hr {
     margin:0;
     margin-bottom: 40px;
     height: 1px;

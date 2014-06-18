@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="container main-layout probank">
-    <div class="row breadcrumbs hidden-sm hidden-xs">
+    <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
             <?php if(function_exists('bcn_display')) { bcn_display(); }?>
         </div>

@@ -2,7 +2,7 @@
 
 
 <div class="container main-layout about-who-we-are">
-    <div class="row breadcrumbs hidden-xs">
+    <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
             <?php if(function_exists('bcn_display')) { bcn_display(); }?>
         </div>

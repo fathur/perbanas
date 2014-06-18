@@ -7,7 +7,7 @@ get_header(); ?>
 
 
 <div class="container main-layout industry-guidelines-syariah-business">
-    <div class="row breadcrumbs">
+    <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
 			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
         </div>

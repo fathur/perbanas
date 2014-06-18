@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="container main-layout photo-gallery photo-gallery-photo-list">
-    <div class="row breadcrumbs hidden-xs">
+    <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
 			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
         </div>
