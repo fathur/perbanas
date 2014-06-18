@@ -1229,7 +1229,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     .homepage-slider .carousel-indicators li {
         margin:0;
-        width: 33%;
+        width: 32.5%;
         border-radius: 0;
         border:0;
         background: none;
@@ -1247,7 +1247,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     .homepage-slider .carousel-indicators li.active {
         margin:0;
-        width: 33%;
+        width: 32.5%;
         border-radius: 0;
         border:0;
         background: #C3D500;
