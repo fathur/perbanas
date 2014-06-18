@@ -97,13 +97,16 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
         }
     );
 }
-
+$.fn.log = function() {
+  console.log.apply(console, this);
+  return this;
+};
 function sidebarAffix() {
     $('.main-content-pane').css('height', 864);
     var mainContentPaneHeight = $('.main-content-pane').outerHeight();
     if (mainContentPaneHeight > 700) {
         //var offset = $('.website-header').outerHeight(true) + $('.navbar-container').outerHeight(true) + $('.breadcrumbs').outerHeight(true);
-        console.log($('.sidebar'));
+        $('.sidebar').log();
         $('.sidebar').affix({'offset': {'top': 301, 'bottom': 0}});
     }
 }
