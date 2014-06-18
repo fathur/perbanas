@@ -23,7 +23,7 @@ get_header(); ?>
         <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>Sectors</span></h1>
+                    <h1><div></div><span><?php echo get_query_var( $wp_query->query_vars['taxonomy'] ); ?></span></h1>
                 </div>
             </div>
             <div class="row ">
