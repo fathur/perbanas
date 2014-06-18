@@ -85,15 +85,30 @@ function remove_wp_logo( $wp_admin_bar ) {
 }
 add_action('admin_bar_menu', 'remove_wp_logo', 999);
 
+/**
+ * Logo in login page
+ */
 function perbanas_login_logo() {
 	echo '<style type="text/css">
-3
-h1 a {background-image: url('.get_bloginfo('template_directory').'/images/login_logo.png) !important; }
-4
-</style>';
+        body.login div#login h1 a {
+            background-image: url('.get_template_directory_uri().'/img/LOGO_PERBANAS_EN.png);
+            padding-bottom: 30px;
+            		width: 300px;
+height: 200px;
+background-size: 300px 200px;
+        }
+    </style>';
 	
 }
-add_action('login_head','perbanas_login_logo');
+function perbanas_login_logo_url() {
+	return home_url();
+}
+function perbanas_login_logo_url_title() {
+	return 'Perbanas';
+}
+add_filter( 'login_headertitle', 'perbanas_login_logo_url_title' );
+add_filter( 'login_headerurl', 'perbanas_login_logo_url' );
+add_action('login_enqueue_scripts','perbanas_login_logo');
 
 
 /**
@@ -665,11 +680,14 @@ function perbanas_get_postmeta_size( $id ) {
 	return round($bytes, $precision) . ' ' . $units[$pow];
 }
 
-function dhgjds($id='') {
-	/* print_r( ABSPATH );
-	echo "<br/>";
-	print_r(perbanas_get_metaval_by_id($id)); */
-	// echo get_home_path();
+/**
+ * Breadcrumbs */
+function perbanas_breadcrumb_council( $trail ) {
+	if (get_post_type() == 'sector') {
+		//array_pop($trail->trail);
+		//print_r($trail->trail);
+	}
 	
-	print_r( str_replace( get_option('siteurl').'/', ABSPATH, perbanas_get_metaval_by_id($id)) );
+	
 }
+add_action('bcn_after_fill','perbanas_breadcrumb_council');
