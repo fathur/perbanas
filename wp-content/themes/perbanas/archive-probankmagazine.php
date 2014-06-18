@@ -19,23 +19,17 @@
             <div class="row">
                 <div class="col-xs-12 text-right">
                     <select>
-                        <option>Other Regional Board</option>
+                        <option>Filter</option>
                         <?php 
-                            $args = array( 'post_type' => get_post_type() );
-                            $query = new WP_Query( $args );
-                        
-                            if ( $query->have_posts() ) {
-                                
-                                while ( $query->have_posts() ) {
-                                    $query->the_post(); ?>
-                                    
-                                    <option value="<?php echo basename(get_permalink()); ?>"><?php echo get_the_title(); ?></option>
-                                    <?php 
-                                }
-                                
+                        	$tahun = perbanas_get_metaval_by_key('wpcf-magazine-year');
+                        	
+                            if ( count($tahun) > 0 ) {
+                                foreach ( $tahun as $thn ) { ?>
+
+                                    <option value="<?php echo '?tahun='.$thn; ?>"><?php echo $thn; ?></option>
+						<?php 
+                                }  
                             } 
-                            wp_reset_postdata();
-                        
                         ?> 
                     </select>
                 </div>
@@ -47,13 +41,20 @@
             </div>
             <div class="row">
             
-            <?php 
-			
+            <?php 			            
+            	
 				wp_reset_query();
 				
-				$args = array(
-					'post_type' => get_post_type()
-				);
+				$args['post_type'] = get_post_type();
+
+				if (isset($_GET['tahun'])) {
+					$args['meta_query'] = array(
+						array(
+							'key'	=> 'wpcf-magazine-year',
+							'value'	=> intval( $_GET['tahun'] )
+						)
+					);
+				}
 				
 				$loop = new WP_Query($args);
 				
