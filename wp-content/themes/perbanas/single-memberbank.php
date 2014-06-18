@@ -55,6 +55,11 @@
                     </span></h1>
                 </div>
             </div>
+             <div class="row main-content-pane-logo">
+                <div class="col-xs-12">
+					<?php the_post_thumbnail('',array('class' => "img-no-responsive",)); ?>
+				</div>
+            </div>
             <div class="row">
                 <div class="col-xs-12">
 					<?php the_content(); ?>
