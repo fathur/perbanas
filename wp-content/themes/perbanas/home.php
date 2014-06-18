@@ -188,7 +188,8 @@
 				wp_reset_query();
 				
 				$args = array(
-					'post_type' => 'probankmagazine'
+					'post_type' => 'probankmagazine',
+					'posts_per_page' => 1
 				);
 				
 				$loop = new WP_Query($args);
@@ -246,7 +247,7 @@
                                 <p class="date"><?php echo date('d', $unixdate)?></p>
                             </div>
                             <div class="col-xs-10 col-sm-11">
-                                <h3><?php echo get_the_title(); ?></h3>
+                                <h3><a href="<?php echo get_post_type_archive_link('upcomingevent'); ?>"><?php echo get_the_title(); ?></a></h3>
                                 <p class="desc">
                                    <?php echo get_post_meta( get_the_ID(), 'wpcf-event-range-time', TRUE) ; ?><br />
                                    <?php echo get_post_meta( get_the_ID(), 'wpcf-event-location', TRUE) ; ?>
