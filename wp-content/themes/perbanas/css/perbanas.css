@@ -486,6 +486,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .section-title h1 {
     position: relative;
     margin-bottom: 60px;
+    line-height: 1.4;
     /*border-bottom: 1px solid #7fa4c3;
     height: 37px;*/
 }
