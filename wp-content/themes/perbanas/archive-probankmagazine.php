@@ -27,9 +27,11 @@
 			
 				wp_reset_query();
 				
-				$args = array(
-					'post_type' => get_post_type()
-				);
+				$args['post_type'] = get_post_type();
+
+				if (isset($_GET['year'])) {
+					//$args['meta_value']
+				}
 				
 				$loop = new WP_Query($args);
 				
