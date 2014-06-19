@@ -33,6 +33,8 @@ function perbanas_cssjs() {
 		wp_enqueue_script('jquery-1.11.1', get_template_directory_uri() . '/js/jquery.min.js',array(),'1.11.1',TRUE);
 		wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',array(),'1.3.1',TRUE);
 		wp_enqueue_script('jquery-easing', get_template_directory_uri() . '/js/jquery.easing.min.js',array(),'',TRUE);
+		wp_enqueue_script('fastclick', get_template_directory_uri() . '/js/fastclick.js',array(),'1.0.2',FALSE);
+
 		wp_enqueue_script('function', get_template_directory_uri() . '/js/functions.js',array(),'',TRUE);
 		wp_enqueue_script('main', get_template_directory_uri() . '/js/page.general.js',array(),'',TRUE);
 
