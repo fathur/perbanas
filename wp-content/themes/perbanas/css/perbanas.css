@@ -390,7 +390,7 @@ a:hover {
             padding: 15px 0;
         }
     }
-    /* navbar equal width when on desktop (large) */
+    /* end navbar equal width when on desktop (large) */
 
     @media screen and (max-width: 992px) {
         .nav-large-wrapper-outer {
@@ -402,7 +402,7 @@ a:hover {
             line-height: 0;
         }
     }
-    .open .arrow img {
+    .open>a .arrow img {
         -webkit-animation: spin .15s linear 1;
         -moz-animation: spin .15s linear 1;
         animation: spin .15s linear 1;
@@ -430,8 +430,14 @@ a:hover {
         -moz-animation-timing-function: ease;
         -moz-animation-fill-mode: forwards;
     }
-    /* nested menu */
 
+    /* nested menu */
+    .dropdown-menu {
+        ddisplay: block !important;
+    }
+    .dropdown-menu li {
+        position: relative;
+    }
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -1419,7 +1425,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     @media screen and (max-width: 991px) {
         .homepage-slider .slider-content {
-            height: 300px;
+            /*height: 300px; seems a bit too small */
         }
     }
     @media screen and (min-width: 992px) {
