@@ -4,7 +4,8 @@
  * Template untuk menampilkan arsip dari Supervisory Board.
  * 
  * Tampilan dalam template ini sama dengan Advisory Board,
- * Sector per orang, Supervisory Board, dan Secretariat.
+ * Sector per orang, Supervisory Board, Board Member 
+ * dan Secretariat.
  * 
  * */
 
