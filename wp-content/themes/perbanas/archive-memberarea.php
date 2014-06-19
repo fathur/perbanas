@@ -9,7 +9,7 @@
         <div class="col-xs-12 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>Members' Area</span></h1>
+                    <h1><div></div><span>Members' Area</span></h1>
                 </div>
             </div>
             
