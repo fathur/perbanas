@@ -43,7 +43,7 @@
 		
 		<script>
 		$(document).ready(function(){
-			$('#iframe').css('height',$(window).height() * 0.9 | 0);
+			$('#iframe').css('height',$(window).height());
 		});
 		</script>
 	</body>
