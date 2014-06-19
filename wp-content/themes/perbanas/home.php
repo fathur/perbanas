@@ -140,7 +140,7 @@ get_header(); ?>
                     <div class="col-md-6">
                     
                      <?php if (has_post_thumbnail()) {
-                     	the_post_thumbnail(array(720,720),array('class' => "img-responsive"));
+                     	the_post_thumbnail(array(750,486),array('class' => "img-responsive"));
                      } else { ?>
                      <img src="<?php echo get_template_directory_uri(); ?>/img/no-news-picture.jpg" class="img-responsive" width="720" height="720" />
 					<?php } ?>
@@ -188,7 +188,7 @@ get_header(); ?>
 			?>
             <div class="col-xs-12 col-md-6 col-md-3 block">
             	<a href="<?php echo get_permalink(); ?>">
-                 <?php the_post_thumbnail(array(720, 478),array('class' => "img-responsive",)); ?>
+                 <?php the_post_thumbnail(array(750, 500),array('class' => "img-responsive",)); ?>
                 </a>
                 <h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                 <p class="date"><?php echo get_the_date(); ?></p>

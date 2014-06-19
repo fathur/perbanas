@@ -137,24 +137,12 @@
                             </li>
                             <li class="item">
                                 <h3 class="bubble">
-                                    <span class="text">2004</span>
+                                    <span class="text">2012</span>
                                     <span class="background"></span>
                                 </h3>
                                 <div class="description right">
                                     <div class="vertical-align">
-                                        <p>Bank BNI ditetapkan sebagai anggota PERBANAS.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <h3 class="bubble">
-                                    <span class="text">2005</span>
-                                    <span class="background"></span>
-                                </h3>
-                                <div class="description left">
-                                    <div class="vertical-align">
-                                        <!--<h3>Perbanas</h3>-->
-                                        <p>Bank Mandiri dan BRI ditetapkan sebagai anggota PERBANAS.</p>
+                                        <p>Organisasi mengalami pergantian nama resmi menjadi Perhimpunan Bank-Bank Nasional, dengan singkatan yang sama, yakni PERBANAS.</p>
                                     </div>
                                 </div>
                             </li>
