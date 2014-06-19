@@ -1,10 +1,20 @@
 <?php 
 
-$menu_post_type = 'events'; // Karena sector merupakan bagian dari menu council
+/**
+ * Template untuk menampilkan arsip dari Upcoming Event.
+ * 
+ * Template ini menampilkan hari event, tanggal event, 
+ * judul event, content event, dan post thumbnail event.
+ * Content event ditampilkan dalam bentuk animasi 
+ * 
+ * @author PT.Fostrom
+ * 
+ * */
 
 get_header(); ?>
 
 <div class="container main-layout event-upcoming">
+
     <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
 			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
@@ -83,6 +93,8 @@ get_header(); ?>
 				get_template_part( 'content', 'none' );
 			endif;
 	
+			/* Restore to originial query */
+			wp_reset_query();
 			/* Restore original Post Data */
 			wp_reset_postdata(); ?> 
            
