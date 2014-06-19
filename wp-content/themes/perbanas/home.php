@@ -119,7 +119,7 @@
             <div class="col-xs-12 col-md-6 block homepage-news-item">
                 <div class="row">
                     <div class="col-md-6">
-                    	<?php the_post_thumbnail(array(210,136),array(
+                    	<?php the_post_thumbnail(array(720,720),array(
 								'class' => "img-responsive")); ?>
                       
                     </div>
@@ -162,7 +162,7 @@
 			?>
             <div class="col-xs-12 col-md-6 col-md-3 block">
             	<a href="<?php echo get_permalink(); ?>">
-                 <?php the_post_thumbnail(array(255,170),array('class' => "img-responsive",)); ?>
+                 <?php the_post_thumbnail(array(720, 478),array('class' => "img-responsive",)); ?>
                 </a>
                 <h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                 <p class="date"><?php echo get_the_date(); ?></p>

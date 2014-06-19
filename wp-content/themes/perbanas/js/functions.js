@@ -196,6 +196,9 @@ function setupTopNav() {
     });
 }
 
+function setupResponsiveNav() {
+    $('.navbar-nav .dropdown-menu .dropdown-toggle').click(function(e) { e.stopPropagation(); $('.navbar-nav .dropdown-menu .dropdown-menu').toggle(); });
+}
 function toggleSearchTextBox(makeVisible) {
     if (makeVisible) {
         toggleLanguageMenu(false);

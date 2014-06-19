@@ -234,8 +234,8 @@ a:hover {
             float: none;
         }
         .navbar-nav>li>a {
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
         }
         .collapse.in{
             display:block !important;
@@ -251,15 +251,20 @@ a:hover {
         margin: 0;
     }
     #navbar-main .nav a {
-        font-size: 16px;
         font-weight: 400;
         color: white;
         background: none;
     }
     @media screen and (min-width: 992px) {
         #navbar-main .nav a:hover, #navbar-main .nav a:active {
+            font-size: 16px;
             border-bottom: 3px solid #009ADD;
             height: 50px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        #navbar-main .nav a {
+            font-size: 14px;
         }
     }
     .navbar-static-top {
@@ -385,7 +390,7 @@ a:hover {
             padding: 15px 0;
         }
     }
-    /* navbar equal width when on desktop (large) */
+    /* end navbar equal width when on desktop (large) */
 
     @media screen and (max-width: 992px) {
         .nav-large-wrapper-outer {
@@ -397,7 +402,7 @@ a:hover {
             line-height: 0;
         }
     }
-    .open .arrow img {
+    .open>a .arrow img {
         -webkit-animation: spin .15s linear 1;
         -moz-animation: spin .15s linear 1;
         animation: spin .15s linear 1;
@@ -425,8 +430,14 @@ a:hover {
         -moz-animation-timing-function: ease;
         -moz-animation-fill-mode: forwards;
     }
-    /* nested menu */
 
+    /* nested menu */
+    .dropdown-menu {
+        ddisplay: block !important;
+    }
+    .dropdown-menu li {
+        position: relative;
+    }
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -437,9 +448,16 @@ a:hover {
         border: 0;
         overflow-y: hidden;
     }
-    .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
-        padding-top:10px;
-        padding-bottom:10px;
+    @media screen and (max-width: 991px) {
+        .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
+            padding-top:7px;
+            padding-bottom:7px;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
+            /* this query is not necessary */
+        }
     }
     .navbar-nav .open .dropdown-menu>li>a {
         sline-height: 1.42857143;
@@ -483,20 +501,35 @@ a:hover {
 }
 @media screen and (max-width: 991px) {
     .main-content-pane .in-article-diagram {
-        padding-left: 20%;
-        padding-right: 20%;
         /* use default value for margin top and bottom */
+        /* use default value for padding left and right */
     }
 }
 @media screen and (min-width: 992px) {
     .main-content-pane .in-article-diagram {
+        padding-left: 20%;
+        padding-right: 20%;
         margin-top: 60px;
         margin-bottom: 60px;
-        /* use default value for padding left and right */
     }
 }
 .main-content-pane p.last {
     margin-bottom: 60px;
+}
+.main-content-pane .inner-last {
+    margin-bottom: 30px;
+}
+
+.main-content-pane ol {
+    margin-left: 15px;
+    list-style-type: decimal;
+    color: #717271;
+    font-size: 12px;
+    font-weight: normal;
+}
+.main-content-pane ol>li {
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 /* general: footer */
 .footer, .footer-links a {
@@ -1392,7 +1425,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     @media screen and (max-width: 991px) {
         .homepage-slider .slider-content {
-            height: 300px;
+            /*height: 300px; seems a bit too small */
         }
     }
     @media screen and (min-width: 992px) {
@@ -1824,11 +1857,12 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     .contact-address, .contact-phone, .contact-fax, .contact-email {
         color: #666666;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     @media screen and (max-width: 992px) {
         .contact-address, .contact-phone, .contact-fax, .contact-email {
             margin-top: 40px;
+            max-height: 60px;
         }
     }
     .contact-section-title {

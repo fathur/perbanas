@@ -19,5 +19,5 @@ function page_general_init() {
 
     sidebarAffix();
     setupTopNav();
-
+    setupResponsiveNav();
 }
