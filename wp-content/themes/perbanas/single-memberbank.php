@@ -49,11 +49,6 @@ get_header(); ?>
                 <div class="col-xs-12 main-content-pane-left-column">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-title', TRUE ); ?></h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
                             <table class="contact-detail">
                                 <tbody>
                                 <tr>

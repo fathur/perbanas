@@ -1326,6 +1326,26 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* end main layout / member banks */
 
 /* main layout / member banks (detail) */
+.member-banks-detail .contact-detail {
+    font-size: 14px;
+    color: #707170;
+    margin-bottom: 38px;
+}
+.member-banks-detail .contact-detail td {
+    padding-bottom: 6px;
+}
+.member-banks-detail .colon-separator {
+    padding-left: 30px;
+    padding-right: 10px;
+}
+.member-banks-detail .main-content-pane hr {
+    margin:0;
+    margin-bottom: 40px;
+    height: 1px;
+    color: #7fa4c3;
+    background: #7fa4c3;
+    border: 0;
+}
 .member-banks-detail .main-content-pane-logo {
     margin-bottom: 60px;
 }
