@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * Menampilkan satu halaman member bank
+ *
+ * @author Fostrom
+ *
+ * */
+
+get_header(); ?>
 <div class="container main-layout member-banks-detail">
     <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
@@ -17,29 +25,24 @@
         </nav>
         <div class="col-xs-12 col-md-9 main-content-pane">
         
-        <?php 
-        while ( have_posts() ) : the_post();
-        
-            
-            
-        ?>
+        <?php while ( have_posts() ) : the_post(); ?>
         
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>
-                    <?php 
-                    if ( is_single() ) :
-                    	the_title();
-                    else :
-						the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' );
-                    endif;
-                    ?>
-                    </span></h1>
+					<h1><div></div><span><?php the_title(); ?></span></h1>
                 </div>
             </div>
             <div class="row main-content-pane-logo">
                 <div class="col-xs-12">
-                    <?php the_post_thumbnail('',array('class' => "img-no-responsive img-max-100p",)); ?>
+                
+					<?php if ( has_post_thumbnail() ) {
+						
+						the_post_thumbnail('',array('class' => "img-no-responsive img-max-100p"));
+						
+					} else { ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/img/no-news-picture.jpg" class="img-responsive img-max-100p" />
+					<?php } ?>
+					
                 </div>
             </div>
             <div class="row">
@@ -74,16 +77,9 @@
                 </div>
             </div>
             
-            <?php 
-    
-            
-            
-            
-        endwhile;       
-        ?>
+            <?php endwhile; ?>
         </div>
     </div>
 </div>
-        
 
 <?php get_footer(); ?>

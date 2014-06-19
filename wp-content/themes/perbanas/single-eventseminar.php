@@ -39,8 +39,9 @@ get_header(); ?>
                 	<?php if ( has_post_thumbnail() ) {
                 		the_post_thumbnail('large',array('class' => "img-responsive"));
                 	} else {
-					
-					} ?>    
+						// no picture is here ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/img/no-news-picture.jpg" class="img-responsive"  />
+					<?php } ?>    
                 </div>
             </div>
             <div class="row">
