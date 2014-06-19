@@ -1,10 +1,16 @@
 <?php 
-$taxonomy       = 'subindustryguidelines';
-$term           = get_query_var( $wp_query->query_vars['taxonomy'] );
-$menu_post_type = 'industryguidelines'; 
+
+/**
+ * Halaman untuk menampilkan bangking in Indonesia
+ * English language
+ * 
+ * Belum ada cms-nya jadi masih hardcode disini
+ * 
+ * @author Fostrom
+ *
+ * */
 
 get_header(); ?>
-
 
 <div class="container main-layout industry-guidelines-syariah-business">
     <div class="row breadcrumbs hidden-xs hidden-sm">

@@ -1,7 +1,20 @@
-<?php get_header(); ?>
+<?php 
+
+/**
+ * Halaman untuk menampilkan page contact (english version)
+ * 
+ * Belum ada cms nya jadi masih hardcode,
+ * karena kemungkinan berubahnya masih kecil
+ * 
+ * @author Fostrom
+ * 
+ * */
+
+get_header(); ?>
 
 <div class="wrapper top-margin">
 </div>
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12 block section-title">
@@ -61,8 +74,7 @@
     </div>
     <div class="row contact-form">
     
-    <?php echo do_shortcode('[contact-form-7 id="302" title="Contact form 1"]'); ?>
-    
+    	<?php echo do_shortcode('[contact-form-7 id="302" title="Contact form 1"]'); ?>
         
     </div>
 </div>

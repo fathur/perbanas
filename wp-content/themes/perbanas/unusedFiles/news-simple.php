@@ -22,7 +22,7 @@ while($loop->have_posts()) : $loop->the_post();
 		</div>
 		
 		<div class="news-desc-bottom">
-			<a href="<?php echo get_permalink(); ?>" class="btn">Read more <span class="arrow">&rang;</span></a>
+			<a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rang;</span></a>
 		</div>
 	</div>
 </div>

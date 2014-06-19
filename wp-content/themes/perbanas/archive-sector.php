@@ -1,6 +1,13 @@
 <?php 
-$menu_post_type = 'council'; // Karena sector merupakan bagian dari menu council
-$taxonomy		= 'subsector';
+
+/**
+ * Template untuk menampilkan Taxonomy Sector.
+ *
+ * Permasalahannya belum dapat diterjemahkan ke dalam bahasa Indonesia
+ * 
+ * @author Fostrom
+ *
+ * */
 
 get_header(); ?>
 
@@ -28,21 +35,24 @@ get_header(); ?>
             </div>
             <div class="row ">
             
-				
-				<?php $sectors = get_terms( $taxonomy , array(
+				<?php 
+				/**
+				 * Mendapatkan daftar nama taxonomynya
+				 * */				
+				$sectors = get_terms( 'subsector' , array(
 					'orderby'		=> 'name', 
 					'order'			=> 'ASC',
 					'hide_empty'	=> FALSE, 
 				) );
 				
 				foreach ($sectors as $sector) :?>
-				<?php // print_r($sector); ?>
+				
 				<div class="col-sm-6 col-md-3 block item">
+				
 					<div class="img">				
 						<?php $s8_img = s8_get_taxonomy_image_src( get_term_by('slug',$sector->slug,$sector->taxonomy), 'full'); ?>		
 						<img class="img-responsive" src="<?php echo $s8_img['src']; ?>" />						
 					</div>
-					
 					
 					<div class="overlay">
 						<div class="overlay-bottom-aligned">
@@ -57,7 +67,5 @@ get_header(); ?>
         </div>
     </div>
 </div>
-
-
 
 <?php get_footer(); ?>

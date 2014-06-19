@@ -42,13 +42,14 @@ get_header(); ?>
                 </div>
             </div>
             
-            <?php $args = array( 'post_type' => get_post_type() );				
+            <?php $args = array( 'post_type' => get_post_type() );		
 			$query = new WP_Query( $args );
 			
 			if ( $query->have_posts() ) :		
-				$i = 1;
-				while ( $query->have_posts() ) : 
-					$query->the_post(); 
+				
+				$i = 1; // Inisialisasi untuk unique id
+			
+				while ( $query->have_posts() ) : $query->the_post(); 
 					$unixdate	= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE); ?>
 					
 			<div class="row item">
@@ -65,7 +66,7 @@ get_header(); ?>
 					</p>
 				</div>
 				
-				<div class="col-xs-12 col-sm-6 col-md-6 main-content-pane-middle-column accordion" id="event-id-<?php echo $i; ?>"> <!-- id attributed is used by the accordion -->
+				<div class="col-xs-12 col-sm-6 col-md-6 main-content-pane-middle-column accordion" id="event-id-<?php echo $i; //id attributed is used by the accordion ?>">
 					<div class="accordion-group">
 						<div class="accordion-heading">
 							<h2>
@@ -86,8 +87,7 @@ get_header(); ?>
 			
 			<hr />
  
-			<?php
-					$i++;
+			<?php $i++; // Incrementing id
 				endwhile;
 			else:
 				get_template_part( 'content', 'none' );

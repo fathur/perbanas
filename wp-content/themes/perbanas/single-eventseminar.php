@@ -1,6 +1,11 @@
 <?php 
-$menu_post_type = 'events'; 
-$unixdate		= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE);
+
+/**
+ * Menampilkan satu halaman event dan seminar
+ * 
+ * @author Fostrom
+ * 
+ * */
 
 get_header(); ?>
 
@@ -14,7 +19,7 @@ get_header(); ?>
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>Events</h2>
+                    <h2><?php _e('Events','perbanas'); ?></h2>
                 </div>
                 <?php echo perbanas_side_menu('event-menu', 'leftMenu'); ?>
             </div>
@@ -22,22 +27,20 @@ get_header(); ?>
         <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>Event & Seminar</span></h1>
+                    <h1><div></div><span><?php _e('Event & Seminar','perbanas'); ?></span></h1>
                 </div>
             </div>
             
-             <?php 
-		while ( have_posts() ) : the_post();
-		
-			
-			
-		?>
+			<?php while ( have_posts() ) : the_post();
+             	$unixdate		= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE); ?>
+             	
             <div class="row">
                 <div class="col-xs-12 logo">
                 	<?php if ( has_post_thumbnail() ) {
                 		the_post_thumbnail('large',array('class' => "img-responsive"));
-                	}?>
-                    
+                	} else {
+					
+					} ?>    
                 </div>
             </div>
             <div class="row">
@@ -45,24 +48,17 @@ get_header(); ?>
                     <p class="event-day"><?php echo date('l', $unixdate)?></p>
                     <p class="event-date"><?php echo date('j F Y', $unixdate); ?></p>
                     <p class="">
-                       	<?php echo get_post_meta( get_the_ID(), 'wpcf-event-range-time', TRUE) ; ?><br />
-                       <?php echo get_post_meta( get_the_ID(), 'wpcf-event-location', TRUE) ; ?>
+						<?php echo get_post_meta( get_the_ID(), 'wpcf-event-range-time', TRUE) ; ?><br />
+						<?php echo get_post_meta( get_the_ID(), 'wpcf-event-location', TRUE) ; ?>
                     </p>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-6 main-content-pane-right-column">
-                    <h2>
-                    <?php if ( is_single() ) :
-						the_title();
-					else :
-						the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' );
-					endif; ?>
-					
-					</h2>
+                    <h2><?php the_title(); ?></h2>
 					
 					<?php the_content(); ?>
                     
-                    </div>
+				</div>
             </div>
             <?php endwhile;?>
         </div>

@@ -1,4 +1,19 @@
-<?php get_header(); ?>
+<?php 
+
+/**
+ * Template untuk menampilkan Hasil pencarian
+ * 
+ * Yang dapat dicari adalah post type berupa
+ * - press release
+ * - news
+ * - upcoming event
+ * - event and seminar
+ * 
+ * @author Fostrom
+ * 
+ * */
+
+get_header(); ?>
 
 <div class="container main-layout members-area">
     <div class="row breadcrumbs hidden-xs hidden-sm">
@@ -14,16 +29,13 @@
                 </div>
             </div>
             
-            <?php 
-			
-				$search_results = new WP_Query( array(
-					's'			=> sanitize_text_field( $_GET['s'] ),
-					'post_type'	=> array('pressrelease','news','upcomingevent','eventseminar')
-				) );
+            <?php $search_results = new WP_Query( array(
+				's'			=> sanitize_text_field( $_GET['s'] ),
+				'post_type'	=> array('pressrelease','news','upcomingevent','eventseminar')
+			) );
 				
-				if( $search_results->have_posts() ) :
-					while($search_results->have_posts()) : $search_results->the_post();
-			?>
+			if( $search_results->have_posts() ) :
+				while($search_results->have_posts()) : $search_results->the_post(); ?>
 			
             <div class="row members-area-item">
                 <div class="col-xs-12">
@@ -33,18 +45,19 @@
                         <p class="desc"><?php echo get_the_content('...'); ?></p>
                     </div>
                     <div class="members-area-desc-bottom">
-                        <a href="<?php echo get_permalink(); ?>" class="btn">Read more <span class="arrow">&rang;</span></a>
+                        <a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rang;</span></a>
                     </div>
                 </div>
             </div>
             <hr />
 			
-			<?php 
-					endwhile;
-				endif; 
+			<?php endwhile;
+			endif; 
 				
-				wp_reset_postdata();
-			?>
+			/* Restore to originial query */
+			wp_reset_query();
+			/* Restore original Post Data */
+			wp_reset_postdata(); ?>
             
         </div>
     </div>
