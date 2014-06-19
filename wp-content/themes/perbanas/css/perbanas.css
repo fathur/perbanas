@@ -234,8 +234,8 @@ a:hover {
             float: none;
         }
         .navbar-nav>li>a {
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
         }
         .collapse.in{
             display:block !important;
@@ -251,15 +251,20 @@ a:hover {
         margin: 0;
     }
     #navbar-main .nav a {
-        font-size: 16px;
         font-weight: 400;
         color: white;
         background: none;
     }
     @media screen and (min-width: 992px) {
         #navbar-main .nav a:hover, #navbar-main .nav a:active {
+            font-size: 16px;
             border-bottom: 3px solid #009ADD;
             height: 50px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        #navbar-main .nav a {
+            font-size: 14px;
         }
     }
     .navbar-static-top {
@@ -437,9 +442,16 @@ a:hover {
         border: 0;
         overflow-y: hidden;
     }
-    .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
-        padding-top:10px;
-        padding-bottom:10px;
+    @media screen and (max-width: 991px) {
+        .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
+            padding-top:7px;
+            padding-bottom:7px;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
+            /* this query is not necessary */
+        }
     }
     .navbar-nav .open .dropdown-menu>li>a {
         sline-height: 1.42857143;
@@ -1839,11 +1851,12 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     .contact-address, .contact-phone, .contact-fax, .contact-email {
         color: #666666;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     @media screen and (max-width: 992px) {
         .contact-address, .contact-phone, .contact-fax, .contact-email {
             margin-top: 40px;
+            max-height: 60px;
         }
     }
     .contact-section-title {
