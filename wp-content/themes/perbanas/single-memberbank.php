@@ -53,22 +53,31 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-6 col-sm-12">
-                            <p>
-                                <span class="main-content-pane-left-column-paragraph-heading hidden-md hidden-lg">Address:</span><br class="hidden-md hidden-lg" />
-                                <?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-address', TRUE ); ?>
-                            </p>
-                        </div>
-                        <div class="col-xs-6 col-sm-12">
-                            <p>
-                                <span class="main-content-pane-left-column-paragraph-heading">Telp:</span><br />
-                                <?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-phones', TRUE ); ?>
-                            </p>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <p>
-                                <a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?>"><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?></a>
-                            </p>
+                        <div class="col-xs-12">
+                            <table class="contact-detail">
+                                <tbody>
+                                <tr>
+                                    <td>Nama Bank Perwakilan</td>
+                                    <td class="colon-separator">:</td>
+                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-title', TRUE ); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat</td>
+                                    <td class="colon-separator">:</td>
+                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-address', TRUE ); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Telepon</td>
+                                    <td class="colon-separator">:</td>
+                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-phones', TRUE ); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Website</td>
+                                    <td class="colon-separator">:</td>
+                                    <td><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?>"><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?></a></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
