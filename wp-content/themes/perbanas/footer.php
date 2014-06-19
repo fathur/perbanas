@@ -6,7 +6,7 @@
 				<div class="row">
 					<div class="col-sm-6 block footer-A">
 						<br class="visible-sm visible-md visible-lg" /> <span
-							class="footer-B">Our partners</span> 
+							class="footer-B"><?php _e('Our partners','perbanas'); ?></span> 
 							
 							<a href="http://www.bi.go.id/" target="__blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" />
@@ -29,7 +29,7 @@
 							</ul>
 						</div>
 						<?php echo perbanas_footer_menu('extra-menu', 'bottomMenu'); ?>
-						<div>&copy; 2014 Perbanas. All rights reserved.</div>
+						<div><?php _e('&copy; 2014 Perbanas. All rights reserved.','perbanas'); ?></div>
 					</div>
 				</div>
 			</div>

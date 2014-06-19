@@ -1,23 +1,20 @@
-<?php
+<?php 
 
-$id_pm = (int)$_GET['id'];
+/**
+ * Melakukan proses download 
+ * 
+ * */
 
+$id_pm = intval( $_GET['id'] );
 
 while ( have_posts() ) : the_post();
 
-	$meta_value = perbanas_get_metaval_by_id( $id_pm );
+	$file_location 	= perbanas_get_metaval_by_id( $id_pm );
+	$filename 		= basename($file_location);
 	
-$file_location = $meta_value;
-$filename = basename($file_location);
-
-
-header("Content-disposition: attachment; filename=$filename");
-header("Content-type: application/pdf");
-readfile($file_location); 
+	header("Content-disposition: attachment; filename=$filename");
+	header("Content-type: application/pdf");
 	
-endwhile;
-
-
-
-
-?>
+	readfile($file_location); 
+	
+endwhile; ?>

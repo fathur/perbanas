@@ -1,24 +1,24 @@
 <?php 
-$taxonomy       = 'subperbanascorner';
 
-wp_reset_query();
-	
-$args = array('post_type' => get_post_type(),
+/**
+ * Template untuk menampilkan daftar artikel dari Perbanas Corner Education.
+ *
+ * @author Fostrom
+ *
+ * */
+
+$loop = new WP_Query(array('post_type' => get_post_type(),
 	'tax_query' => array(
 		array(
-			'taxonomy'  => $taxonomy,
+			'taxonomy'  => 'subperbanascorner',
 			'field'     => 'slug',
 			'terms'     => get_query_var( $wp_query->query_vars['taxonomy'] )
 		),
 	),
-);
-	
-$loop = new WP_Query($args);
+));
 	
 if( $loop->have_posts() ) :
-while($loop->have_posts()) : $loop->the_post();
-
-?>
+	while($loop->have_posts()) : $loop->the_post(); ?>
 
 <div class="row perbanas-corner-education-item">
 	<div class="col-xs-12">
@@ -28,15 +28,16 @@ while($loop->have_posts()) : $loop->the_post();
 			<p class="desc"><?php echo get_the_content('...'); ?></p>
 		</div>
 		<div class="perbanas-corner-education-desc-bottom">
-			<a href="<?php echo get_permalink(); ?>" class="btn">Read more <span class="arrow">&rang;</span></a>
+			<a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rang;</span></a>
 		</div>
 	</div>
 </div>
 <hr />
 
-<?php 
-
-endwhile;
+<?php endwhile;
 endif; 
 
-?>
+/* Restore to originial query */
+wp_reset_query();
+/* Restore original Post Data */
+wp_reset_postdata(); ?>

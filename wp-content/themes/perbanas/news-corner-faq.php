@@ -1,12 +1,16 @@
 <?php 
-$taxonomy       = 'subperbanascorner';
 
-wp_reset_query();
+/**
+ * Template untuk menampilkan daftar artikel dari Perbanas Corner FAQ.
+ *
+ * @author Fostrom
+ *
+ * */
 	
 $args = array('post_type' => get_post_type(),
 	'tax_query' => array(
 		array(
-			'taxonomy'  => $taxonomy,
+			'taxonomy'  => 'subperbanascorner',
 			'field'     => 'slug',
 			'terms'     => get_query_var( $wp_query->query_vars['taxonomy'] )
 		),
@@ -16,8 +20,10 @@ $args = array('post_type' => get_post_type(),
 $loop = new WP_Query($args);
 	
 if( $loop->have_posts() ) :
-while($loop->have_posts()) : $loop->the_post();
-$i = 1;
+	while($loop->have_posts()) : $loop->the_post();
+
+	// Inisialisasi increment 
+	$i = 1;
 ?>
 
 <div class="row item">
@@ -38,10 +44,7 @@ $i = 1;
 		</div>
 	</div>
 </div>
-<?php 
 
-$i++;
-endwhile;
-endif; 
-
-?>
+<?php $i++; // Incrementing
+	endwhile;
+endif; ?>

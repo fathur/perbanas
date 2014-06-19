@@ -1,55 +1,66 @@
-<?php get_header(); ?>
+<?php 
 
-	<div class="wrapper top-margin">
-        <div class="row slider homepage-slider">
-            <div id="featured-slider" class="carousel slide">
-                <div class="carousel-inner">
-	                <?php 
-	                								
-					$args = array(
-						'post_type' => 'carousel',
-						'posts_per_page' => 3
-					);
-					
-					$loop = new WP_Query($args);
-					
-					if( $loop->have_posts() ) :
-					
-						$i = 0;
-					
-						while($loop->have_posts()) : $loop->the_post();
-					
-							$thumb_id = get_post_thumbnail_id();
-					
-							$thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+/**
+ * Template untuk halaman home
+ * 
+ * Berisi slider, news, gallery, magazine, upcoming event
+ * dan member bank
+ * 
+ * */
 
-							if ('2' == $i) {
-								$active = 'active';
-							}
-					?>
+get_header(); ?>
+
+<div class="wrapper top-margin">
+	<div class="row slider homepage-slider">
+		<div id="featured-slider" class="carousel slide">
+			<div class="carousel-inner">
+	        <?php 
+			/**
+			 * Menampilkan slider / carousel
+			 * =============================
+			 * */        								
+		
+			$loop = new WP_Query(array(
+				'post_type' => 'carousel',
+				'posts_per_page' => 3
+			));
 					
-                    <div class="col-xs-12 block slider-background item <?php echo $active; ?>" style="background-image: url('<?php echo $thumb_url[0]; ?>'); background-size: cover; background-position: center center;">
-                        <div class="container">
-                            <div class="row slider-content">
-                                <div class="col-xs-12 block slider-content-text">
-                                    <h1>
-                                       <?php the_title(); ?>
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+			if( $loop->have_posts() ) :
+			
+				$i = 0; // Inisialisasi var loop
+			
+				while($loop->have_posts()) : $loop->the_post();
+			
+					$thumb_id	= get_post_thumbnail_id();
+					$thumb_url	= wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+
+					// Untuk menentukan slider yang aktif pertama kali
+					// Dipilih dua karena 1 mengakibarkan bernilai true sehingga semua slider aktif semua
+					// 0 bernilai salah sehingga semua slider tidak ada yang aktif
+					if ('2' == $i) { $active = 'active'; } ?>
+					
+				<div class="col-xs-12 block slider-background item <?php echo $active; ?>" style="background-image: url('<?php echo $thumb_url[0]; ?>'); background-size: cover; background-position: center center;">
+					<div class="container">
+					    <div class="row slider-content">
+					        <div class="col-xs-12 block slider-content-text">
+					            <h1>
+					               <?php the_title(); ?>
+					            </h1>
+					        </div>
+					    </div>
+					</div>
+				</div>
                     
-                   <?php 
-                   
-                   		$i++;
-                   		endwhile;
-                   endif;
-                   
-                   wp_reset_postdata();
-                   ?>
+			<?php $i++;
+				endwhile;
+			endif;
+			
+			/* Restore to originial query */
+			wp_reset_query();
+			/* Restore original Post Data */
+			wp_reset_postdata(); ?>
                     
-                </div>
+			</div>
                 
                 <div class="col-xs-12">
                     <div class="container slider-pager">
@@ -84,7 +95,10 @@
                    		endwhile;
                    endif;
                    
-                   wp_reset_postdata();
+                   /* Restore to originial query */
+					wp_reset_query();
+					/* Restore original Post Data */
+					wp_reset_postdata();
                    ?>
                         </ol>
                     </div>
@@ -104,7 +118,12 @@
         <div class="row homepage-news">
 			<?php 
 		
-			//wp_reset_query();
+			
+			/**
+			 * Menampilkan news
+			 * ================
+			 * 
+			 * */
 			
 			$args = array(
 				'post_type' => 'news',
@@ -119,9 +138,13 @@
             <div class="col-xs-12 col-md-6 block homepage-news-item">
                 <div class="row">
                     <div class="col-md-6">
-                    	<?php the_post_thumbnail(array(720,720),array(
-								'class' => "img-responsive")); ?>
-                      
+                    
+                     <?php if (has_post_thumbnail()) {
+                     	the_post_thumbnail(array(720,720),array('class' => "img-responsive"));
+                     } else { ?>
+                     <img src="<?php echo get_template_directory_uri(); ?>/img/no-news-picture.jpg" class="img-responsive" width="720" height="720" />
+					<?php } ?>
+                    	
                     </div>
                     <div class="col-md-6">
                         <div class="homepage-news-desc-top">
@@ -129,7 +152,7 @@
                             <p class="date"><?php echo get_the_date(); ?></p>
                         </div>
                         <div class="homepage-news-desc-bottom">
-                            <a href="<?php echo get_permalink(); ?>" class="btn">Read more <span class="arrow">&rang;</span></a>
+                            <a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rang;</span></a>
                         </div>
                     </div>
                 </div>
@@ -138,6 +161,9 @@
 					endwhile;
 				endif; 
 				
+			/* Restore to originial query */
+			wp_reset_query();
+			/* Restore original Post Data */
 			wp_reset_postdata();
 			?>
         </div>
@@ -171,6 +197,9 @@
 				endwhile;
 				endif; 
 				
+				/* Restore to originial query */
+				wp_reset_query();
+				/* Restore original Post Data */
 				wp_reset_postdata();
 			?>
            
@@ -199,8 +228,12 @@
 				?>
                 <div class="row homepage-probank">
                     <div class="col-xs-6 col-md-4 homepage-probank-image-container">
-                    	<?php echo the_post_thumbnail('large',array('class' => 'img-responsive')); ?>
                     
+                    <?php if ( has_post_thumbnail() ) {
+                        		echo the_post_thumbnail('large',array('class' => 'img-responsive'));
+							} else { ?>
+								<img width="161" height="214" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" class="img-responsive wp-post-image" alt="magazine">
+							<?php }?>
 
                         <p class="text-center">
                             <?php echo get_post_meta( get_the_ID(), 'wpcf-magazine-edition', TRUE) ; ?>
@@ -215,6 +248,9 @@
 					endwhile;
 				endif; 
 				
+				/* Restore to originial query */
+				wp_reset_query();
+				/* Restore original Post Data */
 				wp_reset_postdata();
 			?>
             </div>
@@ -264,8 +300,10 @@
 				// no posts found
 			endif;
 	
-			/* Restore original Post Data */
-			wp_reset_postdata(); ?> 
+				/* Restore to originial query */
+				wp_reset_query();
+				/* Restore original Post Data */
+				wp_reset_postdata(); ?>
                 </div>
             </div>
         </div>

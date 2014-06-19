@@ -11,27 +11,21 @@
         <div class="col-xs-12 col-sm-12 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>Members' Area</span></h1>
+                    <h1><span><?php _e("Members' Area",'perbanas'); ?></span></h1>
                 </div>
             </div>
             
             <?php 
             while ( have_posts() ) : the_post(); 
-            $id_post = get_the_ID(); ?>
+            	$id_post = get_the_ID(); ?>
                         
             <div class="row">
                 <div class="col-xs-12">
                     <div class="top-row">
                         <p class="text-right back-link">
-                            <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow">&lang;</span> Back to Member Area</a>
+                            <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow">&lang;</span> <?php _e('Back to Member Area','perbanas'); ?></a>
                         </p>
-                        <h2><?php 
-                    if ( is_single() ) :
-                    the_title();
-                    else :
-                    the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' );
-                    endif;
-                    ?></h2>
+                        <h2><?php the_title(); ?></h2>
                         <p class="date"><?php the_date(); ?></p>
                     </div>
                     <div class="news-content">

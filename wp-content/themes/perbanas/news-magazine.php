@@ -1,5 +1,15 @@
+<?php 
+/**
+ * Halaman untuk menampilkan pdf reader
+ * menggunakan plugin pdf js ala firefox
+ * 
+ * @author Fostrom
+ * 
+ * */
+?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<style>
 		body {
@@ -7,27 +17,25 @@
 		}
 		
 		#iframe {
-			border:none;width:100%;height:100%;
+			border:none;
+			width:100%;
+			height:100%;
 		}
 		</style>
 	</head>
+	
 	<body>
 	<?php
-		$id_pm = (int)$_GET['id'];
+
+	// Menyaring id supaya hanya mampu menampung integer
+	$id_pm = intval( $_GET['id'] );
 	
-	
-		while ( have_posts() ) : the_post();
+	while ( have_posts() ) : the_post();
+		$file_location 	= perbanas_get_metaval_by_id( $id_pm ); ?>
 		
-		$meta_value = perbanas_get_metaval_by_id( $id_pm );
-		
-		$file_location = $meta_value;
-		?>
 		<iframe id="iframe" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/pdfjs-viewer-shortcode/web/viewer.php?file=<?php echo $file_location; ?>"></iframe>
-		<?php 
 	
-		
-		endwhile;
-	?>
+	<?php endwhile; ?>
 		
 	</body>
 </html>

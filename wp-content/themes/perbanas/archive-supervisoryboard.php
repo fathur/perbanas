@@ -7,6 +7,8 @@
  * Sector per orang, Supervisory Board, Board Member 
  * dan Secretariat.
  * 
+ * @author Fostrom
+ * 
  * */
 
 get_header(); ?>
@@ -35,17 +37,11 @@ get_header(); ?>
             </div>
             <div class="row ">
             		
-			<?php 
-			
-			wp_reset_query();
-			
-			$args = array('post_type' => get_post_type());
-			
-			$loop = new WP_Query($args);
+			<?php $loop = new WP_Query( array('post_type' => get_post_type()) );
 			
 			if( $loop->have_posts() ) :
-				while($loop->have_posts()) : $loop->the_post();
-			?>
+				while($loop->have_posts()) : $loop->the_post(); ?>
+				
 				<div class="col-sm-6 col-md-3 block item">
 					<div class="img">
 					<?php 
@@ -80,12 +76,13 @@ get_header(); ?>
 					</div>			
 				</div>	
 			
-			<?php 
-				endwhile;
+			<?php endwhile;
 			else:
 				get_template_part( 'content', 'none' );
 			endif; 
-			?>
+			
+			wp_reset_query();
+			wp_reset_postdata(); ?>
 
             </div>
         </div>

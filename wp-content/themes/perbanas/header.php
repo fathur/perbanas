@@ -67,7 +67,7 @@
 										<a class="forgot-password" href="<?php echo wp_lostpassword_url(); ?>">Forgot password?</a>
 										<input type="submit" name="wp-submit" id="wp-submit" class="btn" value="submit" />
 										<input type="hidden" name="redirect_to" value="<?php echo get_bloginfo('siteurl'); // ( $_SERVER['REQUEST_URI'] ); ?>" />
-										<input type="hidden" name="testcookie" value="1" />
+										<input type="hidden" name="testcookie" value="0" />
 									</div>
 						    </form>
 						  </div>
