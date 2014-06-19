@@ -28,7 +28,7 @@
 							}
 					?>
 					
-                    <div class="col-xs-12 block slider-background item <?php echo $active; ?>" style="background-image: url('<?php echo $thumb_url[0]; ?>'); background-size: cover;">
+                    <div class="col-xs-12 block slider-background item <?php echo $active; ?>" style="background-image: url('<?php echo $thumb_url[0]; ?>'); background-size: cover; background-position: center center;">
                         <div class="container">
                             <div class="row slider-content">
                                 <div class="col-xs-12 block slider-content-text">
