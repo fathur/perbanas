@@ -1343,10 +1343,27 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .homepage-slider .slider-content {
         display: table-cell;
         vertical-align: middle;
-        height: 424px;
     }
-    .homepage-slider .slider-content-text {
-        max-width: 50%;
+    @media screen and (max-width: 991px) {
+        .homepage-slider .slider-content {
+            height: 300px;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .homepage-slider .slider-content {
+            height: 424px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        .homepage-slider .slider-content-text {
+            max-width: 100%;
+            text-align: center;
+        }        
+    }
+    @media screen and (min-width: 992px) {
+        .homepage-slider .slider-content-text {
+            max-width: 50%;
+        }
     }
     .homepage-slider .slider-pager {
         position: relative;
