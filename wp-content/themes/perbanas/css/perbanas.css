@@ -1449,6 +1449,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     @media screen and (max-width: 991px) {
         .homepage-slider .slider-content {
             /*height: 300px; seems a bit too small */
+            height: 424px;
         }
     }
     @media screen and (min-width: 992px) {
