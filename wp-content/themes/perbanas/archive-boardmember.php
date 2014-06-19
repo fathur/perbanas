@@ -15,7 +15,7 @@ get_header(); ?>
 			<nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
         <div class="sidebar">
             <div class="sidebar-title">
-                <h2>Council</h2>
+                <h2><?php _e('Council','perbanas'); ?></h2>
             </div>
             
             <?php echo perbanas_side_menu('council-menu', 'leftMenu'); ?>
@@ -25,7 +25,7 @@ get_header(); ?>
         	
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>Board Member</span></h1>
+                    <h1><div></div><span><?php _e('Board Member','perbanas'); ?></span></h1>
                 </div>
             </div>
             <div class="row ">
@@ -43,7 +43,22 @@ get_header(); ?>
 			?>
 				<div class="col-sm-6 col-md-3 block item">
 					<div class="img">
-						<?php the_post_thumbnail('',array('class' => "img-responsive",)); ?></div>
+					<?php 
+					/**
+					 * Mengambil gambar dari post thumbnail, jika ada ditampilkan,
+					 * jika tidak ada diganti gambar default no profile picture
+					 * 
+					 * */
+					if ( has_post_thumbnail() ) { 
+						
+						the_post_thumbnail(array(667,833),array('class' => "img-responsive",));
+						
+					} else { ?>
+					
+						<img class="img-responsive" width="667" height="833" src="<?php echo get_template_directory_uri(); ?>/img/no-pp.jpg">
+					
+					<?php } ?>	
+					</div>
 					<div class="overlay">
 						<div class="item-title">
 							<h3><?php echo get_the_title(); ?></h3>
@@ -60,6 +75,8 @@ get_header(); ?>
 			
 			<?php 
 				endwhile;
+			else:
+				get_template_part( 'content', 'none' );
 			endif; 
 			?>
 

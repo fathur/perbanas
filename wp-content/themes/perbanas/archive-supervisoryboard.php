@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php 
+
+/**
+ * Template untuk menampilkan arsip dari Supervisory Board.
+ * 
+ * Tampilan dalam template ini sama dengan Advisory Board,
+ * Sector per orang, Supervisory Board, Board Member 
+ * dan Secretariat.
+ * 
+ * */
+
+get_header(); ?>
+
 <div class="container main-layout sectors organization-sector">
     <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
@@ -9,7 +21,7 @@
 			<nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
         <div class="sidebar">
             <div class="sidebar-title">
-                <h2>Council</h2>
+                <h2><?php _e('Council','perbanas'); ?></h2>
             </div>
             
             <?php echo perbanas_side_menu('council-menu', 'leftMenu'); ?>
@@ -18,7 +30,7 @@
         <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>Supervisory Board</span></h1>
+                    <h1><div></div><span><?php _e('Supervisory Board','perbanas'); ?></span></h1>
                 </div>
             </div>
             <div class="row ">
@@ -36,13 +48,30 @@
 			?>
 				<div class="col-sm-6 col-md-3 block item">
 					<div class="img">
-						<?php the_post_thumbnail('',array('class' => "img-responsive",)); ?></div>
+					<?php 
+					/**
+					 * Mengambil gambar dari post thumbnail, jika ada ditampilkan,
+					 * jika tidak ada diganti gambar default no profile picture
+					 * 
+					 * */
+					if ( has_post_thumbnail() ) { 
+						
+						the_post_thumbnail(array(667,833),array('class' => "img-responsive",));
+						
+					} else { ?>
+					
+						<img class="img-responsive" width="667" height="833" src="<?php echo get_template_directory_uri(); ?>/img/no-pp.jpg">
+					
+					<?php } ?>
+						
+					</div>
 					<div class="overlay">
 						<div class="item-title">
 							<h3><?php echo get_the_title(); ?></h3>
 							<p><?php echo get_post_meta( get_the_ID(), 'wpcf-sector-posisi', TRUE ); ?></p>
 						</div>
 						<div class="item-logo">
+							
 							<img class="img-no-responsive" src="<?php echo get_post_meta( get_the_ID(), 'wpcf-sector-logo-bank', TRUE ); ?>" />
 						</div>
 						<div class="item-address">
@@ -53,6 +82,8 @@
 			
 			<?php 
 				endwhile;
+			else:
+				get_template_part( 'content', 'none' );
 			endif; 
 			?>
 
