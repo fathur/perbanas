@@ -89,7 +89,7 @@ get_header(); ?>
 					 * */
 					$format_download 	= perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') );
 					
-					if ( $format_download == 'pdf' ) : ?>
+					if ( $format_download == '.pdf' ) : ?>
 
 				<div class="col-sm-6 col-md-3 block item">
                     <div class="overlay-container">
