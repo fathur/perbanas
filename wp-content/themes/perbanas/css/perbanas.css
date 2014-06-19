@@ -949,7 +949,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     @media screen and (max-width: 767px) {
         .timeline-outer-container .item .description.left {
             margin-left: 0;
-            margin-right: 43%;
+            margin-right: 46%;
         }
     }
     .timeline-outer-container .item .description.right {
