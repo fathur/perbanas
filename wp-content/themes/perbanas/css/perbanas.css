@@ -483,20 +483,35 @@ a:hover {
 }
 @media screen and (max-width: 991px) {
     .main-content-pane .in-article-diagram {
-        padding-left: 20%;
-        padding-right: 20%;
         /* use default value for margin top and bottom */
+        /* use default value for padding left and right */
     }
 }
 @media screen and (min-width: 992px) {
     .main-content-pane .in-article-diagram {
+        padding-left: 20%;
+        padding-right: 20%;
         margin-top: 60px;
         margin-bottom: 60px;
-        /* use default value for padding left and right */
     }
 }
 .main-content-pane p.last {
     margin-bottom: 60px;
+}
+.main-content-pane .inner-last {
+    margin-bottom: 30px;
+}
+
+.main-content-pane ol {
+    margin-left: 15px;
+    list-style-type: decimal;
+    color: #717271;
+    font-size: 12px;
+    font-weight: normal;
+}
+.main-content-pane ol>li {
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 /* general: footer */
 .footer, .footer-links a {
