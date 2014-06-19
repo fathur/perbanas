@@ -1,7 +1,15 @@
 <?php 
-$taxonomy       = 'subsector';
-$term           = get_query_var( $wp_query->query_vars['taxonomy'] );
-$menu_post_type = 'council'; // Karena sector merupakan bagian dari menu council
+
+/**
+ * Template untuk menampilkan arsip dari Board Member.
+ * 
+ * Tampilan dalam template ini sama dengan Advisory Board,
+ * Sector per orang, Supervisory Board, Board Member 
+ * dan Secretariat.
+ * 
+ * @author Fostrom
+ * 
+ * */
 
 get_header(); ?>
 
@@ -30,13 +38,10 @@ get_header(); ?>
             </div>
             <div class="row ">
             		
-			<?php 
-			
-			wp_reset_query();
-			
-			$args = array('post_type' => get_post_type());
-			
-			$loop = new WP_Query($args);
+			<?php $loop = new WP_Query( 
+				array(
+					'post_type' => get_post_type()
+			) );
 			
 			if( $loop->have_posts() ) :
 				while($loop->have_posts()) : $loop->the_post();
@@ -73,12 +78,13 @@ get_header(); ?>
 					</div>			
 				</div>	
 			
-			<?php 
-				endwhile;
+			<?php endwhile;
 			else:
 				get_template_part( 'content', 'none' );
 			endif; 
-			?>
+			
+			wp_reset_query();
+			wp_reset_postdata(); ?>
 
             </div>
         </div>

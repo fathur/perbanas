@@ -1,4 +1,17 @@
-<?php get_header(); ?>
+<?php 
+
+/**
+ * Template untuk menampilkan arsip dari Advisory Board.
+ * 
+ * Tampilan dalam template ini sama dengan Advisory Board,
+ * Sector per orang, Supervisory Board, Board Member 
+ * dan Secretariat.
+ * 
+ * @author Fostrom
+ * 
+ * */
+
+get_header(); ?>
 
 <div class="container main-layout sectors organization-sector">
     

@@ -1,4 +1,14 @@
-<?php get_header(); ?>
+<?php 
+
+/**
+ * Template untuk menampilkan arsip dari Download.
+ *
+ * @author Fostrom
+ *
+ * */
+
+get_header(); ?>
+
 <div class="container main-layout downloads">
     <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
@@ -22,48 +32,51 @@
                 </div>
             </div>
             
-            <?php 
+            <?php $loop = new WP_Query(array(
+				'post_type' => get_post_type()
+			));
 			
-				wp_reset_query();
-				
-				$args = array(
-					'post_type' => get_post_type()
-				);
-				
-				$loop = new WP_Query($args);
-				
-				if( $loop->have_posts() ) :
-					while($loop->have_posts()) : $loop->the_post();
-				?>
-					
-					
+			if( $loop->have_posts() ) :
+				while($loop->have_posts()) : $loop->the_post(); 
 			
-            
+				/**
+				 * Mencari id file yang akan di unduh
+				 * */
+				$id_download 		= perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment');
+				
+				/**
+				 * Mencari file size yang ada
+				 * */
+				$size_download 		= perbanas_get_postmeta_size( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') );
+				
+				/**
+				 * Mencari extensi file
+				 * */
+				$format_download 	= perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') );
+			?>
+			
             <div class="row downloads-item">
                 <div class="col-xs-1 text-center">
-                    <a href="<?php echo get_permalink(); ?>?id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/download-file.png" /></a>
+                    <a href="<?php echo get_permalink(); ?>?id=<?php echo $id_download; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/download-file.png" /></a>
                 </div>
                 <div class="col-xs-9">
-                    <h2><a href="<?php echo get_permalink(); ?>?id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><?php echo get_the_title(); ?></a></h2>
-                    <p class="desc">Size: <?php echo perbanas_get_postmeta_size( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') ); ?> <span class="divider">|</span> <?php echo get_the_date(); ?> <span class="divider">|</span> Format: <?php echo perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') ); ?></p>
+                    <h2><a href="<?php echo get_permalink(); ?>?id=<?php echo $id_download; ?>"><?php echo get_the_title(); ?></a></h2>
+                    <p class="desc">Size: <?php echo $size_download; ?> <span class="divider">|</span> <?php echo get_the_date(); ?> <span class="divider">|</span> Format: <?php echo $format_download; ?></p>
                 </div>
                 <div class="col-xs-2 text-center">
-                    <a href="<?php echo get_permalink(); ?>?id=<?php echo perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/download-button-05.png"></a>
+                    <a href="<?php echo get_permalink(); ?>?id=<?php echo $id_download; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/download-button-05.png"></a>
                 </div>
             </div>
             <hr />
 				
-				<?php 					
-					endwhile;
-				else:
-					get_template_part( 'content', 'none' );
-				endif; 
-			?>
+			<?php endwhile;
+			else:
+				get_template_part( 'content', 'none' );
+			endif; 
 			
-           
-
-
-
+			wp_reset_query();
+			wp_reset_postdata(); ?>
+			
         </div>
     </div>
 </div>

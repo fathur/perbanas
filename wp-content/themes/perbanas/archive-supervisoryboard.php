@@ -7,6 +7,8 @@
  * Sector per orang, Supervisory Board, Board Member 
  * dan Secretariat.
  * 
+ * @author Fostrom
+ * 
  * */
 
 get_header(); ?>

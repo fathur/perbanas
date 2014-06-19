@@ -1,10 +1,26 @@
-<?php get_header(); ?>
+<?php 
+
+/**
+ * Template untuk menampilkan arsip dari Member Area.
+ * 
+ * Halaman untuk menampilkan hanya untuk member area saja.
+ * Orang lain yang tidak login ke halaman ini tidak berhak 
+ * melihatnya.
+ *
+ * @author Fostrom
+ *
+ * */
+
+get_header(); ?>
+
 <div class="container main-layout members-area">
+
     <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
 			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-xs-12 main-content-pane">
             <div class="row">
@@ -15,19 +31,12 @@
                 </div>
             </div>
             
-            <?php 
-			
-				wp_reset_query();
+            <?php $loop = new WP_Query(array(
+				'post_type' => get_post_type()
+			));
 				
-				$args = array(
-					'post_type' => get_post_type()
-				);
-				
-				$loop = new WP_Query($args);
-				
-				if( $loop->have_posts() ) :
-					while($loop->have_posts()) : $loop->the_post();
-			?>
+			if( $loop->have_posts() ) :
+				while($loop->have_posts()) : $loop->the_post(); ?>
 			
             <div class="row members-area-item">
                 <div class="col-xs-12">
@@ -43,12 +52,13 @@
             </div>
             <hr />
 			
-			<?php 
-					endwhile;
-				else:
-					get_template_part( 'content', 'none' );
-				endif; 
-			?>
+			<?php endwhile;
+			else:
+				get_template_part( 'content', 'none' );
+			endif; 
+				
+			wp_reset_query();
+			wp_reset_postdata(); ?>
             
         </div>
     </div>
