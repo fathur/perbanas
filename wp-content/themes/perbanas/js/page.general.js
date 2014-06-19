@@ -1,5 +1,6 @@
 function page_general_init() {
     /* ALL screen sizes */
+    new FastClick(document.body);
     // init carousel
     $('#featured-slider').carousel({interval: 5000});
     $('#partner-slider').carousel({interval: 5000});
