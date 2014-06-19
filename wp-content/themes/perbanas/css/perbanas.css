@@ -465,7 +465,7 @@ a:hover {
 /* general: main content pane */
 @media screen and (max-width: 991px) {
     .main-content-pane h2 {
-
+        /* use default value for margin bottom */
     }
 }
 @media screen and (min-width: 992px) {
@@ -480,6 +480,20 @@ a:hover {
     color: #717271;
     font-size: 12px;
     font-weight: normal;
+}
+@media screen and (max-width: 991px) {
+    .main-content-pane .in-article-diagram {
+        padding-left: 20%;
+        padding-right: 20%;
+        /* use default value for margin top and bottom */
+    }
+}
+@media screen and (min-width: 992px) {
+    .main-content-pane .in-article-diagram {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        /* use default value for padding left and right */
+    }
 }
 .main-content-pane p.last {
     margin-bottom: 60px;
