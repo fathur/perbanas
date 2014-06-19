@@ -1,7 +1,11 @@
 <?php 
-$taxonomy       = 'subsector';
-$term           = get_query_var( $wp_query->query_vars['taxonomy'] );
-$menu_post_type = 'council'; // Karena sector merupakan bagian dari menu council
+
+/**
+ * 
+ * */
+
+$taxonomy	= 'subsector';
+$term		= get_query_var( $wp_query->query_vars['taxonomy'] );
 
 get_header(); ?>
 
@@ -15,7 +19,7 @@ get_header(); ?>
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
 	            <div class="sidebar-title">
-	                <h2>Council</h2>
+	                <h2><?php _e('Council','perbanas')?></h2>
 	            </div>
 	            
 	            <?php echo perbanas_side_menu('council-menu', 'leftMenu'); ?>
@@ -25,17 +29,17 @@ get_header(); ?>
         	<div class="row">
                 <div class="col-xs-12 text-right">
                     <select>
-                    	<option>Other Sectors</option>
+                    	<option><?php _e('Other Sectors','perbanas')?></option>
                         <?php 
-													$sectors = get_terms( $taxonomy , array(
-														'orderby'		=> 'name', 
-														'order'			=> 'ASC',
-														'hide_empty'	=> FALSE, 
-													));
-												?>
-												<?php foreach ($sectors as $sector) :?>
-													<option value="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>"><?php echo $sector->name; ?></option>
-												<?php endforeach; ?>
+							$sectors = get_terms( $taxonomy , array(
+								'orderby'		=> 'name', 
+								'order'			=> 'ASC',
+								'hide_empty'	=> FALSE, 
+							));
+						?>
+						<?php foreach ($sectors as $sector) :?>
+							<option value="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>"><?php echo $sector->name; ?></option>
+						<?php endforeach; ?>
                     </select>
                 </div>
             </div>

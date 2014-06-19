@@ -11,7 +11,7 @@
         <div class="col-xs-12 col-sm-12 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>Members' Area</span></h1>
+                    <h1><span><?php _e("Members' Area",'perbanas'); ?></span></h1>
                 </div>
             </div>
             
@@ -23,7 +23,7 @@
                 <div class="col-xs-12">
                     <div class="top-row">
                         <p class="text-right back-link">
-                            <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow">&lang;</span> Back to Member Area</a>
+                            <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow">&lang;</span> <?php _e('Back to Member Area','perbanas'); ?></a>
                         </p>
                         <h2><?php 
                     if ( is_single() ) :

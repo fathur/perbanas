@@ -16,7 +16,7 @@ get_header(); ?>
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>Industry Guidelines</h2>
+                    <h2><?php _e('Industry Guidelines','perbanas'); ?></h2>
                 </div>
                 
                 <?php echo perbanas_side_menu('industryguidelines-menu', 'leftMenu'); ?>

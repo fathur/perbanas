@@ -1,7 +1,11 @@
 <?php 
+
+/**
+ * 
+ * */
+
 $taxonomy       = 'submemberbank';
 $term           = get_query_var( $wp_query->query_vars['taxonomy'] );
-$menu_post_type = 'member-bank'; // Karena sector merupakan bagian dari menu council
 
 get_header(); ?>
 
@@ -16,7 +20,7 @@ get_header(); ?>
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
 	            <div class="sidebar-title">
-	                <h2>Member Banks</h2>
+	                <h2><?php _e('Member Banks','perbanas'); ?></h2>
 	            </div>
 	            
 	            <?php echo perbanas_side_menu('member-bank-menu', 'leftMenu'); ?>

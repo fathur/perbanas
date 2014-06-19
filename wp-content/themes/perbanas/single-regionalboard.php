@@ -10,7 +10,7 @@
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>Council</h2>
+                    <h2><?php _e('Council','perbanas'); ?></h2>
                 </div>
                <?php echo perbanas_side_menu('council-menu', 'leftMenu'); ?>
             </div>
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-xs-12 text-right">
                     <select>
-                    	<option>Other Regional Board</option>
+                    	<option><?php _e('Other Regional Board','perbanas'); ?></option>
                         <?php 
 							$args = array( 'post_type' => get_post_type() );
 							$query = new WP_Query( $args );

@@ -11,7 +11,7 @@
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>Lingkup Kerja</h2>
+                    <h2><?php _e('Lingkup Kerja','perbanas'); ?></h2>
                 </div>
                 <?php echo perbanas_side_menu('about-menu', 'leftMenu'); ?>
             </div>

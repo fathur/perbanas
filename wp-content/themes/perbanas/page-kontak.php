@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-xs-12 block section-title">
             <h1>
-                <span>Kontak</span>
+                <span><?php _e('Kontak','perbanas'); ?></span>
             </h1>
         </div>
     </div>

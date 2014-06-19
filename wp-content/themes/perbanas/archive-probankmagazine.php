@@ -64,8 +64,13 @@
 
 				<div class="col-sm-6 col-md-3 block item">
                     <div class="overlay-container">
-                        <div class="img">                    
-                        	<?php echo the_post_thumbnail('large',array('class' => 'img-responsive')); ?>
+                        <div class="img">
+                        	<?php if ( has_post_thumbnail() ) {
+                        		echo the_post_thumbnail('large',array('class' => 'img-responsive'));
+							} else { ?>
+								<img width="161" height="214" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" class="img-responsive wp-post-image" alt="magazine">
+							<?php }?>
+                        	
                         </div>
                         <div class="overlay">
                             <div class="overlay-top-aligned">
@@ -80,7 +85,7 @@
                         </div>
                     </div>
                     <div class="description">
-                        <p>Edisi</p>
+                        <p><?php _e('Edition: ','perbanas'); ?></p>
                         <p class="date"><?php echo get_post_meta(get_the_ID(), 'wpcf-magazine-edition', TRUE); ?></p>
                     </div>
                 </div>

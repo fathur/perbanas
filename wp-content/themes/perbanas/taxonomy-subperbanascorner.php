@@ -1,6 +1,12 @@
-<?php get_header(); 
+<?php 
+
+/**
+ * 
+ * */
+
 $term = get_query_var( $wp_query->query_vars['taxonomy'] );
-?>
+
+get_header(); ?>
 
 <div class="container main-layout <?php echo ($term == 'education') ? 'perbanas-corner-education' : 'perbanas-corner-faq' ; ?>">
     <div class="row breadcrumbs hidden-xs hidden-sm">
@@ -12,7 +18,7 @@ $term = get_query_var( $wp_query->query_vars['taxonomy'] );
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>News &amp; Media</h2>
+                    <h2><?php _e('News &amp; Media','perbanas'); ?></h2>
                 </div>
     			<?php echo perbanas_side_menu('news-menu', 'leftMenu'); ?>
             </div>
@@ -24,10 +30,10 @@ $term = get_query_var( $wp_query->query_vars['taxonomy'] );
                         <div></div>
                         <?php
                         if ( $term == 'education' ) {
-                            echo '<span>Education</span>';
+                            echo '<span>'._e('Education','perbanas').'</span>';
                         }
                         elseif ( $term == 'faq' ) {
-                            echo '<span>FAQ</span>';
+                            echo '<span>'._e('FAQ','perbanas').'</span>';
                         }
                         ?>
                     </h1>

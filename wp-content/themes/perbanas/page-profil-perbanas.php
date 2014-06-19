@@ -11,7 +11,7 @@
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>About</h2>
+                    <h2><?php _e('About','perbanas'); ?></h2>
                 </div>
                 <?php echo perbanas_side_menu('about-menu', 'leftMenu'); ?>
             </div>
@@ -19,7 +19,7 @@
         <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><span>Who We Are</span></h1>
+                    <h1><span><?php _e('Who We Are','perbanas'); ?></span></h1>
                 </div>
             </div>
             <div class="row">
