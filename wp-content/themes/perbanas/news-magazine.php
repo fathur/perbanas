@@ -11,6 +11,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		
+		
 		<style>
 		body {
 			margin: 0px;
@@ -37,6 +41,11 @@
 	
 	<?php endwhile; ?>
 		
+		<script>
+		$(document).ready(function(){
+			$('#iframe').css('height',$(window).height() * 0.99 | 0);
+		});
+		</script>
 	</body>
 </html>
 

@@ -14,6 +14,7 @@ get_header(); ?>
 	<div class="row slider homepage-slider">
 		<div id="featured-slider" class="carousel slide">
 			<div class="carousel-inner">
+			
 	        <?php 
 			/**
 			 * Menampilkan slider / carousel
@@ -53,6 +54,8 @@ get_header(); ?>
                     
 			<?php $i++;
 				endwhile;
+			else:
+				get_template_part( 'content', 'none' );
 			endif;
 			
 			/* Restore to originial query */
@@ -62,50 +65,45 @@ get_header(); ?>
                     
 			</div>
                 
-                <div class="col-xs-12">
-                    <div class="container slider-pager">
-                        <div class="slider-pager-border"></div>
-                        <ol class="carousel-indicators">
-                        
-                         <?php 
-	                								
-					$args = array(
-						'post_type' => 'carousel',
-						'posts_per_page' => 3
-					);
-					
-					$loop = new WP_Query($args);
-					
-					if( $loop->have_posts() ) :
-					
-						$j = 0;
-					
-						while($loop->have_posts()) : $loop->the_post();											
+			<div class="col-xs-12">
+				<div class="container slider-pager">
+					<div class="slider-pager-border"></div>
+						<ol class="carousel-indicators">
+			
+			<?php $loop = new WP_Query(array(
+					'post_type' => 'carousel',
+					'posts_per_page' => 3
+				));
+				
+				if( $loop->have_posts() ) :
+				
+					$j = 0;
+				
+					while($loop->have_posts()) : $loop->the_post();											
 
-							if ('2' == $j) {
-								$activex = 'active';
-							}
-					?>
-                            <li data-target="#featured-slider" data-slide-to="<?php echo $j; ?>" class="<?php echo $activex; ?>">
-                                <span class="page-number"><span class="offset-container"><?php echo $j+1; ?></span></span>
-                            </li>
-                            <?php 
-                   
-                   		$j++;
-                   		endwhile;
-                   endif;
-                   
-                   /* Restore to originial query */
-					wp_reset_query();
-					/* Restore original Post Data */
-					wp_reset_postdata();
-                   ?>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+						if ('2' == $j) { $activex = 'active'; } ?>
+						
+							<li data-target="#featured-slider" data-slide-to="<?php echo $j; ?>" class="<?php echo $activex; ?>">
+								<span class="page-number"><span class="offset-container"><?php echo $j+1; ?></span></span>
+							</li>
+					
+				<?php $j++;
+					endwhile;
+				else:
+					get_template_part( 'content', 'none' );
+				endif;
+				
+				/* Restore to originial query */
+				wp_reset_query();
+				/* Restore original Post Data */
+				wp_reset_postdata(); ?>
+				
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     
     <div class="container">
         <div class="row">
@@ -116,37 +114,40 @@ get_header(); ?>
             </div>
         </div>
         <div class="row homepage-news">
-			<?php 
+
+        <?php 
+
+		/**
+		 * Menampilkan news
+		 * ================
+		 * 
+		 * */
 		
-			
-			/**
-			 * Menampilkan news
-			 * ================
-			 * 
-			 * */
-			
-			$args = array(
-				'post_type' => 'news',
-				'posts_per_page' => 4
-			);
-			
-			$loop = new WP_Query($args);
-			
-			if( $loop->have_posts() ) :
-				while($loop->have_posts()) : $loop->the_post();
-			?>
-            <div class="col-xs-12 col-md-6 block homepage-news-item">
-                <div class="row">
-                    <div class="col-md-6">
-                    
-                     <?php if (has_post_thumbnail()) {
-                     	the_post_thumbnail(array(750,486),array('class' => "img-responsive"));
-                     } else { ?>
-                     <img src="<?php echo get_template_directory_uri(); ?>/img/no-news-picture.jpg" class="img-responsive" width="720" height="720" />
+
+		$loop = new WP_Query(array(
+			'post_type' => 'news',
+			'posts_per_page' => 4
+		));
+		
+		if( $loop->have_posts() ) :
+			while($loop->have_posts()) : $loop->the_post();
+		?>
+		
+			<div class="col-xs-12 col-md-6 block homepage-news-item">
+				<div class="row">
+					<div class="col-md-6">
+					
+					<?php if (has_post_thumbnail()) {
+						
+						the_post_thumbnail(array(750,486, true),array('class' => "img-responsive"));
+						
+					} else { ?>					
+						<img src="<?php echo get_template_directory_uri(); ?>/img/no-news-picture.jpg" class="img-responsive" width="720" height="720" />
 					<?php } ?>
                     	
                     </div>
-                    <div class="col-md-6">
+                    
+					<div class="col-md-6">
                         <div class="homepage-news-desc-top">
                             <h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                             <p class="date"><?php echo get_the_date(); ?></p>
@@ -157,9 +158,10 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-           <?php 
-					endwhile;
-				endif; 
+			<?php endwhile;
+			else:
+				get_template_part( 'content', 'none' );
+			endif; 
 				
 			/* Restore to originial query */
 			wp_reset_query();
@@ -167,43 +169,48 @@ get_header(); ?>
 			wp_reset_postdata();
 			?>
         </div>
+        
         <div class="row section-title">
             <div class="col-xs-12 block">
-                <h1><div></div><span>Latest Photos</span></h1>
+                <h1><div></div><span><?php _e('Latest Photos','perbanas'); ?></span></h1>
             </div>
         </div>
+        
         <div class="row homepage-gallery">
         	<?php 
-				// wp_reset_query();
+			/**
+			 * Gallery home page
+			 * =================
+			 * */
+
+			$loop = new WP_Query(array(
+				'post_type' => 'photogallery',
+				'posts_per_page' => 4
+			));
+			
+			if( $loop->have_posts() ) :
+				while($loop->have_posts()) : $loop->the_post(); ?>
 				
-				$args = array(
-					'post_type' => 'photogallery',
-					'posts_per_page' => 4
-				);
-				
-				$loop = new WP_Query($args);
-				
-				if( $loop->have_posts() ) :
-				while($loop->have_posts()) : $loop->the_post();
-			?>
             <div class="col-xs-12 col-md-6 col-md-3 block">
+            
             	<a href="<?php echo get_permalink(); ?>">
                  <?php the_post_thumbnail(array(750, 500),array('class' => "img-responsive",)); ?>
                 </a>
+                
                 <h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                 <p class="date"><?php echo get_the_date(); ?></p>
             </div>
-            <?php 
-				endwhile;
-				endif; 
+            
+			<?php endwhile;
+			endif; 
 				
-				/* Restore to originial query */
-				wp_reset_query();
-				/* Restore original Post Data */
-				wp_reset_postdata();
-			?>
+			/* Restore to originial query */
+			wp_reset_query();
+			/* Restore original Post Data */
+			wp_reset_postdata(); ?>
            
         </div>
+        
         <div class="row">
             <div class="col-sm-6 block">
                 <div class="row section-title homepage-probank-title">
@@ -212,69 +219,71 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                 <?php 
+			<?php 
+			/**
+			 * Probank magazine
+			 * ================
+			 * */
 			
-				wp_reset_query();
+			$loop = new WP_Query(array(
+				'post_type' => 'probankmagazine',
+				'posts_per_page' => 1
+			));
+			
+			if( $loop->have_posts() ) :
+				while($loop->have_posts()) : $loop->the_post(); ?>
 				
-				$args = array(
-					'post_type' => 'probankmagazine',
-					'posts_per_page' => 1
-				);
-				
-				$loop = new WP_Query($args);
-				
-				if( $loop->have_posts() ) :
-					while($loop->have_posts()) : $loop->the_post();
-				?>
                 <div class="row homepage-probank">
                     <div class="col-xs-6 col-md-4 homepage-probank-image-container">
                     
-                    <?php if ( has_post_thumbnail() ) {
-                        		echo the_post_thumbnail('large',array('class' => 'img-responsive'));
-							} else { ?>
-								<img width="161" height="214" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" class="img-responsive wp-post-image" alt="magazine">
-							<?php }?>
-
-                        <p class="text-center">
-                            <?php echo get_post_meta( get_the_ID(), 'wpcf-magazine-edition', TRUE) ; ?>
-                        </p>
-                    </div>
+					<?php if ( has_post_thumbnail() ) {
+						the_post_thumbnail('large',array('class' => 'img-responsive'));
+					} else { ?>
+						<img width="161" height="214" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" class="img-responsive wp-post-image" alt="magazine">
+					<?php } ?>
+						
+						<p class="text-center">
+							<?php echo get_post_meta( get_the_ID(), 'wpcf-magazine-edition', TRUE) ; ?>
+						</p>
+					</div>
                     <div class="col-xs-6 col-md-8">
                         <p class="homepage-probank-desc-top"><?php echo get_the_content('...'); ?></p>
                         <p><a href="<?php echo get_post_type_archive_link('probankmagazine'); ?>" class="btn">View more <span class="arrow">&rang;</span></a></p>
                     </div>
                 </div>
-                <?php 
-					endwhile;
-				endif; 
-				
-				/* Restore to originial query */
-				wp_reset_query();
-				/* Restore original Post Data */
-				wp_reset_postdata();
-			?>
+                
+			<?php endwhile;
+			endif; 
+			
+			/* Restore to originial query */
+			wp_reset_query();
+			/* Restore original Post Data */
+			wp_reset_postdata(); ?>
+			
             </div>
+            
             <div class="col-sm-6 block">
                 <div class="row section-title homepage-events-title">
                     <div class="col-sm-12">
-                        <h1><div></div><span>Upcoming Events</span></h1>
+                        <h1><div></div><span><?php _e('Upcoming Events','perbanas'); ?></span></h1>
                     </div>
                 </div>
                 <div class="row homepage-events">
-                 <?php 
-	
-				$args = array( 
-					'post_type' => 'upcomingevent',
-					'posts_per_page' => 2 );
 				
-				$query = new WP_Query( $args );
+				<?php 
+				/**
+				 * Upcoming event
+				 * ==============
+				 * 
+				 * */
+				$query = new WP_Query( array(
+					'post_type' => 'upcomingevent',
+					'posts_per_page' => 2 ) );
 				
 				if ( $query->have_posts() ) :					
-					while ( $query->have_posts() ) :
-				
-					$query->the_post(); 
-					$unixdate	= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE); 
-				?>
+					while ( $query->have_posts() ) : $query->the_post();
+				 
+						$unixdate	= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE); ?>
 					
                     <div class="col-sm-12">
                         <div class="row item">
@@ -294,11 +303,10 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <?php
-				endwhile;
-			else:
-				// no posts found
-			endif;
+				<?php endwhile;
+				else:
+					get_template_part( 'content', 'none' );
+				endif;
 	
 				/* Restore to originial query */
 				wp_reset_query();

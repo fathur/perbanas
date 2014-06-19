@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php
+
+/**
+ * Menampilkan satu halaman member area
+ * 
+ * hanya bisa diakses oleh member saja
+ *
+ * @author Fostrom
+ *
+ * */
+
+get_header(); ?>
 
 <div class="container main-layout news-single">
     <div class="row breadcrumbs hidden-xs hidden-sm">
@@ -15,9 +26,8 @@
                 </div>
             </div>
             
-            <?php 
-            while ( have_posts() ) : the_post(); 
-            	$id_post = get_the_ID(); ?>
+			<?php while ( have_posts() ) : the_post(); 
+				$id_post = get_the_ID(); ?>
                         
             <div class="row">
                 <div class="col-xs-12">

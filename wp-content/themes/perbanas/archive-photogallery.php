@@ -42,7 +42,7 @@ get_header(); ?>
 				if( $loop->have_posts() ) :
 					while($loop->have_posts()) : $loop->the_post(); ?>
 					
-                <div class="col-xs-6 col-md-3 block photo-gallery-album-item">
+                <div class="col-xs-12 col-md-3 block photo-gallery-album-item">
                     <div class="square">
                     	<a href="<?php echo get_permalink(); ?>">
 							<?php the_post_thumbnail(array(255,170),array('class' => "img-responsive",)); ?>
