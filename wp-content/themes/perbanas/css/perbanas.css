@@ -33,37 +33,55 @@ body {
     font-smoothing: antialiased;
     color: #004987;
 }
-h1 {
-    font-size: 42px;
-    font-weight: 300;
-}
-@media screen and (max-width: 992px) {
-    h1 {
-        font-size: 30px;
-    }
-}
-h2 {
-    font-size: 36px;
-    font-weight: 300;
-}
-@media screen and (max-width: 992px) {
-    h2 {
-        font-size: 24px;
-    }
-}
 
-h3 {
-    /* font-size: 18px; */
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-@media screen and (max-width: 992px) {
-    h3 {
-        font-size: 18px;
+    /* h1 */
+    h1 {
+        font-weight: 300;
     }
-}
+    @media screen and (min-width: 992px) {
+        h1 {
+            font-size: 42px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        h1 {
+            font-size: 30px;
+        }
+    }
+    /* end h1 */
+    /* h2 */
+    h2 {
+        font-weight: 300;
+    }
+    @media screen and (min-width: 992px) {
+        h2 {
+            font-size: 36px;
+            font-weight: 300;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        h2 {
+            font-size: 24px;
+        }
+    }
+    /* end h2 */
+    /* h3 */
+    h3 {
+        font-weight: 400;
+    }
+    @media screen and (min-width: 992px) {
+        h3 {
+            font-size: 22px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        h3 {
+            font-size: 18px;
+        }
+    }
+    /* end h3 */
 
 hr {
     border: 0;
@@ -445,12 +463,26 @@ a:hover {
 /* end general: navbar */
 
 /* general: main content pane */
+@media screen and (max-width: 991px) {
+    .main-content-pane h2 {
+
+    }
+}
+@media screen and (min-width: 992px) {
+    .main-content-pane h2 {
+        margin-bottom: 30px;
+    }
+   
+}
 .main-content-pane p {
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     margin-bottom: 15px;
     color: #717271;
     font-size: 12px;
     font-weight: normal;
+}
+.main-content-pane p.last {
+    margin-bottom: 60px;
 }
 /* general: footer */
 .footer, .footer-links a {
