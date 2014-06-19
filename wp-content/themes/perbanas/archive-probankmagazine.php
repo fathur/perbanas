@@ -10,7 +10,7 @@
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>News &amp; Media</h2>
+                    <h2><?php _e('News &amp; Media','perbanas'); ?></h2>
                 </div>
                 <?php echo perbanas_side_menu('news-menu', 'leftMenu'); ?>
             </div>
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-xs-12 text-right">
                     <select>
-                        <option>Filter</option>
+                        <option><?php _e('Filter','perbanas'); ?></option>
                         <?php 
                         	$tahun = perbanas_get_metaval_by_key('wpcf-magazine-year');
                         	
@@ -36,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>Probank Magazine</span></h1>
+                    <h1><div></div><span><?php _e('Probank Magazine','perbanas'); ?></span></h1>
                 </div>
             </div>
             <div class="row">
@@ -87,6 +87,8 @@
 				
 				<?php 
 					endwhile;
+				else:
+					get_template_part( 'content', 'none' );
 				endif; 
 			?>
 			

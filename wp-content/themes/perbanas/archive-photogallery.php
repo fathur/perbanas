@@ -9,7 +9,7 @@
         <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
-                    <h2>News &amp; Media</h2>
+                    <h2><?php _e('News &amp; Media','perbanas'); ?></h2>
                 </div>
     			<?php echo perbanas_side_menu('news-menu', 'leftMenu'); ?>
             </div>
@@ -17,7 +17,7 @@
         <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>Photo Gallery</span></h1>
+                    <h1><div></div><span><?php _e('Photo Gallery','perbanas'); ?></span></h1>
                 </div>
             </div>
             <div class="row">
@@ -43,6 +43,8 @@
                 
              	<?php 
 				endwhile;
+				else:
+					get_template_part( 'content', 'none' );
 				endif; 
 				
 				wp_reset_postdata();

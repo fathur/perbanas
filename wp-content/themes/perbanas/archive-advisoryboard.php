@@ -1,39 +1,42 @@
 <?php get_header(); ?>
+
 <div class="container main-layout sectors organization-sector">
+    
     <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
 			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
         </div>
     </div>
+    
     <div class="row">
-        <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
-          <div class="sidebar">
-            <div class="sidebar-title">
-                <h2>Council</h2>
-            </div>
-            
-            <?php echo perbanas_side_menu('council-menu', 'leftMenu'); ?>
-	        </div>
-	      </nav>
-        <div class="col-xs-12 col-md-9 main-content-pane">
-            <div class="row">
+		
+		<nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
+			<div class="sidebar">
+				<div class="sidebar-title">
+					<h2><?php _e('Council','perbanas'); ?></h2>
+				</div>
+            	<?php echo perbanas_side_menu('council-menu', 'leftMenu'); ?>
+			</div>
+		</nav>
+		
+		<div class="col-xs-12 col-md-9 main-content-pane">
+			
+			<div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span>Advisory Board</span></h1>
+                    <h1><div></div><span><?php _e('Advisory Board','perbanas'); ?></span></h1>
                 </div>
             </div>
+            
             <div class="row ">
             		
-			<?php 
-			
-			wp_reset_query();
-			
-			$args = array('post_type' => get_post_type());
-			
-			$loop = new WP_Query($args);
+			<?php $loop = new WP_Query( 
+			array(
+				'post_type' => get_post_type()
+			));
 			
 			if( $loop->have_posts() ) :
-				while($loop->have_posts()) : $loop->the_post();
-			?>
+				while($loop->have_posts()) : $loop->the_post(); ?>
+				
 				<div class="col-sm-6 col-md-3 block item">
 					<div class="img">
 						<?php the_post_thumbnail('',array('class' => "img-responsive",)); ?></div>
@@ -51,11 +54,14 @@
 					</div>			
 				</div>	
 			
-			<?php 
-				endwhile;
+			<?php endwhile;
+			else: // Jika tidak ada post
+				get_template_part( 'content', 'none' );
 			endif; 
-			?>
-
+			
+			wp_reset_query();
+			wp_reset_postdata(); ?>
+			
             </div>
         </div>
     </div>

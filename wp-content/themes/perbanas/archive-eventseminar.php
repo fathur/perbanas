@@ -1,17 +1,6 @@
-<?php 
-
-$menu_post_type = 'events'; // Karena sector merupakan bagian dari menu council
+<?php $menu_post_type = 'events'; // Karena sector merupakan bagian dari menu council
 
 get_header(); ?>
-
-<!--
-http://localhost/perbanas/sector/
-
-Daftar nama-nama sektor seperti 
-Organization Sektor
-RnD Sektor
-dll
--->
 
 <div class="row">
 	<div class="col-md-4">
@@ -72,7 +61,7 @@ dll
 		}
 		echo '</ul>';
 	} else {
-		// no posts found
+		get_template_part( 'content', 'none' );
 	}
 	/* Restore original Post Data */
 	wp_reset_postdata();
