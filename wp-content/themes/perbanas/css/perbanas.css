@@ -432,9 +432,6 @@ a:hover {
     }
 
     /* nested menu */
-    .dropdown-menu {
-        ddisplay: block !important;
-    }
     .dropdown-menu li {
         position: relative;
     }
@@ -466,7 +463,13 @@ a:hover {
         max-height: inherit;
     }
     .dropdown-menu li {
-        padding-left: 20px;
+        padding-left: 10px;
+    }
+    .dropdown-menu li .dropdown-menu {
+        margin-left: -10px;
+    }
+    .dropdown-menu li .dropdown-menu li {
+        padding-left: 40px;
     }
     .dropdown-menu li:hover {
         background: #009ADD;
