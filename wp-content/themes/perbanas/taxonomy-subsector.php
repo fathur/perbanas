@@ -29,7 +29,7 @@ get_header(); ?>
         	<div class="row">
                 <div class="col-xs-12 text-right">
                     <select>
-                    	<option><?php _e('Other Sectors','perbanas')?></option>
+                    	<option><?php _e('Other Divisions','perbanas')?></option>
                         <?php 
 							$sectors = get_terms( $taxonomy , array(
 								'orderby'		=> 'name', 

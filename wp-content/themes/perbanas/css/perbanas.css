@@ -1234,6 +1234,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* end main layout / sectors */
 
 /* main layout / organization sector */
+    
     .organization-sector .item .overlay {
         visibility: hidden;
         opacity: 0;
@@ -1250,15 +1251,29 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         transition:opacity .2s;
         padding: 18px;
     }
-    .organization-sector .item:hover .overlay {
-        visibility: visible;
-        -o-transition:opacity .2s;
-        -ms-transition:opacity .2s;
-        -moz-transition:opacity .2s;
-        -webkit-transition: opacity .2s;
-        transition: opacity .2s;
-        opacity: 1;
-        background: white;
+    @media screen and (min-width: 992px) {
+        .organization-sector .item:hover .overlay {
+            visibility: visible;
+            -o-transition:opacity .2s;
+            -ms-transition:opacity .2s;
+            -moz-transition:opacity .2s;
+            -webkit-transition: opacity .2s;
+            transition: opacity .2s;
+            opacity: 1;
+            background: white;
+        }
+    }
+    @media screen and (max-width: 992px) {
+        .organization-sector .item.active .overlay {
+            visibility: visible;
+            -o-transition:opacity .2s;
+            -ms-transition:opacity .2s;
+            -moz-transition:opacity .2s;
+            -webkit-transition: opacity .2s;
+            transition: opacity .2s;
+            opacity: 1;
+            background: white;
+        }
     }
     .organization-sector .item {
         text-align: center;
