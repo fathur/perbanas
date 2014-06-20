@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="row contact-form">
-         <?php echo do_shortcode('[contact-form-7 id="302" title="Contact form 1"]'); ?>
+         <?php echo do_shortcode('[contact-form-7 id="303" title="Contact form Id"]'); ?>
     </div>
 </div>
 
