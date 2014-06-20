@@ -57,7 +57,7 @@ get_header(); ?>
 					<div class="overlay">
 						<div class="overlay-bottom-aligned">
 							<h3><a href="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>">
-						<?php echo $sector->name; ?></a></h3>
+						<?php _e( $sector->name, 'perbanas'); ?></a></h3>
 						</div>
 					
 					</div>									
