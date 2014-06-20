@@ -241,7 +241,7 @@ function perbanas_side_menu( $menu_name, $id ) {
 				$list_menus .= '<div class="accordion-group">
 						<div class="accordion-heading">
 							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
-								<i class="icon-home"></i> '. $menu->title .
+								<i class="icon-home"></i> '. __( $menu->title, 'perbanas') .
 								'</a>
 							<hr class="'.$class_active.'" />
 						</div>';
@@ -255,7 +255,7 @@ function perbanas_side_menu( $menu_name, $id ) {
 				$list_menus .= '<div class="accordion-group">
 						<div class="accordion-heading">
 							<a class="item" href="'.$menu->url.'">
-								<i class="icon-home"></i> '. $menu->title .
+								<i class="icon-home"></i> '. __( $menu->title, 'perbanas' ) .
 								'</a>
 							<hr class="'.$class_active.'" />
 						</div></div>';
@@ -303,7 +303,7 @@ function __generate_child_mobile_menu( &$menus, &$list_menus, $level, &$url_coll
 		if ( __has_child( $menu->children ) ) {
 				
 		} else {
-			$list_menus .= '<li><a href="'.$menu->url.'" class="item">'.$menu->title.'</a></li>';
+			$list_menus .= '<li><a href="'.$menu->url.'" class="item">'.__( $menu->title, 'perbanas').'</a></li>';
 		}
 	}
 
@@ -348,7 +348,7 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 		$list_menus .= "</li>"; */
 
 		$list_menus .= '<li>
-				<a href="'.$menu->url.'" class="item">'.$menu->title.'</a>
+				<a href="'.$menu->url.'" class="item">'. __( $menu->title,'perbanas').'</a>
 				<hr class="'.$class_active.'" />
 			</li>';
 	}
