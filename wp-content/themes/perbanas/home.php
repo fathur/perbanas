@@ -319,6 +319,8 @@ get_header(); ?>
             <div class="col-xs-12 block">
                 <h1><div></div><span>Our Members</span></h1>
             </div>
+        </div>
+        <div class="row">
             <div id="partner-slider" class="col-xs-12 block carousel slide">
                 <div class="carousel-inner">
                     <div class="item active">

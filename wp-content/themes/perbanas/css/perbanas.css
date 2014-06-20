@@ -186,10 +186,12 @@ a:hover {
     }
     @media screen and (max-width: 991px) {
         .navbar-main-collapsed-menu-logo {
-            padding: 8px;
+            /* padding: 8px; (not according to design guideline) */
+            padding: 10px;
         }
         .navbar-main-collapsed-menu-logo img {
-            width: 130px;
+            /*width: 130px; (not according to design guideline) */
+            width: 114px
         }
     }
     /* bootstrap collapsed menu */
@@ -339,7 +341,7 @@ a:hover {
             text-align: left;
         }
         /* end floating navbar collapsible */
-        .navbar-main-scrolled-menu-logo img {
+        .navbar-main-scrolled-menu-logo img { /* is this style used? on what screen size? */ 
             min-width: initial;
         }
         .navbar-nav>li:hover {
@@ -354,6 +356,7 @@ a:hover {
             position: absolute;
             height: 50px;
             width: 50px;
+            padding: 10px; /* (without this line the logo will be full sized, thus not according to design guideline) */
             display: none;
         }
     }
@@ -401,6 +404,10 @@ a:hover {
         .nav-large-wrapper-outer {
             line-height: 0;
         }
+        .navbar-main-scrolled-menu-logo img {
+            max-width: 100%;
+        }
+
     }
     .open>a .arrow img {
         -webkit-animation: spin .15s linear 1;
@@ -523,17 +530,19 @@ a:hover {
     margin-bottom: 30px;
 }
 
-.main-content-pane ol {
-    margin-left: 15px;
-    list-style-type: decimal;
-    color: #717271;
-    font-size: 12px;
-    font-weight: normal;
-}
-.main-content-pane ol>li {
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
+    /* list */
+    .main-content-pane ol, .main-content-pane ul {
+        margin-left: 15px;
+        list-style-type: initial;
+        color: #717271;
+        font-size: 12px;
+        font-weight: normal;
+    }
+    .main-content-pane ol>li, .main-content-pane ul>li {
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+    /* end list */
 /* general: footer */
 .footer, .footer-links a {
     background: #f5f5f5;
@@ -1573,7 +1582,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin-top: -30px;
     }
     #partner-slider .partner-logo {
-        height: 150px;
+        height: 150px;#par
         display: table-cell;
         vertical-align: middle;
     }
@@ -1583,7 +1592,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         }
     }
     #partner-slider img {
-        max-width: 100px;
+        max-width: 100%;
     }
     /* end of partner slider */
     /* probank mag */
