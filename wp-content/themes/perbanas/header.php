@@ -40,7 +40,7 @@
 									<li><a id="search-button" href="#"><?php _e('Search','perbanas'); ?></a></li>
 									<li class="last language-dropdown-container"><a id="language-button" href="#"><?php _e('Language','perbanas'); ?></a>
 										<ul id="language-dropdown">
-									    <li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa</a></li>
+									    <li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a></li>
 									    <li><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>
 									  </ul>
 									</li>
