@@ -49,7 +49,7 @@
 		page_probank_magazine_init();
 		<?php endif; ?>
 
-		<?php if( is_page('who-we-are') ) :?>
+		<?php if( is_page('who-we-are') || is_page('profil-perbanas')) :?>
 		page_about_who_we_are_init();
 		<?php endif; ?>
 

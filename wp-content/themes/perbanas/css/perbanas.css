@@ -186,10 +186,12 @@ a:hover {
     }
     @media screen and (max-width: 991px) {
         .navbar-main-collapsed-menu-logo {
-            padding: 8px;
+            /* padding: 8px; (not according to design guideline) */
+            padding: 10px;
         }
         .navbar-main-collapsed-menu-logo img {
-            width: 130px;
+            /*width: 130px; (not according to design guideline) */
+            width: 114px
         }
     }
     /* bootstrap collapsed menu */
@@ -339,7 +341,7 @@ a:hover {
             text-align: left;
         }
         /* end floating navbar collapsible */
-        .navbar-main-scrolled-menu-logo img {
+        .navbar-main-scrolled-menu-logo img { /* is this style used? on what screen size? */ 
             min-width: initial;
         }
         .navbar-nav>li:hover {
@@ -354,6 +356,7 @@ a:hover {
             position: absolute;
             height: 50px;
             width: 50px;
+            padding: 10px; /* (without this line the logo will be full sized, thus not according to design guideline) */
             display: none;
         }
     }
@@ -401,6 +404,10 @@ a:hover {
         .nav-large-wrapper-outer {
             line-height: 0;
         }
+        .navbar-main-scrolled-menu-logo img {
+            max-width: 100%;
+        }
+
     }
     .open>a .arrow img {
         -webkit-animation: spin .15s linear 1;

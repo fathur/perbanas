@@ -57,7 +57,7 @@ function perbanas_cssjs() {
 			wp_enqueue_script('page-council', get_template_directory_uri() . '/js/page.news-and-media.js',array(),'',TRUE);
 		}		
 		// about - who we are
-		if ( is_page('who-we-are')) {
+		if ( is_page('who-we-are') || is_page('profil-perbanas')) {
 			wp_enqueue_script('jquery-parallax', get_template_directory_uri() . '/js/jquery.parallax-1.1.3.js',array(),'',TRUE);
 			wp_enqueue_script('jquery-viewport', get_template_directory_uri() . '/js/jquery.viewport.mini.js',array(),'',TRUE);
 			wp_enqueue_script('page-about', get_template_directory_uri() . '/js/page.about.js',array(),'',TRUE);
