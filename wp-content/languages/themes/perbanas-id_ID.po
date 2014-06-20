@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-06-20 11:32+0700\n"
+"PO-Revision-Date: 2014-06-20 13:29+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Fostrom <info@fostrom.com>\n"
 "X-Generator: Poedit 1.5.4\n"
@@ -472,4 +472,13 @@ msgstr ""
 
 # Latest News
 msgid "Latest News"
-msgstr "Berita Terkini Cuy"
+msgstr "Berita Terkini"
+
+msgid "Latest Photos"
+msgstr "Foto Terbaru"
+
+msgid "Probank Magazine"
+msgstr "Majalah Perbanas"
+
+msgid "Upcoming Events"
+msgstr "Event yang Akan Datang"
