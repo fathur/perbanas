@@ -8,13 +8,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-06-20 13:29+0700\n"
+"PO-Revision-Date: 2014-06-20 15:29+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Fostrom <info@fostrom.com>\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "Language: English\n"
-"Plural-Forms: Perbanasss;\n"
+"Plural-Forms: Perbanas;\n"
 
 #: 404.php:17
 msgid "Not Found"
@@ -212,7 +212,7 @@ msgstr ""
 
 #: header.php:48
 msgid "Search"
-msgstr ""
+msgstr "Cari"
 
 #: header.php:52
 msgid "Primary Menu"
@@ -481,4 +481,208 @@ msgid "Probank Magazine"
 msgstr "Majalah Perbanas"
 
 msgid "Upcoming Events"
-msgstr "Event yang Akan Datang"
+msgstr "Acara Mendatang"
+
+msgid "No content to show"
+msgstr "Konten tidak dapat ditemukan"
+
+msgid "Our Members"
+msgstr "Anggota Kami"
+
+msgid "All rights reserved."
+msgstr ""
+
+msgid "Our partners"
+msgstr ""
+
+msgid "Language"
+msgstr "Bahasa"
+
+msgid "Who We Are"
+msgstr "Profil Perbanas"
+
+msgid "About"
+msgstr "Tentang Kami"
+
+msgid "What We Do"
+msgstr "Lingkup Kerja"
+
+msgid "Council"
+msgstr "Dewan Pengurus"
+
+msgid "Central Board"
+msgstr "Pengurus Pusat"
+
+msgid "Board Member"
+msgstr "Dewan Direksi"
+
+msgid "Division"
+msgstr "Divisi"
+
+msgid "Advisory Board"
+msgstr "Dewan Penasehat"
+
+msgid "Supervisory Board"
+msgstr "Dewan Pengawas"
+
+msgid "Regional Board"
+msgstr "Pengurus Daerah"
+
+msgid "Secretariat"
+msgstr "Sekretariat"
+
+msgid "Member Banks"
+msgstr "Bank Anggota"
+
+msgid "State Owned Banks"
+msgstr "Bank Pemerintah"
+
+msgid "FOREX Private Banks"
+msgstr "Bank Swasta Nasional Devisa"
+
+msgid "Non FOREX Private Banks"
+msgstr "Bank Swasta Nasional Nondevisa"
+
+msgid "Syariah Banks"
+msgstr "Bank Syariah"
+
+msgid "Regional Development Banks"
+msgstr "Bank Pembangunan Daerah"
+
+msgid "Joint Venture Banks"
+msgstr "Bank Campuran"
+
+msgid "Industry Guidelines"
+msgstr "Pedoman Industri"
+
+msgid "Banking In Indonesia"
+msgstr "Perbankan di Indonesia"
+
+msgid "Download"
+msgstr "Unduh"
+
+msgid "Events"
+msgstr "Acara"
+
+msgid "Sunday"
+msgstr "Minggu"
+
+msgid "Monday"
+msgstr "Senin"
+
+msgid "Tuesday"
+msgstr "Selasa"
+
+msgid "Wednesday"
+msgstr "Rabu"
+
+msgid "Friday"
+msgstr "Jumat"
+
+msgid "Saturday"
+msgstr "Sabtu"
+
+msgid "January"
+msgstr "Januari"
+
+msgid "February"
+msgstr "Februari"
+
+msgid "March"
+msgstr "Maret"
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr "Mei"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "August"
+msgstr "Agustus"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "Desember"
+
+msgid "News & Media"
+msgstr "Berita & Media"
+
+msgid "Press Release"
+msgstr "Siaran Pers"
+
+msgid "Perbanas News"
+msgstr "Berita Perbanas"
+
+msgid "Perbanas Magazine"
+msgstr "Majalah Perbanas"
+
+msgid "Perbanas Corner"
+msgstr "Pojok Perbanas"
+
+msgid "Send Us A Message"
+msgstr "Kirim Pesan"
+
+msgid "Contact"
+msgstr "Kontak"
+
+msgid "Academic and Human Resource Sector"
+msgstr "Bidang Pendidikan & SDM"
+
+msgid "Foreign Sector"
+msgstr "Bidang Luar Negeri"
+
+msgid "Governance Sector"
+msgstr "Bidang Pemerintahan"
+
+msgid "Law Sector"
+msgstr "Bidang Hukum"
+
+msgid "Organization Sector"
+msgstr "Bidang Organisasi"
+
+msgid "Public Relations Sector"
+msgstr "Bidang Hubungan Masyarakat"
+
+msgid "Research and Development Sector"
+msgstr "Bidang Penelitian & Pengembangan"
+
+msgid "Technology Sector"
+msgstr "Bidang Teknologi"
+
+msgid "Other Regional Board"
+msgstr "Pengurus Daerah Lainnya"
+
+msgid "Read more"
+msgstr "Selengkapnya"
+
+msgid "Edition"
+msgstr "Edisi"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Email address"
+msgstr "Alamat email"
+
+msgid "Subject"
+msgstr "Judul"
+
+msgid "Write your message here"
+msgstr "Tulis pesan anda disini"
+
+msgid "Submit"
+msgstr "Kirim"
