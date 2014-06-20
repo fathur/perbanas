@@ -215,7 +215,7 @@ get_header(); ?>
             <div class="col-sm-6 block">
                 <div class="row section-title homepage-probank-title">
                     <div class="col-sm-12">
-                        <h1><div></div><span>Probank <span class="hidden-sm">Magazine</span></span></h1>
+                        <h1><div></div><span><?php _e("Probank <span class='hidden-sm'>Magazine</span>","perbanas"); ?></span></h1>
                     </div>
                 </div>
                 
@@ -317,7 +317,7 @@ get_header(); ?>
         </div>
         <div class="row section-title">
             <div class="col-xs-12 block">
-                <h1><div></div><span>Our Members</span></h1>
+                <h1><div></div><span><?php _e('Our Members','perbanas'); ?></span></h1>
             </div>
         </div>
         <div class="row">

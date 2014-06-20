@@ -32,13 +32,13 @@
 								<ul>
 									
 									<?php if ( is_user_logged_in() ) { ?>
-									<li><a href="<?php echo wp_logout_url( get_bloginfo('siteurl') ); ?>">Log Out</a><?php //echo wp_loginout( get_permalink() ); ?></li>
-									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>">Member Area</a></li>
+									<li><a href="<?php echo wp_logout_url( get_bloginfo('siteurl') ); ?>"><?php _e('Log Out','perbanas'); ?></a><?php //echo wp_loginout( get_permalink() ); ?></li>
+									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>"><?php _e('Member Area','perbanas'); ?></a></li>
 									<?php } else { ?>
-									<li><a id="login-button" href="#">Log In</a></li>
+									<li><a id="login-button" href="#"><?php _e('Log In','perbanas'); ?></a></li>
 									<?php } ?>
-									<li><a id="search-button" href="#">Search</a></li>
-									<li class="last language-dropdown-container"><a id="language-button" href="#">Language</a>
+									<li><a id="search-button" href="#"><?php _e('Search','perbanas'); ?></a></li>
+									<li class="last language-dropdown-container"><a id="language-button" href="#"><?php _e('Language','perbanas'); ?></a>
 										<ul id="language-dropdown">
 									    <li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa</a></li>
 									    <li><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>
@@ -69,8 +69,8 @@
 										<input type="hidden" name="redirect_to" value="<?php echo get_bloginfo('siteurl'); // ( $_SERVER['REQUEST_URI'] ); ?>" />
 										<input type="hidden" name="testcookie" value="0" />
 									</div>
-						    </form>
-						  </div>
+								</form>
+							</div>
 						</div>
 						<?php } ?>
 						<div class="logo-container text-center">
@@ -98,7 +98,6 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<!--<a class="navbar-brand" href="#">Project name</a>-->
 				</div>
 				<div class="navbar-collapse collapse">
 					<div class="nav-large-wrapper-outer">
