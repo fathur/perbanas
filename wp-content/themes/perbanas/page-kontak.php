@@ -12,7 +12,8 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-md-8">
-            <div id="map"></div>
+             <!--<div id="map"></div>-->
+            <iframe src="https://mapsengine.google.com/map/u/0/embed?mid=zvqAkeRiK-hw.kAFZVNjYiH7o" id="map"></iframe>
         </div>
         <div class="col-xs-12 col-md-4">
             <div class="row">
