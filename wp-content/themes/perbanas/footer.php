@@ -56,6 +56,23 @@
 		<?php if (is_tax('subsector') ) : ?>
 		page_subsector_single_init();
 		<?php endif; ?>
+
+		<?php if (get_post_type() == 'boardmember') : ?>
+			page_boardmember_init();
+		<?php endif; ?>
+
+		<?php if (get_post_type() == 'advisoryboard') : ?>
+			page_advisoryboard_init();
+		<?php endif; ?>
+		
+		<?php if (get_post_type() == 'supervisoryboard') : ?>
+			page_supervisoryboard_init();
+		<?php endif; ?>
+
+		<?php if (get_post_type() == 'secretariat') : ?>
+			page_secretariat_init();
+		<?php endif; ?>
+
 	});
 
 	<?php if( is_page('contact') || is_page('kontak') ): ?>

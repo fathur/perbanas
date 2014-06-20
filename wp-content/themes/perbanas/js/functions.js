@@ -241,7 +241,3 @@ function select2_init() {
         window.location.href = e.val;
     });
 }
-
-function overlay_mobile_init() {
-    $('.item').click(function() { $(this).toggleClass('active'); });
-}
