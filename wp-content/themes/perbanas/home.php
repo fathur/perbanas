@@ -109,7 +109,7 @@ get_header(); ?>
         <div class="row">
             <div class="col-xs-12 block section-title">
                 <h1>
-                    <div></div><span>Latest News</span>
+                    <div></div><span><?php _e('Latest News','perbanas'); ?></span>
                 </h1>
             </div>
         </div>
