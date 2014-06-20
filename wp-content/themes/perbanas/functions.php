@@ -50,6 +50,19 @@ function perbanas_cssjs() {
 			wp_enqueue_script('select2-js', get_template_directory_uri() . '/js/select2-3.4.8/select2.min.js',array(),'',TRUE);
 			wp_enqueue_script('page-council', get_template_directory_uri() . '/js/page.council.js',array(),'',TRUE);
 		}
+
+		if (get_post_type() == 'boardmember') {
+			wp_enqueue_script('page-council', get_template_directory_uri() . '/js/page.council.js',array(),'',TRUE);
+		}
+		if (get_post_type() == 'advisoryboard') {
+			wp_enqueue_script('page-council', get_template_directory_uri() . '/js/page.council.js',array(),'',TRUE);
+		}
+		if (get_post_type() == 'supervisoryboard') {
+			wp_enqueue_script('page-council', get_template_directory_uri() . '/js/page.council.js',array(),'',TRUE);
+		}
+		if (get_post_type() == 'secretariat') {
+			wp_enqueue_script('page-council', get_template_directory_uri() . '/js/page.council.js',array(),'',TRUE);
+		}
 		// Add script for contact page
 		if ( is_page('contact') || is_page('kontak') ) {
 			wp_enqueue_script('contact-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false',array(),'',TRUE);
