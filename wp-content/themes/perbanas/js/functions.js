@@ -49,7 +49,6 @@ function onNavbarMenuThresholdReached() {
         adjustNavbarMenu(false, paddingNarrow, paddingWide);
         isNavbarMenuThresholdReached = !isNavbarMenuThresholdReached;
     }
-
 }
 
 function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
@@ -241,4 +240,8 @@ function select2_init() {
     $('select').select2().on("change", function (e) {
         window.location.href = e.val;
     });
+}
+
+function overlay_mobile_init() {
+    $('.item').click(function() { $(this).toggleClass('active'); });
 }
