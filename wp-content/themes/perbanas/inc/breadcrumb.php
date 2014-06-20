@@ -17,7 +17,7 @@ function perbanas_breadcrumb_council( $trail ) {
 		get_post_type() == 'secretariat') {
 		
 		// Lihat file class.bcn_breadcrumb.php di plugin breadcrumb-navxt
-		$element = array( new bcn_breadcrumb('Council','','', get_bloginfo('siteurl') . '/council/sectors/') );
+		$element = array( new bcn_breadcrumb( __('Council','perbanas'),'','', get_bloginfo('siteurl') . '/council/sectors/') );
 		
 		$x = array_slice($trail->trail, 0, count($trail->trail)-1);
 		$z = array_slice($trail->trail, count($trail->trail)-1, count($trail->trail));
@@ -37,7 +37,7 @@ function perbanas_breadcrumb_newsmedia( $trail ) {
 		get_post_type() == 'perbanascorner') {
 
 		// Lihat file class.bcn_breadcrumb.php di plugin breadcrumb-navxt
-		$element = array( new bcn_breadcrumb('News and Media','','', get_bloginfo('siteurl') . '/newsmedia/news/') );
+		$element = array( new bcn_breadcrumb( __('News & Media','perbanas'),'','', get_bloginfo('siteurl') . '/newsmedia/news/') );
 
 		$x = array_slice($trail->trail, 0, count($trail->trail)-1);
 		$z = array_slice($trail->trail, count($trail->trail)-1, count($trail->trail));

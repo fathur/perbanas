@@ -38,7 +38,7 @@ get_header(); ?>
 							));
 						?>
 						<?php foreach ($sectors as $sector) :?>
-							<option value="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>"><?php echo $sector->name; ?></option>
+							<option value="<?php echo get_term_link( $sector->slug, $sector->taxonomy ); ?>"><?php _e( $sector->name, 'perbanas'); ?></option>
 						<?php endforeach; ?>
                     </select>
                 </div>
@@ -50,11 +50,7 @@ get_header(); ?>
             </div>
             <div class="row ">
             		
-			<?php 
-			
-			wp_reset_query();
-			
-			$args = array('post_type' => get_post_type(),
+			<?php $loop = new WP_Query(array('post_type' => get_post_type(),
 				'tax_query' => array(
 					array(
 						'taxonomy'  => $taxonomy,
@@ -62,9 +58,7 @@ get_header(); ?>
 						'terms'     => $term
 					),
 				),
-			);
-			
-			$loop = new WP_Query($args);
+			));
 			
 			if( $loop->have_posts() ) :
 				while($loop->have_posts()) : $loop->the_post();
@@ -106,7 +100,9 @@ get_header(); ?>
 			<?php 
 				endwhile;
 			endif; 
-			?>
+			
+			wp_reset_query();
+			wp_reset_postdata(); ?>
 
             </div>
         </div>
