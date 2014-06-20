@@ -25,6 +25,9 @@
 .img-max-100p {
     max-width: 100%;
 }
+.cml_flags.cml_flags_on_top {
+    display: none;
+}
 /* general: font */
 body {
     font-family: 'Open Sans', sans-serif;
