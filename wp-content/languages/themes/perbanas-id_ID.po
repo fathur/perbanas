@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-06-20 15:41+0700\n"
+"PO-Revision-Date: 2014-06-20 16:21+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Fostrom <info@fostrom.com>\n"
 "X-Generator: Poedit 1.5.4\n"
@@ -663,6 +663,30 @@ msgstr "Bidang Penelitian & Pengembangan"
 msgid "Technology Sector"
 msgstr "Bidang Teknologi"
 
+msgid "Academic and Human Resource Division"
+msgstr "Bidang Pendidikan & SDM"
+
+msgid "Foreign Division"
+msgstr "Bidang Luar Negeri"
+
+msgid "Governance Division"
+msgstr "Bidang Pemerintahan"
+
+msgid "Law Division"
+msgstr "Bidang Hukum"
+
+msgid "Organization Division"
+msgstr "Bidang Organisasi"
+
+msgid "Public Relations Division"
+msgstr "Bidang Hubungan Masyarakat"
+
+msgid "Research and Development Division"
+msgstr "Bidang Penelitian & Pengembangan"
+
+msgid "Technology Division"
+msgstr "Bidang Teknologi"
+
 msgid "Other Regional Board"
 msgstr "Pengurus Daerah Lainnya"
 
@@ -689,3 +713,6 @@ msgstr "Kirim"
 
 msgid "Probank <span class='hidden-sm'>Magazine</span>"
 msgstr "<span class='hidden-sm'>Majalah</span> Probank"
+
+msgid "Other Divisions"
+msgstr "Divisi Lain"
