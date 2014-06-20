@@ -54,7 +54,7 @@ get_header(); ?>
 					
 			<div class="row item">
 				<div class="col-xs-6 hidden-sm hidden-md hidden-lg main-content-pane-right-column">
-					<img src="a" />
+					<?php the_post_thumbnail(); ?>
 				</div>
 				
 				<div class="col-xs-6 col-sm-3 col-md-3 main-content-pane-left-column">
@@ -81,7 +81,7 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="col-sm-3 hidden-xs main-content-pane-right-column">
-					<?php echo get_the_post_thumbnail( get_the_ID(),'thumbnail'); ?>
+					<?php the_post_thumbnail(); ?>
 				</div>
 			</div>
 			

@@ -1,4 +1,6 @@
 <?php
+
+load_theme_textdomain('perbanas');
 add_theme_support( 'post-thumbnails' );
 
 /**
