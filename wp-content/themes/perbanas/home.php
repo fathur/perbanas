@@ -45,7 +45,9 @@ get_header(); ?>
 					    <div class="row slider-content">
 					        <div class="col-xs-12 block slider-content-text">
 					            <h1>
-					               <?php the_title(); ?>
+					               <a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-carousel-link', TRUE );?>">
+					               	<?php the_title(); ?>
+					               </a>
 					            </h1>
 					        </div>
 					    </div>
