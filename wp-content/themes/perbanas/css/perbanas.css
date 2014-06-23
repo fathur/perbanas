@@ -289,6 +289,7 @@ a:hover {
         background: linear-gradient(to bottom,  #335877 0%,#074980 100%); /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#335877', endColorstr='#074980',GradientType=0 ); /* IE6-8 */
     }
+    /* refactoring needed: .arrow can both apply to arrow in the navbar and arrow in the read-more button */;
     .arrow {
         color: white;
         position: absolute;
@@ -298,6 +299,10 @@ a:hover {
     .arrow img {
         width: 7px;
     }
+    .navbar-nav .arrow {
+        right: 17px;
+    }
+    /* end refactor needed */
     /* end navbar general settings */
 
     /* navbar adjustments for showing logo and moving text to the right when it is scrolled down (desktop) */
