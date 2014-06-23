@@ -85,7 +85,7 @@ get_header(); ?>
                                 <tr>
                                     <td><?php _e('Business License','perbanas'); ?></td>
                                     <td class="colon-separator">:</td>
-                                    <td><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-izin-usaha', TRUE ); ?>"><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?></a></td>
+                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-izin-usaha', TRUE ); ?></td>
                                 </tr>
                                 <tr>
                                     <td><?php _e('Status','perbanas'); ?></td>
