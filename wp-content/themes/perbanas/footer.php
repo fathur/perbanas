@@ -74,6 +74,11 @@
 			page_secretariat_init();
 		<?php endif; ?>
 
+	<?php if (get_post_type() == 'photogallery') : ?>
+			gallery_photo_list_init();
+		<?php endif; ?>
+
+
 	});
 
 	<?php if( is_page('contact') || is_page('kontak') ): ?>
