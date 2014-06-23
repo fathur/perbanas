@@ -1035,9 +1035,10 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     #former-chairmen .carousel-inner img {
         position: absolute;
-        top: 0;
-        right: 0;
-        height: 400px;
+bottom: 0;
+right: 0;
+max-height: 400px;
+min-width: 0%;
     }
     #former-chairmen .carousel-inner h3 {
         font-size: 60px;
@@ -1990,9 +1991,11 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         color: white;
         padding: 14px;
     }
+    /* TOOD: is this extra margin needed?
     .contact-form {
         margin-bottom: 140px;
     }
+    */
     div.wpcf7 img.ajax-loader {
         display: none;
     }
