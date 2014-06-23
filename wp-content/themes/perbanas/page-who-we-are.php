@@ -50,7 +50,7 @@
                                 <div class="description right">
                                     <div class="vertical-align">
                                         <!--<h3>Perbanas</h3>-->
-                                        <p>Perhimpunan Bank-Bank Nasional Indonesia (PERBANA) was established as an association for national banks in Indonesia.</p>
+                                        <p>Perhimpunan Bank-Bank Nasional Indonesia (PERBANA) was established as the main association for national banks in Indonesia.</p>
                                     </div>
                                 </div>
                             </li>
@@ -62,7 +62,7 @@
                                 <div class="description left">
                                     <div class="vertical-align">
                                         <!--<h3>OPS Perbanas</h3>-->
-                                        <p>PERBANA formed Yayasan Pendidikan Kadar Bank (YPKB) as an effort to increase the amount of well-educated manpower, specifically in the national banking industry.</p>
+                                        <p>PERBANA established the Yayasan Pendidikan Kadar Bank (YPKB) in an effort to increase the amount of well-educated manpower, especially in the national banking industry. </p>
                                     </div>
                                 </div>
                             </li>
@@ -74,9 +74,7 @@
                                 <div class="description right">
                                     <div class="vertical-align">
                                         <!--<h3>Perbanas</h3>-->
-                                        <p>In the 2nd
-
-                                            Congress held in Jakarta, the name PERBANA was revised to Organisasi Perusahaan Sejenis Perbankan Nasional Swasta (OPS PERBANAS).</p>
+                                        <p>At the 2nd Congress held in Jakarta, the name PERBANA was revised to Organisasi Perusahaan Sejenis Perbankan Nasional Swasta (OPS PERBANAS).</p>
                                     </div>
                                 </div>
                             </li>
@@ -88,7 +86,7 @@
                                 <div class="description left">
                                     <div class="vertical-align">
                                         <!--<h3>OPS Perbanas</h3>-->
-                                        <p>In the 3rd Congress, the word OPS was omitted, and the name of the organization became Perbankan Nasional Swasta (PERBANAS).</p>
+                                        <p>At the 3rd Congress, the word OPS was omitted, and the name of the organization became Perbankan Nasional Swasta (PERBANAS).</p>
                                     </div>
                                 </div>
                                 <div class="description right hidden-xs">
@@ -111,7 +109,7 @@
                                 <div class="description right">
                                     <div class="vertical-align">
                                         <!--<h3>Perbanas</h3>-->
-                                        <p>PERBANAS established Yayasan Pendidikan PERBANAS to initiate formal education in the form of an academy, which is Akademi Ilmu Perbankan Perbanas.</p>
+                                        <p>PERBANAS established the Yayasan Pendidikan PERBANAS to initiate formal education in the form of an academy, which was the Akademi Ilmu Perbankan Perbanas.</p>
                                     </div>
                                 </div>
                             </li>
@@ -123,7 +121,7 @@
                                 <div class="description left">
                                     <div class="vertical-align">
                                         <!--<h3>OPS Perbanas</h3>-->
-                                        <p>In the 6th Congress, the name PERBANAS was revised once again to Perhimpunan Bank-Bank Nasional Swasta, however the acronym remained the same.</p>
+                                        <p>At the 6th Congress, the name of PERBANAS was revised once again to Perhimpunan Bank-Bank Nasional Swasta, however the acronym remained the same.</p>
                                     </div>
                                 </div>
                             </li>
@@ -135,7 +133,7 @@
                                 <div class="description right">
                                     <div class="vertical-align">
                                         <!--<h3>Perbanas</h3>-->
-                                        <p>In the 12th Congress, the word ‘umum’ was inserted to the name of PERBANAS and became Perhimpunan Bank-Bank Umum Nasional Swasta.</p>
+                                        <p>At the 12th Congress, the word ‘umum’ was inserted to the name of PERBANAS and it then became Perhimpunan Bank-Bank Umum Nasional Swasta.</p>
                                     </div>
                                 </div>
                             </li>
@@ -147,7 +145,7 @@
                                 <div class="description left">
                                     <div class="vertical-align">
                                         <!--<h3>OPS Perbanas</h3>-->
-                                        <p>In the 15th Congress, the word ‘swasta’ was omitted from the name of the organization, thus becoming Perhimpunan Bank-Bank Umum Nasional. The acronym remained the same.</p>
+                                        <p>At the 15th Congress, the word ‘swasta’ was omitted from the name of the organization, thus becoming Perhimpunan Bank-Bank Umum Nasional. The acronym remained the same.</p>
                                     </div>
                                 </div>
                             </li>
