@@ -39,7 +39,7 @@ get_header(); ?>
 					
 			<div class="row news-item">
                 <div class="col-md-6">
-                   <?php the_post_thumbnail('',array('class' => "img-responsive",)); ?>
+                   <?php the_post_thumbnail('',array('class' => "img-responsive")); ?>
                 </div>
                 <div class="col-md-6">
                     <div class="news-desc-top">
