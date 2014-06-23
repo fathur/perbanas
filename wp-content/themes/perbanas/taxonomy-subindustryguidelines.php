@@ -88,7 +88,7 @@ get_header(); ?>
 
 			// Custom query loop pagination
 			echo paginate_links(array(
-					'base'		=> get_post_type_archive_link( get_post_type() ) . $term .'/page/%#%',
+					'base'		=> get_term_link( $term, $taxonomy ) .'page/%#%',
 					'total'		=> $loop->max_num_pages,
 					'current'	=> $args['paged']
 			));
