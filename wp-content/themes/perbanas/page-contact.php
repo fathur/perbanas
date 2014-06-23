@@ -65,6 +65,7 @@ get_header(); ?>
             </div>
         </div>
     </div>
+    <!-- 
     <div class="row section-title">
         <div class="col-xs-12 block">
             <h1>
@@ -74,9 +75,10 @@ get_header(); ?>
     </div>
     <div class="row contact-form">
     
-    	<?php echo do_shortcode('[contact-form-7 id="302" title="Contact form En"]'); ?>
+    	<?php // echo do_shortcode('[contact-form-7 id="302" title="Contact form En"]'); ?>
         
     </div>
+     -->
 </div>
 
 <?php get_footer(); ?>

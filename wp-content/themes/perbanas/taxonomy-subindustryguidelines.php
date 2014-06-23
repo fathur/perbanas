@@ -33,12 +33,15 @@ get_header(); ?>
             </div>
 			
 			<?php $args = array('post_type' => get_post_type(),
+				'posts_per_page' => get_option('posts_per_page'),
 				'tax_query' => array(
 					array(
 						'taxonomy'  => $taxonomy,
 						'field'     => 'slug',
 						'terms'     => $term
-				)));
+			)));
+			
+			$args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
 			$loop = new WP_Query($args);
 			
@@ -81,7 +84,18 @@ get_header(); ?>
 			endif; 
 			
 			wp_reset_query();
-			wp_reset_postdata(); ?> 
+			wp_reset_postdata(); 
+
+			// Custom query loop pagination
+			echo paginate_links(array(
+					'base'		=> get_term_link( $term, $taxonomy ) .'page/%#%',
+					'total'		=> $loop->max_num_pages,
+					'current'	=> $args['paged']
+			));
+			
+			// Reset main query object
+			$wp_query = NULL;
+			$wp_query = $temp_query; ?>
             
         </div>
     </div>

@@ -42,14 +42,24 @@ get_header(); ?>
                 </div>
             </div>
             
-            <?php $args = array( 'post_type' => get_post_type() );		
-			$query = new WP_Query( $args );
+             <?php $args = array(
+            	'post_type' => get_post_type(),
+            	'posts_per_page' => get_option('posts_per_page')
+            );
+            $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+	
+			$loop = new WP_Query($args);
 			
-			if ( $query->have_posts() ) :		
+			// Pagination fix
+			$temp_query = $wp_query;
+			$wp_query   = NULL;
+			$wp_query   = $loop;
+			
+			if ( $loop->have_posts() ) :		
 				
 				$i = 1; // Inisialisasi untuk unique id
 			
-				while ( $query->have_posts() ) : $query->the_post(); 
+				while ( $loop->have_posts() ) : $loop->the_post(); 
 					$unixdate	= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE); ?>
 					
 			<div class="row item">
@@ -96,7 +106,18 @@ get_header(); ?>
 			/* Restore to originial query */
 			wp_reset_query();
 			/* Restore original Post Data */
-			wp_reset_postdata(); ?> 
+			wp_reset_postdata();
+			
+			// Custom query loop pagination
+			echo paginate_links(array(
+				'base'		=> get_post_type_archive_link( get_post_type() ) . 'page/%#%',
+				'total'		=> $loop->max_num_pages,
+				'current'	=> $args['paged']
+			));
+			
+			// Reset main query object
+			$wp_query = NULL;
+			$wp_query = $temp_query; ?>
            
         </div>
     </div>
