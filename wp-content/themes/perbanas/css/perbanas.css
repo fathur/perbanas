@@ -547,6 +547,9 @@ a:hover {
     }
     /* end list */
 /* general: footer */
+.footer {
+    margin-top: 75px;
+}
 .footer, .footer-links a {
     background: #f5f5f5;
     color: #707170;
@@ -1071,8 +1074,9 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         text-align: left;
     }
     #former-chairmen .carousel-indicators li {
-        margin-left: 13px;
+        margin-left: 14px;
         margin-right: 13px;
+        margin-bottom: 0;
         width: 15px;
         height: 15px;
         background: white;

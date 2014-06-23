@@ -10,7 +10,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="favicon.ico" />
 
-<title>Perbanas | <?php wp_title( '|', TRUE, 'right' ); ?></title>
+<title>Perbanas | <?php wp_title( '', TRUE, 'right' ); ?></title>
     
     <?php wp_head(); ?>
 
