@@ -55,11 +55,11 @@ get_header(); ?>
 			$wp_query   = NULL;
 			$wp_query   = $loop;
 			
-			if ( $query->have_posts() ) :		
+			if ( $loop->have_posts() ) :		
 				
 				$i = 1; // Inisialisasi untuk unique id
 			
-				while ( $query->have_posts() ) : $query->the_post(); 
+				while ( $loop->have_posts() ) : $loop->the_post(); 
 					$unixdate	= get_post_meta( get_the_ID(), 'wpcf-event-date', TRUE); ?>
 					
 			<div class="row item">
