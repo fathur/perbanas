@@ -31,7 +31,7 @@
             <div class="text-center">
                 <div class="hr" id="history"></div>
             </div>
-            <div class="subsection-title subsection-title-history hidden-md hidden-lg">
+            <div class="subsection-title subsection-title-history hidden-sm hidden-md hidden-lg">
                 <div class="subsection-title-container">
                     <h2 class=""><span>H</span>istory</h2>
                 </div>
@@ -91,7 +91,7 @@
                                         <p>In the 3rd Congress, the word OPS was omitted, and the name of the organization became Perbankan Nasional Swasta (PERBANAS).</p>
                                     </div>
                                 </div>
-                                <div class="description right hidden-xs hidden-sm">
+                                <div class="description right hidden-xs">
                                     <div class="vertical-align">
                                         <div class="subsection-title text-center subsection-title-history">
                                             <div class="subsection-title-container">
