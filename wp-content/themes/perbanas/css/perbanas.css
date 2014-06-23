@@ -1503,6 +1503,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         display: table-cell;
         vertical-align: middle;
     }
+
     @media screen and (max-width: 991px) {
         .homepage-slider .slider-content {
             /*height: 300px; seems a bit too small */
@@ -1513,6 +1514,9 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         .homepage-slider .slider-content {
             height: 424px;
         }
+    }
+    .homepage-slider .slider-content-text h1 {
+        line-height: 1.2;
     }
     @media screen and (max-width: 991px) {
         .homepage-slider .slider-content-text {
