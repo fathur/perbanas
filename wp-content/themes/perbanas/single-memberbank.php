@@ -52,22 +52,22 @@ get_header(); ?>
                             <table class="contact-detail">
                                 <tbody>
                                 <tr>
-                                    <td>Nama Bank Perwakilan</td>
+                                    <td><?php _e('Bank Name','perbanas'); ?></td>
                                     <td class="colon-separator">:</td>
                                     <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-title', TRUE ); ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Alamat</td>
+                                    <td><?php _e('Address','perbanas'); ?></td>
                                     <td class="colon-separator">:</td>
                                     <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-address', TRUE ); ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Telepon</td>
+                                    <td><?php _e('Phone','perbanas'); ?></td>
                                     <td class="colon-separator">:</td>
                                     <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-phones', TRUE ); ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Website</td>
+                                    <td><?php _e('Website','perbanas'); ?></td>
                                     <td class="colon-separator">:</td>
                                     <td><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?>"><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?></a></td>
                                 </tr>
