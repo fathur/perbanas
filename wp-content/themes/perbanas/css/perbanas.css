@@ -605,6 +605,11 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: white;
     text-decoration: none;
 }
+@media screen and (max-width: 991px) {
+    a.btn, a.btn:hover, a.btn:active, a.btn:visited {
+        margin-top: 15px;
+    }
+}
 .btn .arrow {
     font-size: 0.7em;
     font-weight: bold;
