@@ -217,8 +217,6 @@ function perbanas_force_members_area() {
 	}
 }
 
-
-
 /**
  * Include separate function
  * 
