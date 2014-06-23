@@ -45,6 +45,11 @@ get_header(); ?>
 
 			$loop = new WP_Query($args);
 			
+			// Pagination fix
+			$temp_query = $wp_query;
+			$wp_query   = NULL;
+			$wp_query   = $loop;
+			
 			if( $loop->have_posts() ) : 
 				while($loop->have_posts()) : $loop->the_post();
 			

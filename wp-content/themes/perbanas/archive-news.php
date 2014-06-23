@@ -54,7 +54,7 @@ get_header(); ?>
                     <div class="news-desc-top">
                         <h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                         <p class="date"><?php echo get_the_date(); ?> </p>
-                        <p class="desc"><?php echo get_the_content(); ?></p>
+                        <p class="desc"><?php echo get_the_content(' '); ?></p>
                     </div>
                     <div class="news-desc-bottom">
                         <a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rang;</span></a>
