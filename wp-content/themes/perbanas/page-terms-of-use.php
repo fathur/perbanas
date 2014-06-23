@@ -28,8 +28,18 @@ get_header(); ?>
             
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="news-content">                        
-                       <?php the_content(); ?>
+                    <div class="news-content">
+                        <?php
+                        if (have_posts()) :
+                        ?>
+                            <?php while ( have_posts() ) : the_post(); ?>                      
+                               <?php the_content(); ?>
+                           <?php endwhile; ?>
+                           <?php
+                        else:
+                            get_template_part( 'content', 'none' );
+                        endif; 
+                        ?> 
                     </div>
                 </div>
             </div>
