@@ -25,7 +25,9 @@ function page_about_who_we_are_init() {
     openViewport(H);
 
     // vision mission
-    $('.about-who-we-are .vision').parallax("75%", 0.2);
+    if ($(window).width() > 991) {
+        $('.about-who-we-are .vision').parallax("75%", 0.2);
+    }
 
     // chairmans
     $('#former-chairmen').carousel({interval: 5000});
