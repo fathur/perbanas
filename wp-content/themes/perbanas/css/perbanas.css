@@ -1627,7 +1627,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     /* partner slider */
     #partner-slider {
-        margin-top: -30px;
+        /* margin-top: -30px; TODO: is this needed?; */
     }
     #partner-slider .partner-logo {
         height: 150px;#par
