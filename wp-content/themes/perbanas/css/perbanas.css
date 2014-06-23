@@ -1035,10 +1035,10 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     #former-chairmen .carousel-inner img {
         position: absolute;
-bottom: 0;
-right: 0;
-max-height: 400px;
-min-width: 0%;
+        bottom: 0;
+        right: 0;
+        max-height: 400px;
+        min-width: 0%;
     }
     #former-chairmen .carousel-inner h3 {
         font-size: 60px;
@@ -1928,12 +1928,17 @@ min-width: 0%;
     }
     .contact-address, .contact-phone, .contact-fax, .contact-email {
         color: #666666;
-        margin-bottom: 30px;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (min-width: 992px) {
         .contact-address, .contact-phone, .contact-fax, .contact-email {
-            margin-top: 40px;
-            max-height: 60px;
+            margin-bottom: 30px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        .contact-address, .contact-phone, .contact-fax, .contact-email {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            /*max-height: 60px;*/
         }
     }
     .contact-section-title {
