@@ -26,7 +26,7 @@ get_header(); ?>
             <div class="row">
                 <div class="col-xs-12 section-title">
 
-                    <h1><span><?php _e('Members Area','perbanas'); ?></span></h1>
+                    <h1><div></div><span><?php _e('Members Area','perbanas'); ?></span></h1>
                     
                 </div>
             </div>
