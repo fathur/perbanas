@@ -44,7 +44,7 @@ get_header(); ?>
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-phone">
                     <p>
                         <span class="contact-section-title">Telp:</span><br />
-                        +62217654321
+                        +62 21 5223038 | +62 21 5255731
                         <br class="hidden-sm hidden-md hidden-lg" />
                         <br class="hidden-sm hidden-md hidden-lg" />
                         <br class="hidden-sm hidden-md hidden-lg" />
@@ -53,13 +53,13 @@ get_header(); ?>
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-fax">
                     <p>
                         <span class="contact-section-title">Fax:</span><br />
-                        +62217654322
+                        +62 21 5223037 | +62 21 5279359
                     </p>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-email">
                     <p>
                     <span class="contact-section-title">Email:</span><br />
-                    info@perbanas.com
+                    sekretariat@perbanas.org
                     </p>
                 </div>
             </div>
@@ -74,7 +74,7 @@ get_header(); ?>
     </div>
     <div class="row contact-form">
     
-    	<?php echo do_shortcode('[contact-form-7 id="302" title="Contact form 1"]'); ?>
+    	<?php echo do_shortcode('[contact-form-7 id="302" title="Contact form En"]'); ?>
         
     </div>
 </div>

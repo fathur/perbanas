@@ -14,7 +14,7 @@
 							<a href="http://www.ojk.go.id/" target="__blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-ojk.jpg" />
 							</a>
-							<a href="#" target="__blank">
+							<a href="http://www.bi.go.id/id/perbankan/arsitektur/Contents/edukasimasyarakat.aspx" target="__blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-3p.jpg" />
 							</a>
 							<a href="http://www.lps.go.id/" target="__blank">

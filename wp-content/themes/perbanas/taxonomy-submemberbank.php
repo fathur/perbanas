@@ -29,24 +29,20 @@ get_header(); ?>
         <div class="col-xs-12 col-md-9 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span><?php echo get_term_by('slug', $term, $taxonomy)->name; ?></span></h1>
+                    <h1><div></div><span><?php _e( get_term_by('slug', $term, $taxonomy)->name, 'perbanas'); ?></span></h1>
                 </div>
             </div>
            <div class="row">
-				<?php
-	           
-				wp_reset_query();
-	           
-				$args = array('post_type' => get_post_type(),
+				<?php $loop = new WP_Query(array('post_type' => get_post_type(),
 					'posts_per_page'	=> -1,
 					'tax_query' => array(
 						array(
 							'taxonomy'  => $taxonomy,
 							'field'     => 'slug',
 							'terms'     => $term
-					)));
-
-				$loop = new WP_Query($args);
+						)
+					)
+				) );
 				
 				if( $loop->have_posts() ) : 
 					while($loop->have_posts()) : $loop->the_post();
@@ -58,11 +54,10 @@ get_header(); ?>
 					</a>
                 </div>
 				
-				<?php 
-					endwhile; 
+				<?php endwhile; 
 				endif;
-				
-				?> 
+				wp_reset_query();
+				wp_reset_postdata(); ?> 
             </div>
         </div>
     </div>

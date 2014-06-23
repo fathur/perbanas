@@ -325,47 +325,64 @@ get_header(); ?>
                 <div class="carousel-inner">
                     <div class="item active">
                         <div class="row">
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_bii.jpg" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_bri.gif" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                            	<div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_btn.jpg" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_danamon.jpg" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_mandiri.gif" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/Logo_bni.gif" /></div>
-                            </div>
+                        
+						<?php 
+						/**
+						 * Show random Our Member post type
+						 * ================================
+						 * */
+	
+						$query = new WP_Query( array(
+							'post_type'	=> 'memberbank',
+							'orderby'	=> 'rand',
+							'posts_per_page'	=> 6 ) );
+						
+						if ( $query->have_posts() ) :
+							while ( $query->have_posts() ) : $query->the_post(); ?>
+						
+							<div class="col-sm-2 col-xs-4 partner-logo-outer">
+								<div class="partner-logo">
+									<a href="<?php echo get_permalink(); ?>">
+                                		<?php the_post_thumbnail('',array('class' => "img-responsive")); ?>
+                                	</a>
+								</div>
+							</div>
+
+						<?php endwhile;
+						endif; ?>
                         </div>
                     </div>
                     <div class="item">
                         <div class="row">
+
+                        	<?php 
+							/**
+							 * Show random Our Member post type
+							 * ================================
+							 * */
+		
+							$query = new WP_Query( array(
+								'post_type'	=> 'memberbank',
+								'orderby'	=> 'rand',
+								'posts_per_page'	=> 6 ) );
+							
+							if ( $query->have_posts() ) :
+								while ( $query->have_posts() ) : $query->the_post(); ?>
+							
                             <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_bii.jpg" /></div>
+                                <div class="partner-logo">
+                                	<a href="<?php echo get_permalink(); ?>">
+                                		<?php the_post_thumbnail('',array('class' => "img-responsive")); ?>
+                                	</a>
+                                </div>
                             </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_bri.gif" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer"><div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_btn.jpg" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_danamon.jpg" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/logo_mandiri.gif" /></div>
-                            </div>
-                            <div class="col-sm-2 col-xs-4 partner-logo-outer">
-                                <div class="partner-logo"><img class="img-responsive" src="<?=get_template_directory_uri()?>/img/Logo_bni.gif" /></div>
-                            </div>
+
+							<?php endwhile;
+							endif; ?>
                         </div>
                     </div>
+                    
+                    
                 </div>
 
             </div>

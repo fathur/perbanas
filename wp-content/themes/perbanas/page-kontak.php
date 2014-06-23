@@ -12,7 +12,8 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-md-8">
-            <div id="map"></div>
+             <!--<div id="map"></div>-->
+            <iframe src="https://mapsengine.google.com/map/u/0/embed?mid=zvqAkeRiK-hw.kAFZVNjYiH7o" id="map"></iframe>
         </div>
         <div class="col-xs-12 col-md-4">
             <div class="row">
@@ -30,7 +31,7 @@
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-phone">
                     <p>
                         <span class="contact-section-title">Telp:</span><br />
-                        +62217654321
+                        +62 21 5223038 | +62 21 5255731
                         <br class="hidden-sm hidden-md hidden-lg" />
                         <br class="hidden-sm hidden-md hidden-lg" />
                         <br class="hidden-sm hidden-md hidden-lg" />
@@ -39,13 +40,13 @@
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-fax">
                     <p>
                         <span class="contact-section-title">Fax:</span><br />
-                        +62217654322
+                        +62 21 5223037 | +62 21 5279359
                     </p>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-12 contact-email">
                     <p>
                     <span class="contact-section-title">Email:</span><br />
-                    info@perbanas.com
+                    sekretariat@perbanas.org
                     </p>
                 </div>
             </div>
@@ -59,7 +60,7 @@
         </div>
     </div>
     <div class="row contact-form">
-         <?php echo do_shortcode('[contact-form-7 id="302" title="Contact form 1"]'); ?>
+         <?php echo do_shortcode('[contact-form-7 id="303" title="Contact form Id"]'); ?>
     </div>
 </div>
 

@@ -58,7 +58,7 @@ get_header(); ?>
 				</div>
 				
 				<div class="col-xs-6 col-sm-3 col-md-3 main-content-pane-left-column">
-					<p class="event-day"><?php echo date('l', $unixdate)?></p>
+					<p class="event-day"><?php _e( date('l', $unixdate),'perbanas'); ?></p>
 					<p class="event-date"><?php echo date('j F Y', $unixdate); ?></p>
 					<p class="">
 						<?php echo get_post_meta( get_the_ID(), 'wpcf-event-range-time', TRUE) ; ?><br />
