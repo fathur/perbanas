@@ -346,7 +346,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-control-container">
+                <div class="carousel-control-container hidden-xs hidden-sm">
                     <a class="carousel-control left" href="#former-chairmen" data-slide="prev">&lsaquo;</a>
                     <a class="carousel-control right" href="#former-chairmen" data-slide="next">&rsaquo;</a>
                 </div>
