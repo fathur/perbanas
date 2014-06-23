@@ -234,20 +234,21 @@ get_header(); ?>
 				while($loop->have_posts()) : $loop->the_post(); ?>
 				
                 <div class="row homepage-probank">
-                    <div class="col-xs-6 col-md-4 homepage-probank-image-container">
-                    
+                    <div class="col-xs-5 col-md-4 homepage-probank-image-container">
+                    	<div class="text-center">
 					<?php if ( has_post_thumbnail() ) {
 						the_post_thumbnail('large',array('class' => 'img-responsive'));
 					} else { ?>
 						<img width="161" height="214" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" class="img-responsive wp-post-image" alt="magazine">
 					<?php } ?>
-						
-						<p class="text-center">
-							<?php echo get_post_meta( get_the_ID(), 'wpcf-magazine-edition', TRUE) ; ?>
+											</div>
+						<p class="text-center edition">
+							<?php _e('Edition', 'perbanas'); ?><br />
+							<span class="edition-date"><?php echo get_post_meta( get_the_ID(), 'wpcf-magazine-edition', TRUE) ; ?></span>
 						</p>
 					</div>
-                    <div class="col-xs-6 col-md-8">
-                        <p class="homepage-probank-desc-top"><?php echo get_the_content('...'); ?></p>
+                    <div class="col-xs-7 col-md-8">
+                        <p class="homepage-probank-desc-top"><?php echo get_the_content(''); ?></p>
                         <p><a href="<?php echo get_post_type_archive_link('probankmagazine'); ?>" class="btn">View more <span class="arrow">&rang;</span></a></p>
                     </div>
                 </div>

@@ -1639,8 +1639,29 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     /* end gallery */
 
     /* probank and events */
-    .homepage-probank-desc-top {
-        height: 184px;
+    @media screen and (max-width: 767px) {
+
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        .homepage-probank-desc-top {
+            height: 157px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        .homepage-probank-desc-top {
+            height: 217px;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        .homepage-probank-desc-top {
+            height: 217px;
+        }        
+    }
+    .homepage-probank-image-container .edition {
+        color: #707170;
+    }
+    .homepage-probank-image-container .edition-date {
+        font-weight: bold;
     }
     /* partner slider */
     #partner-slider {
@@ -1665,7 +1686,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         text-align: center;
     }
     .homepage-probank-image-container img {
-        min-width: initial;
+        /* min-width: initial;*/
     }
     /* end of probank mag */
     .homepage-events .separator {
