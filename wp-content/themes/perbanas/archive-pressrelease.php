@@ -33,9 +33,20 @@ get_header(); ?>
                 </div>
             </div>
             
-            <?php $loop = new WP_Query(array(
-				'post_type' => get_post_type()
-			));
+            <?php 
+            
+            $press_args = array(
+            	'post_type' => get_post_type(),
+            	'posts_per_page' => get_option('posts_per_page')
+            );
+            $press_args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+            
+            $loop = new WP_Query($press_args);
+            
+            // Pagination fix
+            $temp_query = $wp_query;
+            $wp_query   = NULL;
+            $wp_query   = $loop;
 			
 			if( $loop->have_posts() ) :
 				while($loop->have_posts()) : $loop->the_post(); ?>
@@ -60,7 +71,17 @@ get_header(); ?>
 			endif; 
 			
 			wp_reset_query();
-			wp_reset_postdata(); ?>
+			wp_reset_postdata(); 
+			
+			echo paginate_links(array(
+				'base'		=> get_post_type_archive_link( get_post_type() ) . 'page/%#%',
+				'total'		=> $loop->max_num_pages,
+				'current'	=> $news_args['paged']
+			));
+
+			// Reset main query object
+			$wp_query = NULL;
+			$wp_query = $temp_query; ?>
         </div>
     </div>
 </div>
