@@ -1597,12 +1597,20 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
             margin-top: 12px;
         }
     }
-    @media screen and (min-width: 992px) { /* desktop screen */
+    @media screen and (min-width: 992px) and (max-width: 1199px) { /* desktop screen */
         .homepage-news-item .homepage-news-desc-top {
             height: 100px;
         }
         .homepage-news-item .homepage-news-desc-bottom {
-            margin-top:12px;
+            margin-top:32px;
+        }
+    }
+    @media screen and (min-width: 1200px) { /* desktop screen */
+        .homepage-news-item .homepage-news-desc-top {
+            height: 100px;
+        }
+        .homepage-news-item .homepage-news-desc-bottom {
+            margin-top:69px;
         }
     }
     /* end news */
