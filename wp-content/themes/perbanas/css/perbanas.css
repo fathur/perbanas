@@ -833,9 +833,18 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 
 /* main layout / about - who we are */
 .about-who-we-are .subsection-title {
-    margin-bottom: 60px;
     font-size: 36px;
     color: #C4D600;
+}
+@media screen and (max-width: 991px) {
+    .about-who-we-are .subsection-title {
+        margin-bottom: 30px;
+    }    
+}
+@media screen and (min-width: 992px) {
+    .about-who-we-are .subsection-title {
+        margin-bottom: 60px;
+    }
 }
 .about-who-we-are .subsection-title-container {
     display: inline-block;
@@ -907,6 +916,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .timeline-outer-container ul.timeline-container {
         list-style: none;
         padding-left:0;
+        margin-left: 0;
     }
     .timeline-outer-container .item {
         position: relative;
