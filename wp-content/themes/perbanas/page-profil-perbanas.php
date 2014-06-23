@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.png" />
+                        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif" />
                     </div>
                 </div>
             </div>
