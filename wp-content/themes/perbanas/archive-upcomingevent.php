@@ -54,7 +54,7 @@ get_header(); ?>
 					
 			<div class="row item">
 				<div class="col-xs-6 hidden-sm hidden-md hidden-lg main-content-pane-right-column">
-					<?php the_post_thumbnail(); ?>
+					<?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
 				</div>
 				
 				<div class="col-xs-6 col-sm-3 col-md-3 main-content-pane-left-column">
