@@ -25,6 +25,9 @@
 .img-max-100p {
     max-width: 100%;
 }
+.cml_flags.cml_flags_on_top {
+    display: none;
+}
 /* general: font */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -290,7 +293,7 @@ a:hover {
         color: white;
         position: absolute;
         top: 10px;
-        right: 17px;
+        /* right: 17px; TODO: is this needed? */
     }
     .arrow img {
         width: 7px;
@@ -533,10 +536,15 @@ a:hover {
     /* list */
     .main-content-pane ol, .main-content-pane ul {
         margin-left: 15px;
-        list-style-type: initial;
         color: #717271;
         font-size: 12px;
         font-weight: normal;
+    }
+    .main-content-pane ol {
+        list-style-type: decimal;
+    }
+    .main-content-pane ul {
+            list-style-type: disc;
     }
     .main-content-pane ol>li, .main-content-pane ul>li {
         line-height: 1.6;
@@ -544,6 +552,9 @@ a:hover {
     }
     /* end list */
 /* general: footer */
+.footer {
+    margin-top: 75px;
+}
 .footer, .footer-links a {
     background: #f5f5f5;
     color: #707170;
@@ -822,9 +833,18 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 
 /* main layout / about - who we are */
 .about-who-we-are .subsection-title {
-    margin-bottom: 60px;
     font-size: 36px;
     color: #C4D600;
+}
+@media screen and (max-width: 991px) {
+    .about-who-we-are .subsection-title {
+        margin-bottom: 30px;
+    }    
+}
+@media screen and (min-width: 992px) {
+    .about-who-we-are .subsection-title {
+        margin-bottom: 60px;
+    }
 }
 .about-who-we-are .subsection-title-container {
     display: inline-block;
@@ -896,6 +916,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .timeline-outer-container ul.timeline-container {
         list-style: none;
         padding-left:0;
+        margin-left: 0;
     }
     .timeline-outer-container .item {
         position: relative;
@@ -1014,9 +1035,10 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     #former-chairmen .carousel-inner img {
         position: absolute;
-        top: 0;
-        right: 0;
-        height: 400px;
+bottom: 0;
+right: 0;
+max-height: 400px;
+min-width: 0%;
     }
     #former-chairmen .carousel-inner h3 {
         font-size: 60px;
@@ -1068,8 +1090,9 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         text-align: left;
     }
     #former-chairmen .carousel-indicators li {
-        margin-left: 13px;
+        margin-left: 14px;
         margin-right: 13px;
+        margin-bottom: 0;
         width: 15px;
         height: 15px;
         background: white;
@@ -1968,8 +1991,13 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         color: white;
         padding: 14px;
     }
+    /* TOOD: is this extra margin needed?
     .contact-form {
         margin-bottom: 140px;
+    }
+    */
+    div.wpcf7 img.ajax-loader {
+        display: none;
     }
     /* end form */
 /* end main layout / contact page */

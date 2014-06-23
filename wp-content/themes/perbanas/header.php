@@ -10,7 +10,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="favicon.ico" />
 
-<title>Perbanas | <?php wp_title( '|', TRUE, 'right' ); ?></title>
+<title>Perbanas | <?php wp_title( '', TRUE, 'right' ); ?></title>
     
     <?php wp_head(); ?>
 
@@ -38,11 +38,19 @@
 									<li><a id="login-button" href="#"><?php _e('Log In','perbanas'); ?></a></li>
 									<?php } ?>
 									<li><a id="search-button" href="#"><?php _e('Search','perbanas'); ?></a></li>
-									<li class="last language-dropdown-container"><a id="language-button" href="#"><?php _e('Language','perbanas'); ?></a>
-										<ul id="language-dropdown">
-									    <li><a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a></li>
-									    <li><a href="<?php echo get_option('siteurl'); ?>/en">English</a></li>
-									  </ul>
+									<li class="last language-dropdown-container">
+										<?php
+										if (cml_get_current_language()->cml_locale == 'id_ID') {
+											?>
+											<a href="<?php echo get_option('siteurl'); ?>/en">English</a>
+											<?php
+										}
+										else {
+											?>
+											<a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a>
+											<?php
+										}
+										?>
 									</li>
 								</ul>
 							</div>

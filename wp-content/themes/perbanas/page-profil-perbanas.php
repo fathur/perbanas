@@ -24,7 +24,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <p>PERBANAS merupakan organisasi yang memayungi industri perbankan nasional, yang dapat menjadi jembatan bagi anggotanya untuk menyalurkan aspirasi perbankan kepada pemerintah, DPR dan Bank Indonesia.</p>
+                    <p>PERBANAS merupakan sebuah organisasi yang memayungi industri perbankan nasional, yang dapat menjadi jembatan bagi anggotanya untuk menyalurkan aspirasi perbankan kepada pemerintah, DPR dan Bank Indonesia.</p>
                     <p>Bagi anggotanya, keberadaan PERBANAS dapat menjadi wadah untuk ikut menyehatkan sektor perbankan nasional. Pemikiran-pemikiran aktif dan positif bagi pengembangan industri bukan hanya monopoli Bank Indonesia, tetapi juga dapat datang dari kalangan praktisi, tentunya melalui PERBANAS.</p>
                 </div>
             </div>
@@ -155,18 +155,18 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="vision vm-title text-center">
-                            <h2>Vision</h2>
+                            <h2>Visi</h2>
                             <hr />
-                            <p>To become a respected organization and play an active role in building the professional banking industry, as well as making a positive contribution to the national economic development.</p>
+                            <p>Menjadi organisasi yang dihormati dan disegani serta berperan aktif membangun industri perbankan yang profesional dan memberikan nilai tambah pada pembangunan ekonomi nasional.</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
                         <div class=" mission vm-title text-center">
-                            <h2>Mission</h2>
+                            <h2>Misi</h2>
                             <hr />
-                            <p>Provide maximum benefits for its stakeholders.</p>
+                            <p>Memberikan kontribusi dan nilai tambah yang maksimal bagi para <span style="font-style: italic">stakeholder</span>-nya.</p>
 
                         </div>
                     </div>
@@ -176,30 +176,30 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-3 column">
                                 <div class="vm-title text-center">
-                                    <h2>Members</h2>
+                                    <h2>Anggota</h2>
                                     <hr />
-                                    <p>Increase cooperation among members which are mutually beneficial in order to build a professional banking organization.</p>
+                                    <p>Mengembangkan kerjasama antar anggota yang saling menguntungkan agar tercipta suatu organisasi perbankan yang profesional.</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-3 column">
                                 <div class="vm-title text-center">
-                                    <h2>Government</h2>
+                                    <h2>Pemerintah</h2>
                                     <hr />
-                                    <p>Become a professional partner in developing the national banking industry.</p>
+                                    <p>Menjadi mitra yang profesional dalam mengembangkan industri perbankan nasional.</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-3 column">
                                 <div class="vm-title text-center">
-                                    <h2>Public</h2>
+                                    <h2>Masyarakat</h2>
                                     <hr />
-                                    <p>Increase public trust towards the banking sector as well as increasing the function of banking intermediation.</p>
+                                    <p>Meningkatkan kepercayaan masyarakat terhadap sektor perbankan serta mendorong peningkatan fungsi intermediasi perbankan.</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-3 column">
                                 <div class="vm-title text-center">
-                                    <h2>Environment</h2>
+                                    <h2>Lingkungan</h2>
                                     <hr />
-                                    <p>Create harmony between the banking industry and the environment <emph>(good corporate citizenship).</emph></p>
+                                    <p>Menciptakan keselarasan antar industri perbankan dengan lingkungannya <span style="font-style: italic">(good corporate citizenship)</span>.</p>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.png" />
+                        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif" />
                     </div>
                 </div>
             </div>
@@ -225,7 +225,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="subsection-title-former-chairmen">
-                        <span>Former</span> Chairmen</h2>
+                        <span>Ketua</span> Sebelumnya</h2>
                 </div>
             </div>
             <div id="former-chairmen" class="carousel slide">
