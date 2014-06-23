@@ -69,7 +69,7 @@ function perbanas_cssjs() {
 		}
 		if ( get_post_type() == 'probankmagazine') {
 			wp_enqueue_script('select2-js', get_template_directory_uri() . '/js/select2-3.4.8/select2.min.js',array(),'',TRUE);
-			wp_enqueue_script('page-council', get_template_directory_uri() . '/js/page.news-and-media.js',array(),'',TRUE);
+			wp_enqueue_script('page-news-and-media', get_template_directory_uri() . '/js/page.news-and-media.js',array(),'',TRUE);
 		}		
 		// about - who we are
 		if ( is_page('who-we-are') || is_page('profil-perbanas')) {
@@ -77,6 +77,10 @@ function perbanas_cssjs() {
 			wp_enqueue_script('jquery-viewport', get_template_directory_uri() . '/js/jquery.viewport.mini.js',array(),'',TRUE);
 			wp_enqueue_script('page-about', get_template_directory_uri() . '/js/page.about.js',array(),'',TRUE);
 		}
+		if (get_post_type() == 'photogallery') {
+			wp_enqueue_script('page-news-and-media', get_template_directory_uri() . '/js/page.news-and-media.js',array(),'',TRUE);
+		}
+
 	}
 }
 add_action('wp_enqueue_scripts','perbanas_cssjs');
