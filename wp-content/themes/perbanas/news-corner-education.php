@@ -8,7 +8,9 @@
  * */
 
 $loop = new WP_Query(array('post_type' => get_post_type(),
-	'tax_query' => array(
+	'posts_per_page'	=> get_option('posts_per_page'),
+	'paged'				=> get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+	'tax_query' 		=> array(
 		array(
 			'taxonomy'  => 'subperbanascorner',
 			'field'     => 'slug',
@@ -16,7 +18,12 @@ $loop = new WP_Query(array('post_type' => get_post_type(),
 		),
 	),
 ));
-	
+
+// Pagination fix
+$temp_query = $wp_query;
+$wp_query   = NULL;
+$wp_query   = $loop;
+
 if( $loop->have_posts() ) :
 	while($loop->have_posts()) : $loop->the_post(); ?>
 
@@ -40,4 +47,15 @@ endif;
 /* Restore to originial query */
 wp_reset_query();
 /* Restore original Post Data */
-wp_reset_postdata(); ?>
+wp_reset_postdata(); 
+
+// Custom query loop pagination
+echo paginate_links(array(
+	'base'		=> get_term_link( $term, $taxonomy ) .'page/%#%',
+	'total'		=> $loop->max_num_pages,
+	'current'	=> get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1
+));
+
+// Reset main query object
+$wp_query = NULL;
+$wp_query = $temp_query;?>
