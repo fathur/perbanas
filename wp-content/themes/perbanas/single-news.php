@@ -60,7 +60,7 @@ get_header(); ?>
             
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <div></div><h1><span><?php _e('Other News','perbanas'); ?></span></h1>
+                    <h1><div></div><span><?php _e('Other News','perbanas'); ?></span></h1>
                 </div>
             </div>
             <div class="row other-news">
