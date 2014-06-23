@@ -81,7 +81,7 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="col-sm-3 hidden-xs main-content-pane-right-column">
-					<?php the_post_thumbnail(); ?>
+					<?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
 				</div>
 			</div>
 			
