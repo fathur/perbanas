@@ -568,15 +568,39 @@ a:hover {
     border: 1px solid #009BDE;
     background: white;
 }
+.back-to-top-container .back-to-top-circle {
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    -o-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
 .back-to-top-container .back-to-top-arrow-normal {
     position: absolute;
-    top: 33%;
-    left: 37%;
+    top: 29%;
+    left: 44%;
+    opacity: 1;
+    font-size: 20px;
+    color: #009BDE;
 }
 .back-to-top-container .back-to-top-arrow-onhover {
     position: absolute;
     top: 100%;
-    left: 37%;
+    left: 44%;
+    opacity: 0;
+    font-size: 20px;
+    color: #009BDE;
+}
+.back-to-top-container .back-to-top-arrow-normal, .back-to-top-container .back-to-top-arrow-onhover {
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.back-to-top .back-to-top-arrow-normal, .back-to-top .back-to-top-arrow-onhover {
+    -webkit-transition: top 0.2s ease, opacity 0.2s ease;
+    -moz-transition: top 0.2s ease, opacity 0.2s ease;
+    -o-transition: top 0.2s ease, opacity 0.2s ease;
+    transition: top 0.2s ease, opacity 0.2s ease;
 }
 
 .back-to-top:hover .back-to-top-circle {
@@ -586,10 +610,12 @@ a:hover {
 .back-to-top:hover .back-to-top-arrow-normal {
     top: -15%;
     color: black;
+    opacity: 0;
 }
 .back-to-top:hover .back-to-top-arrow-onhover {
-    top: 33%;
+    top: 29%;
     color: white;
+    opacity: 1;
 }
 
 .footer {
