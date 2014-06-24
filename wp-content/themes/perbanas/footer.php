@@ -1,5 +1,15 @@
 
 <div class="wrapper">
+	<div class="back-to-top-container">
+		<a href="#" class="back-to-top btn-fixed-bottom" style="display: block;">
+			<div class="back-to-top-circle">
+			  <span class="back-to-top-arrow-normal">&lt;</span>
+			  <span class="back-to-top-arrow-onhover">&lt;</span>
+			</div>
+		</a>
+			<div></div>
+		</a>
+	</div>
 	<div class="row footer">
 		<div class="col-sm-12 block">
 			<div class="container">

@@ -560,6 +560,38 @@ a:hover {
     }
     /* end list */
 /* general: footer */
+.back-to-top-container .back-to-top-circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 35px;
+    border: 1px solid #009BDE;
+    background: white;
+}
+.back-to-top-container .back-to-top-arrow-normal {
+    position: absolute;
+    top: 33%;
+    left: 37%;
+}
+.back-to-top-container .back-to-top-arrow-onhover {
+    position: absolute;
+    top: 100%;
+    left: 37%;
+}
+
+.back-to-top:hover .back-to-top-circle {
+    background: #009BDE;
+    border: 1px solid white;
+}
+.back-to-top:hover .back-to-top-arrow-normal {
+    top: -15%;
+    color: black;
+}
+.back-to-top:hover .back-to-top-arrow-onhover {
+    top: 33%;
+    color: white;
+}
+
 .footer {
     margin-top: 75px;
 }
