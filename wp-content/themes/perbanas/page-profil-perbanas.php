@@ -30,6 +30,12 @@
             </div>
             <div class="row">
                 <div id="history" class="anchor-with-offset"></div>
+                <div class="subsection-title subsection-title-history hidden-sm hidden-md hidden-lg">
+                    <div class="subsection-title-container">
+                        <h2 class=""><span>H</span>istory</h2>
+                    </div>
+                </div>
+
                 <div class="col-xs-12">
                     <div class="timeline-outer-container">
                         <ul class="timeline-container animate">
@@ -77,7 +83,7 @@
                                         <p>Dalam Kongres III, kata OPS dihilangkan, sehingga nama organisasi menjadi Perbankan Nasional Swasta (PERBANAS).</p>
                                     </div>
                                 </div>
-                                <div class="description right">
+                                <div class="description right hidden-xs">
                                     <div class="vertical-align">
                                         <div class="subsection-title text-center subsection-title-history">
                                             <div class="subsection-title-container">
@@ -231,59 +237,101 @@
             <div id="former-chairmen" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Rachmat_Moeljomiseno.jpg" />
+                        <div class="desc">
+                            <h3>1952 - 1957</h3>
+                            <h4>Rachmat Moeljomiseno</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <!--<img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />-->
+                        <div class="desc">
+                            <h3>1957 - 1958</h3>
+                            <h4>Parmin Martokoesoemo</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Sadjito.jpg" />
+                        <div class="desc">
+                            <h3>1958 - 1963</h3>
+                            <h4>Sadjito</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Selamat_Ginting.jpg" />
+                        <div class="desc">
+                            <h3>1963 - 1967</h3>
+                            <h4>Selamat Ginting</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/H_Tachjar.jpg" />
+                        <div class="desc">
+                            <h3>1967 - 1970</h3>
+                            <h4>H. Tachjar</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Idham.jpg" />
+                        <div class="desc">
+                            <h3>1970 - 1973</h3>
+                            <h4>Idham</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Sarono.jpg" />
+                        <div class="desc">
+                            <h3>1973 - 1982</h3>
+                            <h4>Sarono</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/I_Nyoman_Moena.jpg" />
                         <div class="desc">
                             <h3>1982 - 1988</h3>
                             <h4>I Nyoman Moena</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Abdulgani.jpg" />
                         <div class="desc">
-                            <h3>1982 - 1988</h3>
-                            <h4>I Nyoman Moena</h4>
+                            <h3>1988 - 1991</h3>
+                            <h4>Abdulgani</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Trenggono_Purwosuprodjo.jpg" />
                         <div class="desc">
-                            <h3>1982 - 1988</h3>
-                            <h4>I Nyoman Moena</h4>
+                            <h3>1991 - 1997</h3>
+                            <h4>Trenggono Purwosuprodjo</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Atmosardjono_Subowo.jpg" />
                         <div class="desc">
-                            <h3>1982 - 1988</h3>
-                            <h4>I Nyoman Moena</h4>
+                            <h3>1997 - 2000</h3>
+                            <h4>Atmosardjono Subowo</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Gunarni_Soeworo.jpg" />
                         <div class="desc">
-                            <h3>1982 - 1988</h3>
-                            <h4>I Nyoman Moena</h4>
+                            <h3>2000 - 2003</h3>
+                            <h4>Gunarni Soeworo</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Agus_Martowardojo.jpg" />
                         <div class="desc">
-                            <h3>1982 - 1988</h3>
-                            <h4>I Nyoman Moena</h4>
+                            <h3>2003 - 2006</h3>
+                            <h4>Agus Martowardojo</h4>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Sigit_Pramono.jpg" />
                         <div class="desc">
-                            <h3>1982 - 1988</h3>
-                            <h4>I Nyoman Moena</h4>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chairman-1.png" />
-                        <div class="desc">
-                            <h3>1982 - 1988</h3>
-                            <h4>I Nyoman Moena</h4>
+                            <h3>2006 - sekarang</h3>
+                            <h4>Sigit Pramono</h4>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,29 @@
 load_theme_textdomain('perbanas');
 add_theme_support( 'post-thumbnails' );
 
+/* */
+
+
+	function filter_handler( $data , $postarr ) {
+	  // do something with the post data
+		$data['post_name'] .= $data['post_name'] . '-id';
+		$a = cml_get_current_language()->cml_locale;
+		print_r( CMLLanguage::get_current());
+		print_r($data);
+		print_r($postarrs);
+		
+	  return $data;
+	}
+
+	add_filter( 'wp_insert_post_data', 'filter_handler', '1', 2 );
+
+
+// function append_language_id_in_permalink($permalink) {
+// 	echo '<h1>' . $permalink . '</h1>';
+// 	return ($permalink + '33');
+// }
+// add_filter('the_permalink', 'append_language_id_in_permalink');
+
 /**
  * Registering style and javascript in wordpress
  */
