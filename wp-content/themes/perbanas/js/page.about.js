@@ -20,6 +20,10 @@ function fHistViewport(H){
 }//end function  fViewport()
 
 function page_about_who_we_are_init() {
+    // sidebar active
+    $('#whoweare a').click(onAnchorClicked);
+    setCurrentActiveAnchor(window.location.hash)
+    
     // history
     var H = Math.round(calculateHeight()/2);
     openViewport(H);
@@ -31,4 +35,16 @@ function page_about_who_we_are_init() {
 
     // chairmans
     $('#former-chairmen').carousel({interval: 5000});
+}
+
+function onAnchorClicked(e) {
+    var anchor = $(this).attr('href');
+    setCurrentActiveAnchor(anchor);
+}
+function setCurrentActiveAnchor(anchor) {
+    $('.sidebar #whoweare hr').removeClass('active');
+    getHrOfCurrentActiveAnchor(anchor).addClass('active');
+}
+function getHrOfCurrentActiveAnchor(anchor) {
+    return $('#whoweare a[href= ' + anchor + ']').next();
 }

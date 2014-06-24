@@ -160,6 +160,7 @@
 
                 </div>
             </div>
+            <div id="vision-mission" class="anchor-with-offset"></div>
             <div class="vision-mission-container">
                 <div class="row">
                     <div class="col-xs-12">
