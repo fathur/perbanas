@@ -227,10 +227,12 @@ function perbanas_side_menu( $menu_name, $id ) {
 
 		foreach ( $menus as $menu ) {
 				
-			if ($menu->url == __getCurrentUrl())
+			if ( __formatUrl( $menu->url)  == __formatUrl( __getCurrentUrl() ))
 				$class_active	= 'active';
 			else
 				$class_active	= '';
+			
+			
 				
 			if ( __has_child( $menu->children )) {
 
@@ -267,7 +269,7 @@ function perbanas_side_menu( $menu_name, $id ) {
 				$list_menus .= '</div>';
 
 			} else {
-
+			
 				$list_menus .= '<div class="accordion-group">
 						<div class="accordion-heading">
 							<a class="item" href="'.$menu->url.'">
@@ -434,4 +436,9 @@ function __getCurrentUrl() {
 	$url		= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 
 	return $protocol . $url;
+}
+
+function __formatUrl( $url ) {
+	$url = rtrim($url, '/');
+	return $url;
 }
