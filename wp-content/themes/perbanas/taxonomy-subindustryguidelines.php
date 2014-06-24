@@ -72,7 +72,7 @@ get_header(); ?>
 					<div class="col-xs-10">
 						<h2><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE); ?>"><?php echo esc_attr( get_the_title() ); ?></a></h2>
 						
-						<p class="desc"><?php _e('Size','perbanas'); ?>: <?php echo $size_download; ?> <span class="divider">|</span> <?php the_date(); ?> <span class="divider">|</span> <?php _e('Size','perbanas'); ?>: <?php echo $format_download; ?></p>
+						<p class="desc"><?php _e('Size','perbanas'); ?>: <?php echo $size_download; ?> <span class="divider">|</span> <?php the_date(); ?> <span class="divider">|</span> <?php _e('Format','perbanas'); ?>: <?php echo $format_download; ?></p>
 						<p class="desc-detailed">
 							<?php the_content(); ?>
 						</p>
