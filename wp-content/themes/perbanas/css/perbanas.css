@@ -553,7 +553,7 @@ a:hover {
     /*margin-top: 15px;*/
     margin-bottom: 15px;
     color: #717271;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
 }
 @media screen and (max-width: 991px) {
@@ -581,7 +581,7 @@ a:hover {
     .main-content-pane ol, .main-content-pane ul {
         margin-left: 15px;
         color: #717271;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: normal;
     }
     .main-content-pane ol {
@@ -1444,7 +1444,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         max-width: 100%;
     }
     .organization-sector .item-address {
-        font-size: 10px;
+        font-size: 12px;
         color: rgb(0, 73, 135);
     }
 /* end main layout / organization sector */
