@@ -233,6 +233,8 @@ function __perbanas_header_mobile_menu( $menu_name, $id) {
 
 function __predicate( $url ) {
 	
+	global $post;
+	
 	if ( __formatUrl( $url )  == __formatUrl( __getCurrentUrl() )) {
 		return TRUE;
 	}
@@ -240,19 +242,25 @@ function __predicate( $url ) {
 	if ( __formatUrl( get_post_type_archive_link( get_post_type() ) ) == __formatUrl($url) ) {
 		return TRUE;
 	}
+	
+	if ( 'memberbank' == get_post_type() ) {
+		
+		$terms = wp_get_post_terms($post->ID, 'submemberbank');
+		
+		if ( __formatUrl( get_term_link( $terms[0]->slug , $terms[0]->taxonomy) ) == __formatUrl($url) ) {
+			return TRUE;
+		}
+	}
 }
 
 function perbanas_side_menu( $menu_name, $id ) {
-
+	
 	$menus = __find_all_thread( $menu_name );
 
 	if ( $menus && count( $menus ) > 0 ) {
 		$list_menus = "<div class='accordion' id='$id'>";
 
 		foreach ( $menus as $menu ) {
-			
-			/* echo gettype(__formatUrl( $menu->url ));
-			echo "<br/>"; */
 				
 			if ( __predicate( $menu->url ) )
 				$class_active	= 'active';
