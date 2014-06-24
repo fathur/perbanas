@@ -51,57 +51,86 @@ get_header(); ?>
                         <div class="col-xs-12">
                             <table class="contact-detail">
                                 <tbody>
-                                <tr>
-                                    <td><?php _e('Bank Name','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-title', TRUE ); ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php _e('Address','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-address', TRUE ); ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php _e('Phone','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-phones', TRUE ); ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php _e('Website','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?>"><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?></a></td>
-                                </tr>
                                 
-                                 <tr>
-                                    <td><?php _e('Fax','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-fax', TRUE ); ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php _e('Email','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-email', TRUE ); ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php _e('Business License','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-izin-usaha', TRUE ); ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php _e('Status','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-status', TRUE ); ?></td>
-                                </tr>
-                                 <tr>
-                                    <td><?php _e('Member Since','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-tanggal-keanggotaan', TRUE ); ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php _e('Member No.','perbanas'); ?></td>
-                                    <td class="colon-separator">:</td>
-                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-no-keanggotaan', TRUE ); ?></td>
-                                </tr>
+                                	<?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-title', TRUE ) != '') : ?>
+	                                <tr>
+	                                    <td><?php _e('Bank Name','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-title', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-address', TRUE ) != '') : ?>
+	                                <tr>
+	                                    <td><?php _e('Address','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-address', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-phones', TRUE ) != '') : ?>
+	                                <tr>
+	                                    <td><?php _e('Phone','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-phones', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ) != '') : ?>
+	                                <tr>
+	                                    <td><?php _e('Website','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?>"><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-website', TRUE ); ?></a></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-fax', TRUE ) != '') : ?>
+	                                 <tr>
+	                                    <td><?php _e('Fax','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-fax', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-email', TRUE ) != '') : ?>
+	                                <tr>
+	                                    <td><?php _e('Email','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-email', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-izin-usaha', TRUE ) != '') : ?>
+	                                <tr>
+	                                    <td><?php _e('Business License','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-izin-usaha', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-status', TRUE ) != '') : ?>
+	                                <tr>
+	                                    <td><?php _e('Status','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-status', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-tanggal-keanggotaan', TRUE ) != '') : ?>
+	                                 <tr>
+	                                    <td><?php _e('Member Since','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-tanggal-keanggotaan', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
+	                                
+	                                <?php if ( get_post_meta( get_the_ID(), 'wpcf-memberbank-no-keanggotaan', TRUE ) != '') : ?>
+	                                <tr>
+	                                    <td><?php _e('Member No.','perbanas'); ?></td>
+	                                    <td class="colon-separator">:</td>
+	                                    <td><?php echo get_post_meta( get_the_ID(), 'wpcf-memberbank-no-keanggotaan', TRUE ); ?></td>
+	                                </tr>
+	                                <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>

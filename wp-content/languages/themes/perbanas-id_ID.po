@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-06-23 15:40+0700\n"
+"PO-Revision-Date: 2014-06-23 17:56+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Fostrom <info@fostrom.com>\n"
 "X-Generator: Poedit 1.5.4\n"
@@ -725,3 +725,12 @@ msgstr "Alamat"
 
 msgid "Phone"
 msgstr "Telepon"
+
+msgid "Business License"
+msgstr "Izin Usaha"
+
+msgid "Member Since"
+msgstr "Menjadi Anggota Perbanas"
+
+msgid "Member No."
+msgstr "No. Keanggotaan"
