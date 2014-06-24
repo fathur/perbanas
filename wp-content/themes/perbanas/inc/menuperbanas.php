@@ -236,18 +236,34 @@ function perbanas_side_menu( $menu_name, $id ) {
 
 				if ( __have_active_menu( $menu->children ) ) {
 					$class_active = 'active';
+					$height = 'auto';
+					$in	= 'in';
+				} else {
+					$class_active = '';
+					$height = '0px';
+					$in	= '';
 				}
 
 				$list_menus .= '<div class="accordion-group">
 						<div class="accordion-heading">
-							<a class="accordion-toggle item" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
+							<a class="accordion-toggle item '.$class_active.'" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
 								<i class="icon-home"></i> '. __( $menu->title, 'perbanas') .
 								'</a>
 							<hr class="'.$class_active.'" />
 						</div>';
+				
+				// Mengahapus simbol # (kres) pada string pertama
+				$kres = substr($menu->url, 0, 1);
+				if ('#' == $kres) $url_collapse = substr($menu->url, 1);
 
+				$list_menus .= '<div id="'.$url_collapse.'" class="accordion-body collapse '.$in.'" style="height: '.$height.'; ">
+					<div class="accordion-inner">
+						<ul class="list-unstyled" >';
+				
 				__generate_child_menu( $menu->children, $list_menus, 0, $menu->url );
-
+				
+				$list_menus .= "</ul></div></div>";
+				
 				$list_menus .= '</div>';
 
 			} else {
@@ -318,9 +334,7 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 	$kres = substr($url_collapse, 0, 1);
 	if ('#' == $kres) $url_collapse = substr($url_collapse, 1);
 
-	$list_menus .= '<div id="'.$url_collapse.'" class="accordion-body collapse" style="height: 0px; ">
-		<div class="accordion-inner">
-			<ul class="list-unstyled" >';
+	
 
 	foreach ( $menus as $menu ) {
 
@@ -352,8 +366,6 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 				<hr class="'.$class_active.'" />
 			</li>';
 	}
-
-	$list_menus .= "</ul></div></div>";
 }
 
 function __has_child( $child ) {
