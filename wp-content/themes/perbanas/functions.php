@@ -3,7 +3,10 @@
 load_theme_textdomain('perbanas');
 add_theme_support( 'post-thumbnails' );
 
-
+add_action( 'login_form_middle', 'add_lost_password_link' );
+function add_lost_password_link() {
+	return '<a class="forgot-password" href="/wp-login.php?action=lostpassword">Forgot Password?</a>';
+}
 /**
  * Registering style and javascript in wordpress
  */
@@ -12,7 +15,9 @@ function perbanas_cssjs() {
 	if ( !is_admin()) {
 
 		wp_enqueue_style('bootstrap-min', get_template_directory_uri() . '/css/bootstrap.min.css');
-		wp_enqueue_style('showup', get_template_directory_uri() . '/js/showup/showup.css');
+		if (!is_home() && !is_front_page()) {
+			wp_enqueue_style('showup', get_template_directory_uri() . '/js/showup/showup.css');
+		}
 
 		// Add select bootstrap script and style
 		if ( get_post_type() == 'regionalboard' ) {
