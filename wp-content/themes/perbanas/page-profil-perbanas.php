@@ -22,11 +22,14 @@
                     <h1><div></div><span><?php _e('Who We Are','perbanas'); ?></span></h1>
                 </div>
             </div>
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-xs-12">
                     <p>PERBANAS merupakan sebuah organisasi yang memayungi industri perbankan nasional, yang dapat menjadi jembatan bagi anggotanya untuk menyalurkan aspirasi perbankan kepada pemerintah, DPR dan Bank Indonesia.</p>
                     <p>Bagi anggotanya, keberadaan PERBANAS dapat menjadi wadah untuk ikut menyehatkan sektor perbankan nasional. Pemikiran-pemikiran aktif dan positif bagi pengembangan industri bukan hanya monopoli Bank Indonesia, tetapi juga dapat datang dari kalangan praktisi, tentunya melalui PERBANAS.</p>
                 </div>
+            </div>
+            <div class="text-center">
+                <div class="hr" id="history"></div>
             </div>
             <div class="row">
                 <div id="history" class="anchor-with-offset"></div>
