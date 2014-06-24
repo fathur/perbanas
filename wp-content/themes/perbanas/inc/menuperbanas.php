@@ -231,8 +231,6 @@ function perbanas_side_menu( $menu_name, $id ) {
 				$class_active	= 'active';
 			else
 				$class_active	= '';
-			
-			
 				
 			if ( __has_child( $menu->children )) {
 
@@ -330,13 +328,9 @@ function __generate_child_mobile_menu( &$menus, &$list_menus, $level, &$url_coll
 
 function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = '' ) {
 
-
-
 	// Mengahapus simbol # (kres) pada string pertama
 	$kres = substr($url_collapse, 0, 1);
 	if ('#' == $kres) $url_collapse = substr($url_collapse, 1);
-
-	
 
 	foreach ( $menus as $menu ) {
 
@@ -362,9 +356,18 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 		"</a>";
 		}
 		$list_menus .= "</li>"; */
+		
+		if (is_page('profil-perbanas') || is_page('who-we-are') ) {
+			
+			$x_wwa = explode('#',$menu->url);
+			
+			$menu_url = '#' . $x_wwa[1];
+		} else {
+			$menu_url = $menu->url;
+		}
 
 		$list_menus .= '<li>
-				<a href="'.$menu->url.'" class="item">'. __( $menu->title,'perbanas').'</a>
+				<a href="'.$menu_url.'" class="item">'. __( $menu->title,'perbanas').'</a>
 				<hr class="'.$class_active.'" />
 			</li>';
 	}
