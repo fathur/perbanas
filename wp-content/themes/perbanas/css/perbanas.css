@@ -135,6 +135,7 @@ a:hover {
         font-size: 10px;
         padding: 5px;
         margin-top: 10px;
+        width: 100%;
     }
     .top-nav-login-dialog-container .login-dialog-buttons {
         margin-top: 10px;
@@ -142,9 +143,44 @@ a:hover {
     .top-nav-login-dialog-container .forgot-password {
         font-size: 10px;
     }
-    .top-nav-login-dialog-container .top-nav-login-dialog-form {
+    .top-nav-login-dialog-container #top-nav-login-dialog-form {
         position: absolute;
         right: 15px;
+    }
+    .top-nav-login-dialog-container label {
+        display: none;
+    }
+    .top-nav-login-dialog-container p {
+        line-height: 1;
+    }
+    .top-nav-login-dialog-container p.login-remember {
+        display: none;
+    }
+    .top-nav-login-dialog-container p.login-submit {
+        display: inline-block;
+        margin-top: 10px;
+    }
+    #wp-submit {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+
+        font-size: 10px;
+        font-weight: 400;
+        color: white;
+        background: #C3D500;
+        border-radius: 0;
+
     }
     #search-textbox {
         display: none;
@@ -682,6 +718,7 @@ a:hover {
     background: #C3D500;
     border-radius: 0;
 }
+
 a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: white;
     text-decoration: none;

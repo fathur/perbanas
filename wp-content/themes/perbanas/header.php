@@ -30,7 +30,6 @@
 							<div class="col-xs-6"></div>
 							<div class="col-xs-6">
 								<ul>
-									
 									<?php if ( is_user_logged_in() ) { ?>
 									<li><a href="<?php echo wp_logout_url( get_bloginfo('siteurl') ); ?>"><?php _e('Log Out','perbanas'); ?></a><?php //echo wp_loginout( get_permalink() ); ?></li>
 									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>"><?php _e('Member Area','perbanas'); ?></a></li>
@@ -74,7 +73,7 @@
 									'label_username' => __( 'Username' ),
 									'label_password' => __( 'Password' ),
 									'label_remember' => __( 'Remember Me' ),
-									'label_log_in'   => __( 'Log In' ),
+									'label_log_in'   => __( 'submit' ),
 									'id_username'    => 'user_login',
 									'id_password'    => 'user_pass',
 									'id_remember'    => 'rememberme',
