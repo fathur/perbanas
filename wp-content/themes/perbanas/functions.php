@@ -5,7 +5,7 @@ add_theme_support( 'post-thumbnails' );
 
 add_action( 'login_form_middle', 'add_lost_password_link' );
 function add_lost_password_link() {
-	return '<a class="forgot-password" href="/wp-login.php?action=lostpassword">Forgot Password?</a>';
+	return '<a class="forgot-password" href="'.wp_lostpassword_url().'">Forgot Password?</a>';
 }
 /**
  * Registering style and javascript in wordpress

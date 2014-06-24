@@ -165,6 +165,10 @@ var searchTextboxVisible = false;
 var languageMenuVisible = false;
 var loginDialogVisible = false;
 function setupTopNav() {
+    $('#user_login').attr( 'placeholder', 'Username' );
+    $('#user_pass').attr( 'placeholder', 'Password' );
+
+
     $('#search-button').click(function() {
         toggleSearchTextBox(!searchTextboxVisible);
         if (searchTextboxVisible) {

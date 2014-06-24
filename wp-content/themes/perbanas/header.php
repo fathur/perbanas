@@ -73,7 +73,7 @@
 									'label_username' => __( 'Username' ),
 									'label_password' => __( 'Password' ),
 									'label_remember' => __( 'Remember Me' ),
-									'label_log_in'   => __( 'Log In' ),
+									'label_log_in'   => __( 'submit' ),
 									'id_username'    => 'user_login',
 									'id_password'    => 'user_pass',
 									'id_remember'    => 'rememberme',
