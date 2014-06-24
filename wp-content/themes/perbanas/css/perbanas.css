@@ -562,7 +562,7 @@ a:hover {
 /* general: footer */
 
 .back-to-top-container .btn-fixed-bottom {
-    bottom: 25%;
+    bottom: 210px;
     right: 40px;
 }
 @media screen and (min-width: 1200px) and (max-width: 1388px) {
