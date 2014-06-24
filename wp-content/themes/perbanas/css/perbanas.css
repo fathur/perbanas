@@ -602,6 +602,7 @@ a:hover {
     bottom: 210px;
     right: 40px;
 }
+
 @media screen and (min-width: 1200px) and (max-width: 1388px) {
     .back-to-top-container .btn-fixed-bottom {
         right: 0px;
@@ -1150,16 +1151,35 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         background: #56b5e5;
         
     }
-    #former-chairmen, #former-chairmen .carousel-inner, #former-chairmen .carousel-inner .item, #former-chairmen .carousel-inner .item .desc {
-        height: 400px;
+    @media screen and (min-width: 992px) {
+        #former-chairmen, #former-chairmen .carousel-inner, #former-chairmen .carousel-inner .item, #former-chairmen .carousel-inner .item .desc {
+            height: 400px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        #former-chairmen, #former-chairmen .carousel-inner, #former-chairmen .carousel-inner .item, #former-chairmen .carousel-inner .item .desc {
+            height: 350px;
+        }
     }
     #former-chairmen .carousel-inner .item .desc {
         position: relative;
         z-index: 2;
         display: table-cell;
-        vertical-align: middle;
-        padding-left: 70px;
     }
+    @media screen and (min-width: 992px) {
+        #former-chairmen .carousel-inner .item .desc {
+            vertical-align: middle;
+            padding-left: 70px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        #former-chairmen .carousel-inner .item .desc {
+            vertical-align: bottom;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }    
+    }
+
     #former-chairmen .carousel-inner img {
         position: absolute;
         bottom: 0;
@@ -1218,14 +1238,30 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     #former-chairmen .carousel-indicators li {
         margin-left: 14px;
-        margin-right: 13px;
+        margin-right: 15px;
         margin-bottom: 0;
         width: 15px;
         height: 15px;
         background: white;
+        text-indent: 0;
+        position: relative;
     }
     #former-chairmen .carousel-indicators li.active {
         background: #004987;
+    }
+    #former-chairmen .carousel-indicators li .carousel-indicators-year {
+        position: absolute;
+        color: white;
+        width: 100px;
+        margin-left: -50px;
+        top: -29px;
+        
+        opacity: 0;
+        -webkit-transition: opacity 0.2s ease;
+    }
+    #former-chairmen .carousel-indicators li.active .carousel-indicators-year {
+        
+        opacity: 1;
     }
     /* end former chairmen */
 
@@ -1751,6 +1787,9 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     /* end gallery */
 
     /* probank and events */
+    .homepage-probank-desc-top {
+        font-size: 14px;
+    }
     @media screen and (max-width: 767px) {
 
     }
@@ -1761,7 +1800,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     @media screen and (min-width: 992px) and (max-width: 1199px) {
         .homepage-probank-desc-top {
-            height: 217px;
+            height: 197px;
         }
     }
     @media screen and (min-width: 1200px) {

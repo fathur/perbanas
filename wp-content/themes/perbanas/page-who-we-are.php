@@ -341,7 +341,7 @@
                     <div class="item">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/Sigit_Pramono.jpg" />
                         <div class="desc">
-                            <h3>2006 - now</h3>
+                            <h3>2006 - Now</h3>
                             <h4>Sigit Pramono</h4>
                         </div>
                     </div>
@@ -353,22 +353,48 @@
                 <div class="carousel-indicators-container hidden-xs hidden-sm">
                     <div class="border"></div>
                     <ol class="carousel-indicators">
-                        <li data-target="#former-chairmen" data-slide-to="0" class="active"></li>
-                        <li data-target="#former-chairmen" data-slide-to=1></li>
-                        <li data-target="#former-chairmen" data-slide-to=2></li>
-                        <li data-target="#former-chairmen" data-slide-to=3></li>
-                        <li data-target="#former-chairmen" data-slide-to=4></li>
-                        <li data-target="#former-chairmen" data-slide-to=5></li>
-                        <li data-target="#former-chairmen" data-slide-to=6></li>
-                        <li data-target="#former-chairmen" data-slide-to=7></li>
-                        <li data-target="#former-chairmen" data-slide-to=8></li>
-
-                        <li data-target="#former-chairmen" data-slide-to=9></li>
-                        <li data-target="#former-chairmen" data-slide-to=10></li>
-                        <li data-target="#former-chairmen" data-slide-to=11></li>
-                        <li data-target="#former-chairmen" data-slide-to=12></li>
-
-                        <li data-target="#former-chairmen" data-slide-to=13></li>
+                        <li data-target="#former-chairmen" data-slide-to="0" class="active">
+                            <span class="carousel-indicators-year">1952-1957</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=1>
+                            <span class="carousel-indicators-year">1957-1958</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=2>
+                            <span class="carousel-indicators-year">1958-1963</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=3>
+                            <span class="carousel-indicators-year">1963-1967</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=4>
+                            <span class="carousel-indicators-year">1967-1970</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=5>
+                            <span class="carousel-indicators-year">1970-1973</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=6>
+                            <span class="carousel-indicators-year">1973-1982</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=7>
+                            <span class="carousel-indicators-year">1982-1988</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=8>
+                            <span class="carousel-indicators-year">1988-1991</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=9>
+                            <span class="carousel-indicators-year">1991-1997</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=10>
+                            <span class="carousel-indicators-year">19997-2000</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=11>
+                            <span class="carousel-indicators-year">2000-2003</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=12>
+                            <span class="carousel-indicators-year">2003-2006</span>
+                        </li>
+                        <li data-target="#former-chairmen" data-slide-to=13>
+                            <span class="carousel-indicators-year">2006-Now</span>
+                        </li>
                     </ol>
                 </div>
             </div>
