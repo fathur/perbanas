@@ -60,13 +60,30 @@
 							<div class="col-xs-4 text-right">
 								<form action="<?php echo get_bloginfo('siteurl'); ?>" method="get">
 									<input type="text" name="s" id="search-textbox" />
-						    </form>
+								</form>
 							</div>
 						</div>
 						<?php if ( ! is_user_logged_in() ) { ?>
 						<div class="row top-nav-login-dialog-container">
 							<div class="col-xs-8"></div>
 							<div class="col-xs-4">
+								<?php wp_login_form(array(
+									'echo'           => true,
+									'redirect'       => "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
+									'form_id'        => 'top-nav-login-dialog-form',
+									'label_username' => __( 'Username' ),
+									'label_password' => __( 'Password' ),
+									'label_remember' => __( 'Remember Me' ),
+									'label_log_in'   => __( 'Log In' ),
+									'id_username'    => 'user_login',
+									'id_password'    => 'user_pass',
+									'id_remember'    => 'rememberme',
+									'id_submit'      => 'wp-submit',
+									'remember'       => true,
+									'value_username' => NULL,
+									'value_remember' => false
+								)); ?>
+							<!-- 
 								<form action="<?php echo get_option('siteurl');?>/wp-login.php" method="post" class="top-nav-login-dialog-form">
 									<input type="text" placeholder="Username" name="log" id="user_login" />
 									<input type="password" placeholder="Password" name="pwd" id="user_pass" />
@@ -77,7 +94,7 @@
 										<input type="hidden" name="redirect_to" value="<?php echo get_bloginfo('siteurl'); // ( $_SERVER['REQUEST_URI'] ); ?>" />
 										<input type="hidden" name="testcookie" value="0" />
 									</div>
-								</form>
+								</form>  -->
 							</div>
 						</div>
 						<?php } ?>
