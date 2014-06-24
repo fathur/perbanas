@@ -383,7 +383,7 @@ function __have_active_menu( &$menus ) {
 
 	foreach ( $menus as $menu ) {
 
-		if ($menu->url == __getCurrentUrl())
+		if ( __formatUrl( $menu->url ) == __formatUrl( __getCurrentUrl() ))
 			array_push($tmp, TRUE);
 		else
 			array_push($tmp, FALSE);
