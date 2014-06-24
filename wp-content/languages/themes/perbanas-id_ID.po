@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-06-23 17:56+0700\n"
+"PO-Revision-Date: 2014-06-24 12:01+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Fostrom <info@fostrom.com>\n"
 "X-Generator: Poedit 1.5.4\n"
@@ -480,8 +480,17 @@ msgstr "Foto Terbaru"
 msgid "Probank Magazine"
 msgstr "Majalah Perbanas"
 
+msgid "Probank Magazines"
+msgstr "Majalah Pebanas"
+
 msgid "Upcoming Events"
 msgstr "Acara Mendatang"
+
+msgid "Events and Seminars"
+msgstr "Dewan Direksi"
+
+msgid "Events and Seminar"
+msgstr "Acara dan Seminar"
 
 msgid "No content to show"
 msgstr "Konten tidak dapat ditemukan"
@@ -493,7 +502,7 @@ msgid "All rights reserved."
 msgstr ""
 
 msgid "Our partners"
-msgstr ""
+msgstr "Mitra kami"
 
 msgid "Language"
 msgstr "Bahasa"
@@ -516,20 +525,41 @@ msgstr "Pengurus Pusat"
 msgid "Board Member"
 msgstr "Dewan Direksi"
 
+msgid "Board Members"
+msgstr "Dewan Direksi"
+
 msgid "Division"
+msgstr "Divisi"
+
+msgid "Divisions"
 msgstr "Divisi"
 
 msgid "Advisory Board"
 msgstr "Dewan Penasehat"
 
+msgid "Advisory Boards"
+msgstr "Dewan Penasehat"
+
 msgid "Supervisory Board"
+msgstr "Dewan Pengawas"
+
+msgid "Supervisory Boards"
 msgstr "Dewan Pengawas"
 
 msgid "Regional Board"
 msgstr "Pengurus Daerah"
 
+msgid "Regional Boards"
+msgstr "Pengurus Daerah"
+
 msgid "Secretariat"
 msgstr "Sekretariat"
+
+msgid "Secretariats"
+msgstr "Sekretariat"
+
+msgid "Member Bank"
+msgstr "Bank Anggota"
 
 msgid "Member Banks"
 msgstr "Bank Anggota"
@@ -555,10 +585,22 @@ msgstr "Bank Campuran"
 msgid "Industry Guidelines"
 msgstr "Pedoman Industri"
 
+msgid "Industry Guideline"
+msgstr "Pedoman Industri"
+
+msgid "Industries Guidelines"
+msgstr "Pedoman Industri"
+
+msgid "Industries Guideline"
+msgstr "Pedoman Industri"
+
 msgid "Banking In Indonesia"
 msgstr "Perbankan di Indonesia"
 
 msgid "Download"
+msgstr "Unduh"
+
+msgid "Downloads"
 msgstr "Unduh"
 
 msgid "Events"
@@ -624,6 +666,12 @@ msgstr "Berita & Media"
 msgid "Press Release"
 msgstr "Siaran Pers"
 
+msgid "Press Releases"
+msgstr "Siaran Pers"
+
+msgid "Photo Galleries"
+msgstr "Galeri Foto"
+
 msgid "Perbanas News"
 msgstr "Berita Perbanas"
 
@@ -632,6 +680,12 @@ msgstr "Majalah Perbanas"
 
 msgid "Perbanas Corner"
 msgstr "Pojok Perbanas"
+
+msgid "Perbanas Corners"
+msgstr "Pojok Perbanas"
+
+msgid "Education"
+msgstr "Pendidikan"
 
 msgid "Send Us A Message"
 msgstr "Kirim Pesan"

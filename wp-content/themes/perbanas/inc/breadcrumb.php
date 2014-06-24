@@ -19,9 +19,12 @@ function perbanas_breadcrumb_council( $trail ) {
 		// Lihat file class.bcn_breadcrumb.php di plugin breadcrumb-navxt
 		$element = array( new bcn_breadcrumb( __('Council','perbanas'),'','', get_bloginfo('siteurl') . '/council/sectors/') );
 		
+		// Menambahkan satu elemen sebelum awal breadcrumb
+		// atau sebelum akhir array $trail->trail
 		$x = array_slice($trail->trail, 0, count($trail->trail)-1);
 		$z = array_slice($trail->trail, count($trail->trail)-1, count($trail->trail));
 		$trail->trail = array_merge($x,$element,$z);
+		
 	}
 }
 add_action('bcn_after_fill','perbanas_breadcrumb_council');
@@ -45,3 +48,17 @@ function perbanas_breadcrumb_newsmedia( $trail ) {
 	}
 }
 add_action('bcn_after_fill','perbanas_breadcrumb_newsmedia');
+
+function perbanas_breadcrumb_translate( $trail ) {
+	
+	// Menterjemahkan tiap2 item yang berupa object protected
+	$new_trail = array();
+	foreach ( $trail->trail as $item) {
+		$translated = __( $item->get_title(), 'perbanas' );
+		$item->set_title($translated);
+		array_push($new_trail, $item);
+	}
+	
+	$trail->trail = $new_trail;
+}
+add_action('bcn_after_fill','perbanas_breadcrumb_translate');
