@@ -598,6 +598,7 @@ a:hover {
 /* general: footer */
 
 .back-to-top-container .btn-fixed-bottom {
+    display: none;
     bottom: 210px;
     right: 40px;
 }
