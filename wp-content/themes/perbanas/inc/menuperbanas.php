@@ -340,7 +340,7 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 
 	foreach ( $menus as $menu ) {
 
-		if ($menu->url == __getCurrentUrl())
+		if ( __formatUrl( $menu->url ) == __formatUrl( __getCurrentUrl() ))
 			$class_active	= 'active';
 		else
 			$class_active	= '';
