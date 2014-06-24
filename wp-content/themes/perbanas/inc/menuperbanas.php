@@ -333,28 +333,24 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 	if ('#' == $kres) $url_collapse = substr($url_collapse, 1);
 
 	foreach ( $menus as $menu ) {
-
+		
 		if ( __formatUrl( $menu->url ) == __formatUrl( __getCurrentUrl() ))
 			$class_active	= 'active';
 		else
 			$class_active	= '';
 
 		/* // if child has children, iterate its childs!!
-		 if ( __has_child( $menu->children ) ) {
-
+		 if ( __has_child( $menu->children ) ) 
 		// first output its child parent
 		$list_menus .= "<li><a href='#' title='" . $menu->title . "'>" .
 		$menu->title . "</a>";
 		// generate again
 		__generate_child_menu( $menu->children, $list_menus,$level+1);
-
 		} else {
-			
 		$list_menus .= "<li class='subnav$level nohaschild'>
 		<a href='" . $menu->url . "' title='" . $menu->title . "' class='' >" .
 		$menu->title .
-		"</a>";
-		}
+		"</a>";}
 		$list_menus .= "</li>"; */
 		
 		if (is_page('profil-perbanas') || is_page('who-we-are') ) {
@@ -442,6 +438,12 @@ function __getCurrentUrl() {
 }
 
 function __formatUrl( $url ) {
+	
+	if (strpos($url,'#') !== false) {
+		$x_url = explode('#', $url);
+		$url	= $x_url[0];
+	}
+	
 	$url = rtrim($url, '/');
 	return $url;
 }
