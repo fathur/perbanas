@@ -542,15 +542,21 @@ a:hover {
     .main-content-pane h2 {
         /* use default value for margin bottom */
     }
+    .main-content-pane h3 {
+        /* use default value for margin bottom */
+    }
 }
 @media screen and (min-width: 992px) {
     .main-content-pane h2 {
+        margin-top: 60px;
         margin-bottom: 30px;
     }
-   
+    .main-content-pane h3 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
 }
 .main-content-pane p {
-    /*margin-top: 15px;*/
     margin-bottom: 15px;
     color: #717271;
     font-size: 14px;
@@ -566,8 +572,14 @@ a:hover {
     .main-content-pane .in-article-diagram {
         padding-left: 20%;
         padding-right: 20%;
-        margin-top: 60px;
-        margin-bottom: 60px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .main-content-pane .in-article-diagram-inner {
+        padding-left: 20%;
+        padding-right: 20%;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 }
 .main-content-pane p.last {
