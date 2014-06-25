@@ -370,7 +370,10 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 
 	foreach ( $menus as $menu ) {
 		
-		$class_active	= '';
+		if ( __predicate( $menu->url ) )
+			$class_active	= 'active';
+		else
+			$class_active	= '';
 		
 		if (is_page('profil-perbanas') || is_page('who-we-are') ) {
 			
@@ -378,10 +381,6 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 			
 			$menu_url = '#' . $x_wwa[1];
 		} else {
-			
-			if ( __predicate( $menu->url ) )
-				$class_active	= 'active';
-			
 			$menu_url = $menu->url;
 		}
 
