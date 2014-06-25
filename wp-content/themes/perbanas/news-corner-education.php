@@ -32,7 +32,7 @@ if( $loop->have_posts() ) :
 		<div class="perbanas-corner-education-desc-top">
 			<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 			<p class="date"><?php echo get_the_date(); ?></p>
-			<p class="desc"><?php echo get_the_content('...'); ?></p>
+			<p class="desc"><?php echo get_the_excerpt(''); ?></p>
 		</div>
 		<div class="perbanas-corner-education-desc-bottom">
 			<a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rang;</span></a>

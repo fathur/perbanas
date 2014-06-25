@@ -536,7 +536,13 @@ a:hover {
 
 
 /* end general: navbar */
-
+@media screen and (min-width: 992px) {
+    .about-who-we-are .main-content-pane h2, .news-single .main-content-pane h2, .industry-guidelines-syariah-business h2 {
+        margin-top: 60px;
+    }
+    .about-who-we-are .main-content-pane h2, .news-single .main-content-pane h2, .industry-guidelines-syariah-business h2 {
+    }
+}
 /* general: main content pane */
 @media screen and (max-width: 991px) {
     .main-content-pane h2 {
@@ -548,8 +554,10 @@ a:hover {
 }
 @media screen and (min-width: 992px) {
     .main-content-pane h2 {
-        margin-top: 60px;
         margin-bottom: 30px;
+    }
+    .main-content-pane .back-link+h2 {
+        margin-top: 0;
     }
     .main-content-pane h3 {
         margin-top: 30px;
@@ -1342,6 +1350,12 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     background: #009ADD;
     background-clip: content-box;
 }
+@media screen and (min-width: 768px) {
+    .about-who-we-are .column-background .row {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
 @media screen and (max-width: 991px) {
     .about-who-we-are .column .vm-title {
         padding-top: 15px;
@@ -1607,7 +1621,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     border: 0;
 }
 .event-upcoming .main-content-pane-left-column p {
-    font-size: 10px;
+    /*font-size: 10px;*/
     color: #009ADD;
 }
 .event-upcoming .main-content-pane-left-column .event-day {
@@ -1928,11 +1942,14 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     margin-top: 15px;
     margin-bottom: 15px;
     color: #717271;
-    font-size: 12px;
+    /*font-size: 12px;*/
     font-weight: normal;
 }
 .news-single .other-news {
     margin-bottom: 90px;
+}
+.news-single .other-news h3 {
+    margin-top: 0;
 }
 .news-single .other-news img {
     margin-bottom: 20px;
@@ -1942,6 +1959,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 15px;
+    min-height: 63px;
 }
 /* end main layout / news single */
 
