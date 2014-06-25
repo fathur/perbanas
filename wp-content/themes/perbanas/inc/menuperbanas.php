@@ -101,63 +101,76 @@ function __get_postname_menu( $cari ) {
 
 	// Register assiciated all menu content page, post or whatever here
 	$lists_menu_header = array(
-			'about-2'	=> array(
-					'page'	=> array(
-							'who-we-are',
-							'how-we-work',
-							'what-we-do',
-							'lingkup-kerja',
-							'kegiatan-perbanas',
-							'profil-perbanas'
-					),
-					'post_type'	=> array(),
-					'location'	=> 'about-menu'
-			),'council'	=> array(
-					'page'	=> array(),
-					'post_type'	=> array(
-							'sector',
-							'regionalboard',
-							'advisoryboard',
-							'supervisoryboard',
-							'boardmember',
-							'secretariat'
-					),
-					'location'	=> 'council-menu'
-			),'member-banks'	=> array(
-					'page'	=> array(),
-					'post_type'	=> array(
-							'memberbank'
-					),
-					'location'	=> 'member-bank-menu'
-			),'industry-guidelines'	=> array(
-					'page'	=> array(
-							'banking-in-indonesia',
-							'perbankan-di-indonesia'
-					),
-					'post_type'	=> array(
-							'industryguidelines'
-					),
-					'location'	=> 'industryguidelines-menu'
-			),'events'	=> array(
+		'about-2'	=> array(
+				'page'	=> array(
+						'who-we-are',
+						'how-we-work',
+						'what-we-do',
+						'lingkup-kerja',
+						'kegiatan-perbanas',
+						'profil-perbanas'
+				),
+				'post_type'	=> array(),
+				'location'	=> 'about-menu'
+		),
+		
+		// Register council related items
+		'council'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array(
+				'sector',
+				'regionalboard',
+				'advisoryboard',
+				'supervisoryboard',
+				'boardmember',
+				'secretariat'
+			),
+			'location'	=> 'council-menu'
+		),
+			
+		'member-banks'	=> array(
+				'page'	=> array(),
+				'post_type'	=> array(
+						'memberbank'
+				),
+				'location'	=> 'member-bank-menu'
+		),
+			
+		'industry-guidelines'	=> array(
+			'page'	=> array(
+				'banking-in-indonesia',
+				'perbankan-di-indonesia'
+			),
+			'post_type'	=> array(
+				'industryguidelines'
+			),
+			'location'	=> 'industryguidelines-menu'
+		),
+			
+		'events'	=> array(
 			'page'	=> array(),
 			'post_type'	=> array('upcomingevent','eventseminar'),
 			'location'	=> 'events-menu'
-					),'news-and-media'	=> array(
-					'page'	=> array(),
-					'post_type'	=> array(
-					'news',
-					'pressrelease',
-					'probankmagazine',
-					'photogallery',
-					'download',
-					'perbanascorner'
-							),
-							'location'	=> 'news-menu'
-									),'contact'	=> array(
-									'page'	=> array(),
-									'post_type'	=> array(),
-									'location'	=> ''
-											)
+		),
+		
+		'news-and-media'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array(
+				'news',
+				'pressrelease',
+				'probankmagazine',
+				'photogallery',
+				'download',
+				'perbanascorner'
+			),
+			'location'	=> 'news-menu'
+		),
+		
+		'contact'	=> array(
+			'page'	=> array(),
+			'post_type'	=> array(),
+			'location'	=> ''
+		)
 	);
 
 	// Main search
@@ -218,8 +231,30 @@ function __perbanas_header_mobile_menu( $menu_name, $id) {
 	}
 }
 
-function perbanas_side_menu( $menu_name, $id ) {
+function __predicate( $url ) {
+	
+	global $post;
+	
+	if ( __formatUrl( $url )  == __formatUrl( __getCurrentUrl() )) {
+		return TRUE;
+	}
+	
+	if ( __formatUrl( get_post_type_archive_link( get_post_type() ) ) == __formatUrl($url) ) {
+		return TRUE;
+	}
+	
+	if ( 'memberbank' == get_post_type() ) {
+		
+		$terms = wp_get_post_terms($post->ID, 'submemberbank');
+		
+		if ( __formatUrl( get_term_link( $terms[0]->slug , $terms[0]->taxonomy) ) == __formatUrl($url) ) {
+			return TRUE;
+		}
+	}
+}
 
+function perbanas_side_menu( $menu_name, $id ) {
+	
 	$menus = __find_all_thread( $menu_name );
 
 	if ( $menus && count( $menus ) > 0 ) {
@@ -227,7 +262,7 @@ function perbanas_side_menu( $menu_name, $id ) {
 
 		foreach ( $menus as $menu ) {
 				
-			if ( __formatUrl( $menu->url)  == __formatUrl( __getCurrentUrl() ))
+			if ( __predicate( $menu->url ) )
 				$class_active	= 'active';
 			else
 				$class_active	= '';
@@ -255,6 +290,7 @@ function perbanas_side_menu( $menu_name, $id ) {
 				// Mengahapus simbol # (kres) pada string pertama
 				$kres = substr($menu->url, 0, 1);
 				if ('#' == $kres) $url_collapse = substr($menu->url, 1);
+				
 
 				$list_menus .= '<div id="'.$url_collapse.'" class="accordion-body collapse '.$in.'" style="height: '.$height.'; ">
 					<div class="accordion-inner">
@@ -334,24 +370,10 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 
 	foreach ( $menus as $menu ) {
 		
-		if ( __formatUrl( $menu->url ) == __formatUrl( __getCurrentUrl() ))
+		if ( __predicate( $menu->url ) )
 			$class_active	= 'active';
 		else
 			$class_active	= '';
-
-		/* // if child has children, iterate its childs!!
-		 if ( __has_child( $menu->children ) ) 
-		// first output its child parent
-		$list_menus .= "<li><a href='#' title='" . $menu->title . "'>" .
-		$menu->title . "</a>";
-		// generate again
-		__generate_child_menu( $menu->children, $list_menus,$level+1);
-		} else {
-		$list_menus .= "<li class='subnav$level nohaschild'>
-		<a href='" . $menu->url . "' title='" . $menu->title . "' class='' >" .
-		$menu->title .
-		"</a>";}
-		$list_menus .= "</li>"; */
 		
 		if (is_page('profil-perbanas') || is_page('who-we-are') ) {
 			
@@ -383,7 +405,7 @@ function __have_active_menu( &$menus ) {
 
 	foreach ( $menus as $menu ) {
 
-		if ( __formatUrl( $menu->url ) == __formatUrl( __getCurrentUrl() ))
+		if ( __predicate( $menu->url ) )
 			array_push($tmp, TRUE);
 		else
 			array_push($tmp, FALSE);
