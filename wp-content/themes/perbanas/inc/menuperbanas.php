@@ -370,24 +370,7 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 
 	foreach ( $menus as $menu ) {
 		
-		if ( __predicate( $menu->url ) )
-			$class_active	= 'active';
-		else
-			$class_active	= '';
-
-		/* // if child has children, iterate its childs!!
-		 if ( __has_child( $menu->children ) ) 
-		// first output its child parent
-		$list_menus .= "<li><a href='#' title='" . $menu->title . "'>" .
-		$menu->title . "</a>";
-		// generate again
-		__generate_child_menu( $menu->children, $list_menus,$level+1);
-		} else {
-		$list_menus .= "<li class='subnav$level nohaschild'>
-		<a href='" . $menu->url . "' title='" . $menu->title . "' class='' >" .
-		$menu->title .
-		"</a>";}
-		$list_menus .= "</li>"; */
+		$class_active	= '';
 		
 		if (is_page('profil-perbanas') || is_page('who-we-are') ) {
 			
@@ -395,6 +378,10 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 			
 			$menu_url = '#' . $x_wwa[1];
 		} else {
+			
+			if ( __predicate( $menu->url ) )
+				$class_active	= 'active';
+			
 			$menu_url = $menu->url;
 		}
 
