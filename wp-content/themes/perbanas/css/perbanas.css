@@ -557,9 +557,9 @@ a:hover {
     .main-content-pane h2 {
         margin-bottom: 30px;
     }
-    /*.main-content-pane .back-link+h2 {
+    .main-content-pane .back-link+h2 {
         margin-top: 0;
-    }*/
+    }
     .main-content-pane h3 {
         margin-bottom: 15px;
     }
@@ -1903,13 +1903,13 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) { /* desktop screen */
     .news .news-item .news-desc-top {
-        height: 194px;
+        /* height: 194px; /* 211px */
     }
 }
 @media screen and (min-width: 1200px) {
     /* desktop screen */
     .news .news-item .news-desc-top {
-        height: 206px;
+        height: 267px
     }
 }
 .news .news-item {
