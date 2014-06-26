@@ -54,7 +54,7 @@ get_header(); ?>
                     </p>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6 main-content-pane-right-column">
+                <div class="col-xs-12 col-sm-9 col-md-9 main-content-pane-right-column">
                     <h2><?php the_title(); ?></h2>
 					
 					<?php the_content(); ?>
