@@ -537,10 +537,10 @@ a:hover {
 
 /* end general: navbar */
 @media screen and (min-width: 992px) {
-    .about-who-we-are .main-content-pane h2, .news-single .main-content-pane h2, .industry-guidelines-syariah-business h2 {
+    .about-who-we-are .main-content-pane h2, .news-single .main-content-pane h2, .industry-guidelines-banking-in-indonesia h2 {
         margin-top: 60px;
     }
-    .about-who-we-are .main-content-pane h3, .news-single .main-content-pane h3, .industry-guidelines-syariah-business h3 {
+    .about-who-we-are .main-content-pane h3, .news-single .main-content-pane h3, .industry-guidelines-banking-in-indonesia h3 {
         margin-top: 30px;
     }
 }
@@ -1974,6 +1974,21 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .press-releases .press-release-item .desc {
     margin-bottom: 30px;
 }
+.press-releases .main-content-pane hr {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: 1px;
+    /* color: #737980; */
+    background: #E5E9EE;
+    border: 0;
+}
+@media screen and (min-width: 922px) {
+    .press-releases .main-content-pane hr {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
 /* end main layout / press releases */
 
 /* main layout / downloads */
@@ -1987,6 +2002,21 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .downloads .downloads-item .desc {
     margin-bottom: 30px;
 }
+.downloads .main-content-pane hr {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: 1px;
+    /* color: #737980; */
+    background: #E5E9EE;
+    border: 0;
+}
+@media screen and (min-width: 922px) {
+    .downloads .main-content-pane hr {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
 /* end main layout / downloads */
 
 /* main layout / probank magazine */
@@ -2129,6 +2159,19 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .industry-guidelines-syariah-business .industry-guidelines-syariah-business-item .desc-detailed {
     color: #717271;
 }
+.industry-guidelines-syariah-business .main-content-pane hr {
+    height: 1px;
+    /* color: #737980; */
+    background: #E5E9EE;
+    border: 0;
+}
+@media screen and (min-width: 922px) {
+    .industry-guidelines-syariah-business .main-content-pane hr {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
 /* end main layout / industry guidelines syariah business */
 
 /* main layout / industry guidelines banking in indonesia */
