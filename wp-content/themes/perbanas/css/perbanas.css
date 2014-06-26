@@ -540,7 +540,8 @@ a:hover {
     .about-who-we-are .main-content-pane h2, .news-single .main-content-pane h2, .industry-guidelines-syariah-business h2 {
         margin-top: 60px;
     }
-    .about-who-we-are .main-content-pane h2, .news-single .main-content-pane h2, .industry-guidelines-syariah-business h2 {
+    .about-who-we-are .main-content-pane h3, .news-single .main-content-pane h3, .industry-guidelines-syariah-business h3 {
+        margin-top: 30px;
     }
 }
 /* general: main content pane */
@@ -556,11 +557,10 @@ a:hover {
     .main-content-pane h2 {
         margin-bottom: 30px;
     }
-    .main-content-pane .back-link+h2 {
+    /*.main-content-pane .back-link+h2 {
         margin-top: 0;
-    }
+    }*/
     .main-content-pane h3 {
-        margin-top: 30px;
         margin-bottom: 15px;
     }
 }
