@@ -96,6 +96,22 @@ function perbanas_cssjs() {
 add_action('wp_enqueue_scripts','perbanas_cssjs');
 
 /**
+ * 
+ * */
+function perbanas_cssjs_admin() {
+	global $wp_roles;
+	$current_user = wp_get_current_user();
+	$roles = $current_user->roles;
+	$role = array_shift($roles);
+	$roleSekarang = isset($wp_roles->role_names[$role]) ? translate_user_role($wp_roles->role_names[$role] ) : false;
+	
+	if (strtolower(str_replace(' ','',$roleSekarang)) == 'memberarea') {
+		wp_enqueue_style('perbanas-admin', get_template_directory_uri().'/css/adminperbanas.css');
+	} 
+}
+add_action( 'admin_enqueue_scripts', 'perbanas_cssjs_admin' );
+
+/**
  * Add Title to Titlebar
  */
 add_filter( 'wp_title', 'perbanas_title_for_home' );
