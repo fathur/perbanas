@@ -232,6 +232,14 @@ function perbanas_force_members_area() {
 }
 
 /**
+ * Remove excerpt [...] suffix
+ * */
+function perbanas_remove_suffix_excerpt() {
+	return '';
+}
+add_filter('excerpt_more', 'perbanas_remove_suffix_excerpt');
+
+/**
  * Include separate function
  * 
  */
