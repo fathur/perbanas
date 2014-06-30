@@ -118,8 +118,11 @@ add_filter( 'wp_title', 'perbanas_title_for_home' );
 function perbanas_title_for_home( $title )
 {
 	if( empty( $title ) && ( is_home() || is_front_page() ) ) {
-		return __( 'Home', 'perbanas' ) . ' | ' . get_bloginfo( 'description' );
+		return get_bloginfo('title') . ' | ' . get_bloginfo( 'description' );
+	} else {
+		return get_bloginfo('title') . ' |' . $title;
 	}
+	
 	return $title;
 }
 
