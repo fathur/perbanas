@@ -1,19 +1,15 @@
-# Copyright (C) 2014 the WordPress team
-# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Perbanas 1.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/twentyfourteen\n"
-"POT-Creation-Date: 2014-04-16 18:29:37+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-07-01 09:45+0700\n"
+"Project-Id-Version: Perbanas.1.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Fostrom <info@fostrom.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _e;__\n"
-"Language: English\n"
+"Language: Indonesia\n"
 "Plural-Forms: Perbanas;\n"
 
 #: 404.php:17
@@ -795,5 +791,5 @@ msgstr "Perhimpunan Bank Nasional"
 msgid "Album List"
 msgstr "Daftar Album Foto"
 
-msg "Album Content"
+msgid "Album Content"
 msgstr "Isi Foto"
