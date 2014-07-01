@@ -258,6 +258,20 @@ function perbanas_remove_suffix_excerpt() {
 }
 add_filter('excerpt_more', 'perbanas_remove_suffix_excerpt');
 
+
+/**
+ * Change footer admin text
+ * */
+function perbanas_edit_footer()
+{
+    add_filter( 'admin_footer_text', 'perbanas_edit_text', 11 );
+}
+
+function perbanas_edit_text($content) {
+    return "Thank you for creating with <a href='http://www.fostrom.com/'>Fostrom</a>";
+}
+add_action( 'admin_init', 'perbanas_edit_footer' );
+
 /**
  * Include separate function
  * 
