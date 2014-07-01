@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    <!-- 
+
     <div class="row section-title">
         <div class="col-xs-12 block">
             <h1>
@@ -63,9 +63,8 @@
         </div>
     </div>
     <div class="row contact-form">
-         <?php // echo do_shortcode('[contact-form-7 id="303" title="Contact form Id"]'); ?>
+         <?php echo do_shortcode('[contact-form-7 id="303" title="Contact form Id"]'); ?>
     </div>
-     -->
 </div>
 
 <?php get_footer(); ?>
