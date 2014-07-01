@@ -1073,7 +1073,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin-bottom: 0;
         margin-top: -4px;
     }
-    .timeline-outer-container .bubble {
+    .main-content-pane .timeline-outer-container .bubble {
         position:absolute;
         top: -20px;
         left: 50%;
@@ -1085,7 +1085,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         line-height: 1;
         text-align: center;
         font-size: 24px;
-
+        margin-top: 0;
     }
     .timeline-outer-container .bubble .text {
         position: relative;
@@ -1398,7 +1398,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     bottom: 10px;
     right: 25px;
     /*background: #009ADD;*/
-    background-color: rgba(0, 73, 135, 0.6);
+    background-color: rgba(0, 73, 135, 0.7);
     -o-transition:background .2s;
     -ms-transition:background .2s;
     -moz-transition:background .2s;
@@ -1696,6 +1696,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     .homepage-slider .slider-content-text h1 {
         line-height: 1.2;
+        font-size: 30px;
     }
     @media screen and (max-width: 991px) {
         .homepage-slider .slider-content-text {
@@ -2078,6 +2079,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: #a2a3a2;
 }
 .probank .description .date {
+    height: 21px;
     font-weight: bold;
 }
 
