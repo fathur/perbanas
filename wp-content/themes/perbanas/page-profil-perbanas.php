@@ -155,6 +155,18 @@
                                     </div>
                                 </div>
                             </li>
+                            <li class="item">
+                                <h3 class="bubble">
+                                    <span class="text">2014</span>
+                                    <span class="background"></span>
+                                </h3>
+                                <div class="description right">
+                                    <div class="vertical-align">
+                                        <p>Dalam kongres tahun 2014, PERBANAS mengalami perubahan kepanjangan nama, sehingga menjadi Perhimpunan Bank Nasional.</p>
+                                    </div>
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
 
