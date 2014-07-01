@@ -791,3 +791,9 @@ msgstr "No. Keanggotaan"
 
 msgid "Indonesian Banks Association"
 msgstr "Perhimpunan Bank Nasional"
+
+msgid "Album List"
+msgstr "Daftar Album Foto"
+
+msg "Album Content"
+msgstr "Isi Foto"
