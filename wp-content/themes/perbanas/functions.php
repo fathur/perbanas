@@ -118,12 +118,12 @@ add_filter( 'wp_title', 'perbanas_title_for_home' );
 function perbanas_title_for_home( $title )
 {
 	if( empty( $title ) && ( is_home() || is_front_page() ) ) {
-		return get_bloginfo('title') . ' | ' . get_bloginfo( 'description' );
+		return __(get_bloginfo('title'),'perbanas') . ' | ' . __(get_bloginfo( 'description' ),'perbanas');
 	} else {
-		return get_bloginfo('title') . ' |' . $title;
+		return __(get_bloginfo('title'),'perbanas') . ' |' . __($title,'perbanas');
 	}
 	
-	return $title;
+	return __($title,'perbanas');
 }
 
 /**
