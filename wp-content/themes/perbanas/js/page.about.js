@@ -22,7 +22,7 @@ function fHistViewport(H){
 function page_about_who_we_are_init() {
     // sidebar active
     $('#whoweare a').click(onAnchorClicked);
-    if (anchor != '') {
+    if (window.location.hash) {
         setCurrentActiveAnchor(window.location.hash);
     }
     

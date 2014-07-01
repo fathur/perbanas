@@ -469,10 +469,3 @@ function __formatUrl( $url ) {
 	$url = rtrim($url, '/');
 	return $url;
 }
-
-function perbanas_remove_admin_menu() {
-	remove_menu_page('#');
-}
-add_action( 'admin_menu', 'perbanas_remove_admin_menu');
-
-
