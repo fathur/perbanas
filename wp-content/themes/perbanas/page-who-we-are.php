@@ -161,6 +161,19 @@
                                     </div>
                                 </div>
                             </li>
+                            <li class="item">
+                                <h3 class="bubble">
+                                    <span class="text">2014</span>
+                                    <span class="background"></span>
+                                </h3>
+                                <div class="description right">
+                                    <div class="vertical-align">
+                                        <!--<h3>Perbanas</h3>-->
+                                        <p>During the latest Congress in 2014, PERBANAS once again revised its name to Perhimpunan Bank Nasional. The acronym remains the same.</p>
+                                    </div>
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
 
