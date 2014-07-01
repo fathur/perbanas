@@ -39,7 +39,9 @@ function page_about_who_we_are_init() {
 
 function onAnchorClicked(e) {
     var anchor = $(this).attr('href');
-    setCurrentActiveAnchor(anchor);
+    if (anchor != '') {
+        setCurrentActiveAnchor(anchor);
+    }
 }
 function setCurrentActiveAnchor(anchor) {
     $('.sidebar #whoweare hr').removeClass('active');
