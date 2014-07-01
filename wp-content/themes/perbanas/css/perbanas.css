@@ -1076,7 +1076,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin-bottom: 0;
         margin-top: -4px;
     }
-    .main-content-pane .timeline-outer-container .bubble {
+    .timeline-outer-container .bubble {
         position:absolute;
         top: -20px;
         left: 50%;
@@ -1088,6 +1088,9 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         line-height: 1;
         text-align: center;
         font-size: 24px;
+        margin-top: 0;
+    }
+    .main-content-pane .timeline-outer-container h3.bubble {
         margin-top: 0;
     }
     .timeline-outer-container .bubble .text {
