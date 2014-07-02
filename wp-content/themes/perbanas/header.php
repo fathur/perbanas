@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo.png" />
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo-scrolled.png" />
 
 <title><?php wp_title( '', TRUE, 'left' ); ?></title>
     
