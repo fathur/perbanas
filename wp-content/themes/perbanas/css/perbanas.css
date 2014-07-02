@@ -1949,7 +1949,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     margin-top: 15px;
     margin-bottom: 15px;
     color: #717271;
-    /*font-size: 12px;*/
     font-weight: normal;
 }
 .news-single .other-news {
@@ -2348,3 +2347,22 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         max-height: 5000px;
     }
 }
+
+/* TEST */
+.news-single .news-content p, .news .news-item .news-desc-top .desc{
+    color: #262729 !important;
+    line-height: 1.7 !important;
+}
+
+.btn {
+    font-size: 14px !important;
+    background: #074980 !important;
+}
+
+.news-single .top-row .date {
+    color: #262729 !important;
+}
+.news .news-item .news-desc-top {
+    height: 261px;
+}
+/* END TEST */
