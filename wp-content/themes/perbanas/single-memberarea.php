@@ -33,7 +33,7 @@ get_header(); ?>
                 <div class="col-xs-12">
                     <div class="top-row">
                         <p class="text-right back-link">
-                            <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow">&lang;</span> <?php _e('Back to Member Area','perbanas'); ?></a>
+                            <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow hidden-xs hidden-sm">&lang;</span> <?php _e('Back to Member Area','perbanas'); ?></a>
                         </p>
                         <h2><?php the_title(); ?></h2>
                         <p class="date"><?php the_date(); ?></p>

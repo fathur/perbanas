@@ -390,7 +390,7 @@
                             <span class="carousel-indicators-year">1991-1997</span>
                         </li>
                         <li data-target="#former-chairmen" data-slide-to=10>
-                            <span class="carousel-indicators-year">19997-2000</span>
+                            <span class="carousel-indicators-year">1997-2000</span>
                         </li>
                         <li data-target="#former-chairmen" data-slide-to=11>
                             <span class="carousel-indicators-year">2000-2003</span>
