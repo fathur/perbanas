@@ -1711,6 +1711,11 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
             height: 424px;
         }
     }
+    .homepage-slider .slider-content-text {
+        background: white;
+        opacity: 0.9;
+        padding: 15px;
+    }
     .homepage-slider .slider-content-text h1 {
         line-height: 1.2;
         font-size: 30px;
