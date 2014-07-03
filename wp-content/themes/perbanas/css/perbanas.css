@@ -1132,7 +1132,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         font-size: 24px;
     }
     .timeline-outer-container .item .description p {
-        color: #717271;
+        color: #262729;
         font-size: 14px;
     }
     @media screen and (min-width: 768px) {
@@ -1697,6 +1697,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .homepage-slider .slider-content {
         display: table-cell;
         vertical-align: middle;
+        width: 90%;
     }
 
     @media screen and (max-width: 991px) {
@@ -1956,7 +1957,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .news-single .news-content p {
     margin-top: 15px;
     margin-bottom: 15px;
-    color: #717271;
+    color: #262729;
     font-weight: normal;
 }
 .news-single .other-news {
@@ -2176,9 +2177,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 }
 .industry-guidelines-syariah-business .industry-guidelines-syariah-business-item .desc {
     margin-bottom: 30px;
-}
-.industry-guidelines-syariah-business .industry-guidelines-syariah-business-item .desc-detailed {
-    color: #717271;
 }
 .industry-guidelines-syariah-business .main-content-pane hr {
     height: 1px;
