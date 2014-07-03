@@ -45,7 +45,7 @@ get_header(); ?>
                         <p class="desc"><?php echo get_the_content('...'); ?></p>
                     </div>
                     <div class="members-area-desc-bottom">
-                        <a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rang;</span></a>
+                        <a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rsaquo;</span></a>
                     </div>
                 </div>
             </div>

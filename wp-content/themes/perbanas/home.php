@@ -155,7 +155,7 @@ get_header(); ?>
                             <p class="date"><?php echo get_the_date(); ?></p>
                         </div>
                         <div class="homepage-news-desc-bottom">
-                            <a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rang;</span></a>
+                            <a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rsaquo;</span></a>
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@ get_header(); ?>
 					</div>
                     <div class="col-xs-7 col-md-8">
                         <p class="homepage-probank-desc-top"><?php echo get_the_content(''); ?></p>
-                        <p><a href="<?php echo get_post_type_archive_link('probankmagazine'); ?>" class="btn">View more <span class="arrow">&rang;</span></a></p>
+                        <p><a href="<?php echo get_post_type_archive_link('probankmagazine'); ?>" class="btn">View more <span class="arrow">&rsaquo;</span></a></p>
                     </div>
                 </div>
                 
