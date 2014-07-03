@@ -648,18 +648,18 @@ a:hover {
 }
 .back-to-top-container .back-to-top-arrow-normal {
     position: absolute;
-    top: 29%;
-    left: 44%;
+    top: 14%;
+    left: 46.5%;
     opacity: 1;
-    font-size: 20px;
+    font-size: 34px;
     color: #009BDE;
 }
 .back-to-top-container .back-to-top-arrow-onhover {
     position: absolute;
     top: 100%;
-    left: 44%;
+    left: 46.5%;
     opacity: 0;
-    font-size: 20px;
+    font-size: 34px;
     color: #009BDE;
 }
 .back-to-top-container .back-to-top-arrow-normal, .back-to-top-container .back-to-top-arrow-onhover {
@@ -685,7 +685,7 @@ a:hover {
     opacity: 0;
 }
 .back-to-top-container .back-to-top:hover .back-to-top-arrow-onhover {
-    top: 29%;
+    top: 14%;
     color: white;
     opacity: 1;
 }
@@ -754,12 +754,12 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin-top: 15px;
     }
 }
-.btn .arrow {
+/*.btn .arrow {
     font-size: 0.7em;
     font-weight: bold;
     position: relative;
     top: -1px;
-}
+}*/
 .date, .main-content-pane .date {
     font-size: 12px;
     font-weight: bold;
