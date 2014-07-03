@@ -99,8 +99,13 @@
 						<?php } ?>
 						<div class="logo-container text-center">
 							<a href="<?php echo get_bloginfo('siteurl'); ?>">
-							<img width="214px" height="149px" class="logo"
-								src="<?php echo get_template_directory_uri(); ?>/img/LOGO_PERBANAS_EN.png" />
+							<?php
+							if (cml_get_current_language()->cml_locale == 'id_ID') {
+							?>
+							<img width="214px" height="149px" class="logo" src="<?php echo get_template_directory_uri(); ?>/img/LOGO_PERBANAS_ID.jpg" />
+							<?php } else { ?>
+							<img width="214px" height="149px" class="logo" src="<?php echo get_template_directory_uri(); ?>/img/LOGO_PERBANAS_EN.png" />
+							<?php } ?>
 							</a>
 						</div>
 					</div>
