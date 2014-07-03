@@ -246,7 +246,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif" />
+                        <a href="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif" /></a>
                     </div>
                 </div>
             </div>

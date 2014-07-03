@@ -239,7 +239,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure-id.gif" />
+                        <a href="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure-id.gif"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure-id.gif" /></a>
                     </div>
                 </div>
             </div>
