@@ -24,7 +24,7 @@
             </div>
             <div class="top-row">
                 <p class="text-right back-link">
-                    <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow hidden-xs hidden-sm">&lang;</span> Back to Photo Gallery</a>
+                    <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>"><span class="arrow hidden-xs hidden-sm">&lsaquo;</span> Back to Photo Gallery</a>
                 </p>
             </div>
 
