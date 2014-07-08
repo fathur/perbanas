@@ -525,10 +525,10 @@ msgid "Board Members"
 msgstr "Dewan Direksi"
 
 msgid "Division"
-msgstr "Divisi"
+msgstr "Bidang"
 
 msgid "Divisions"
-msgstr "Divisi"
+msgstr "Bidang"
 
 msgid "Advisory Board"
 msgstr "Dewan Penasehat"
@@ -768,7 +768,7 @@ msgid "Perbanas <span class='hidden-sm'>Magazine</span>"
 msgstr "<span class='hidden-sm'>Majalah</span> Perbanas"
 
 msgid "Other Divisions"
-msgstr "Divisi Lain"
+msgstr "Bidang Lain"
 
 msgid "Bank Name"
 msgstr "Nama Bank Perwakilan"
