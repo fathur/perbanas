@@ -764,6 +764,9 @@ msgstr "Kirim"
 msgid "Probank <span class='hidden-sm'>Magazine</span>"
 msgstr "<span class='hidden-sm'>Majalah</span> Probank"
 
+msgid "Perbanas <span class='hidden-sm'>Magazine</span>"
+msgstr "<span class='hidden-sm'>Majalah</span> Perbanas"
+
 msgid "Other Divisions"
 msgstr "Divisi Lain"
 
