@@ -55,7 +55,7 @@ get_header(); ?>
             </div>
             <div class="row">
                 <div class="col-xs-12 section-title">
-                    <h1><div></div><span><?php _e('Probank Magazine','perbanas'); ?></span></h1>
+                    <h1><div></div><span><?php _e('Perbanas Magazine','perbanas'); ?></span></h1>
                 </div>
             </div>
             <div class="row">
