@@ -200,7 +200,11 @@ function setupTopNav() {
 }
 
 function setupResponsiveNav() {
-    $('.navbar-nav .dropdown-menu .dropdown-toggle').click(function(e) { e.stopPropagation(); $('.navbar-nav .dropdown-menu .dropdown-menu').toggle(); });
+    $('.navbar-nav .dropdown-menu .dropdown-toggle').click(function(e) {
+        e.stopPropagation();
+        $('.navbar-nav .dropdown-menu .dropdown-menu').toggle();
+        $(this).parent().toggleClass('open');
+    });
 }
 function toggleSearchTextBox(makeVisible) {
     if (makeVisible) {
@@ -225,7 +229,7 @@ function toggleLanguageMenu(makeVisible) {
     }
     else {
         $('#language-dropdown').fadeOut('fast');
-    }   
+    }
 }
 function toggleLoginDialog(makeVisible) {
     toggleSearchTextBox(false);

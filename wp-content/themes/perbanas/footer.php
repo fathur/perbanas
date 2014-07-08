@@ -3,8 +3,8 @@
 	<div class="back-to-top-container visible-lg">
 		<a href="#" class="back-to-top btn-fixed-bottom">
 			<div class="back-to-top-circle">
-			  <span class="back-to-top-arrow-normal">&lang;</span>
-			  <span class="back-to-top-arrow-onhover">&lang;</span>
+			  <span class="back-to-top-arrow-normal">&lsaquo;</span>
+			  <span class="back-to-top-arrow-onhover">&lsaquo;</span>
 			</div>
 		</a>
 			<div></div>

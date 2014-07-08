@@ -10,4 +10,4 @@
 
 ?>
 
-<p class="text-center" style="color: #707170; font-style: italic"><?php _e('No content to show','perbanas')?></p>
+<p class="text-center no-content"><?php _e('No content to show','perbanas')?></p>

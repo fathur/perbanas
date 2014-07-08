@@ -569,7 +569,8 @@ a:hover {
 }
 .main-content-pane p {
     margin-bottom: 15px;
-    color: #717271;
+    color: #262729;
+    line-height: 1.7;
     font-size: 14px;
     font-weight: normal;
 }
@@ -603,7 +604,7 @@ a:hover {
     /* list */
     .main-content-pane ol, .main-content-pane ul {
         margin-left: 15px;
-        color: #717271;
+        color: #262729;
         font-size: 14px;
         font-weight: normal;
     }
@@ -614,7 +615,7 @@ a:hover {
             list-style-type: disc;
     }
     .main-content-pane ol>li, .main-content-pane ul>li {
-        line-height: 1.6;
+        line-height: 1.7;
         margin-bottom: 10px;
     }
     /* end list */
@@ -647,18 +648,18 @@ a:hover {
 }
 .back-to-top-container .back-to-top-arrow-normal {
     position: absolute;
-    top: 29%;
-    left: 44%;
+    top: 14%;
+    left: 46.5%;
     opacity: 1;
-    font-size: 20px;
+    font-size: 34px;
     color: #009BDE;
 }
 .back-to-top-container .back-to-top-arrow-onhover {
     position: absolute;
     top: 100%;
-    left: 44%;
+    left: 46.5%;
     opacity: 0;
-    font-size: 20px;
+    font-size: 34px;
     color: #009BDE;
 }
 .back-to-top-container .back-to-top-arrow-normal, .back-to-top-container .back-to-top-arrow-onhover {
@@ -684,7 +685,7 @@ a:hover {
     opacity: 0;
 }
 .back-to-top-container .back-to-top:hover .back-to-top-arrow-onhover {
-    top: 29%;
+    top: 14%;
     color: white;
     opacity: 1;
 }
@@ -737,10 +738,10 @@ a:hover {
 
 /* general: components (buttons, date, description) */
 .btn {
-    font-size: 10px;
+    font-size: 14px;
+    background: #074980;
     font-weight: 400;
     color: white;
-    background: #C3D500;
     border-radius: 0;
 }
 
@@ -753,16 +754,22 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin-top: 15px;
     }
 }
-.btn .arrow {
+/*.btn .arrow {
     font-size: 0.7em;
     font-weight: bold;
     position: relative;
     top: -1px;
+}*/
+.date, .main-content-pane .date {
+    font-size: 12px;
+    font-weight: bold;
+    color: #009ADD;
 }
-.date, .desc {
-    font-size: 10px;
+
+.desc {
+    font-size: 12px;
     font-weight: 400;
-    color: #707170;
+    color: #262729;
 }
 
 @media screen and (min-width: 992px) {
@@ -862,7 +869,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     /* start table */
     .member-list {
         font-size: 14px;
-        color: #707170;
+        color: #262729;
     }
     .member-list thead {
         padding: 0;
@@ -889,6 +896,10 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     content: "";
     height: 100px;
     margin: -100px 0 0;
+}
+.no-content {
+    color: #262729;
+    font-style: italic;
 }
 /* end general */
 
@@ -1121,7 +1132,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         font-size: 24px;
     }
     .timeline-outer-container .item .description p {
-        color: #717271;
+        color: #262729;
         font-size: 14px;
     }
     @media screen and (min-width: 768px) {
@@ -1350,7 +1361,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     background: #f5f5f5;
 }
 .about-who-we-are .mission p {
-    color: #707170;
+    color: #262729;
 }
 .about-who-we-are .column-background {
     background: #009ADD;
@@ -1539,7 +1550,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 }
 .regional-board-inside .contact-detail {
     font-size: 14px;
-    color: #707170;
+    color: #262729;
     margin-bottom: 38px;
 }
 .regional-board-inside .contact-detail td {
@@ -1570,7 +1581,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* main layout / member banks (detail) */
 .member-banks-detail .contact-detail {
     font-size: 14px;
-    color: #707170;
+    color: #262729;
     margin-bottom: 38px;
 }
 .member-banks-detail .contact-detail td {
@@ -1665,7 +1676,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     min-width: 100%;
 }
 .event-seminar .main-content-pane-left-column p {
-    font-size: 10px;
     color: #009ADD;
 }
 .event-seminar .main-content-pane-left-column .event-day {
@@ -1687,6 +1697,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .homepage-slider .slider-content {
         display: table-cell;
         vertical-align: middle;
+        width: 90%;
     }
 
     @media screen and (max-width: 991px) {
@@ -1699,6 +1710,11 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         .homepage-slider .slider-content {
             height: 424px;
         }
+    }
+    .homepage-slider .slider-content-text {
+        background: white;
+        opacity: 0.9;
+        padding: 15px;
     }
     .homepage-slider .slider-content-text h1 {
         line-height: 1.2;
@@ -1791,7 +1807,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
             height: 100px;
         }
         .homepage-news-item .homepage-news-desc-bottom {
-            margin-top:69px;
+            margin-top:63px;
         }
     }
     /* end news */
@@ -1828,17 +1844,17 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
     @media screen and (min-width: 768px) and (max-width: 991px) {
         .homepage-probank-desc-top {
-            height: 157px;
+            height: 170px;
         }
     }
     @media screen and (min-width: 992px) and (max-width: 1199px) {
         .homepage-probank-desc-top {
-            height: 197px;
+            height: 191px;
         }
     }
     @media screen and (min-width: 1200px) {
         .homepage-probank-desc-top {
-            height: 217px;
+            height: 209px;
         }        
     }
     .homepage-probank-image-container .edition {
@@ -1916,8 +1932,9 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 @media screen and (min-width: 1200px) {
     /* desktop screen */
     .news .news-item .news-desc-top {
-        height: 267px
+        height: 261px;
     }
+
 }
 .news .news-item {
     margin-bottom: 30px;
@@ -1942,13 +1959,10 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     margin-bottom: 15px;
     font-size: 36px;
 }
-.news-single .top-row .date {
-    font-size: 20px;
-}
 .news-single .news-content p {
     margin-top: 15px;
     margin-bottom: 15px;
-    color: #717271;
+    color: #262729;
     font-weight: normal;
 }
 .news-single .other-news {
@@ -1965,7 +1979,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 15px;
-    min-height: 63px;
+    /*min-height: 63px;*/
 }
 /* end main layout / news single */
 
@@ -2094,9 +2108,15 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .photo-gallery .photo-gallery-album-item {
     margin-bottom: 30px;
 }
+.photo-gallery .photo-gallery-album-item img {
+    margin-bottom: 20px;
+}
 .photo-gallery .photo-gallery-album-item h3 {
-    margin-bottom: 10px;
-    font-size: 14px;
+    /*margin-bottom: 10px;
+    font-size: 14px;*/
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
 }
 /* end main layout / photo gallery (general) */
 
@@ -2163,9 +2183,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 .industry-guidelines-syariah-business .industry-guidelines-syariah-business-item .desc {
     margin-bottom: 30px;
 }
-.industry-guidelines-syariah-business .industry-guidelines-syariah-business-item .desc-detailed {
-    color: #717271;
-}
 .industry-guidelines-syariah-business .main-content-pane hr {
     height: 1px;
     /* color: #737980; */
@@ -2206,7 +2223,11 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin-top: 0;
     }
     .contact-address, .contact-phone, .contact-fax, .contact-email {
-        color: #666666;
+        color: #262729;
+
+    }
+    .contact-address p, .contact-phone p, .contact-fax p, .contact-email p {
+        font-size: 14px;
     }
     @media screen and (min-width: 992px) {
         .contact-address, .contact-phone, .contact-fax, .contact-email {
@@ -2349,20 +2370,8 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 }
 
 /* TEST */
-.news-single .news-content p, .news .news-item .news-desc-top .desc{
+.news .news-item .news-desc-top .desc{
     color: #262729 !important;
     line-height: 1.7 !important;
-}
-
-.btn {
-    font-size: 14px !important;
-    background: #074980 !important;
-}
-
-.news-single .top-row .date {
-    color: #262729 !important;
-}
-.news .news-item .news-desc-top {
-    height: 261px;
 }
 /* END TEST */
