@@ -1712,8 +1712,8 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         }
     }
     .homepage-slider .slider-content-text {
-        background: white;
-        opacity: 0.9;
+     /* background: white;
+        opacity: 0.9; */
         padding: 15px;
     }
     .homepage-slider .slider-content-text h1 {
