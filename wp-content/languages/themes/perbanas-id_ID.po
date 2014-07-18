@@ -720,7 +720,7 @@ msgid "Foreign Division"
 msgstr "Bidang Luar Negeri"
 
 msgid "Governance Division"
-msgstr "Bidang Pemerintahan"
+msgstr "Bidang Governance"
 
 msgid "Law Division"
 msgstr "Bidang Hukum"
