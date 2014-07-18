@@ -659,6 +659,9 @@ msgstr "Desember"
 msgid "News & Media"
 msgstr "Berita & Media"
 
+msgid "News &amp; Media"
+msgstr "Berita &amp; Media"
+
 msgid "Press Release"
 msgstr "Siaran Pers"
 
