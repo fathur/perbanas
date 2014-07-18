@@ -696,7 +696,7 @@ msgid "Foreign Sector"
 msgstr "Bidang Luar Negeri"
 
 msgid "Governance Sector"
-msgstr "Bidang Pemerintahan"
+msgstr "Bidang Governance"
 
 msgid "Law Sector"
 msgstr "Bidang Hukum"
@@ -714,7 +714,7 @@ msgid "Technology Sector"
 msgstr "Bidang Teknologi"
 
 msgid "Academic and Human Resource Division"
-msgstr "Bidang Pendidikan & SDM"
+msgstr "Bidang Pendidikan & Pengembangan SDM"
 
 msgid "Foreign Division"
 msgstr "Bidang Luar Negeri"
@@ -732,7 +732,7 @@ msgid "Public Relations Division"
 msgstr "Bidang Hubungan Masyarakat"
 
 msgid "Research and Development Division"
-msgstr "Bidang Penelitian & Pengembangan"
+msgstr "Bidang Pengkajian & Pengembangan"
 
 msgid "Technology Division"
 msgstr "Bidang Teknologi"
