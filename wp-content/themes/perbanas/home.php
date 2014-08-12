@@ -217,7 +217,7 @@ get_header(); ?>
             <div class="col-sm-6 block">
                 <div class="row section-title homepage-probank-title">
                     <div class="col-sm-12">
-                        <h1><div></div><span><?php _e("Probank <span class='hidden-sm'>Magazine</span>","perbanas"); ?></span></h1>
+                        <h1><div></div><span><?php _e("Perbanas <span class='hidden-sm'>Magazine</span>","perbanas"); ?></span></h1>
                     </div>
                 </div>
                 

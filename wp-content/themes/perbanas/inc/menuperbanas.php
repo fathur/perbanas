@@ -386,7 +386,7 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 
 		$list_menus .= '<li>
 				<a href="'.$menu_url.'" class="item">'. __( $menu->title,'perbanas').'</a>
-				<hr class="'.$class_active.'" />
+				<hr class="" />
 			</li>';
 	}
 }

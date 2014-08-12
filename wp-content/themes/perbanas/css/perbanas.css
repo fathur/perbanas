@@ -989,7 +989,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* main layout / about - who we are */
 .about-who-we-are .subsection-title {
     font-size: 36px;
-    color: #C4D600;
+    color: #074980;
 }
 @media screen and (max-width: 991px) {
     .about-who-we-are .subsection-title {
@@ -1017,7 +1017,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     height: 3px;
 }
 .about-who-we-are .subsection-title.subsection-title-history span {
-    border-bottom: 2px solid #C4D600;
+    border-bottom: 2px solid #074980;
 }
 .about-who-we-are .subsection-title-former-chairmen {
     font-size: 52px;
@@ -1708,8 +1708,8 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         }
     }
     .homepage-slider .slider-content-text {
-        background: white;
-        opacity: 0.9;
+     /* background: white;
+        opacity: 0.9; */
         padding: 15px;
     }
     .homepage-slider .slider-content-text h1 {
@@ -2288,7 +2288,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 
     }
     .contact-form input[type="submit"] {
-        background: #c3d600;
+        background: #074980;
         border: 0;
         color: white;
         padding: 14px;
