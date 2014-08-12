@@ -31,6 +31,9 @@ html, body{
 .cml_flags.cml_flags_on_top {
     display: none;
 }
+.ab-item img {
+    min-width: initial;
+}
 /* general: font */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -936,13 +939,6 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     /* end breadcrumbs */
     /* main layout: sidebar navigation */
 
-    /*
-    why is this necessary??
-    @media screen and (min-width: 1200px) {
-        .main-layout .sidebar {
-            padding-right: 65px;
-        }
-    }*/
     /* sidebar affix */
     .sidebar.affix {
         top: 68px;
@@ -1838,6 +1834,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     /* probank and events */
     .homepage-probank-desc-top {
         font-size: 14px;
+        color: #262729;
     }
     @media screen and (max-width: 767px) {
 
