@@ -37,18 +37,19 @@ get_header(); ?>
                 </div>
             </div>
             <div class="row ">
-            		
-			<?php $loop = new WP_Query( 
+
+			<?php $loop = new WP_Query(
 				array(
-					'post_type' => get_post_type()
+					'post_type' => get_post_type(),
+					'posts_per_page' => -1
 			) );
-			
+
 			if( $loop->have_posts() ) :
 				while($loop->have_posts()) : $loop->the_post();
 			?>
 				<div class="col-sm-6 col-md-3 block item">
 					<div class="img">
-					<?php 
+					<?php
 					/**
 					 * Mengambil gambar dari post thumbnail, jika ada ditampilkan,
 					 * jika tidak ada diganti gambar default no profile picture
