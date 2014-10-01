@@ -21,7 +21,7 @@
                     <select>
                     	<option><?php _e('Other Regional Board','perbanas'); ?></option>
                         <?php 
-							$args = array( 'post_type' => get_post_type() );
+							$args = array( 'post_type' => get_post_type(), 'posts_per_page' => -1 );
 							$query = new WP_Query( $args );
 						
 							if ( $query->have_posts() ) {
