@@ -87,7 +87,7 @@ function page_general_init() {
 
         if (currentPosition > 217) {
 
-            //adjustNavbarMenu(true, paddingNarrow);
+            adjustNavbarMenu(true, paddingNarrow);
             $('#navbar-main li.first').css({
                 'padding-right': paddingNarrow
             });
@@ -99,7 +99,7 @@ function page_general_init() {
                 'padding-left': paddingNarrow
             });
         } else if (currentPosition > 217) {
-            //adjustNavbarMenu(false, paddingNarrow);
+            adjustNavbarMenu(false, paddingNarrow);
              $('#navbar-main li.first').css({
                 'padding-right': paddingNarrow
             });
