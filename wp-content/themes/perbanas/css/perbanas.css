@@ -7,7 +7,7 @@ html, body{
         padding-right: 15px;
     }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
     img {
         min-width: 100%;
     }
@@ -375,7 +375,7 @@ a:hover {
             background: #009ADD;
         }
     }
-    @media screen and (min-width: 768px) and (max-width: 992px) {
+    @media screen and (min-width: 768px) and (max-width: 991px) {
         /* floating navbar collapsible */
         .navbar-container {
             height: 52px;
@@ -448,7 +448,7 @@ a:hover {
     }
     /* end navbar equal width when on desktop (large) */
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
         .nav-large-wrapper-outer {
             line-height: 0;
         }
@@ -1251,7 +1251,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         padding: 0 107px;
         background-clip: content-box;
     }
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1199px) {
         #former-chairmen .carousel-indicators-container .border {
             padding: 0 30px;
         }
@@ -1488,7 +1488,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
             background: white;
         }
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
         .organization-sector .item.active .overlay {
             visibility: visible;
             -o-transition:opacity .2s;

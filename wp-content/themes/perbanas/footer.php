@@ -97,6 +97,210 @@
 	google.maps.event.addDomListener(window, 'load', initGoogleMaps);
 	<?php endif; ?>
 </script>
+
+<script>
+	/**
+	 * @param  {boolean} expand
+	 * @param  {string} paddingNarrow
+	 * @param  {string} paddingWide
+	 */
+	function adjustNavbar (expand, paddingNarrow, paddingWide) {
+
+		var value = (expand == true) ? paddingNarrow : paddingWide;
+
+		if (expand) {
+			$('#navbar-main .navbar-main-scrolled-menu-logo').fadeIn();
+		} else {
+			$('#navbar-main .navbar-main-scrolled-menu-logo').fadeOut();
+		}
+
+		$('#navbar-main li.first').animate({
+			'padding-right': value
+		},
+		'fast', 'swing', function() {
+			if (!expand) {
+				$('#navbar-main li.first').css('padding-right', '');
+			}
+		});
+
+		$('#navbar-main li.last').animate({
+			'padding-left': value
+		}, 'fast', 'swing', function() {
+			if (!expand) {
+				$('#navbar-main li.last').css('padding-left', '');
+			}
+		});
+
+		$('#navbar-main li').not('.first').not('.last').animate({
+			'padding-left': value,
+			'padding-right': value
+		}, 'fast', 'swing', function() {
+			if (!expand) {
+				$('#navbar-main li').css('padding-left', '');
+				$('#navbar-main li').css('padding-right', '');
+			}
+		});
+	}
+
+	
+
+	/**
+	 * Pada saat posisi di atas kemudian 
+	 * di resize kanan kiri
+	 */
+	$(window).resize(function() {
+		var paddingNarrow, paddingWide,
+			navbarTreshold 	= 217,					// tinggi header
+			$window 		= $(this),
+			windowWidth 	= $window.width() + 15, // 15 untuk menggenapkan kekurangan width
+			currentPosition	= $window.scrollTop();	// Menghitung jarak scroll yang telah terjadi
+
+		// 1. Pada posisi mobile (< 992) ke md
+
+		if (windowWidth >= 1200) {
+			paddingNarrow 	= '40px';
+			paddingWide		= '46px';
+		} else if (windowWidth >= 992 && windowWidth < 1200) {
+			paddingNarrow	= '23px';
+			paddingWide		= '30px';
+		};
+
+		if (currentPosition < navbarTreshold) {
+			$('#navbar-main li.first').css({
+				'padding-right': paddingWide
+			});
+			$('#navbar-main li.last').css({
+				'padding-left': paddingWide
+			});
+			$('#navbar-main li').not('.first').not('.last').css({
+				'padding-right': paddingWide,
+				'padding-left': paddingWide
+			});
+		} else {
+			$('#navbar-main li.first').css({
+				'padding-right': paddingNarrow
+			});
+			$('#navbar-main li.last').css({
+				'padding-left': paddingNarrow
+			});
+			$('#navbar-main li').not('.first').not('.last').css({
+				'padding-right': paddingNarrow,
+				'padding-left': paddingNarrow
+			});
+		};
+		
+
+		// 2.a. Pada posisi md (992 <= x < 1200) ke large
+		// 2.b. Pada posisi md ke mobile
+		// 3. Pada posisi x >= 1200 ke md
+
+	});
+	
+	/**
+	 * Pada saat posisi di atas kemudian 
+	 * di scroll kebawah
+	 */
+	var isTresholdReached = false;
+	$(window).scroll(function() {
+
+		var paddingNarrow, paddingWide,
+			navbarTreshold 	= 217,					// tinggi header
+			$window 		= $(this),
+			windowWidth 	= $window.width() + 15, // 15 untuk menggenapkan kekurangan width
+			currentPosition	= $window.scrollTop();	// Menghitung jarak scroll yang telah terjadi
+
+		/* 1. Pada posisi mobile < 992 */
+
+		/* 2. Pada posisi 992 <= x < 1200 */
+		/* 3. Pada posisi x >= 1200 */
+
+		if (windowWidth >= 1200) {
+			paddingNarrow 	= '40px';
+			paddingWide		= '46px';
+		} else if (windowWidth >= 992 && windowWidth < 1200) {
+			paddingNarrow	= '23px';
+			paddingWide		= '30px';
+		};
+
+		if (currentPosition < navbarTreshold && !isTresholdReached) {
+			adjustNavbar(false, paddingNarrow, paddingWide);
+			isTresholdReached = !isTresholdReached;
+		} else if (currentPosition > navbarTreshold && isTresholdReached) {
+			adjustNavbar(true, paddingNarrow, paddingWide);
+			isTresholdReached = !isTresholdReached;
+		};
+
+		
+	});
+
+	/**
+	 * Pada saat posisi di tengah kemudian
+	 * di resize kanan kiri
+	 */
+	// 1. Pada posisi mobile (< 992) ke md
+	// 2.a. Pada posisi md (992 <= x < 1200) ke large
+	// 2.b. Pada posisi md ke mobile
+	// 3. Pada posisi x >= 1200 ke md
+
+
+	/**
+	 * Pada saat posisi di tengah kemudian
+	 * di scroll keatas kebawah
+	 */
+	function loadNavbarPosition () {
+		var paddingNarrow, paddingWide,
+			navbarTreshold 	= 217,					// tinggi header
+			$window 		= $(this),
+			windowWidth 	= $window.width() + 15, // 15 untuk menggenapkan kekurangan width
+			currentPosition	= $window.scrollTop();	// Menghitung jarak scroll yang telah terjadi
+
+		// 1. Pada posisi mobile < 992
+		// 2. Pada posisi 992 <= x < 1200
+		// 3. Pada posisi x >= 1200
+
+		if (windowWidth >= 1200) {
+			paddingNarrow 	= '40px';
+			paddingWide		= '46px';
+		} else if (windowWidth >= 992 && windowWidth < 1200) {
+			paddingNarrow	= '23px';
+			paddingWide		= '30px';
+		};
+
+		if (currentPosition < navbarTreshold) {
+			
+			$('#navbar-main .navbar-main-scrolled-menu-logo').hide();
+
+			$('#navbar-main li.first').css({
+				'padding-right': paddingWide
+			});
+			$('#navbar-main li.last').css({
+				'padding-left': paddingWide
+			});
+			$('#navbar-main li').not('.first').not('.last').css({
+				'padding-right': paddingWide,
+				'padding-left': paddingWide
+			});
+
+		} else {
+			
+			$('#navbar-main .navbar-main-scrolled-menu-logo').show();
+
+			$('#navbar-main li.first').css({
+				'padding-right': paddingNarrow
+			});
+			$('#navbar-main li.last').css({
+				'padding-left': paddingNarrow
+			});
+			$('#navbar-main li').not('.first').not('.last').css({
+				'padding-right': paddingNarrow,
+				'padding-left': paddingNarrow
+			});
+		};
+	}
+
+	loadNavbarPosition();
+	
+</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
