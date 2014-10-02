@@ -25,8 +25,6 @@ get_header(); ?>
     </div>
     <div class="row">
         <div class="col-xs-12 col-md-8">
-            <!--<div id="map"></div>-->
-            <!-- iframe src="https://mapsengine.google.com/map/u/0/embed?mid=zvqAkeRiK-hw.kAFZVNjYiH7o" id="map"></iframe -->
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=zbI_gZIaSmx8.k_CgGUqHGMas" width="640" height="480"></iframe>
         </div>
         <div class="col-xs-12 col-md-4">
