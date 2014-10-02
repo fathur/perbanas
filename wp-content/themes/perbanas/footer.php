@@ -49,6 +49,7 @@
 </div>
 <?php wp_footer(); ?>
 <script>
+	 
 	$(document).ready(function(){
 		page_general_init();
 		

@@ -18,29 +18,50 @@ function onScroll(callback) {
 function onScrollOff(callback) {
     $(window).off('scroll', callback);
 }
-// callback actions
+
+/**
+ * function untuk reset affix
+ * 
+ */
 function resetAffixNavigation() {
     $('#navbar-main').off('.affix');
     $('#navbar-main').removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     $('#navbar-main').affix({ offset: $('.header').outerHeight(true)});
 }
 
-var isNavbarMenuThresholdReached = false;
+/**
+ * Berguna untuk mementokkan navbar di atas halaman
+ */
+
+// Set global variabel for detecting navbar reached or not
+var isNavbarMenuThresholdReached;
+
 function onNavbarMenuThresholdReached() {
+
+    // Set variabel untuk ... ?
     var paddingNarrow;
+
+    // Set variabel untuk ...?
     var paddingWide;
-    if ($(window).width() > 1199) {
+
+    // Jika ukuran viewportnya lebih dari atau sama dengan 1200px.
+    // dalam CSS Bootstrap, ukurannnya adalah >= 1200px untuk large device
+    // dan >= 992px untuk medium device
+    if (($(window).width() + 15) >= 1200) {
         paddingNarrow = '40px';
         paddingWide = '46px';
     }
-    else if ($(window).width() > 992 && $(window).width() <= 1199) {
+    else if (($(window).width() + 15) >= 992 && ($(window).width() + 15) < 1200) {
         paddingNarrow = '23px';
         paddingWide = '30px';
     }
     else {
         // do nothing
     }
+
+    // Detect window scrolling position
     var currentPosition = $(this).scrollTop();
+
     if (currentPosition > NAVBAR_THRESHOLD && isNavbarMenuThresholdReached) {
         adjustNavbarMenu(true, paddingNarrow, paddingWide);
         isNavbarMenuThresholdReached = !isNavbarMenuThresholdReached;
@@ -51,8 +72,16 @@ function onNavbarMenuThresholdReached() {
     }
 }
 
+/**
+ * [adjustNavbarMenu description]
+ * @param  {[type]} expand
+ * @param  {[type]} paddingNarrow
+ * @param  {[type]} paddingOriginal
+ * @return {[type]}
+ */
 function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
-    var value = expand == true ? paddingNarrow : paddingOriginal;
+
+    var value = (expand == true) ? paddingNarrow : paddingOriginal;
 
     if (expand) {
         $('#navbar-main .navbar-main-scrolled-menu-logo').fadeIn();
@@ -96,6 +125,11 @@ function adjustNavbarMenu(expand, paddingNarrow, paddingOriginal) {
         }
     );
 }
+
+/**
+ * [sidebarAffix description]
+ * @return {[type]}
+ */
 function sidebarAffix() {
     //$('.main-content-pane').css('height', 864);
     var mainContentPaneHeight = $('.main-content-pane').outerHeight();
