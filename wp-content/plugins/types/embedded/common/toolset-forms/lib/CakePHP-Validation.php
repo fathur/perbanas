@@ -424,7 +424,10 @@ class WPToolset_Cake_Validation
      */
     function date( $check, $format = 'ymd', $regex = null ) {
         
-        // TODO Change to use date strtotime
+        if ( is_numeric( $check ) ) {
+			return WPToolset_Field_Date_Scripts::_isTimestampInRange($check);
+		}
+		// TODO Change to use date strtotime
         $valid = wptoolset_strtotime( $check );
         return $valid !== false;
 
@@ -581,10 +584,13 @@ class WPToolset_Cake_Validation
      * @access public
      */
     function extension( $check, $extensions = array('gif', 'jpeg', 'png', 'jpg') ) {
+        //https://icanlocalize.basecamphq.com/projects/7393061-toolset/todo_items/188215131/comments
+        if (!isset($check)||empty($check)) return false;
+        //##########################################################################################
         if ( is_array( $check ) ) {
             return WPToolset_Cake_Validation::extension( array_shift( $check ),
                             $extensions );
-        }
+        }        
         $extension = strtolower( array_pop( explode( '.', $check ) ) );
         foreach ( $extensions as $value ) {
             if ( $extension == strtolower( $value ) ) {
@@ -1124,7 +1130,7 @@ class WPToolset_Cake_Validation
     
     public static function required( $value )
     {
-        return !(empty( $value ) || $value === '0');
+        return !( is_null( $value ) || $value === false || $value === '' );
     }
 
 }
