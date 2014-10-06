@@ -24,8 +24,8 @@ function onScrollOff(callback) {
  * 
  */
 function resetAffixNavigation() {
-    $('#navbar-main').off('.affix');
-    $('#navbar-main').removeData('bs.affix').removeClass('affix affix-top affix-bottom');
+   // $('#navbar-main').off('.affix');
+   // $('#navbar-main').removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     $('#navbar-main').affix({ offset: $('.header').outerHeight(true)});
 }
 

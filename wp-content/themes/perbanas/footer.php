@@ -142,6 +142,7 @@
 		});
 	}
 
+	var isTresholdReached = false;
 	
 
 	/**
@@ -149,11 +150,14 @@
 	 * di resize kanan kiri
 	 */
 	$(window).resize(function() {
+		
 		var paddingNarrow, paddingWide,
-			navbarTreshold 	= 217,					// tinggi header
 			$window 		= $(this),
+			navbarTreshold 	= 217,					// tinggi header
 			windowWidth 	= $window.width() + 15, // 15 untuk menggenapkan kekurangan width
 			currentPosition	= $window.scrollTop();	// Menghitung jarak scroll yang telah terjadi
+
+		
 
 		// 1. Pada posisi mobile (< 992) ke md
 
@@ -166,6 +170,9 @@
 		};
 
 		if (currentPosition < navbarTreshold) {
+
+			$('#navbar-main .navbar-main-scrolled-menu-logo').hide();
+
 			$('#navbar-main li.first').css({
 				'padding-right': paddingWide
 			});
@@ -176,7 +183,13 @@
 				'padding-right': paddingWide,
 				'padding-left': paddingWide
 			});
+
+			console.log(paddingWide);
+
 		} else {
+
+			$('#navbar-main .navbar-main-scrolled-menu-logo').show();
+
 			$('#navbar-main li.first').css({
 				'padding-right': paddingNarrow
 			});
@@ -187,6 +200,7 @@
 				'padding-right': paddingNarrow,
 				'padding-left': paddingNarrow
 			});
+
 		};
 		
 
@@ -200,7 +214,6 @@
 	 * Pada saat posisi di atas kemudian 
 	 * di scroll kebawah
 	 */
-	var isTresholdReached = false;
 	$(window).scroll(function() {
 
 		var paddingNarrow, paddingWide,
