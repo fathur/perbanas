@@ -354,7 +354,7 @@
                     <div class="item">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/Sigit_Pramono.jpg" />
                         <div class="desc">
-                            <h3>2006 - Now</h3>
+                            <h3>2006 - Present</h3>
                             <h4>Sigit Pramono</h4>
                         </div>
                     </div>
