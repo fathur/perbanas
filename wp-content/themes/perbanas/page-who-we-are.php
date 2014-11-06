@@ -254,7 +254,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="subsection-title-former-chairmen">
-                        <span>Former</span> Chairmen</h2>
+                        <span>Former</span> Chairman</h2>
                 </div>
             </div>
 
