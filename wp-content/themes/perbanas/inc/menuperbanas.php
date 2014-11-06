@@ -380,6 +380,15 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 	if ('#' == $kres) $url_collapse = substr($url_collapse, 1);
 
 	foreach ( $menus as $menu ) {
+
+		// Jika ada additional class
+		// di setting apperance menu
+		$classes = '';
+		if (count($menu->classes) > 0) {
+			foreach ($menu->classes as $class) {
+				$classes .= $class . ' ';
+			}
+		}
 		
 		if ( __predicate( $menu->url ) )
 			$class_active	= 'active';
@@ -395,7 +404,7 @@ function __generate_child_menu( &$menus, &$list_menus, $level, &$url_collapse = 
 			$menu_url = $menu->url;
 		}
 
-		$list_menus .= '<li>
+		$list_menus .= '<li class="'.$classes.'">
 				<a href="'.$menu_url.'" class="item">'. __( $menu->title,'perbanas').'</a>
 				<hr class="" />
 			</li>';
