@@ -261,6 +261,15 @@ function perbanas_side_menu( $menu_name, $id ) {
 		$list_menus = "<div class='accordion' id='$id'>";
 
 		foreach ( $menus as $menu ) {
+
+			// Jika ada additional class
+			// di setting apperance menu
+			$classes = '';
+			if (count($menu->classes) > 0) {
+				foreach ($menu->classes as $class) {
+					$classes .= $class . ' ';
+				}
+			}
 				
 			if ( __predicate( $menu->url ) )
 				$class_active	= 'active';
@@ -279,7 +288,9 @@ function perbanas_side_menu( $menu_name, $id ) {
 					$in	= '';
 				}
 
-				$list_menus .= '<div class="accordion-group">
+				
+
+				$list_menus .= '<div class="accordion-group '.$classes.'">
 						<div class="accordion-heading">
 							<a class="accordion-toggle item '.$class_active.'" data-toggle="collapse" data-parent="#'.$id.'" href="'.$menu->url.'">
 								<i class="icon-home"></i> '. __( $menu->title, 'perbanas') .
@@ -304,7 +315,7 @@ function perbanas_side_menu( $menu_name, $id ) {
 
 			} else {
 			
-				$list_menus .= '<div class="accordion-group">
+				$list_menus .= '<div class="accordion-group '.$classes.'">
 						<div class="accordion-heading">
 							<a class="item" href="'.$menu->url.'">
 								<i class="icon-home"></i> '. __( $menu->title, 'perbanas' ) .

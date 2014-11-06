@@ -972,6 +972,11 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .accordion-group hr.active {
         width: 100%;
     }
+    .accordion-group.separator {
+        border-top: 3px solid #004987;
+        padding-top: 16px;
+        margin-top: 50px;
+    }
     /* end main layout: sidebar navigation */
 
 @media screen and (max-width: 767px) {
