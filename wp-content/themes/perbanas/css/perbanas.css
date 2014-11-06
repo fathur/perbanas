@@ -2372,6 +2372,10 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     }
 }
 
+.affiliation-item img {
+    margin: 0 auto;
+}
+
 /* TEST */
 .news .news-item .news-desc-top .desc{
     color: #262729 !important;

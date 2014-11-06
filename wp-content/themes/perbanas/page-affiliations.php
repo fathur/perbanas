@@ -14,48 +14,41 @@
                     <h1><div></div><span><?php the_title(); ?></span></h1>
                 </div>
             </div>
-            <div class="row text-center">
+            <div class="row text-center affiliation-item">
                 <div class="col-xs-12 col-md-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" class="img-responsive">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/Bank-Indonesia.png" class="img-responsive">
                 </div>
 
                 <div class="col-xs-12 col-md-3">
+                     <img src="<?php echo get_template_directory_uri(); ?>/img/OJK_Logo.png" class="img-responsive">
+                </div>
+
+
+                <div class="col-xs-12 col-md-3">
+                     <img src="<?php echo get_template_directory_uri(); ?>/img/LPS_Logo.jpg" class="img-responsive">
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                     <img src="<?php echo get_template_directory_uri(); ?>/img/PPATK_Logo.png" class="img-responsive">
+                    
+                </div>
+            </div>
+
+            <div class="row text-center affiliation-item">
+                <div class="col-xs-12 col-md-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/Bank-Indonesia.png" class="img-responsive">
+                </div>
+
+                <div class="col-xs-12 col-md-3">
+                     <img src="<?php echo get_template_directory_uri(); ?>/img/OJK_Logo.png" class="img-responsive">
+                </div>
+
+                <div class="col-xs-12 col-md-3 text-center">
+                     <img src="<?php echo get_template_directory_uri(); ?>/img/PPATK_Logo.png" class="img-responsive">
                     
                 </div>
 
                 <div class="col-xs-12 col-md-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" class="img-responsive">
-                    
-                </div>
-
-                <div class="col-xs-12 col-md-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" class="img-responsive">
-                    
-                </div>
-
-                <div class="col-xs-12 col-md-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" class="img-responsive">
-                    
-                </div>
-
-                <div class="col-xs-12 col-md-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" class="img-responsive">
-                    
-                </div>
-
-                <div class="col-xs-12 col-md-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" class="img-responsive">
-                    
-                </div>
-
-                <div class="col-xs-12 col-md-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" class="img-responsive">
-                    
-                </div>
-
-                <div class="col-xs-12 col-md-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" class="img-responsive">
-                    
+                     <img src="<?php echo get_template_directory_uri(); ?>/img/LPS_Logo.jpg" class="img-responsive">
                 </div>
             </div>
         <?php endwhile; endif;?>
