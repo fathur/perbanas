@@ -179,77 +179,9 @@
 
                 </div>
             </div>
-            <div id="vision-mission" class="anchor-with-offset"></div>
-            <div class="vision-mission-container" id="vision-mission">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="vision vm-title text-center">
-                            <h2>Vision</h2>
-                            <hr />
-                            <p>To become a respected organization and play an active role in building the professional banking industry, as well as making a positive contribution to the national economic development.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class=" mission vm-title text-center">
-                            <h2>Mission</h2>
-                            <hr />
-                            <p>Provide maximum benefits for its stakeholders.</p>
+            <!-- End History -->
 
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 column-background">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-3 column">
-                                <div class="vm-title text-center">
-                                    <h2>Members</h2>
-                                    <hr />
-                                    <p>Increase cooperation among members which are mutually beneficial in order to build a professional banking organization.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-3 column">
-                                <div class="vm-title text-center">
-                                    <h2>Government</h2>
-                                    <hr />
-                                    <p>Become a professional partner in developing the national banking industry.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-3 column">
-                                <div class="vm-title text-center">
-                                    <h2>Public</h2>
-                                    <hr />
-                                    <p>Increase public trust towards the banking sector as well as increasing the function of banking intermediation.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-3 column">
-                                <div class="vm-title text-center">
-                                    <h2>Environment</h2>
-                                    <hr />
-                                    <p id="organization-structure">Create harmony between the banking industry and the environment <emph>(good corporate citizenship).</emph></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="organization-structure" class="anchor-with-offset"></div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="subsection-title text-center hide">
-                        <div class="subsection-title-container">
-                            <h2>Organization</h2>
-                            <hr />
-                            <h2>Structure</h2>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif" /></a>
-                    </div>
-                </div>
-            </div>
+            <!-- Former Chairman Begin -->
             <div id="former-chairmen-title" class="anchor-with-offset"></div>
             <div class="row">
                 <div class="col-xs-12">
@@ -409,6 +341,80 @@
                             <span class="carousel-indicators-year">2006-Now</span>
                         </li>
                     </ol>
+                </div>
+            </div>
+            <!-- Former Chairman End -->
+
+            <!-- Begin VISI MISI -->
+            <div id="vision-mission" class="anchor-with-offset"></div>
+            <div class="vision-mission-container" id="vision-mission">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="vision vm-title text-center">
+                            <h2>Vision</h2>
+                            <hr />
+                            <p>To become a respected organization and play an active role in building the professional banking industry, as well as making a positive contribution to the national economic development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class=" mission vm-title text-center">
+                            <h2>Mission</h2>
+                            <hr />
+                            <p>Provide maximum benefits for its stakeholders.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 column-background">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-3 column">
+                                <div class="vm-title text-center">
+                                    <h2>Members</h2>
+                                    <hr />
+                                    <p>Increase cooperation among members which are mutually beneficial in order to build a professional banking organization.</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-3 column">
+                                <div class="vm-title text-center">
+                                    <h2>Government</h2>
+                                    <hr />
+                                    <p>Become a professional partner in developing the national banking industry.</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-3 column">
+                                <div class="vm-title text-center">
+                                    <h2>Public</h2>
+                                    <hr />
+                                    <p>Increase public trust towards the banking sector as well as increasing the function of banking intermediation.</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-3 column">
+                                <div class="vm-title text-center">
+                                    <h2>Environment</h2>
+                                    <hr />
+                                    <p id="organization-structure">Create harmony between the banking industry and the environment <emph>(good corporate citizenship).</emph></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="organization-structure" class="anchor-with-offset"></div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="subsection-title text-center hide">
+                        <div class="subsection-title-container">
+                            <h2>Organization</h2>
+                            <hr />
+                            <h2>Structure</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/about-who-we-are-organization-structure.gif" /></a>
+                    </div>
                 </div>
             </div>
 
