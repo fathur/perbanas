@@ -15,8 +15,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 block footer-A">
-						&nbsp;<br class="visible-sm visible-md visible-lg" /> <span
-							class="footer-B"><?php _e('Our partners','perbanas'); ?></span> 
+						&nbsp;<br class="visible-sm visible-md visible-lg" /> 
+							<span class="footer-B"><?php _e('Our partners','perbanas'); ?></span> 
 							
 							<a href="http://www.bi.go.id/" target="__blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-bi.jpg" />
@@ -24,12 +24,15 @@
 							<a href="http://www.ojk.go.id/" target="__blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-ojk.jpg" />
 							</a>
-							<a href="http://www.bi.go.id/id/perbankan/arsitektur/Contents/edukasimasyarakat.aspx" target="__blank">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-3p.jpg" />
+							<a href="http://www.ppatk.go.id" target="__blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-ppatk.png" />
 							</a>
 							<a href="http://www.lps.go.id/" target="__blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-lps.jpg" />
 							</a>
+
+							&nbsp;<span class="footer-B"> <a href="<?php echo get_permalink( get_page_by_title( 'Affiliations' ) )?>"> <?php _e('See more','perbanas'); ?></a></span> 
+
 					</div>
 					<div class="col-sm-6 block footer-right">
 						<div>
