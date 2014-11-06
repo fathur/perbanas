@@ -29,7 +29,27 @@
 						<div class="row top-nav">
 							<div class="col-xs-6"></div>
 							<div class="col-xs-6">
-								<ul>
+								<span class="language-container pull-right">
+									<?php
+									if (cml_get_current_language()->cml_locale == 'id_ID') {
+										?>
+										<a href="<?php echo get_option('siteurl'); ?>/en" >
+											<img src="<?php echo get_template_directory_uri(); ?>/img/flag-english.png">
+										</a>
+										
+										<img src="<?php echo get_template_directory_uri(); ?>/img/flag-indonesia.png">
+										<?php
+									}
+									else {
+										?>
+										<img src="<?php echo get_template_directory_uri(); ?>/img/flag-english.png">
+										<a href="<?php echo get_option('siteurl'); ?>/id"><img src="<?php echo get_template_directory_uri(); ?>/img/flag-indonesia.png"></a>
+										<?php
+									}
+									?>
+								</span>
+
+								<ul class="pull-right">
 									<?php if ( is_user_logged_in() ) { ?>
 									<li><a href="<?php echo wp_logout_url( get_bloginfo('siteurl') ); ?>"><?php _e('Log Out','perbanas'); ?></a><?php //echo wp_loginout( get_permalink() ); ?></li>
 									<li><a href="<?php echo get_post_type_archive_link('memberarea'); ?>"><?php _e('Member Area','perbanas'); ?></a></li>
@@ -37,20 +57,7 @@
 									<li><a id="login-button" href="#"><?php _e('Log In','perbanas'); ?></a></li>
 									<?php } ?>
 									<li><a id="search-button" href="#"><?php _e('Search','perbanas'); ?></a></li>
-									<li class="last language-dropdown-container">
-										<?php
-										if (cml_get_current_language()->cml_locale == 'id_ID') {
-											?>
-											<a href="<?php echo get_option('siteurl'); ?>/en">English</a>
-											<?php
-										}
-										else {
-											?>
-											<a href="<?php echo get_option('siteurl'); ?>/id">Bahasa Indonesia</a>
-											<?php
-										}
-										?>
-									</li>
+									
 								</ul>
 							</div>
 						</div>
