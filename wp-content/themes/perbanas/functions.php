@@ -272,6 +272,21 @@ function perbanas_edit_text($content) {
 }
 add_action( 'admin_init', 'perbanas_edit_footer' );
 
+
+/**
+ * Sort multi dimensional array
+ * Source: http://stackoverflow.com/questions/2699086/sort-multi-dimensional-array-by-value
+ * 
+ * @param  array $a array
+ * @param  array $b array
+ * @return order    
+ *
+ * 
+ */
+function sort_by_order($a, $b) {
+	return strcasecmp($a['order'], $b['order']);
+}
+
 /**
  * Include separate function
  * 

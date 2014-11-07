@@ -612,9 +612,9 @@ a:hover {
     .main-content-pane ol {
         list-style-type: decimal;
     }
-    .main-content-pane ul {
+   /* .main-content-pane ul {
             list-style-type: disc;
-    }
+    }*/
     .main-content-pane ol>li, .main-content-pane ul>li {
         line-height: 1.7;
         margin-bottom: 10px;
@@ -783,7 +783,8 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin-top: 30px;
     }
 }
-.section-title h1 {
+.section-title h1,
+.section-title h2 {
         position: relative;
         line-height: 1.4;
 }
@@ -791,21 +792,29 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .section-title h1 {
         margin-bottom: 60px;
     }
+
+    .section-title h2 {
+        margin-bottom: 5px;
+        margin-top: 20px;
+    }
 }
 @media screen and (max-width: 991px) {
-    .section-title h1 {
+    .section-title h1,
+    .section-title h2 {
         margin-top: 15px;
         margin-bottom: 15px;
     }
 }
-.section-title h1 div {
+.section-title h1 div,
+.section-title h2 div {
     border-bottom: 1px solid #7fa4c3;
     position: absolute;
     width: 100%;
     bottom: 6px;
     z-index: -4;
 }
-.section-title h1 span {
+.section-title h1 span,
+.section-title h2 span {
     background: white;
 }
 /* start select (using jquery select2) */
@@ -871,6 +880,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     .member-list {
         font-size: 14px;
         color: #262729;
+        width: 100%;
     }
     .member-list thead {
         padding: 0;

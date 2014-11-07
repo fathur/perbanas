@@ -14,7 +14,7 @@ get_header(); ?>
         </div>
     </div>
     <div class="row">
-        <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
+        <!-- <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
             <div class="sidebar">
                 <div class="sidebar-title">
                     <h2><?php _e('Member Banks','perbanas'); ?></h2>
@@ -22,8 +22,8 @@ get_header(); ?>
                 
                 <?php echo perbanas_side_menu('member-bank-menu', 'leftMenu'); ?>
             </div>
-        </nav>
-        <div class="col-xs-12 col-md-9 main-content-pane">
+        </nav> -->
+        <div class="col-xs-12 col-md-12 main-content-pane">
         
         <?php while ( have_posts() ) : the_post(); ?>
         
