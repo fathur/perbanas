@@ -76,10 +76,15 @@ get_header(); ?>
 
                     if ($char !== $last_char) :
                         if ($last_char !== '') 
-                            echo '</div>';
+                            //echo '</div>';
                         
-                        echo "<div class=\"row\"> <div class=\"col-xs-12 section-title\">
-                            <h2><div></div><span>".strtoupper($char)."</span></h2>
+                        echo "<div class=\"row\"> 
+                            <div class=\"col-xs-12 section-title\">
+                                <h2>
+                                    <div></div>
+                                    <span>".strtoupper($char)."</span>
+                                </h2>
+                            </div>
                         </div>";
                       
                         $last_char = $char;
@@ -89,7 +94,8 @@ get_header(); ?>
                     echo "<div class=\"col-xs-6 col-sm-3\">
                         <a href=\"".get_permalink( $bank['id'] )."\" title='".$bank['title']."'>".
                             get_the_post_thumbnail( $bank['id'], array(141,141), array('class'=>'img-responsive') )
-                        ."</a></div>";
+                        ."</a>
+                    </div>";
 
                 endforeach;
 

@@ -8,7 +8,7 @@
 			</div>
 		</a>
 			<div></div>
-		</a>
+		
 	</div>
 	<div class="row footer">
 		<div class="col-sm-12 block">
