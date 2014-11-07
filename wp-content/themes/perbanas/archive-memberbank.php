@@ -75,7 +75,7 @@ get_header(); ?>
                     $char = $bank['order'][0];
 
                     if ($char !== $last_char) :
-                        if ($last_char !== '') 
+                        //if ($last_char !== '') 
                             //echo '</div>';
                         
                         echo "<div class=\"row\"> 
