@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div id="orgstruct"></div>
+
+	<script type="text/javascript" src="js/raphael-min.js"></script>
+	<script>
+		window.onload = function() {
+			var os = new Raphael('orgstruct','848','1338');
+
+			// Set variabel
+			var r1 	= 60, // radius circle 1
+				r2 	= 55, // radius circle 2
+				r3	= 48,
+
+				darkBlue 	= '#004987',
+				lightBlue 	= '#009CDF',
+
+				rightOffset 		= 420,
+				topOffset			= 130,
+				abstraxMarginSide 	= 120,
+				marginBottom		= 20,
+				
+				darkBlueCircleAttr = {
+					fill: darkBlue,
+					stroke: darkBlue,
+					cursor: 'pointer'
+				},
+				darkBlueTextAttr = {
+					fill: '#FFF',
+					'font-size': 14,
+					cursor: 'pointer'
+				},
+
+				lightBlueCircleAttr = {
+					fill: lightBlue,
+					stroke: lightBlue,
+					cursor: 'pointer'
+				},
+				lightBlueTextAttr = {
+					fill: '#FFF',
+					'font-size': 14,
+					cursor: 'pointer'
+				},
+				lightBlueSmallTextAttr = {
+					fill: '#FFF',
+					'font-size': 12,
+					cursor: 'pointer'
+				};
+
+		
+
+			// -------------------
+			// Supervisory Board
+			// -------------------
+			var supervisoryBoardX = 150,
+				supervisoryBoardY = 60 + topOffset,
+				supervisoryBoardCircle = os.circle(supervisoryBoardX, supervisoryBoardY, r1)
+					.attr(darkBlueCircleAttr)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				supervisoryBoardText = os.text(supervisoryBoardX,supervisoryBoardY,'Supervisory \n Board')
+					.attr(darkBlueTextAttr)
+					.click(function() {
+						alert('Supervisory Board')
+					});
+
+			// -------------------
+			// Members
+			// -------------------
+			var membersX = 60,
+				membersY = 180 + topOffset,
+				membersCircle = os.circle(membersX, membersY, r1)
+					.attr(darkBlueCircleAttr)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				membersText = os.text(membersX,membersY,'Members')
+					.attr(darkBlueTextAttr)
+					.click(function() {
+						alert('Supervisory Board')
+					});
+
+			// -------------------
+			// Chairman
+			// -------------------
+			var chairmanX = 240,
+				chairmanY = 180 + topOffset,
+				chairmanCircle = os.circle(chairmanX, chairmanY, r1)
+					.attr(darkBlueCircleAttr)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				chairmanText = os.text(chairmanX,chairmanY,'Chairman')
+					.attr(darkBlueTextAttr)
+					.click(function() {
+						alert('Supervisory Board')
+					});
+
+			// -------------------
+			// Advisory Board
+			// -------------------
+			var advisoryBoardX = 150,
+				advisoryBoardY = 300 + topOffset,
+				advisoryBoardCircle = os.circle(advisoryBoardX, advisoryBoardY, r1)
+					.attr(darkBlueCircleAttr)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				advisoryBoardText = os.text(advisoryBoardX,advisoryBoardY,'Advisory \n Board')
+					.attr(darkBlueTextAttr)
+					.click(function() {
+						alert('Supervisory Board')
+					});
+
+
+			// Line Members to chairman
+			os.path("M"+(2*r1)+","+membersY+"H"+(chairmanX-membersX)).attr({stroke:darkBlue});
+			os.path("M"+supervisoryBoardX+","+(supervisoryBoardY+r1)+"V"+(advisoryBoardY-r1)).attr({stroke:darkBlue});
+			os.path("M"+(chairmanX+r1)+","+chairmanY+"H"+( (5*r1)+15 ));
+
+
+
+			// -------------------
+			// Secretary General
+			// -------------------
+			var secretaryGeneralX = 0 + rightOffset,
+				secretaryGeneralY = r2,
+				secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				secretaryGeneralText = os.text(secretaryGeneralX,secretaryGeneralY,'Secretary \n General')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(secretaryGeneralX-r2)+","+secretaryGeneralY+
+					"H"+(rightOffset-r2-50)+
+					"V"+( (15*r2)+(7*marginBottom) ))
+				.attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Treasurer
+			// -------------------
+			var trasurerX = 0 + rightOffset,
+				trasurerY = (3*r2)+marginBottom,
+				trasurerCircle = os.circle(trasurerX, trasurerY, r2)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				trasurerText = os.text(trasurerX,trasurerY,'Treasurer')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(trasurerX-r2)+","+trasurerY+
+					"H"+(rightOffset-r2-50))
+				.attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Vice Chairman 1
+			// -------------------
+			var viceChairman1X = 0 + rightOffset,
+				viceChairman1Y = (5*r2)+(2*marginBottom),
+				viceChairman1Circle = os.circle(viceChairman1X, viceChairman1Y, r2)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				viceChairman1Text = os.text(viceChairman1X,viceChairman1Y,'Vice \n Chairman 1')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(viceChairman1X-r2)+","+viceChairman1Y+
+					"H"+(rightOffset-r2-25)+
+					"V"+((13*r2)+(6*marginBottom)))
+				.attr({stroke:darkBlue});
+			os.path("M"+(viceChairman1X+r2)+","+viceChairman1Y+
+					"H"+(viceChairman1X+r2+7)+
+					"V"+(viceChairman1Y+r3+15)+
+					"H"+((3*abstraxMarginSide) + rightOffset))
+				.attr({stroke:darkBlue});
+
+			// -------------------
+			// Vice Chairman 2
+			// -------------------
+			var viceChairman2X = 0 + rightOffset,
+				viceChairman2Y = (7*r2)+(3*marginBottom),
+				viceChairman2Circle = os.circle(viceChairman2X, viceChairman2Y, r2)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				viceChairman2Text = os.text(viceChairman2X,viceChairman2Y,'Vice \n Chairman 2')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(viceChairman2X-r2)+","+viceChairman2Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+			os.path("M"+(viceChairman2X+r2)+","+viceChairman2Y+
+					"H"+(viceChairman2X+r2+7)+
+					"V"+(viceChairman2Y+r3+15)+
+					"H"+((2*abstraxMarginSide) + rightOffset))
+				.attr({stroke:darkBlue});
+
+			// -------------------
+			// Vice Chairman 3
+			// -------------------
+			var viceChairman3X = 0 + rightOffset,
+				viceChairman3Y = (9*r2)+(4*marginBottom),
+				viceChairman3Circle = os.circle(viceChairman3X, viceChairman3Y, r2)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				viceChairman3Text = os.text(viceChairman3X,viceChairman3Y,'Vice \n Chairman 3')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
+
+			// -------------------
+			// Vice Chairman 4
+			// -------------------
+			var viceChairman4X = 0 + rightOffset,
+				viceChairman4Y = (11*r2)+(5*marginBottom),
+				viceChairman4Circle = os.circle(viceChairman4X, viceChairman4Y, r2)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				viceChairman4Text = os.text(viceChairman4X,viceChairman4Y,'Vice \n Chairman 4')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(viceChairman4X-r2)+","+viceChairman4Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+			os.path("M"+(viceChairman4X+r2)+","+viceChairman4Y+
+					"H"+(viceChairman4X+r2+7)+
+					"V"+(viceChairman4Y+r3+15)+
+					"H"+((2*abstraxMarginSide) + rightOffset))
+				.attr({stroke:darkBlue});
+
+			// -------------------
+			// Vice Chairman 5
+			// -------------------
+			var viceChairman5X = 0 + rightOffset,
+				viceChairman5Y = (13*r2)+(6*marginBottom),
+				viceChairman5Circle = os.circle(viceChairman5X, viceChairman5Y, r2)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				viceChairman5Text = os.text(viceChairman5X,viceChairman5Y,'Vice \n Chairman 5')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(viceChairman5X-r2)+","+viceChairman5Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+			os.path("M"+(viceChairman5X+r2)+","+viceChairman5Y+
+					"H"+(viceChairman5X+r2+7)+
+					"V"+(viceChairman5Y+r3+15)+
+					"H"+((2*abstraxMarginSide) + rightOffset))
+				.attr({stroke:darkBlue});
+
+			// -------------------
+			// KMPP
+			// -------------------
+			var kmppX = 0 + rightOffset,
+				kmppY = (15*r2)+(7*marginBottom),
+				kmppCircle = os.circle(kmppX, kmppY, r2)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				kmppText = os.text(kmppX,kmppY,'KMPP')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(kmppX-r2)+","+kmppY+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
+
+
+			
+
+
+			// -------------------
+			// Secretariat
+			// -------------------
+			var secreatariatX = abstraxMarginSide + rightOffset,
+				secreatariatY = r2,
+				secreatariatCircle = os.circle(secreatariatX, secreatariatY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				secreatariatText = os.text(secreatariatX,secreatariatY,'Secretariat')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(secreatariatX-r3)+","+secreatariatY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Organization Division
+			// -------------------
+			var orgDivisionX = abstraxMarginSide + rightOffset,
+				orgDivisionY = (5*r2)+(2*marginBottom),
+				orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				orgDivisionText = os.text(orgDivisionX,orgDivisionY,'Organization\nDivision')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+
+			os.path("M"+orgDivisionX+","+(orgDivisionY+r3)+"V"+(orgDivisionY+r3+15)).attr({stroke:darkBlue});
+
+			// -------------------
+			// Academic and Human Resource Division
+			// -------------------
+			var acadHRDX = abstraxMarginSide + rightOffset,
+				acadHRDY = (7*r2)+(3*marginBottom),
+				acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				acadHRDText = os.text(acadHRDX,acadHRDY,'Academic\nand\nHuman\nResource\nDivision')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			os.path("M"+acadHRDX+","+(acadHRDY+r3)+"V"+(acadHRDY+r3+15)).attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Law and Regulation Division
+			// -------------------
+			var lawAndRegulationX = abstraxMarginSide + rightOffset,
+				lawAndRegulationY = (9*r2)+(4*marginBottom),
+				lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				lawAndRegulationText = os.text(lawAndRegulationX,lawAndRegulationY,'Law and\nRegulation\nDivision')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			// line
+			os.path("M"+(lawAndRegulationX-r3)+","+lawAndRegulationY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+
+			// -------------------
+			// Foreign Affairs Division
+			// -------------------
+			var foreignAffairsX = abstraxMarginSide + rightOffset,
+				foreignAffairsY = (11*r2)+(5*marginBottom),
+				foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				foreignAffairsText = os.text(foreignAffairsX,foreignAffairsY,'Foreign Affairs\nDivision')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			os.path("M"+foreignAffairsX+","+(foreignAffairsY+r3)+"V"+(foreignAffairsY+r3+15)).attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Public Relation Division
+			// -------------------
+			var PRX = abstraxMarginSide + rightOffset,
+				PRY = (13*r2)+(6*marginBottom),
+				PRCircle = os.circle(PRX, PRY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				PRText = os.text(PRX,PRY,'Public Relation\nDivision')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			os.path("M"+PRX+","+(PRY+r3)+"V"+(PRY+r3+15)).attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Research and Development Division
+			// -------------------
+			var rndX = (2*abstraxMarginSide) + rightOffset,
+				rndY = (5*r2)+(2*marginBottom),
+				rndCircle = os.circle(rndX, rndY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				rndText = os.text(rndX,rndY,'Research and\nDevelopment\nDivision')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+
+			os.path("M"+rndX+","+(rndY+r3)+"V"+(rndY+r3+15)).attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Technology Division
+			// -------------------
+			var techX = (2*abstraxMarginSide) + rightOffset,
+				techY = (7*r2)+(3*marginBottom),
+				techCircle = os.circle(techX, techY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				techText = os.text(techX,techY,'Technology\nDivision')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+
+			os.path("M"+techX+","+(techY+r3)+"V"+(techY+r3+15)).attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Regional\nDevelopment\nCompartment
+			// -------------------
+			var rdcX = (2*abstraxMarginSide) + rightOffset,
+				rdcY = (11*r2)+(5*marginBottom),
+				rdcCircle = os.circle(rdcX, rdcY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				rdcText = os.text(rdcX,rdcY,'Regional\nDevelopment\nCompartment')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			os.path("M"+rdcX+","+(rdcY+r3)+"V"+(rdcY+r3+15)).attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Sharia Banking Compartment
+			// -------------------
+			var shariaX = (2*abstraxMarginSide) + rightOffset,
+				shariaY = (13*r2)+(6*marginBottom),
+				shariaCircle = os.circle(shariaX, shariaY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				shariaText = os.text(shariaX,shariaY,'Sharia\nBanking\nCompartment')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+			os.path("M"+shariaX+","+(shariaY+r3)+"V"+(shariaY+r3+15)).attr({stroke:darkBlue});
+
+
+			// -------------------
+			// Governance Division
+			// -------------------
+			var governanceX = (3*abstraxMarginSide) + rightOffset,
+				governanceY = (5*r2)+(2*marginBottom),
+				governanceCircle = os.circle(governanceX, governanceY, r3)
+					.click(function() {
+						alert('Supervisory Board')
+					}),
+				governanceText = os.text(governanceX,governanceY,'Governance\nDivision')
+					.click(function() {
+						alert('Supervisory Board')
+					});
+
+			os.path("M"+governanceX+","+(governanceY+r3)+"V"+(governanceY+r3+15)).attr({stroke:darkBlue});
+
+
+
+			var lingBiruMudaBesar = os.set();
+			lingBiruMudaBesar.push(
+				secretaryGeneralCircle,
+				trasurerCircle,
+				viceChairman1Circle,
+				viceChairman2Circle,
+				viceChairman3Circle,
+				viceChairman4Circle,
+				viceChairman5Circle,
+				kmppCircle
+			);
+			lingBiruMudaBesar.attr(lightBlueCircleAttr);
+
+			var txtBiruMudaBesar = os.set();
+			txtBiruMudaBesar.push(
+				secretaryGeneralText,
+				trasurerText,
+				viceChairman1Text,
+				viceChairman2Text,
+				viceChairman3Text,
+				viceChairman4Text,
+				viceChairman5Text,
+				kmppText
+			);
+			txtBiruMudaBesar.attr(lightBlueTextAttr);
+
+			var lingBiruMudaKecil = os.set();
+			lingBiruMudaKecil.push(
+				secreatariatCircle,
+				orgDivisionCircle,
+				acadHRDCircle,
+				lawAndRegulationCircle,
+				foreignAffairsCircle,
+				PRCircle,
+				rndCircle,
+				techCircle,
+				rdcCircle,
+				shariaCircle,
+				governanceCircle
+
+			);
+			lingBiruMudaKecil.attr(lightBlueCircleAttr);
+
+			var txtBiruMudaKecil = os.set();
+			txtBiruMudaKecil.push(
+				secreatariatText,
+				orgDivisionText,
+				acadHRDText,
+				lawAndRegulationText,
+				foreignAffairsText,
+				PRText,
+				rndText,
+				techText,
+				rdcText,
+				shariaText,
+				governanceText
+
+			);
+			txtBiruMudaKecil.attr(lightBlueSmallTextAttr);
+		}
+	</script>
+</body>
+</html>
