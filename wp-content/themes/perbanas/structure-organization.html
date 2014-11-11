@@ -2,13 +2,54 @@
 <html>
 <head>
 	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
 <body>
 
 	<div id="orgstruct"></div>
+	
+	<div id="modal-orgstruct" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modallabel">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					
+					<!-- Title Here -->
+					<h4></h4>
+
+				</div>
+
+				<!-- Content here -->
+				<div class="modal-body"></div>
+
+				<div class="modal-footer">
+					<a class="btn btn-default" target="__blank" href="#">Read More</a>
+				</div>
+			</div>
+		</div>	
+	</div>
 
 	<script type="text/javascript" src="js/raphael-min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 	<script>
+
+		function loadModal(title, content, link) {
+			
+			$('#modal-orgstruct .modal-header h4').html(title);
+			$('#modal-orgstruct .modal-body').html(content);
+			$('#modal-orgstruct .modal-footer a').attr('href', link);
+
+			$('#modal-orgstruct').modal();
+
+
+		}
+
 		window.onload = function() {
 			var os = new Raphael('orgstruct','848','1338');
 
@@ -59,15 +100,18 @@
 			// -------------------
 			var supervisoryBoardX = 150,
 				supervisoryBoardY = 60 + topOffset,
+				supervisoryBoardModal = function() {
+					loadModal('Supervisory Board','Some Content here','http://google.com');
+				},
 				supervisoryBoardCircle = os.circle(supervisoryBoardX, supervisoryBoardY, r1)
 					.attr(darkBlueCircleAttr)
 					.click(function() {
-						alert('Supervisory Board')
+						supervisoryBoardModal();
 					}),
 				supervisoryBoardText = os.text(supervisoryBoardX,supervisoryBoardY,'Supervisory \n Board')
 					.attr(darkBlueTextAttr)
 					.click(function() {
-						alert('Supervisory Board')
+						supervisoryBoardModal();
 					});
 
 			// -------------------
@@ -75,15 +119,18 @@
 			// -------------------
 			var membersX = 60,
 				membersY = 180 + topOffset,
+				membersModal = function() {
+					loadModal('Members','Some Content here','http://google.com');
+				},
 				membersCircle = os.circle(membersX, membersY, r1)
 					.attr(darkBlueCircleAttr)
 					.click(function() {
-						alert('Supervisory Board')
+						membersModal();
 					}),
 				membersText = os.text(membersX,membersY,'Members')
 					.attr(darkBlueTextAttr)
 					.click(function() {
-						alert('Supervisory Board')
+						membersModal();
 					});
 
 			// -------------------
@@ -91,15 +138,18 @@
 			// -------------------
 			var chairmanX = 240,
 				chairmanY = 180 + topOffset,
+				chairmanModal = function() {
+					loadModal('Chairman','','');
+				},
 				chairmanCircle = os.circle(chairmanX, chairmanY, r1)
 					.attr(darkBlueCircleAttr)
 					.click(function() {
-						alert('Supervisory Board')
+						chairmanModal();
 					}),
 				chairmanText = os.text(chairmanX,chairmanY,'Chairman')
 					.attr(darkBlueTextAttr)
 					.click(function() {
-						alert('Supervisory Board')
+						chairmanModal();
 					});
 
 			// -------------------
@@ -107,15 +157,18 @@
 			// -------------------
 			var advisoryBoardX = 150,
 				advisoryBoardY = 300 + topOffset,
+				advisoryBoardModal = function() {
+					loadModal('Advisory Board','','');
+				},
 				advisoryBoardCircle = os.circle(advisoryBoardX, advisoryBoardY, r1)
 					.attr(darkBlueCircleAttr)
 					.click(function() {
-						alert('Supervisory Board')
+						advisoryBoardModal();
 					}),
 				advisoryBoardText = os.text(advisoryBoardX,advisoryBoardY,'Advisory \n Board')
 					.attr(darkBlueTextAttr)
 					.click(function() {
-						alert('Supervisory Board')
+						advisoryBoardModal();
 					});
 
 
@@ -131,13 +184,16 @@
 			// -------------------
 			var secretaryGeneralX = 0 + rightOffset,
 				secretaryGeneralY = r2,
+				secretaryModal = function() {
+					loadModal('Secretary General','','');
+				},
 				secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
 					.click(function() {
-						alert('Supervisory Board')
+						secretaryModal();
 					}),
 				secretaryGeneralText = os.text(secretaryGeneralX,secretaryGeneralY,'Secretary \n General')
 					.click(function() {
-						alert('Supervisory Board')
+						secretaryModal();
 					});
 			// line
 			os.path("M"+(secretaryGeneralX-r2)+","+secretaryGeneralY+
@@ -149,18 +205,21 @@
 			// -------------------
 			// Treasurer
 			// -------------------
-			var trasurerX = 0 + rightOffset,
-				trasurerY = (3*r2)+marginBottom,
-				trasurerCircle = os.circle(trasurerX, trasurerY, r2)
+			var treasurerX = 0 + rightOffset,
+				treasurerY = (3*r2)+marginBottom,
+				treasurerModal = function() {
+					loadModal('Trasurer','','');
+				},
+				treasurerCircle = os.circle(treasurerX, treasurerY, r2)
 					.click(function() {
-						alert('Supervisory Board')
+						treasurerModal();
 					}),
-				trasurerText = os.text(trasurerX,trasurerY,'Treasurer')
+				treasurerText = os.text(treasurerX,treasurerY,'Treasurer')
 					.click(function() {
-						alert('Supervisory Board')
+						treasurerModal();
 					});
 			// line
-			os.path("M"+(trasurerX-r2)+","+trasurerY+
+			os.path("M"+(treasurerX-r2)+","+treasurerY+
 					"H"+(rightOffset-r2-50))
 				.attr({stroke:darkBlue});
 
@@ -170,13 +229,16 @@
 			// -------------------
 			var viceChairman1X = 0 + rightOffset,
 				viceChairman1Y = (5*r2)+(2*marginBottom),
+				viceChairman1Modal = function() {
+					loadModal('Vice Chairman 1','','');
+				},
 				viceChairman1Circle = os.circle(viceChairman1X, viceChairman1Y, r2)
 					.click(function() {
-						alert('Supervisory Board')
+						viceChairman1Modal();
 					}),
 				viceChairman1Text = os.text(viceChairman1X,viceChairman1Y,'Vice \n Chairman 1')
 					.click(function() {
-						alert('Supervisory Board')
+						viceChairman1Modal();
 					});
 			// line
 			os.path("M"+(viceChairman1X-r2)+","+viceChairman1Y+
@@ -194,13 +256,16 @@
 			// -------------------
 			var viceChairman2X = 0 + rightOffset,
 				viceChairman2Y = (7*r2)+(3*marginBottom),
+				viceCHairman2Modal = function() {
+					loadModal('Vice Chairman 2','','');
+				},
 				viceChairman2Circle = os.circle(viceChairman2X, viceChairman2Y, r2)
 					.click(function() {
-						alert('Supervisory Board')
+						viceCHairman2Modal();
 					}),
 				viceChairman2Text = os.text(viceChairman2X,viceChairman2Y,'Vice \n Chairman 2')
 					.click(function() {
-						alert('Supervisory Board')
+						viceCHairman2Modal();
 					});
 			// line
 			os.path("M"+(viceChairman2X-r2)+","+viceChairman2Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
@@ -215,13 +280,16 @@
 			// -------------------
 			var viceChairman3X = 0 + rightOffset,
 				viceChairman3Y = (9*r2)+(4*marginBottom),
+				viceChairman3Modal = function() {
+					loadModal('Vice Chairman 3','','');
+				},
 				viceChairman3Circle = os.circle(viceChairman3X, viceChairman3Y, r2)
 					.click(function() {
-						alert('Supervisory Board')
+						viceChairman3Modal();
 					}),
 				viceChairman3Text = os.text(viceChairman3X,viceChairman3Y,'Vice \n Chairman 3')
 					.click(function() {
-						alert('Supervisory Board')
+						viceChairman3Modal();
 					});
 			// line
 			os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
@@ -231,13 +299,16 @@
 			// -------------------
 			var viceChairman4X = 0 + rightOffset,
 				viceChairman4Y = (11*r2)+(5*marginBottom),
+				viceChairman4Modal = function() {
+					loadModal('Vice Chairman 4','','');
+				},
 				viceChairman4Circle = os.circle(viceChairman4X, viceChairman4Y, r2)
 					.click(function() {
-						alert('Supervisory Board')
+						viceChairman4Modal();
 					}),
 				viceChairman4Text = os.text(viceChairman4X,viceChairman4Y,'Vice \n Chairman 4')
 					.click(function() {
-						alert('Supervisory Board')
+						viceChairman4Modal();
 					});
 			// line
 			os.path("M"+(viceChairman4X-r2)+","+viceChairman4Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
@@ -252,13 +323,16 @@
 			// -------------------
 			var viceChairman5X = 0 + rightOffset,
 				viceChairman5Y = (13*r2)+(6*marginBottom),
+				viceChairman5Modal = function() {
+					loadModal('Vice Chairman 5','','');
+				},
 				viceChairman5Circle = os.circle(viceChairman5X, viceChairman5Y, r2)
 					.click(function() {
-						alert('Supervisory Board')
+						viceChairman5Modal();
 					}),
 				viceChairman5Text = os.text(viceChairman5X,viceChairman5Y,'Vice \n Chairman 5')
 					.click(function() {
-						alert('Supervisory Board')
+						viceChairman5Modal();
 					});
 			// line
 			os.path("M"+(viceChairman5X-r2)+","+viceChairman5Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
@@ -273,13 +347,16 @@
 			// -------------------
 			var kmppX = 0 + rightOffset,
 				kmppY = (15*r2)+(7*marginBottom),
+				kmppModal = function() {
+					loadModal('KMPP','','');
+				},
 				kmppCircle = os.circle(kmppX, kmppY, r2)
 					.click(function() {
-						alert('Supervisory Board')
+						kmppModal();
 					}),
 				kmppText = os.text(kmppX,kmppY,'KMPP')
 					.click(function() {
-						alert('Supervisory Board')
+						kmppModal();
 					});
 			// line
 			os.path("M"+(kmppX-r2)+","+kmppY+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
@@ -291,18 +368,21 @@
 			// -------------------
 			// Secretariat
 			// -------------------
-			var secreatariatX = abstraxMarginSide + rightOffset,
-				secreatariatY = r2,
-				secreatariatCircle = os.circle(secreatariatX, secreatariatY, r3)
+			var secretariatX = abstraxMarginSide + rightOffset,
+				secretariatY = r2,
+				secretariatModal = function() {
+					loadModal('Secretariat','','');
+				},
+				secretariatCircle = os.circle(secretariatX, secretariatY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						secretariatModal();
 					}),
-				secreatariatText = os.text(secreatariatX,secreatariatY,'Secretariat')
+				secretariatText = os.text(secretariatX,secretariatY,'Secretariat')
 					.click(function() {
-						alert('Supervisory Board')
+						secretariatModal();
 					});
 			// line
-			os.path("M"+(secreatariatX-r3)+","+secreatariatY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+			os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
 
 
 			// -------------------
@@ -310,13 +390,16 @@
 			// -------------------
 			var orgDivisionX = abstraxMarginSide + rightOffset,
 				orgDivisionY = (5*r2)+(2*marginBottom),
+				orgDivisionModal = function() {
+					loadModal('Organization Division','','');
+				},
 				orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						orgDivisionModal();
 					}),
 				orgDivisionText = os.text(orgDivisionX,orgDivisionY,'Organization\nDivision')
 					.click(function() {
-						alert('Supervisory Board')
+						orgDivisionModal();
 					});
 
 			os.path("M"+orgDivisionX+","+(orgDivisionY+r3)+"V"+(orgDivisionY+r3+15)).attr({stroke:darkBlue});
@@ -326,13 +409,16 @@
 			// -------------------
 			var acadHRDX = abstraxMarginSide + rightOffset,
 				acadHRDY = (7*r2)+(3*marginBottom),
+				acadHRDModal = function() {
+					loadModal('Academic and Human Resource Division','','');
+				},
 				acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						acadHRDModal();
 					}),
 				acadHRDText = os.text(acadHRDX,acadHRDY,'Academic\nand\nHuman\nResource\nDivision')
 					.click(function() {
-						alert('Supervisory Board')
+						acadHRDModal();
 					});
 			os.path("M"+acadHRDX+","+(acadHRDY+r3)+"V"+(acadHRDY+r3+15)).attr({stroke:darkBlue});
 
@@ -342,13 +428,16 @@
 			// -------------------
 			var lawAndRegulationX = abstraxMarginSide + rightOffset,
 				lawAndRegulationY = (9*r2)+(4*marginBottom),
+				lawAndRegulationModal = function() {
+					loadModal('Law and Regulation Division','','');
+				},
 				lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						lawAndRegulationModal();
 					}),
 				lawAndRegulationText = os.text(lawAndRegulationX,lawAndRegulationY,'Law and\nRegulation\nDivision')
 					.click(function() {
-						alert('Supervisory Board')
+						lawAndRegulationModal();
 					});
 			// line
 			os.path("M"+(lawAndRegulationX-r3)+","+lawAndRegulationY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
@@ -358,13 +447,16 @@
 			// -------------------
 			var foreignAffairsX = abstraxMarginSide + rightOffset,
 				foreignAffairsY = (11*r2)+(5*marginBottom),
+				foreignAffairsModal = function() {
+					loadModal('Foreign Affairs Division','','');
+				},
 				foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						foreignAffairsModal();
 					}),
 				foreignAffairsText = os.text(foreignAffairsX,foreignAffairsY,'Foreign Affairs\nDivision')
 					.click(function() {
-						alert('Supervisory Board')
+						foreignAffairsModal();
 					});
 			os.path("M"+foreignAffairsX+","+(foreignAffairsY+r3)+"V"+(foreignAffairsY+r3+15)).attr({stroke:darkBlue});
 
@@ -374,13 +466,16 @@
 			// -------------------
 			var PRX = abstraxMarginSide + rightOffset,
 				PRY = (13*r2)+(6*marginBottom),
+				PRModal = function() {
+					loadModal('Public Relation Division','','');
+				},
 				PRCircle = os.circle(PRX, PRY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						PRModal();
 					}),
 				PRText = os.text(PRX,PRY,'Public Relation\nDivision')
 					.click(function() {
-						alert('Supervisory Board')
+						PRModal();
 					});
 			os.path("M"+PRX+","+(PRY+r3)+"V"+(PRY+r3+15)).attr({stroke:darkBlue});
 
@@ -390,13 +485,16 @@
 			// -------------------
 			var rndX = (2*abstraxMarginSide) + rightOffset,
 				rndY = (5*r2)+(2*marginBottom),
+				rndModal = function() {
+					loadModal('Research and Development Division','','');
+				},
 				rndCircle = os.circle(rndX, rndY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						rndModal();
 					}),
 				rndText = os.text(rndX,rndY,'Research and\nDevelopment\nDivision')
 					.click(function() {
-						alert('Supervisory Board')
+						rndModal();
 					});
 
 			os.path("M"+rndX+","+(rndY+r3)+"V"+(rndY+r3+15)).attr({stroke:darkBlue});
@@ -407,13 +505,16 @@
 			// -------------------
 			var techX = (2*abstraxMarginSide) + rightOffset,
 				techY = (7*r2)+(3*marginBottom),
+				techModal = function() {
+					loadModal('Technology Division','','');
+				},
 				techCircle = os.circle(techX, techY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						techModal();
 					}),
 				techText = os.text(techX,techY,'Technology\nDivision')
 					.click(function() {
-						alert('Supervisory Board')
+						techModal();
 					});
 
 			os.path("M"+techX+","+(techY+r3)+"V"+(techY+r3+15)).attr({stroke:darkBlue});
@@ -424,13 +525,16 @@
 			// -------------------
 			var rdcX = (2*abstraxMarginSide) + rightOffset,
 				rdcY = (11*r2)+(5*marginBottom),
+				rdcModal = function() {
+					loadModal('Regional Development Compartment','','');
+				},
 				rdcCircle = os.circle(rdcX, rdcY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						rdcModal();
 					}),
 				rdcText = os.text(rdcX,rdcY,'Regional\nDevelopment\nCompartment')
 					.click(function() {
-						alert('Supervisory Board')
+						rdcModal();
 					});
 			os.path("M"+rdcX+","+(rdcY+r3)+"V"+(rdcY+r3+15)).attr({stroke:darkBlue});
 
@@ -440,13 +544,16 @@
 			// -------------------
 			var shariaX = (2*abstraxMarginSide) + rightOffset,
 				shariaY = (13*r2)+(6*marginBottom),
+				shariaModal = function() {
+					loadModal('Sharia Banking Compartment','','');
+				},
 				shariaCircle = os.circle(shariaX, shariaY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						shariaModal();
 					}),
 				shariaText = os.text(shariaX,shariaY,'Sharia\nBanking\nCompartment')
 					.click(function() {
-						alert('Supervisory Board')
+						shariaModal();
 					});
 			os.path("M"+shariaX+","+(shariaY+r3)+"V"+(shariaY+r3+15)).attr({stroke:darkBlue});
 
@@ -456,13 +563,16 @@
 			// -------------------
 			var governanceX = (3*abstraxMarginSide) + rightOffset,
 				governanceY = (5*r2)+(2*marginBottom),
+				governanceModal = function() {
+					loadModal('Governance Division','','');
+				},
 				governanceCircle = os.circle(governanceX, governanceY, r3)
 					.click(function() {
-						alert('Supervisory Board')
+						governanceModal();
 					}),
 				governanceText = os.text(governanceX,governanceY,'Governance\nDivision')
 					.click(function() {
-						alert('Supervisory Board')
+						governanceModal();
 					});
 
 			os.path("M"+governanceX+","+(governanceY+r3)+"V"+(governanceY+r3+15)).attr({stroke:darkBlue});
@@ -472,7 +582,7 @@
 			var lingBiruMudaBesar = os.set();
 			lingBiruMudaBesar.push(
 				secretaryGeneralCircle,
-				trasurerCircle,
+				treasurerCircle,
 				viceChairman1Circle,
 				viceChairman2Circle,
 				viceChairman3Circle,
@@ -485,7 +595,7 @@
 			var txtBiruMudaBesar = os.set();
 			txtBiruMudaBesar.push(
 				secretaryGeneralText,
-				trasurerText,
+				treasurerText,
 				viceChairman1Text,
 				viceChairman2Text,
 				viceChairman3Text,
@@ -497,7 +607,7 @@
 
 			var lingBiruMudaKecil = os.set();
 			lingBiruMudaKecil.push(
-				secreatariatCircle,
+				secretariatCircle,
 				orgDivisionCircle,
 				acadHRDCircle,
 				lawAndRegulationCircle,
@@ -514,7 +624,7 @@
 
 			var txtBiruMudaKecil = os.set();
 			txtBiruMudaKecil.push(
-				secreatariatText,
+				secretariatText,
 				orgDivisionText,
 				acadHRDText,
 				lawAndRegulationText,
