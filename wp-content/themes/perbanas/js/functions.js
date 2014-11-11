@@ -283,3 +283,24 @@ function select2_init() {
         window.location.href = e.val;
     });
 }
+
+
+/**
+ * Memanggil Modal pada halaman 
+ * Who We Are dan Tentang Perbanas
+ * 
+ * @param  {string} title   [Judul Header Modal]
+ * @param  {string} content [Content di dalam Modal]
+ * @param  {string} link    [Link read more-nya]
+ * @return {object}         [Menampilkan Modal]
+ */
+function loadModal(title, content, link) {
+            
+    $('#modal-orgstruct .modal-header h4').html(title);
+    $('#modal-orgstruct .modal-body').html(content);
+    $('#modal-orgstruct .modal-footer a').attr('href', link);
+
+    $('#modal-orgstruct').modal();
+
+
+}
