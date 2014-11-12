@@ -2416,7 +2416,15 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     top: -60px; 
     visibility: hidden;
 }
+.modal-body {
+    color: #000000;
+    font-size: 14px;
+}
 
+.modal-body .content {
+    display: inline;
+    line-height: 1.6em;
+}
 /* TEST */
 .news .news-item .news-desc-top .desc{
     color: #262729 !important;
