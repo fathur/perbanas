@@ -432,7 +432,7 @@
                             <div class="modal-body"></div>
 
                             <div class="modal-footer">
-                                <a class="btn btn-default" target="__blank" href="#">Read More</a>
+                                <a class="btn btn-default" href="#">Read More</a>
                             </div>
                         </div>
                     </div>  
@@ -498,7 +498,7 @@
     var supervisoryBoardX = 150,
         supervisoryBoardY = 60 + topOffset,
         supervisoryBoardModal = function() {
-            loadModal('Dewan Penasihat','','/lingkup-kerja#supervisory-board');
+            loadModal('Dewan Penasihat','','/id/lingkup-kerja#supervisory-board');
         },
         supervisoryBoardCircle = os.circle(supervisoryBoardX, supervisoryBoardY, r1)
             .attr(darkBlueCircleAttr)
@@ -517,7 +517,7 @@
     var membersX = 60,
         membersY = 180 + topOffset,
         membersModal = function() {
-            loadModal('Anggota','Some Content here','/lingkup-kerja#members');
+            loadModal('Anggota','Some Content here','/id/lingkup-kerja#members');
         },
         membersCircle = os.circle(membersX, membersY, r1)
             .attr(darkBlueCircleAttr)
@@ -536,7 +536,7 @@
     var chairmanX = 240,
         chairmanY = 180 + topOffset,
         chairmanModal = function() {
-            loadModal('Ketua Umum','','/lingkup-kerja#chairman');
+            loadModal('Ketua Umum','','/id/lingkup-kerja#chairman');
         },
         chairmanCircle = os.circle(chairmanX, chairmanY, r1)
             .attr(darkBlueCircleAttr)
@@ -555,7 +555,7 @@
     var advisoryBoardX = 150,
         advisoryBoardY = 300 + topOffset,
         advisoryBoardModal = function() {
-            loadModal('Dewan Pengawas','','/lingkup-kerja#advisory-board');
+            loadModal('Dewan Pengawas','','/id/lingkup-kerja#advisory-board');
         },
         advisoryBoardCircle = os.circle(advisoryBoardX, advisoryBoardY, r1)
             .attr(darkBlueCircleAttr)
@@ -582,7 +582,7 @@
     var secretaryGeneralX = 0 + rightOffset,
         secretaryGeneralY = r2,
         secretaryModal = function() {
-            loadModal('Sekretaris Jenderal','','/lingkup-kerja#secretary-general');
+            loadModal('Sekretaris Jenderal','','/id/lingkup-kerja#secretary-general');
         },
         secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
             .click(function() {
@@ -605,7 +605,7 @@
     var treasurerX = 0 + rightOffset,
         treasurerY = (3*r2)+marginBottom,
         treasurerModal = function() {
-            loadModal('Bendahara','','/lingkup-kerja#treasurer');
+            loadModal('Bendahara','','/id/lingkup-kerja#treasurer');
         },
         treasurerCircle = os.circle(treasurerX, treasurerY, r2)
             .click(function() {
@@ -627,7 +627,7 @@
     var viceChairman1X = 0 + rightOffset,
         viceChairman1Y = (5*r2)+(2*marginBottom),
         viceChairman1Modal = function() {
-            loadModal('Wakil Ketua Umum 1','','/lingkup-kerja#vice-chairman-1');
+            loadModal('Wakil Ketua Umum 1','','/id/lingkup-kerja#vice-chairman-1');
         },
         viceChairman1Circle = os.circle(viceChairman1X, viceChairman1Y, r2)
             .click(function() {
@@ -654,7 +654,7 @@
     var viceChairman2X = 0 + rightOffset,
         viceChairman2Y = (7*r2)+(3*marginBottom),
         viceCHairman2Modal = function() {
-            loadModal('Wakil Ketua Umum 2','','/lingkup-kerja#vice-chairman-2');
+            loadModal('Wakil Ketua Umum 2','','/id/lingkup-kerja#vice-chairman-2');
         },
         viceChairman2Circle = os.circle(viceChairman2X, viceChairman2Y, r2)
             .click(function() {
@@ -678,7 +678,7 @@
     var viceChairman3X = 0 + rightOffset,
         viceChairman3Y = (9*r2)+(4*marginBottom),
         viceChairman3Modal = function() {
-            loadModal('Wakil Ketua Umum 3','','/lingkup-kerja#vice-chairman-3');
+            loadModal('Wakil Ketua Umum 3','','/id/lingkup-kerja#vice-chairman-3');
         },
         viceChairman3Circle = os.circle(viceChairman3X, viceChairman3Y, r2)
             .click(function() {
@@ -697,7 +697,7 @@
     var viceChairman4X = 0 + rightOffset,
         viceChairman4Y = (11*r2)+(5*marginBottom),
         viceChairman4Modal = function() {
-            loadModal('Wakil Ketua Umum 4','','/lingkup-kerja#vice-chairman-4');
+            loadModal('Wakil Ketua Umum 4','','/id/lingkup-kerja#vice-chairman-4');
         },
         viceChairman4Circle = os.circle(viceChairman4X, viceChairman4Y, r2)
             .click(function() {
@@ -721,7 +721,7 @@
     var viceChairman5X = 0 + rightOffset,
         viceChairman5Y = (13*r2)+(6*marginBottom),
         viceChairman5Modal = function() {
-            loadModal('Wakil Ketua Umum 5','','/lingkup-kerja#vice-chairman-5');
+            loadModal('Wakil Ketua Umum 5','','/id/lingkup-kerja#vice-chairman-5');
         },
         viceChairman5Circle = os.circle(viceChairman5X, viceChairman5Y, r2)
             .click(function() {
@@ -745,7 +745,7 @@
     var kmppX = 0 + rightOffset,
         kmppY = (15*r2)+(7*marginBottom),
         kmppModal = function() {
-            loadModal('KMPP','','/lingkup-kerja#kmpp');
+            loadModal('KMPP','','/id/lingkup-kerja#kmpp');
         },
         kmppCircle = os.circle(kmppX, kmppY, r2)
             .click(function() {
@@ -768,7 +768,7 @@
     var secretariatX = abstraxMarginSide + rightOffset,
         secretariatY = r2,
         secretariatModal = function() {
-            loadModal('Sekretariat','','/lingkup-kerja#secretariat');
+            loadModal('Sekretariat','','/id/lingkup-kerja#secretariat');
         },
         secretariatCircle = os.circle(secretariatX, secretariatY, r3)
             .click(function() {
@@ -788,7 +788,7 @@
     var orgDivisionX = abstraxMarginSide + rightOffset,
         orgDivisionY = (5*r2)+(2*marginBottom),
         orgDivisionModal = function() {
-            loadModal('Bidang Organisasi','','/lingkup-kerja#organization-division');
+            loadModal('Bidang Organisasi','','/id/lingkup-kerja#organization-division');
         },
         orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
             .click(function() {
@@ -807,7 +807,7 @@
     var acadHRDX = abstraxMarginSide + rightOffset,
         acadHRDY = (7*r2)+(3*marginBottom),
         acadHRDModal = function() {
-            loadModal('Bidang Pendidikan & Pengembangan SDM','','/lingkup-kerja#academic-and-human-resource-division');
+            loadModal('Bidang Pendidikan & Pengembangan SDM','','/id/lingkup-kerja#academic-and-human-resource-division');
         },
         acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
             .click(function() {
@@ -826,7 +826,7 @@
     var lawAndRegulationX = abstraxMarginSide + rightOffset,
         lawAndRegulationY = (9*r2)+(4*marginBottom),
         lawAndRegulationModal = function() {
-            loadModal('Bidang Hukum','','/lingkup-kerja#law-and-regulation-division');
+            loadModal('Bidang Hukum','','/id/lingkup-kerja#law-and-regulation-division');
         },
         lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
             .click(function() {
@@ -845,7 +845,7 @@
     var foreignAffairsX = abstraxMarginSide + rightOffset,
         foreignAffairsY = (11*r2)+(5*marginBottom),
         foreignAffairsModal = function() {
-            loadModal('Bidang Luar Negeri','','/lingkup-kerja#foreign-affairs-division');
+            loadModal('Bidang Luar Negeri','','/id/lingkup-kerja#foreign-affairs-division');
         },
         foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
             .click(function() {
@@ -864,7 +864,7 @@
     var PRX = abstraxMarginSide + rightOffset,
         PRY = (13*r2)+(6*marginBottom),
         PRModal = function() {
-            loadModal('Bidang Hubungan Masyarakat','','/lingkup-kerja#pr-division');
+            loadModal('Bidang Hubungan Masyarakat','','/id/lingkup-kerja#pr-division');
         },
         PRCircle = os.circle(PRX, PRY, r3)
             .click(function() {
@@ -883,7 +883,7 @@
     var rndX = (2*abstraxMarginSide) + rightOffset,
         rndY = (5*r2)+(2*marginBottom),
         rndModal = function() {
-            loadModal('Bidang Pengkajian & Pengembangan','','/lingkup-kerja#rnd-divsion');
+            loadModal('Bidang Pengkajian & Pengembangan','','/id/lingkup-kerja#rnd-divsion');
         },
         rndCircle = os.circle(rndX, rndY, r3)
             .click(function() {
@@ -903,7 +903,7 @@
     var techX = (2*abstraxMarginSide) + rightOffset,
         techY = (7*r2)+(3*marginBottom),
         techModal = function() {
-            loadModal('Bidang Teknologi','','/lingkup-kerja#tech-division');
+            loadModal('Bidang Teknologi','','/id/lingkup-kerja#tech-division');
         },
         techCircle = os.circle(techX, techY, r3)
             .click(function() {
@@ -923,7 +923,7 @@
     var rdcX = (2*abstraxMarginSide) + rightOffset,
         rdcY = (11*r2)+(5*marginBottom),
         rdcModal = function() {
-            loadModal('Kompartemen Pembangunan Daerah','','/lingkup-kerja#regional-development-compartment');
+            loadModal('Kompartemen Pembangunan Daerah','','/id/lingkup-kerja#regional-development-compartment');
         },
         rdcCircle = os.circle(rdcX, rdcY, r3)
             .click(function() {
@@ -942,7 +942,7 @@
     var shariaX = (2*abstraxMarginSide) + rightOffset,
         shariaY = (13*r2)+(6*marginBottom),
         shariaModal = function() {
-            loadModal('Kompartemen Perbankan Syariah','','/lingkup-kerja#sharia-banking-compartment');
+            loadModal('Kompartemen Perbankan Syariah','','/id/lingkup-kerja#sharia-banking-compartment');
         },
         shariaCircle = os.circle(shariaX, shariaY, r3)
             .click(function() {
@@ -961,7 +961,7 @@
     var governanceX = (3*abstraxMarginSide) + rightOffset,
         governanceY = (5*r2)+(2*marginBottom),
         governanceModal = function() {
-            loadModal('Bidang Governance','','/lingkup-kerja#governance-division');
+            loadModal('Bidang Governance','','/id/lingkup-kerja#governance-division');
         },
         governanceCircle = os.circle(governanceX, governanceY, r3)
             .click(function() {

@@ -442,7 +442,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <a class="btn btn-default" target="__blank" href="#">Read More</a>
+                                <a class="btn btn-default" href="#">Read More</a>
                             </div>
                         </div>
                     </div>  
@@ -506,7 +506,7 @@
     var supervisoryBoardX = 150,
         supervisoryBoardY = 60 + topOffset,
         supervisoryBoardModal = function() {
-            loadModal('Supervisory Board','Some Content here','/how-we-work#supervisory-board');
+            loadModal('Supervisory Board','Some Content here','/en/how-we-work#supervisory-board');
         },
         supervisoryBoardCircle = os.circle(supervisoryBoardX, supervisoryBoardY, r1)
             .attr(darkBlueCircleAttr)
@@ -525,7 +525,7 @@
     var membersX = 60,
         membersY = 180 + topOffset,
         membersModal = function() {
-            loadModal('Members','Some Content here','/how-we-work#members');
+            loadModal('Members','Some Content here','/en/how-we-work#members');
         },
         membersCircle = os.circle(membersX, membersY, r1)
             .attr(darkBlueCircleAttr)
@@ -544,7 +544,7 @@
     var chairmanX = 240,
         chairmanY = 180 + topOffset,
         chairmanModal = function() {
-            loadModal('Chairman','','/how-we-work#chairman');
+            loadModal('Chairman','','/en/how-we-work#chairman');
         },
         chairmanCircle = os.circle(chairmanX, chairmanY, r1)
             .attr(darkBlueCircleAttr)
@@ -563,7 +563,7 @@
     var advisoryBoardX = 150,
         advisoryBoardY = 300 + topOffset,
         advisoryBoardModal = function() {
-            loadModal('Advisory Board','','/how-we-work#advisory-board');
+            loadModal('Advisory Board','','/en/how-we-work#advisory-board');
         },
         advisoryBoardCircle = os.circle(advisoryBoardX, advisoryBoardY, r1)
             .attr(darkBlueCircleAttr)
@@ -590,7 +590,7 @@
     var secretaryGeneralX = 0 + rightOffset,
         secretaryGeneralY = r2,
         secretaryModal = function() {
-            loadModal('Secretary General','Key Initiatives: 1. Support the Work Programs of all Divisions.','/how-we-work#secretary-general');
+            loadModal('Secretary General','Key Initiatives: 1. Support the Work Programs of all Divisions.','/en/how-we-work#secretary-general');
         },
         secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
             .click(function() {
@@ -613,7 +613,7 @@
     var treasurerX = 0 + rightOffset,
         treasurerY = (3*r2)+marginBottom,
         treasurerModal = function() {
-            loadModal('Trasurer','Key Initiatives: 1. Consolidation of regional financial statements.','/how-we-work#treasurer');
+            loadModal('Trasurer','Key Initiatives: 1. Consolidation of regional financial statements.','/en/how-we-work#treasurer');
         },
         treasurerCircle = os.circle(treasurerX, treasurerY, r2)
             .click(function() {
@@ -635,7 +635,7 @@
     var viceChairman1X = 0 + rightOffset,
         viceChairman1Y = (5*r2)+(2*marginBottom),
         viceChairman1Modal = function() {
-            loadModal('Vice Chairman 1','','/how-we-work#vice-chairman-1');
+            loadModal('Vice Chairman 1','','/en/how-we-work#vice-chairman-1');
         },
         viceChairman1Circle = os.circle(viceChairman1X, viceChairman1Y, r2)
             .click(function() {
@@ -662,7 +662,7 @@
     var viceChairman2X = 0 + rightOffset,
         viceChairman2Y = (7*r2)+(3*marginBottom),
         viceCHairman2Modal = function() {
-            loadModal('Vice Chairman 2','','/how-we-work#vice-chairman-2');
+            loadModal('Vice Chairman 2','','/en/how-we-work#vice-chairman-2');
         },
         viceChairman2Circle = os.circle(viceChairman2X, viceChairman2Y, r2)
             .click(function() {
@@ -686,7 +686,7 @@
     var viceChairman3X = 0 + rightOffset,
         viceChairman3Y = (9*r2)+(4*marginBottom),
         viceChairman3Modal = function() {
-            loadModal('Vice Chairman 3','','/how-we-work#vice-chairman-3');
+            loadModal('Vice Chairman 3','','/en/how-we-work#vice-chairman-3');
         },
         viceChairman3Circle = os.circle(viceChairman3X, viceChairman3Y, r2)
             .click(function() {
@@ -705,7 +705,7 @@
     var viceChairman4X = 0 + rightOffset,
         viceChairman4Y = (11*r2)+(5*marginBottom),
         viceChairman4Modal = function() {
-            loadModal('Vice Chairman 4','','/how-we-work#vice-chairman-4');
+            loadModal('Vice Chairman 4','','/en/how-we-work#vice-chairman-4');
         },
         viceChairman4Circle = os.circle(viceChairman4X, viceChairman4Y, r2)
             .click(function() {
@@ -729,7 +729,7 @@
     var viceChairman5X = 0 + rightOffset,
         viceChairman5Y = (13*r2)+(6*marginBottom),
         viceChairman5Modal = function() {
-            loadModal('Vice Chairman 5','','/how-we-work#vice-chairman-5');
+            loadModal('Vice Chairman 5','','/en/how-we-work#vice-chairman-5');
         },
         viceChairman5Circle = os.circle(viceChairman5X, viceChairman5Y, r2)
             .click(function() {
@@ -753,7 +753,7 @@
     var kmppX = 0 + rightOffset,
         kmppY = (15*r2)+(7*marginBottom),
         kmppModal = function() {
-            loadModal('KMPP','','/how-we-work#kmpp');
+            loadModal('KMPP','','/en/how-we-work#kmpp');
         },
         kmppCircle = os.circle(kmppX, kmppY, r2)
             .click(function() {
@@ -776,7 +776,7 @@
     var secretariatX = abstraxMarginSide + rightOffset,
         secretariatY = r2,
         secretariatModal = function() {
-            loadModal('Secretariat','','/how-we-work#secretariat');
+            loadModal('Secretariat','','/en/how-we-work#secretariat');
         },
         secretariatCircle = os.circle(secretariatX, secretariatY, r3)
             .click(function() {
@@ -796,7 +796,7 @@
     var orgDivisionX = abstraxMarginSide + rightOffset,
         orgDivisionY = (5*r2)+(2*marginBottom),
         orgDivisionModal = function() {
-            loadModal('Organization Division','Key Initiatives: 1. Discourse to unify all regional banking activities into one organization which is Perbanas.','/how-we-work#organization-division');
+            loadModal('Organization Division','Key Initiatives: 1. Discourse to unify all regional banking activities into one organization which is Perbanas.','/en/how-we-work#organization-division');
         },
         orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
             .click(function() {
@@ -815,7 +815,7 @@
     var acadHRDX = abstraxMarginSide + rightOffset,
         acadHRDY = (7*r2)+(3*marginBottom),
         acadHRDModal = function() {
-            loadModal('Academic and Human Resource Division','Key Initiatives: 1. Optimize the \'link and match\' process with Perbanas Institute and STIE Perbanas Surabaya.','/how-we-work#academic-and-human-resource-division');
+            loadModal('Academic and Human Resource Division','Key Initiatives: 1. Optimize the \'link and match\' process with Perbanas Institute and STIE Perbanas Surabaya.','/en/how-we-work#academic-and-human-resource-division');
         },
         acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
             .click(function() {
@@ -834,7 +834,7 @@
     var lawAndRegulationX = abstraxMarginSide + rightOffset,
         lawAndRegulationY = (9*r2)+(4*marginBottom),
         lawAndRegulationModal = function() {
-            loadModal('Law and Regulation Division','Key Initiative: 1. Increase legal protection for the banking industry by establishing Perbanas Legal Working Commission and synergize with BI initiatives.','/how-we-work#law-and-regulation-division');
+            loadModal('Law and Regulation Division','Key Initiative: 1. Increase legal protection for the banking industry by establishing Perbanas Legal Working Commission and synergize with BI initiatives.','/en/how-we-work#law-and-regulation-division');
         },
         lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
             .click(function() {
@@ -853,7 +853,7 @@
     var foreignAffairsX = abstraxMarginSide + rightOffset,
         foreignAffairsY = (11*r2)+(5*marginBottom),
         foreignAffairsModal = function() {
-            loadModal('Foreign Affairs Division','Key Initiatives: 1. Establishment of "ASEAN One Integration" Committee','/how-we-work#foreign-affairs-division');
+            loadModal('Foreign Affairs Division','Key Initiatives: 1. Establishment of "ASEAN One Integration" Committee','/en/how-we-work#foreign-affairs-division');
         },
         foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
             .click(function() {
@@ -872,7 +872,7 @@
     var PRX = abstraxMarginSide + rightOffset,
         PRY = (13*r2)+(6*marginBottom),
         PRModal = function() {
-            loadModal('Public Relation Division','Key Initiatives: 1. Maintain the image and existence of Perbanas as an organization and become a reliable partner to stakeholders.','/how-we-work#pr-division');
+            loadModal('Public Relation Division','Key Initiatives: 1. Maintain the image and existence of Perbanas as an organization and become a reliable partner to stakeholders.','/en/how-we-work#pr-division');
         },
         PRCircle = os.circle(PRX, PRY, r3)
             .click(function() {
@@ -891,7 +891,7 @@
     var rndX = (2*abstraxMarginSide) + rightOffset,
         rndY = (5*r2)+(2*marginBottom),
         rndModal = function() {
-            loadModal('Research and Development Division','Key Initiatives: 1. Routine FGD (hot issue) once a month','/how-we-work#rnd-division');
+            loadModal('Research and Development Division','Key Initiatives: 1. Routine FGD (hot issue) once a month','/en/how-we-work#rnd-division');
         },
         rndCircle = os.circle(rndX, rndY, r3)
             .click(function() {
@@ -911,7 +911,7 @@
     var techX = (2*abstraxMarginSide) + rightOffset,
         techY = (7*r2)+(3*marginBottom),
         techModal = function() {
-            loadModal('Technology Division','Key Initiatives: 1. Formulate a database for the Indonesian banking industry.','/how-we-work#tech-division');
+            loadModal('Technology Division','Key Initiatives: 1. Formulate a database for the Indonesian banking industry.','/en/how-we-work#tech-division');
         },
         techCircle = os.circle(techX, techY, r3)
             .click(function() {
@@ -931,7 +931,7 @@
     var rdcX = (2*abstraxMarginSide) + rightOffset,
         rdcY = (11*r2)+(5*marginBottom),
         rdcModal = function() {
-            loadModal('Regional Development Compartment','','/how-we-work#regional-development-compartment');
+            loadModal('Regional Development Compartment','','/en/how-we-work#regional-development-compartment');
         },
         rdcCircle = os.circle(rdcX, rdcY, r3)
             .click(function() {
@@ -950,7 +950,7 @@
     var shariaX = (2*abstraxMarginSide) + rightOffset,
         shariaY = (13*r2)+(6*marginBottom),
         shariaModal = function() {
-            loadModal('Sharia Banking Compartment','Key Initiatives: 1. Product Manager Forum.','/how-we-work#sharia-banking-compartment');
+            loadModal('Sharia Banking Compartment','Key Initiatives: 1. Product Manager Forum.','/en/how-we-work#sharia-banking-compartment');
         },
         shariaCircle = os.circle(shariaX, shariaY, r3)
             .click(function() {
@@ -969,7 +969,7 @@
     var governanceX = (3*abstraxMarginSide) + rightOffset,
         governanceY = (5*r2)+(2*marginBottom),
         governanceModal = function() {
-            loadModal('Governance Division','Key Initiatives: 1. Socialization on GCG in cooperation with KNKG or BI (3 x a year).','/how-we-work#governance-division');
+            loadModal('Governance Division','Key Initiatives: 1. Socialization on GCG in cooperation with KNKG or BI (3 x a year).','/en/how-we-work#governance-division');
         },
         governanceCircle = os.circle(governanceX, governanceY, r3)
             .click(function() {
