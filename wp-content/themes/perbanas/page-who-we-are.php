@@ -454,594 +454,594 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/raphael-min.js'; ?>"></script>
 <script>
   window.onload = function() {
-            var os = new Raphael('orgstruct','848','1338');
+    var os = new Raphael('orgstruct','848','1338');
 
-            // Set variabel
-            var r1  = 60, // radius circle 1
-                r2  = 55, // radius circle 2
-                r3  = 48,
+    // Set variabel
+    var r1  = 60, // radius circle 1
+        r2  = 55, // radius circle 2
+        r3  = 48,
 
-                darkBlue    = '#004987',
-                lightBlue   = '#009CDF',
+        darkBlue    = '#004987',
+        lightBlue   = '#009CDF',
 
-                rightOffset         = 420,
-                topOffset           = 130,
-                abstraxMarginSide   = 120,
-                marginBottom        = 20,
-                
-                darkBlueCircleAttr = {
-                    fill: darkBlue,
-                    stroke: darkBlue,
-                    cursor: 'pointer'
-                },
-                darkBlueTextAttr = {
-                    fill: '#FFF',
-                    'font-size': 14,
-                    cursor: 'pointer'
-                },
-
-                lightBlueCircleAttr = {
-                    fill: lightBlue,
-                    stroke: lightBlue,
-                    cursor: 'pointer'
-                },
-                lightBlueTextAttr = {
-                    fill: '#FFF',
-                    'font-size': 14,
-                    cursor: 'pointer'
-                },
-                lightBlueSmallTextAttr = {
-                    fill: '#FFF',
-                    'font-size': 12,
-                    cursor: 'pointer'
-                };
-
+        rightOffset         = 420,
+        topOffset           = 130,
+        abstraxMarginSide   = 120,
+        marginBottom        = 20,
         
+        darkBlueCircleAttr = {
+            fill: darkBlue,
+            stroke: darkBlue,
+            cursor: 'pointer'
+        },
+        darkBlueTextAttr = {
+            fill: '#FFF',
+            'font-size': 14,
+            cursor: 'pointer'
+        },
 
-            // -------------------
-            // Supervisory Board
-            // -------------------
-            var supervisoryBoardX = 150,
-                supervisoryBoardY = 60 + topOffset,
-                supervisoryBoardModal = function() {
-                    loadModal('Supervisory Board','Some Content here','/how-we-work#supervisory-board');
-                },
-                supervisoryBoardCircle = os.circle(supervisoryBoardX, supervisoryBoardY, r1)
-                    .attr(darkBlueCircleAttr)
-                    .click(function() {
-                        supervisoryBoardModal();
-                    }),
-                supervisoryBoardText = os.text(supervisoryBoardX,supervisoryBoardY,'Supervisory \n Board')
-                    .attr(darkBlueTextAttr)
-                    .click(function() {
-                        supervisoryBoardModal();
-                    });
-
-            // -------------------
-            // Members
-            // -------------------
-            var membersX = 60,
-                membersY = 180 + topOffset,
-                membersModal = function() {
-                    loadModal('Members','Some Content here','/how-we-work#members');
-                },
-                membersCircle = os.circle(membersX, membersY, r1)
-                    .attr(darkBlueCircleAttr)
-                    .click(function() {
-                        membersModal();
-                    }),
-                membersText = os.text(membersX,membersY,'Members')
-                    .attr(darkBlueTextAttr)
-                    .click(function() {
-                        membersModal();
-                    });
-
-            // -------------------
-            // Chairman
-            // -------------------
-            var chairmanX = 240,
-                chairmanY = 180 + topOffset,
-                chairmanModal = function() {
-                    loadModal('Chairman','','/how-we-work#chairman');
-                },
-                chairmanCircle = os.circle(chairmanX, chairmanY, r1)
-                    .attr(darkBlueCircleAttr)
-                    .click(function() {
-                        chairmanModal();
-                    }),
-                chairmanText = os.text(chairmanX,chairmanY,'Chairman')
-                    .attr(darkBlueTextAttr)
-                    .click(function() {
-                        chairmanModal();
-                    });
-
-            // -------------------
-            // Advisory Board
-            // -------------------
-            var advisoryBoardX = 150,
-                advisoryBoardY = 300 + topOffset,
-                advisoryBoardModal = function() {
-                    loadModal('Advisory Board','','/how-we-work#advisory-board');
-                },
-                advisoryBoardCircle = os.circle(advisoryBoardX, advisoryBoardY, r1)
-                    .attr(darkBlueCircleAttr)
-                    .click(function() {
-                        advisoryBoardModal();
-                    }),
-                advisoryBoardText = os.text(advisoryBoardX,advisoryBoardY,'Advisory \n Board')
-                    .attr(darkBlueTextAttr)
-                    .click(function() {
-                        advisoryBoardModal();
-                    });
-
-
-            // Line Members to chairman
-            os.path("M"+(2*r1)+","+membersY+"H"+(chairmanX-membersX)).attr({stroke:darkBlue});
-            os.path("M"+supervisoryBoardX+","+(supervisoryBoardY+r1)+"V"+(advisoryBoardY-r1)).attr({stroke:darkBlue});
-            os.path("M"+(chairmanX+r1)+","+chairmanY+"H"+( (5*r1)+15 ));
+        lightBlueCircleAttr = {
+            fill: lightBlue,
+            stroke: lightBlue,
+            cursor: 'pointer'
+        },
+        lightBlueTextAttr = {
+            fill: '#FFF',
+            'font-size': 14,
+            cursor: 'pointer'
+        },
+        lightBlueSmallTextAttr = {
+            fill: '#FFF',
+            'font-size': 12,
+            cursor: 'pointer'
+        };
 
 
 
-            // -------------------
-            // Secretary General
-            // -------------------
-            var secretaryGeneralX = 0 + rightOffset,
-                secretaryGeneralY = r2,
-                secretaryModal = function() {
-                    loadModal('Secretary General','','/how-we-work#secretary-general');
-                },
-                secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
-                    .click(function() {
-                        secretaryModal();
-                    }),
-                secretaryGeneralText = os.text(secretaryGeneralX,secretaryGeneralY,'Secretary \n General')
-                    .click(function() {
-                        secretaryModal();
-                    });
-            // line
-            os.path("M"+(secretaryGeneralX-r2)+","+secretaryGeneralY+
-                    "H"+(rightOffset-r2-50)+
-                    "V"+( (15*r2)+(7*marginBottom) ))
-                .attr({stroke:darkBlue});
+    // -------------------
+    // Supervisory Board
+    // -------------------
+    var supervisoryBoardX = 150,
+        supervisoryBoardY = 60 + topOffset,
+        supervisoryBoardModal = function() {
+            loadModal('Supervisory Board','Some Content here','/how-we-work#supervisory-board');
+        },
+        supervisoryBoardCircle = os.circle(supervisoryBoardX, supervisoryBoardY, r1)
+            .attr(darkBlueCircleAttr)
+            .click(function() {
+                supervisoryBoardModal();
+            }),
+        supervisoryBoardText = os.text(supervisoryBoardX,supervisoryBoardY,'Supervisory \n Board')
+            .attr(darkBlueTextAttr)
+            .click(function() {
+                supervisoryBoardModal();
+            });
+
+    // -------------------
+    // Members
+    // -------------------
+    var membersX = 60,
+        membersY = 180 + topOffset,
+        membersModal = function() {
+            loadModal('Members','Some Content here','/how-we-work#members');
+        },
+        membersCircle = os.circle(membersX, membersY, r1)
+            .attr(darkBlueCircleAttr)
+            .click(function() {
+                membersModal();
+            }),
+        membersText = os.text(membersX,membersY,'Members')
+            .attr(darkBlueTextAttr)
+            .click(function() {
+                membersModal();
+            });
+
+    // -------------------
+    // Chairman
+    // -------------------
+    var chairmanX = 240,
+        chairmanY = 180 + topOffset,
+        chairmanModal = function() {
+            loadModal('Chairman','','/how-we-work#chairman');
+        },
+        chairmanCircle = os.circle(chairmanX, chairmanY, r1)
+            .attr(darkBlueCircleAttr)
+            .click(function() {
+                chairmanModal();
+            }),
+        chairmanText = os.text(chairmanX,chairmanY,'Chairman')
+            .attr(darkBlueTextAttr)
+            .click(function() {
+                chairmanModal();
+            });
+
+    // -------------------
+    // Advisory Board
+    // -------------------
+    var advisoryBoardX = 150,
+        advisoryBoardY = 300 + topOffset,
+        advisoryBoardModal = function() {
+            loadModal('Advisory Board','','/how-we-work#advisory-board');
+        },
+        advisoryBoardCircle = os.circle(advisoryBoardX, advisoryBoardY, r1)
+            .attr(darkBlueCircleAttr)
+            .click(function() {
+                advisoryBoardModal();
+            }),
+        advisoryBoardText = os.text(advisoryBoardX,advisoryBoardY,'Advisory \n Board')
+            .attr(darkBlueTextAttr)
+            .click(function() {
+                advisoryBoardModal();
+            });
 
 
-            // -------------------
-            // Treasurer
-            // -------------------
-            var treasurerX = 0 + rightOffset,
-                treasurerY = (3*r2)+marginBottom,
-                treasurerModal = function() {
-                    loadModal('Trasurer','','/how-we-work#treasurer');
-                },
-                treasurerCircle = os.circle(treasurerX, treasurerY, r2)
-                    .click(function() {
-                        treasurerModal();
-                    }),
-                treasurerText = os.text(treasurerX,treasurerY,'Treasurer')
-                    .click(function() {
-                        treasurerModal();
-                    });
-            // line
-            os.path("M"+(treasurerX-r2)+","+treasurerY+
-                    "H"+(rightOffset-r2-50))
-                .attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Vice Chairman 1
-            // -------------------
-            var viceChairman1X = 0 + rightOffset,
-                viceChairman1Y = (5*r2)+(2*marginBottom),
-                viceChairman1Modal = function() {
-                    loadModal('Vice Chairman 1','','/how-we-work#vice-chairman-1');
-                },
-                viceChairman1Circle = os.circle(viceChairman1X, viceChairman1Y, r2)
-                    .click(function() {
-                        viceChairman1Modal();
-                    }),
-                viceChairman1Text = os.text(viceChairman1X,viceChairman1Y,'Vice \n Chairman 1')
-                    .click(function() {
-                        viceChairman1Modal();
-                    });
-            // line
-            os.path("M"+(viceChairman1X-r2)+","+viceChairman1Y+
-                    "H"+(rightOffset-r2-25)+
-                    "V"+((13*r2)+(6*marginBottom)))
-                .attr({stroke:darkBlue});
-            os.path("M"+(viceChairman1X+r2)+","+viceChairman1Y+
-                    "H"+(viceChairman1X+r2+7)+
-                    "V"+(viceChairman1Y+r3+15)+
-                    "H"+((3*abstraxMarginSide) + rightOffset))
-                .attr({stroke:darkBlue});
-
-            // -------------------
-            // Vice Chairman 2
-            // -------------------
-            var viceChairman2X = 0 + rightOffset,
-                viceChairman2Y = (7*r2)+(3*marginBottom),
-                viceCHairman2Modal = function() {
-                    loadModal('Vice Chairman 2','','/how-we-work#vice-chairman-2');
-                },
-                viceChairman2Circle = os.circle(viceChairman2X, viceChairman2Y, r2)
-                    .click(function() {
-                        viceCHairman2Modal();
-                    }),
-                viceChairman2Text = os.text(viceChairman2X,viceChairman2Y,'Vice \n Chairman 2')
-                    .click(function() {
-                        viceCHairman2Modal();
-                    });
-            // line
-            os.path("M"+(viceChairman2X-r2)+","+viceChairman2Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
-            os.path("M"+(viceChairman2X+r2)+","+viceChairman2Y+
-                    "H"+(viceChairman2X+r2+7)+
-                    "V"+(viceChairman2Y+r3+15)+
-                    "H"+((2*abstraxMarginSide) + rightOffset))
-                .attr({stroke:darkBlue});
-
-            // -------------------
-            // Vice Chairman 3
-            // -------------------
-            var viceChairman3X = 0 + rightOffset,
-                viceChairman3Y = (9*r2)+(4*marginBottom),
-                viceChairman3Modal = function() {
-                    loadModal('Vice Chairman 3','','/how-we-work#vice-chairman-3');
-                },
-                viceChairman3Circle = os.circle(viceChairman3X, viceChairman3Y, r2)
-                    .click(function() {
-                        viceChairman3Modal();
-                    }),
-                viceChairman3Text = os.text(viceChairman3X,viceChairman3Y,'Vice \n Chairman 3')
-                    .click(function() {
-                        viceChairman3Modal();
-                    });
-            // line
-            os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
-
-            // -------------------
-            // Vice Chairman 4
-            // -------------------
-            var viceChairman4X = 0 + rightOffset,
-                viceChairman4Y = (11*r2)+(5*marginBottom),
-                viceChairman4Modal = function() {
-                    loadModal('Vice Chairman 4','','/how-we-work#vice-chairman-4');
-                },
-                viceChairman4Circle = os.circle(viceChairman4X, viceChairman4Y, r2)
-                    .click(function() {
-                        viceChairman4Modal();
-                    }),
-                viceChairman4Text = os.text(viceChairman4X,viceChairman4Y,'Vice \n Chairman 4')
-                    .click(function() {
-                        viceChairman4Modal();
-                    });
-            // line
-            os.path("M"+(viceChairman4X-r2)+","+viceChairman4Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
-            os.path("M"+(viceChairman4X+r2)+","+viceChairman4Y+
-                    "H"+(viceChairman4X+r2+7)+
-                    "V"+(viceChairman4Y+r3+15)+
-                    "H"+((2*abstraxMarginSide) + rightOffset))
-                .attr({stroke:darkBlue});
-
-            // -------------------
-            // Vice Chairman 5
-            // -------------------
-            var viceChairman5X = 0 + rightOffset,
-                viceChairman5Y = (13*r2)+(6*marginBottom),
-                viceChairman5Modal = function() {
-                    loadModal('Vice Chairman 5','','/how-we-work#vice-chairman-5');
-                },
-                viceChairman5Circle = os.circle(viceChairman5X, viceChairman5Y, r2)
-                    .click(function() {
-                        viceChairman5Modal();
-                    }),
-                viceChairman5Text = os.text(viceChairman5X,viceChairman5Y,'Vice \n Chairman 5')
-                    .click(function() {
-                        viceChairman5Modal();
-                    });
-            // line
-            os.path("M"+(viceChairman5X-r2)+","+viceChairman5Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
-            os.path("M"+(viceChairman5X+r2)+","+viceChairman5Y+
-                    "H"+(viceChairman5X+r2+7)+
-                    "V"+(viceChairman5Y+r3+15)+
-                    "H"+((2*abstraxMarginSide) + rightOffset))
-                .attr({stroke:darkBlue});
-
-            // -------------------
-            // KMPP
-            // -------------------
-            var kmppX = 0 + rightOffset,
-                kmppY = (15*r2)+(7*marginBottom),
-                kmppModal = function() {
-                    loadModal('KMPP','','/how-we-work#kmpp');
-                },
-                kmppCircle = os.circle(kmppX, kmppY, r2)
-                    .click(function() {
-                        kmppModal();
-                    }),
-                kmppText = os.text(kmppX,kmppY,'KMPP')
-                    .click(function() {
-                        kmppModal();
-                    });
-            // line
-            os.path("M"+(kmppX-r2)+","+kmppY+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
-
-
-            
-
-
-            // -------------------
-            // Secretariat
-            // -------------------
-            var secretariatX = abstraxMarginSide + rightOffset,
-                secretariatY = r2,
-                secretariatModal = function() {
-                    loadModal('Secretariat','','/how-we-work#secretariat');
-                },
-                secretariatCircle = os.circle(secretariatX, secretariatY, r3)
-                    .click(function() {
-                        secretariatModal();
-                    }),
-                secretariatText = os.text(secretariatX,secretariatY,'Secretariat')
-                    .click(function() {
-                        secretariatModal();
-                    });
-            // line
-            os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Organization Division
-            // -------------------
-            var orgDivisionX = abstraxMarginSide + rightOffset,
-                orgDivisionY = (5*r2)+(2*marginBottom),
-                orgDivisionModal = function() {
-                    loadModal('Organization Division','','/how-we-work#organization-division');
-                },
-                orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
-                    .click(function() {
-                        orgDivisionModal();
-                    }),
-                orgDivisionText = os.text(orgDivisionX,orgDivisionY,'Organization\nDivision')
-                    .click(function() {
-                        orgDivisionModal();
-                    });
-
-            os.path("M"+orgDivisionX+","+(orgDivisionY+r3)+"V"+(orgDivisionY+r3+15)).attr({stroke:darkBlue});
-
-            // -------------------
-            // Academic and Human Resource Division
-            // -------------------
-            var acadHRDX = abstraxMarginSide + rightOffset,
-                acadHRDY = (7*r2)+(3*marginBottom),
-                acadHRDModal = function() {
-                    loadModal('Academic and Human Resource Division','','/how-we-work#academic-and-human-resource-division');
-                },
-                acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
-                    .click(function() {
-                        acadHRDModal();
-                    }),
-                acadHRDText = os.text(acadHRDX,acadHRDY,'Academic\nand\nHuman\nResource\nDivision')
-                    .click(function() {
-                        acadHRDModal();
-                    });
-            os.path("M"+acadHRDX+","+(acadHRDY+r3)+"V"+(acadHRDY+r3+15)).attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Law and Regulation Division
-            // -------------------
-            var lawAndRegulationX = abstraxMarginSide + rightOffset,
-                lawAndRegulationY = (9*r2)+(4*marginBottom),
-                lawAndRegulationModal = function() {
-                    loadModal('Law and Regulation Division','','/how-we-work#law-and-regulation-division');
-                },
-                lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
-                    .click(function() {
-                        lawAndRegulationModal();
-                    }),
-                lawAndRegulationText = os.text(lawAndRegulationX,lawAndRegulationY,'Law and\nRegulation\nDivision')
-                    .click(function() {
-                        lawAndRegulationModal();
-                    });
-            // line
-            os.path("M"+(lawAndRegulationX-r3)+","+lawAndRegulationY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
-
-            // -------------------
-            // Foreign Affairs Division
-            // -------------------
-            var foreignAffairsX = abstraxMarginSide + rightOffset,
-                foreignAffairsY = (11*r2)+(5*marginBottom),
-                foreignAffairsModal = function() {
-                    loadModal('Foreign Affairs Division','','/how-we-work#foreign-affairs-division');
-                },
-                foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
-                    .click(function() {
-                        foreignAffairsModal();
-                    }),
-                foreignAffairsText = os.text(foreignAffairsX,foreignAffairsY,'Foreign Affairs\nDivision')
-                    .click(function() {
-                        foreignAffairsModal();
-                    });
-            os.path("M"+foreignAffairsX+","+(foreignAffairsY+r3)+"V"+(foreignAffairsY+r3+15)).attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Public Relation Division
-            // -------------------
-            var PRX = abstraxMarginSide + rightOffset,
-                PRY = (13*r2)+(6*marginBottom),
-                PRModal = function() {
-                    loadModal('Public Relation Division','','/how-we-work#pr-division');
-                },
-                PRCircle = os.circle(PRX, PRY, r3)
-                    .click(function() {
-                        PRModal();
-                    }),
-                PRText = os.text(PRX,PRY,'Public Relation\nDivision')
-                    .click(function() {
-                        PRModal();
-                    });
-            os.path("M"+PRX+","+(PRY+r3)+"V"+(PRY+r3+15)).attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Research and Development Division
-            // -------------------
-            var rndX = (2*abstraxMarginSide) + rightOffset,
-                rndY = (5*r2)+(2*marginBottom),
-                rndModal = function() {
-                    loadModal('Research and Development Division','','/how-we-work#rnd-divsion');
-                },
-                rndCircle = os.circle(rndX, rndY, r3)
-                    .click(function() {
-                        rndModal();
-                    }),
-                rndText = os.text(rndX,rndY,'Research and\nDevelopment\nDivision')
-                    .click(function() {
-                        rndModal();
-                    });
-
-            os.path("M"+rndX+","+(rndY+r3)+"V"+(rndY+r3+15)).attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Technology Division
-            // -------------------
-            var techX = (2*abstraxMarginSide) + rightOffset,
-                techY = (7*r2)+(3*marginBottom),
-                techModal = function() {
-                    loadModal('Technology Division','','/how-we-work#tech-division');
-                },
-                techCircle = os.circle(techX, techY, r3)
-                    .click(function() {
-                        techModal();
-                    }),
-                techText = os.text(techX,techY,'Technology\nDivision')
-                    .click(function() {
-                        techModal();
-                    });
-
-            os.path("M"+techX+","+(techY+r3)+"V"+(techY+r3+15)).attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Regional\nDevelopment\nCompartment
-            // -------------------
-            var rdcX = (2*abstraxMarginSide) + rightOffset,
-                rdcY = (11*r2)+(5*marginBottom),
-                rdcModal = function() {
-                    loadModal('Regional Development Compartment','','/how-we-work#regional-development-compartment');
-                },
-                rdcCircle = os.circle(rdcX, rdcY, r3)
-                    .click(function() {
-                        rdcModal();
-                    }),
-                rdcText = os.text(rdcX,rdcY,'Regional\nDevelopment\nCompartment')
-                    .click(function() {
-                        rdcModal();
-                    });
-            os.path("M"+rdcX+","+(rdcY+r3)+"V"+(rdcY+r3+15)).attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Sharia Banking Compartment
-            // -------------------
-            var shariaX = (2*abstraxMarginSide) + rightOffset,
-                shariaY = (13*r2)+(6*marginBottom),
-                shariaModal = function() {
-                    loadModal('Sharia Banking Compartment','','/how-we-work#sharia-banking-compartment');
-                },
-                shariaCircle = os.circle(shariaX, shariaY, r3)
-                    .click(function() {
-                        shariaModal();
-                    }),
-                shariaText = os.text(shariaX,shariaY,'Sharia\nBanking\nCompartment')
-                    .click(function() {
-                        shariaModal();
-                    });
-            os.path("M"+shariaX+","+(shariaY+r3)+"V"+(shariaY+r3+15)).attr({stroke:darkBlue});
-
-
-            // -------------------
-            // Governance Division
-            // -------------------
-            var governanceX = (3*abstraxMarginSide) + rightOffset,
-                governanceY = (5*r2)+(2*marginBottom),
-                governanceModal = function() {
-                    loadModal('Governance Division','','/how-we-work#governance-division');
-                },
-                governanceCircle = os.circle(governanceX, governanceY, r3)
-                    .click(function() {
-                        governanceModal();
-                    }),
-                governanceText = os.text(governanceX,governanceY,'Governance\nDivision')
-                    .click(function() {
-                        governanceModal();
-                    });
-
-            os.path("M"+governanceX+","+(governanceY+r3)+"V"+(governanceY+r3+15)).attr({stroke:darkBlue});
+    // Line Members to chairman
+    os.path("M"+(2*r1)+","+membersY+"H"+(chairmanX-membersX)).attr({stroke:darkBlue});
+    os.path("M"+supervisoryBoardX+","+(supervisoryBoardY+r1)+"V"+(advisoryBoardY-r1)).attr({stroke:darkBlue});
+    os.path("M"+(chairmanX+r1)+","+chairmanY+"H"+( (5*r1)+15 ));
 
 
 
-            var lingBiruMudaBesar = os.set();
-            lingBiruMudaBesar.push(
-                secretaryGeneralCircle,
-                treasurerCircle,
-                viceChairman1Circle,
-                viceChairman2Circle,
-                viceChairman3Circle,
-                viceChairman4Circle,
-                viceChairman5Circle,
-                kmppCircle
-            );
-            lingBiruMudaBesar.attr(lightBlueCircleAttr);
+    // -------------------
+    // Secretary General
+    // -------------------
+    var secretaryGeneralX = 0 + rightOffset,
+        secretaryGeneralY = r2,
+        secretaryModal = function() {
+            loadModal('Secretary General','','/how-we-work#secretary-general');
+        },
+        secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
+            .click(function() {
+                secretaryModal();
+            }),
+        secretaryGeneralText = os.text(secretaryGeneralX,secretaryGeneralY,'Secretary \n General')
+            .click(function() {
+                secretaryModal();
+            });
+    // line
+    os.path("M"+(secretaryGeneralX-r2)+","+secretaryGeneralY+
+            "H"+(rightOffset-r2-50)+
+            "V"+( (15*r2)+(7*marginBottom) ))
+        .attr({stroke:darkBlue});
 
-            var txtBiruMudaBesar = os.set();
-            txtBiruMudaBesar.push(
-                secretaryGeneralText,
-                treasurerText,
-                viceChairman1Text,
-                viceChairman2Text,
-                viceChairman3Text,
-                viceChairman4Text,
-                viceChairman5Text,
-                kmppText
-            );
-            txtBiruMudaBesar.attr(lightBlueTextAttr);
 
-            var lingBiruMudaKecil = os.set();
-            lingBiruMudaKecil.push(
-                secretariatCircle,
-                orgDivisionCircle,
-                acadHRDCircle,
-                lawAndRegulationCircle,
-                foreignAffairsCircle,
-                PRCircle,
-                rndCircle,
-                techCircle,
-                rdcCircle,
-                shariaCircle,
-                governanceCircle
+    // -------------------
+    // Treasurer
+    // -------------------
+    var treasurerX = 0 + rightOffset,
+        treasurerY = (3*r2)+marginBottom,
+        treasurerModal = function() {
+            loadModal('Trasurer','','/how-we-work#treasurer');
+        },
+        treasurerCircle = os.circle(treasurerX, treasurerY, r2)
+            .click(function() {
+                treasurerModal();
+            }),
+        treasurerText = os.text(treasurerX,treasurerY,'Treasurer')
+            .click(function() {
+                treasurerModal();
+            });
+    // line
+    os.path("M"+(treasurerX-r2)+","+treasurerY+
+            "H"+(rightOffset-r2-50))
+        .attr({stroke:darkBlue});
 
-            );
-            lingBiruMudaKecil.attr(lightBlueCircleAttr);
 
-            var txtBiruMudaKecil = os.set();
-            txtBiruMudaKecil.push(
-                secretariatText,
-                orgDivisionText,
-                acadHRDText,
-                lawAndRegulationText,
-                foreignAffairsText,
-                PRText,
-                rndText,
-                techText,
-                rdcText,
-                shariaText,
-                governanceText
+    // -------------------
+    // Vice Chairman 1
+    // -------------------
+    var viceChairman1X = 0 + rightOffset,
+        viceChairman1Y = (5*r2)+(2*marginBottom),
+        viceChairman1Modal = function() {
+            loadModal('Vice Chairman 1','','/how-we-work#vice-chairman-1');
+        },
+        viceChairman1Circle = os.circle(viceChairman1X, viceChairman1Y, r2)
+            .click(function() {
+                viceChairman1Modal();
+            }),
+        viceChairman1Text = os.text(viceChairman1X,viceChairman1Y,'Vice \n Chairman 1')
+            .click(function() {
+                viceChairman1Modal();
+            });
+    // line
+    os.path("M"+(viceChairman1X-r2)+","+viceChairman1Y+
+            "H"+(rightOffset-r2-25)+
+            "V"+((13*r2)+(6*marginBottom)))
+        .attr({stroke:darkBlue});
+    os.path("M"+(viceChairman1X+r2)+","+viceChairman1Y+
+            "H"+(viceChairman1X+r2+7)+
+            "V"+(viceChairman1Y+r3+15)+
+            "H"+((3*abstraxMarginSide) + rightOffset))
+        .attr({stroke:darkBlue});
 
-            );
-            txtBiruMudaKecil.attr(lightBlueSmallTextAttr);
-        }
+    // -------------------
+    // Vice Chairman 2
+    // -------------------
+    var viceChairman2X = 0 + rightOffset,
+        viceChairman2Y = (7*r2)+(3*marginBottom),
+        viceCHairman2Modal = function() {
+            loadModal('Vice Chairman 2','','/how-we-work#vice-chairman-2');
+        },
+        viceChairman2Circle = os.circle(viceChairman2X, viceChairman2Y, r2)
+            .click(function() {
+                viceCHairman2Modal();
+            }),
+        viceChairman2Text = os.text(viceChairman2X,viceChairman2Y,'Vice \n Chairman 2')
+            .click(function() {
+                viceCHairman2Modal();
+            });
+    // line
+    os.path("M"+(viceChairman2X-r2)+","+viceChairman2Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman2X+r2)+","+viceChairman2Y+
+            "H"+(viceChairman2X+r2+7)+
+            "V"+(viceChairman2Y+r3+15)+
+            "H"+((2*abstraxMarginSide) + rightOffset))
+        .attr({stroke:darkBlue});
+
+    // -------------------
+    // Vice Chairman 3
+    // -------------------
+    var viceChairman3X = 0 + rightOffset,
+        viceChairman3Y = (9*r2)+(4*marginBottom),
+        viceChairman3Modal = function() {
+            loadModal('Vice Chairman 3','','/how-we-work#vice-chairman-3');
+        },
+        viceChairman3Circle = os.circle(viceChairman3X, viceChairman3Y, r2)
+            .click(function() {
+                viceChairman3Modal();
+            }),
+        viceChairman3Text = os.text(viceChairman3X,viceChairman3Y,'Vice \n Chairman 3')
+            .click(function() {
+                viceChairman3Modal();
+            });
+    // line
+    os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
+
+    // -------------------
+    // Vice Chairman 4
+    // -------------------
+    var viceChairman4X = 0 + rightOffset,
+        viceChairman4Y = (11*r2)+(5*marginBottom),
+        viceChairman4Modal = function() {
+            loadModal('Vice Chairman 4','','/how-we-work#vice-chairman-4');
+        },
+        viceChairman4Circle = os.circle(viceChairman4X, viceChairman4Y, r2)
+            .click(function() {
+                viceChairman4Modal();
+            }),
+        viceChairman4Text = os.text(viceChairman4X,viceChairman4Y,'Vice \n Chairman 4')
+            .click(function() {
+                viceChairman4Modal();
+            });
+    // line
+    os.path("M"+(viceChairman4X-r2)+","+viceChairman4Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman4X+r2)+","+viceChairman4Y+
+            "H"+(viceChairman4X+r2+7)+
+            "V"+(viceChairman4Y+r3+15)+
+            "H"+((2*abstraxMarginSide) + rightOffset))
+        .attr({stroke:darkBlue});
+
+    // -------------------
+    // Vice Chairman 5
+    // -------------------
+    var viceChairman5X = 0 + rightOffset,
+        viceChairman5Y = (13*r2)+(6*marginBottom),
+        viceChairman5Modal = function() {
+            loadModal('Vice Chairman 5','','/how-we-work#vice-chairman-5');
+        },
+        viceChairman5Circle = os.circle(viceChairman5X, viceChairman5Y, r2)
+            .click(function() {
+                viceChairman5Modal();
+            }),
+        viceChairman5Text = os.text(viceChairman5X,viceChairman5Y,'Vice \n Chairman 5')
+            .click(function() {
+                viceChairman5Modal();
+            });
+    // line
+    os.path("M"+(viceChairman5X-r2)+","+viceChairman5Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman5X+r2)+","+viceChairman5Y+
+            "H"+(viceChairman5X+r2+7)+
+            "V"+(viceChairman5Y+r3+15)+
+            "H"+((2*abstraxMarginSide) + rightOffset))
+        .attr({stroke:darkBlue});
+
+    // -------------------
+    // KMPP
+    // -------------------
+    var kmppX = 0 + rightOffset,
+        kmppY = (15*r2)+(7*marginBottom),
+        kmppModal = function() {
+            loadModal('KMPP','','/how-we-work#kmpp');
+        },
+        kmppCircle = os.circle(kmppX, kmppY, r2)
+            .click(function() {
+                kmppModal();
+            }),
+        kmppText = os.text(kmppX,kmppY,'KMPP')
+            .click(function() {
+                kmppModal();
+            });
+    // line
+    os.path("M"+(kmppX-r2)+","+kmppY+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
+
+
     
+
+
+    // -------------------
+    // Secretariat
+    // -------------------
+    var secretariatX = abstraxMarginSide + rightOffset,
+        secretariatY = r2,
+        secretariatModal = function() {
+            loadModal('Secretariat','','/how-we-work#secretariat');
+        },
+        secretariatCircle = os.circle(secretariatX, secretariatY, r3)
+            .click(function() {
+                secretariatModal();
+            }),
+        secretariatText = os.text(secretariatX,secretariatY,'Secretariat')
+            .click(function() {
+                secretariatModal();
+            });
+    // line
+    os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+
+
+    // -------------------
+    // Organization Division
+    // -------------------
+    var orgDivisionX = abstraxMarginSide + rightOffset,
+        orgDivisionY = (5*r2)+(2*marginBottom),
+        orgDivisionModal = function() {
+            loadModal('Organization Division','','/how-we-work#organization-division');
+        },
+        orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
+            .click(function() {
+                orgDivisionModal();
+            }),
+        orgDivisionText = os.text(orgDivisionX,orgDivisionY,'Organization\nDivision')
+            .click(function() {
+                orgDivisionModal();
+            });
+
+    os.path("M"+orgDivisionX+","+(orgDivisionY+r3)+"V"+(orgDivisionY+r3+15)).attr({stroke:darkBlue});
+
+    // -------------------
+    // Academic and Human Resource Division
+    // -------------------
+    var acadHRDX = abstraxMarginSide + rightOffset,
+        acadHRDY = (7*r2)+(3*marginBottom),
+        acadHRDModal = function() {
+            loadModal('Academic and Human Resource Division','','/how-we-work#academic-and-human-resource-division');
+        },
+        acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
+            .click(function() {
+                acadHRDModal();
+            }),
+        acadHRDText = os.text(acadHRDX,acadHRDY,'Academic\nand\nHuman\nResource\nDivision')
+            .click(function() {
+                acadHRDModal();
+            });
+    os.path("M"+acadHRDX+","+(acadHRDY+r3)+"V"+(acadHRDY+r3+15)).attr({stroke:darkBlue});
+
+
+    // -------------------
+    // Law and Regulation Division
+    // -------------------
+    var lawAndRegulationX = abstraxMarginSide + rightOffset,
+        lawAndRegulationY = (9*r2)+(4*marginBottom),
+        lawAndRegulationModal = function() {
+            loadModal('Law and Regulation Division','','/how-we-work#law-and-regulation-division');
+        },
+        lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
+            .click(function() {
+                lawAndRegulationModal();
+            }),
+        lawAndRegulationText = os.text(lawAndRegulationX,lawAndRegulationY,'Law and\nRegulation\nDivision')
+            .click(function() {
+                lawAndRegulationModal();
+            });
+    // line
+    os.path("M"+(lawAndRegulationX-r3)+","+lawAndRegulationY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+
+    // -------------------
+    // Foreign Affairs Division
+    // -------------------
+    var foreignAffairsX = abstraxMarginSide + rightOffset,
+        foreignAffairsY = (11*r2)+(5*marginBottom),
+        foreignAffairsModal = function() {
+            loadModal('Foreign Affairs Division','','/how-we-work#foreign-affairs-division');
+        },
+        foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
+            .click(function() {
+                foreignAffairsModal();
+            }),
+        foreignAffairsText = os.text(foreignAffairsX,foreignAffairsY,'Foreign Affairs\nDivision')
+            .click(function() {
+                foreignAffairsModal();
+            });
+    os.path("M"+foreignAffairsX+","+(foreignAffairsY+r3)+"V"+(foreignAffairsY+r3+15)).attr({stroke:darkBlue});
+
+
+    // -------------------
+    // Public Relation Division
+    // -------------------
+    var PRX = abstraxMarginSide + rightOffset,
+        PRY = (13*r2)+(6*marginBottom),
+        PRModal = function() {
+            loadModal('Public Relation Division','','/how-we-work#pr-division');
+        },
+        PRCircle = os.circle(PRX, PRY, r3)
+            .click(function() {
+                PRModal();
+            }),
+        PRText = os.text(PRX,PRY,'Public Relation\nDivision')
+            .click(function() {
+                PRModal();
+            });
+    os.path("M"+PRX+","+(PRY+r3)+"V"+(PRY+r3+15)).attr({stroke:darkBlue});
+
+
+    // -------------------
+    // Research and Development Division
+    // -------------------
+    var rndX = (2*abstraxMarginSide) + rightOffset,
+        rndY = (5*r2)+(2*marginBottom),
+        rndModal = function() {
+            loadModal('Research and Development Division','','/how-we-work#rnd-divsion');
+        },
+        rndCircle = os.circle(rndX, rndY, r3)
+            .click(function() {
+                rndModal();
+            }),
+        rndText = os.text(rndX,rndY,'Research and\nDevelopment\nDivision')
+            .click(function() {
+                rndModal();
+            });
+
+    os.path("M"+rndX+","+(rndY+r3)+"V"+(rndY+r3+15)).attr({stroke:darkBlue});
+
+
+    // -------------------
+    // Technology Division
+    // -------------------
+    var techX = (2*abstraxMarginSide) + rightOffset,
+        techY = (7*r2)+(3*marginBottom),
+        techModal = function() {
+            loadModal('Technology Division','','/how-we-work#tech-division');
+        },
+        techCircle = os.circle(techX, techY, r3)
+            .click(function() {
+                techModal();
+            }),
+        techText = os.text(techX,techY,'Technology\nDivision')
+            .click(function() {
+                techModal();
+            });
+
+    os.path("M"+techX+","+(techY+r3)+"V"+(techY+r3+15)).attr({stroke:darkBlue});
+
+
+    // -------------------
+    // Regional\nDevelopment\nCompartment
+    // -------------------
+    var rdcX = (2*abstraxMarginSide) + rightOffset,
+        rdcY = (11*r2)+(5*marginBottom),
+        rdcModal = function() {
+            loadModal('Regional Development Compartment','','/how-we-work#regional-development-compartment');
+        },
+        rdcCircle = os.circle(rdcX, rdcY, r3)
+            .click(function() {
+                rdcModal();
+            }),
+        rdcText = os.text(rdcX,rdcY,'Regional\nDevelopment\nCompartment')
+            .click(function() {
+                rdcModal();
+            });
+    os.path("M"+rdcX+","+(rdcY+r3)+"V"+(rdcY+r3+15)).attr({stroke:darkBlue});
+
+
+    // -------------------
+    // Sharia Banking Compartment
+    // -------------------
+    var shariaX = (2*abstraxMarginSide) + rightOffset,
+        shariaY = (13*r2)+(6*marginBottom),
+        shariaModal = function() {
+            loadModal('Sharia Banking Compartment','','/how-we-work#sharia-banking-compartment');
+        },
+        shariaCircle = os.circle(shariaX, shariaY, r3)
+            .click(function() {
+                shariaModal();
+            }),
+        shariaText = os.text(shariaX,shariaY,'Sharia\nBanking\nCompartment')
+            .click(function() {
+                shariaModal();
+            });
+    os.path("M"+shariaX+","+(shariaY+r3)+"V"+(shariaY+r3+15)).attr({stroke:darkBlue});
+
+
+    // -------------------
+    // Governance Division
+    // -------------------
+    var governanceX = (3*abstraxMarginSide) + rightOffset,
+        governanceY = (5*r2)+(2*marginBottom),
+        governanceModal = function() {
+            loadModal('Governance Division','','/how-we-work#governance-division');
+        },
+        governanceCircle = os.circle(governanceX, governanceY, r3)
+            .click(function() {
+                governanceModal();
+            }),
+        governanceText = os.text(governanceX,governanceY,'Governance\nDivision')
+            .click(function() {
+                governanceModal();
+            });
+
+    os.path("M"+governanceX+","+(governanceY+r3)+"V"+(governanceY+r3+15)).attr({stroke:darkBlue});
+
+
+
+    var lingBiruMudaBesar = os.set();
+    lingBiruMudaBesar.push(
+        secretaryGeneralCircle,
+        treasurerCircle,
+        viceChairman1Circle,
+        viceChairman2Circle,
+        viceChairman3Circle,
+        viceChairman4Circle,
+        viceChairman5Circle,
+        kmppCircle
+    );
+    lingBiruMudaBesar.attr(lightBlueCircleAttr);
+
+    var txtBiruMudaBesar = os.set();
+    txtBiruMudaBesar.push(
+        secretaryGeneralText,
+        treasurerText,
+        viceChairman1Text,
+        viceChairman2Text,
+        viceChairman3Text,
+        viceChairman4Text,
+        viceChairman5Text,
+        kmppText
+    );
+    txtBiruMudaBesar.attr(lightBlueTextAttr);
+
+    var lingBiruMudaKecil = os.set();
+    lingBiruMudaKecil.push(
+        secretariatCircle,
+        orgDivisionCircle,
+        acadHRDCircle,
+        lawAndRegulationCircle,
+        foreignAffairsCircle,
+        PRCircle,
+        rndCircle,
+        techCircle,
+        rdcCircle,
+        shariaCircle,
+        governanceCircle
+
+    );
+    lingBiruMudaKecil.attr(lightBlueCircleAttr);
+
+    var txtBiruMudaKecil = os.set();
+    txtBiruMudaKecil.push(
+        secretariatText,
+        orgDivisionText,
+        acadHRDText,
+        lawAndRegulationText,
+        foreignAffairsText,
+        PRText,
+        rndText,
+        techText,
+        rdcText,
+        shariaText,
+        governanceText
+
+    );
+    txtBiruMudaKecil.attr(lightBlueSmallTextAttr);
+}
+
 </script>
 <?php get_footer(); ?>
