@@ -429,7 +429,9 @@
                             </div>
 
                             <!-- Content here -->
-                            <div class="modal-body"></div>
+                            <div class="modal-body">
+                                <div class="content"></div> ...
+                            </div>
 
                             <div class="modal-footer">
                                 <a class="btn btn-default" href="#">Read More</a>
@@ -582,7 +584,7 @@
     var secretaryGeneralX = 0 + rightOffset,
         secretaryGeneralY = r2,
         secretaryModal = function() {
-            loadModal('Sekretaris Jenderal','','/id/lingkup-kerja#secretary-general');
+            loadModal('Sekretaris Jenderal','Gagasan Utama: 1. Support program kerja bidang','/id/lingkup-kerja#secretary-general');
         },
         secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
             .click(function() {
@@ -605,7 +607,7 @@
     var treasurerX = 0 + rightOffset,
         treasurerY = (3*r2)+marginBottom,
         treasurerModal = function() {
-            loadModal('Bendahara','','/id/lingkup-kerja#treasurer');
+            loadModal('Bendahara','Gagasan Utama: 1. Konsolidasi laporan keuangan daerah.','/id/lingkup-kerja#treasurer');
         },
         treasurerCircle = os.circle(treasurerX, treasurerY, r2)
             .click(function() {
@@ -788,7 +790,7 @@
     var orgDivisionX = abstraxMarginSide + rightOffset,
         orgDivisionY = (5*r2)+(2*marginBottom),
         orgDivisionModal = function() {
-            loadModal('Bidang Organisasi','','/id/lingkup-kerja#organization-division');
+            loadModal('Bidang Organisasi','Gagasan Utama: 1. Wacana untuk menyatukan seluruh kegiatan perbankan daerah dalam satu wadah saja yaitu Perbanas.','/id/lingkup-kerja#organization-division');
         },
         orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
             .click(function() {
@@ -807,7 +809,7 @@
     var acadHRDX = abstraxMarginSide + rightOffset,
         acadHRDY = (7*r2)+(3*marginBottom),
         acadHRDModal = function() {
-            loadModal('Bidang Pendidikan & Pengembangan SDM','','/id/lingkup-kerja#academic-and-human-resource-division');
+            loadModal('Bidang Pendidikan & Pengembangan SDM','Gagasan Utama: 1. Meningkatkan proses link and match dengan Perbanas Institute dan STIE Perbanas Surabaya.','/id/lingkup-kerja#academic-and-human-resource-division');
         },
         acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
             .click(function() {
@@ -826,7 +828,7 @@
     var lawAndRegulationX = abstraxMarginSide + rightOffset,
         lawAndRegulationY = (9*r2)+(4*marginBottom),
         lawAndRegulationModal = function() {
-            loadModal('Bidang Hukum','','/id/lingkup-kerja#law-and-regulation-division');
+            loadModal('Bidang Hukum','Gagasan Utama: 1. Meningkatkan perlindungan hukum bagi industry perbankan dengan membentuk Komisi Kerja Legal Perbanas dan bersinergi dengan inisiatif BI.','/id/lingkup-kerja#law-and-regulation-division');
         },
         lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
             .click(function() {
@@ -845,7 +847,7 @@
     var foreignAffairsX = abstraxMarginSide + rightOffset,
         foreignAffairsY = (11*r2)+(5*marginBottom),
         foreignAffairsModal = function() {
-            loadModal('Bidang Luar Negeri','','/id/lingkup-kerja#foreign-affairs-division');
+            loadModal('Bidang Luar Negeri','Gagasan Utama: 1. Pembentukan Komite "ASEAN One Integration"','/id/lingkup-kerja#foreign-affairs-division');
         },
         foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
             .click(function() {
@@ -864,7 +866,7 @@
     var PRX = abstraxMarginSide + rightOffset,
         PRY = (13*r2)+(6*marginBottom),
         PRModal = function() {
-            loadModal('Bidang Hubungan Masyarakat','','/id/lingkup-kerja#pr-division');
+            loadModal('Bidang Hubungan Masyarakat','Gagasan Utama: 1. Menjaga citra dan eksistensi Perbanas sebagai organisasi serta menjadi mitra yang terpercaya bagi stakeholders.','/id/lingkup-kerja#pr-division');
         },
         PRCircle = os.circle(PRX, PRY, r3)
             .click(function() {
@@ -883,7 +885,7 @@
     var rndX = (2*abstraxMarginSide) + rightOffset,
         rndY = (5*r2)+(2*marginBottom),
         rndModal = function() {
-            loadModal('Bidang Pengkajian & Pengembangan','','/id/lingkup-kerja#rnd-divsion');
+            loadModal('Bidang Pengkajian & Pengembangan','Gagasan Utama: 1. FGD rutin (hot issue) setiap bulan sekali','/id/lingkup-kerja#rnd-divsion');
         },
         rndCircle = os.circle(rndX, rndY, r3)
             .click(function() {
@@ -903,7 +905,7 @@
     var techX = (2*abstraxMarginSide) + rightOffset,
         techY = (7*r2)+(3*marginBottom),
         techModal = function() {
-            loadModal('Bidang Teknologi','','/id/lingkup-kerja#tech-division');
+            loadModal('Bidang Teknologi','Gagasan Utama: 1. Membentuk Database Perbankan Indonesia.','/id/lingkup-kerja#tech-division');
         },
         techCircle = os.circle(techX, techY, r3)
             .click(function() {
@@ -942,7 +944,7 @@
     var shariaX = (2*abstraxMarginSide) + rightOffset,
         shariaY = (13*r2)+(6*marginBottom),
         shariaModal = function() {
-            loadModal('Kompartemen Perbankan Syariah','','/id/lingkup-kerja#sharia-banking-compartment');
+            loadModal('Kompartemen Perbankan Syariah','Gagasan Utama: 1. Forum Product Manager.','/id/lingkup-kerja#sharia-banking-compartment');
         },
         shariaCircle = os.circle(shariaX, shariaY, r3)
             .click(function() {
@@ -961,7 +963,7 @@
     var governanceX = (3*abstraxMarginSide) + rightOffset,
         governanceY = (5*r2)+(2*marginBottom),
         governanceModal = function() {
-            loadModal('Bidang Governance','','/id/lingkup-kerja#governance-division');
+            loadModal('Bidang Governance','Gagasan Utama: 1. Sosialisasi tentang GCG bekerja sama dengan KNKG atau BI (3 x setahun).','/id/lingkup-kerja#governance-division');
         },
         governanceCircle = os.circle(governanceX, governanceY, r3)
             .click(function() {
