@@ -298,7 +298,7 @@ function loadModal(title, content, link) {
             
     $('#modal-orgstruct .modal-header h4').html(title);
     $('#modal-orgstruct .modal-body').html(content);
-    $('#modal-orgstruct .modal-footer a').attr('href', link);
+    $('#modal-orgstruct .modal-footer a').attr('href', 'http://localhost/perbanas'+link);
 
     $('#modal-orgstruct').modal();
 

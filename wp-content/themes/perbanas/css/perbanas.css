@@ -749,6 +749,7 @@ a:hover {
 a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     color: white;
     text-decoration: none;
+    background: #074980;
 }
 @media screen and (max-width: 991px) {
     a.btn, a.btn:hover, a.btn:active, a.btn:visited {
@@ -902,11 +903,24 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         border-bottom: 1px solid #C3D500;
     }
     /* end table */
-.anchor-with-offset {
-    display: block;
-    content: "";
-    height: 100px;
-    margin: -100px 0 0;
+.anchor-with-offset-organization-structure {
+
+    display: block; 
+    position: relative; 
+    top: -25px; 
+    visibility: hidden;   
+}
+.anchor-with-offset-vision-mission {
+    display: block; 
+    position: relative; 
+    top: -90px; 
+    visibility: hidden;  
+}
+.anchor-with-offset-history {
+    display: block; 
+    position: relative; 
+    top: -150px; 
+    visibility: hidden;  
 }
 .no-content {
     color: #262729;
@@ -2384,6 +2398,23 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 
 .affiliation-item img {
     margin: 0 auto;
+}
+
+.orgstructure-chart h2 {
+    margin-bottom: 0px;
+}
+
+.orgstructure-chart h3 {
+    margin-top: 0px !important;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.anchor-hww {
+    display: block; 
+    position: relative; 
+    top: -60px; 
+    visibility: hidden;
 }
 
 /* TEST */

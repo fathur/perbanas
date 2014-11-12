@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <div class="hr" id="history"></div>
+                <div class="hr"></div>
             </div>
             <div class="subsection-title subsection-title-history hidden-sm hidden-md hidden-lg">
                 <div class="subsection-title-container">
@@ -38,7 +38,9 @@
             </div>
 
             <div class="row">
-                <div id="history" class="anchor-with-offset"></div>
+                
+                <div id="history" class="anchor-with-offset-history"></div>
+                
                 <div class="col-xs-12">
                     <div class="timeline-outer-container">
                         <ul class="timeline-container animate">
@@ -346,9 +348,11 @@
             <!-- Former Chairman End -->
 
             <!-- Begin VISI MISI -->
-            <div id="vision-mission" class="anchor-with-offset"></div>
             <div class="vision-mission-container" id="vision-mission">
                 <div class="row">
+                    
+                    <div id="anchor-vision-mission" class="anchor-with-offset-vision-mission"></div>
+                    
                     <div class="col-xs-12">
                         <div class="vision vm-title text-center">
                             <h2>Vision</h2>
@@ -395,51 +399,51 @@
                                 <div class="vm-title text-center">
                                     <h2>Environment</h2>
                                     <hr />
-                                    <p id="organization-structure">Create harmony between the banking industry and the environment <emph>(good corporate citizenship).</emph></p>
+                                    <p>Create harmony between the banking industry and the environment <emph>(good corporate citizenship).</emph></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="organization-structure" class="anchor-with-offset"></div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="subsection-title text-center hide">
-                        <div class="subsection-title-container">
-                            <h2>Organization</h2>
-                            <hr />
-                            <h2>Structure</h2>
-                        </div>
-                    </div>
-                    <div>
+                    
+                    <div id="organization-structure" class="anchor-with-offset-organization-structure "></div>
+                    
+                    <div class="text-center orgstructure-chart ">
                         
+                        <h2>Organization Structure</h2>
+                        <hr/>
+                        <h3>Perbanas 2012 -2016</h3>
+
                         <div id="orgstruct"></div>
                         
-                        <div id="modal-orgstruct" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modallabel">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button class="close" type="button" data-dismiss="modal">
-                                            <span aria-hidden="true">&times;</span>
-                                            <span class="sr-only">Close</span>
-                                        </button>
-                                        
-                                        <!-- Title Here -->
-                                        <h4></h4>
-
-                                    </div>
-
-                                    <!-- Content here -->
-                                    <div class="modal-body"></div>
-
-                                    <div class="modal-footer">
-                                        <a class="btn btn-default" target="__blank" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
                     </div>
+                </div>
+
+                <div id="modal-orgstruct" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modallabel">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" type="button" data-dismiss="modal">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                
+                                <!-- Title Here -->
+                                <h4></h4>
+
+                            </div>
+
+                            <!-- Content here -->
+                            <div class="modal-body"></div>
+
+                            <div class="modal-footer">
+                                <a class="btn btn-default" target="__blank" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>  
                 </div>
             </div>
 
@@ -500,7 +504,7 @@
             var supervisoryBoardX = 150,
                 supervisoryBoardY = 60 + topOffset,
                 supervisoryBoardModal = function() {
-                    loadModal('Supervisory Board','Some Content here','http://google.com');
+                    loadModal('Supervisory Board','Some Content here','/how-we-work#supervisory-board');
                 },
                 supervisoryBoardCircle = os.circle(supervisoryBoardX, supervisoryBoardY, r1)
                     .attr(darkBlueCircleAttr)
@@ -519,7 +523,7 @@
             var membersX = 60,
                 membersY = 180 + topOffset,
                 membersModal = function() {
-                    loadModal('Members','Some Content here','http://google.com');
+                    loadModal('Members','Some Content here','/how-we-work#members');
                 },
                 membersCircle = os.circle(membersX, membersY, r1)
                     .attr(darkBlueCircleAttr)
@@ -538,7 +542,7 @@
             var chairmanX = 240,
                 chairmanY = 180 + topOffset,
                 chairmanModal = function() {
-                    loadModal('Chairman','','');
+                    loadModal('Chairman','','/how-we-work#chairman');
                 },
                 chairmanCircle = os.circle(chairmanX, chairmanY, r1)
                     .attr(darkBlueCircleAttr)
@@ -557,7 +561,7 @@
             var advisoryBoardX = 150,
                 advisoryBoardY = 300 + topOffset,
                 advisoryBoardModal = function() {
-                    loadModal('Advisory Board','','');
+                    loadModal('Advisory Board','','/how-we-work#advisory-board');
                 },
                 advisoryBoardCircle = os.circle(advisoryBoardX, advisoryBoardY, r1)
                     .attr(darkBlueCircleAttr)
@@ -584,7 +588,7 @@
             var secretaryGeneralX = 0 + rightOffset,
                 secretaryGeneralY = r2,
                 secretaryModal = function() {
-                    loadModal('Secretary General','','');
+                    loadModal('Secretary General','','/how-we-work#secretary-general');
                 },
                 secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
                     .click(function() {
@@ -607,7 +611,7 @@
             var treasurerX = 0 + rightOffset,
                 treasurerY = (3*r2)+marginBottom,
                 treasurerModal = function() {
-                    loadModal('Trasurer','','');
+                    loadModal('Trasurer','','/how-we-work#treasurer');
                 },
                 treasurerCircle = os.circle(treasurerX, treasurerY, r2)
                     .click(function() {
@@ -629,7 +633,7 @@
             var viceChairman1X = 0 + rightOffset,
                 viceChairman1Y = (5*r2)+(2*marginBottom),
                 viceChairman1Modal = function() {
-                    loadModal('Vice Chairman 1','','');
+                    loadModal('Vice Chairman 1','','/how-we-work#vice-chairman-1');
                 },
                 viceChairman1Circle = os.circle(viceChairman1X, viceChairman1Y, r2)
                     .click(function() {
@@ -656,7 +660,7 @@
             var viceChairman2X = 0 + rightOffset,
                 viceChairman2Y = (7*r2)+(3*marginBottom),
                 viceCHairman2Modal = function() {
-                    loadModal('Vice Chairman 2','','');
+                    loadModal('Vice Chairman 2','','/how-we-work#vice-chairman-2');
                 },
                 viceChairman2Circle = os.circle(viceChairman2X, viceChairman2Y, r2)
                     .click(function() {
@@ -680,7 +684,7 @@
             var viceChairman3X = 0 + rightOffset,
                 viceChairman3Y = (9*r2)+(4*marginBottom),
                 viceChairman3Modal = function() {
-                    loadModal('Vice Chairman 3','','');
+                    loadModal('Vice Chairman 3','','/how-we-work#vice-chairman-3');
                 },
                 viceChairman3Circle = os.circle(viceChairman3X, viceChairman3Y, r2)
                     .click(function() {
@@ -699,7 +703,7 @@
             var viceChairman4X = 0 + rightOffset,
                 viceChairman4Y = (11*r2)+(5*marginBottom),
                 viceChairman4Modal = function() {
-                    loadModal('Vice Chairman 4','','');
+                    loadModal('Vice Chairman 4','','/how-we-work#vice-chairman-4');
                 },
                 viceChairman4Circle = os.circle(viceChairman4X, viceChairman4Y, r2)
                     .click(function() {
@@ -723,7 +727,7 @@
             var viceChairman5X = 0 + rightOffset,
                 viceChairman5Y = (13*r2)+(6*marginBottom),
                 viceChairman5Modal = function() {
-                    loadModal('Vice Chairman 5','','');
+                    loadModal('Vice Chairman 5','','/how-we-work#vice-chairman-5');
                 },
                 viceChairman5Circle = os.circle(viceChairman5X, viceChairman5Y, r2)
                     .click(function() {
@@ -747,7 +751,7 @@
             var kmppX = 0 + rightOffset,
                 kmppY = (15*r2)+(7*marginBottom),
                 kmppModal = function() {
-                    loadModal('KMPP','','');
+                    loadModal('KMPP','','/how-we-work#kmpp');
                 },
                 kmppCircle = os.circle(kmppX, kmppY, r2)
                     .click(function() {
@@ -770,7 +774,7 @@
             var secretariatX = abstraxMarginSide + rightOffset,
                 secretariatY = r2,
                 secretariatModal = function() {
-                    loadModal('Secretariat','','');
+                    loadModal('Secretariat','','/how-we-work#secretariat');
                 },
                 secretariatCircle = os.circle(secretariatX, secretariatY, r3)
                     .click(function() {
@@ -790,7 +794,7 @@
             var orgDivisionX = abstraxMarginSide + rightOffset,
                 orgDivisionY = (5*r2)+(2*marginBottom),
                 orgDivisionModal = function() {
-                    loadModal('Organization Division','','');
+                    loadModal('Organization Division','','/how-we-work#organization-division');
                 },
                 orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
                     .click(function() {
@@ -809,7 +813,7 @@
             var acadHRDX = abstraxMarginSide + rightOffset,
                 acadHRDY = (7*r2)+(3*marginBottom),
                 acadHRDModal = function() {
-                    loadModal('Academic and Human Resource Division','','');
+                    loadModal('Academic and Human Resource Division','','/how-we-work#academic-and-human-resource-division');
                 },
                 acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
                     .click(function() {
@@ -828,7 +832,7 @@
             var lawAndRegulationX = abstraxMarginSide + rightOffset,
                 lawAndRegulationY = (9*r2)+(4*marginBottom),
                 lawAndRegulationModal = function() {
-                    loadModal('Law and Regulation Division','','');
+                    loadModal('Law and Regulation Division','','/how-we-work#law-and-regulation-division');
                 },
                 lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
                     .click(function() {
@@ -847,7 +851,7 @@
             var foreignAffairsX = abstraxMarginSide + rightOffset,
                 foreignAffairsY = (11*r2)+(5*marginBottom),
                 foreignAffairsModal = function() {
-                    loadModal('Foreign Affairs Division','','');
+                    loadModal('Foreign Affairs Division','','/how-we-work#foreign-affairs-division');
                 },
                 foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
                     .click(function() {
@@ -866,7 +870,7 @@
             var PRX = abstraxMarginSide + rightOffset,
                 PRY = (13*r2)+(6*marginBottom),
                 PRModal = function() {
-                    loadModal('Public Relation Division','','');
+                    loadModal('Public Relation Division','','/how-we-work#pr-division');
                 },
                 PRCircle = os.circle(PRX, PRY, r3)
                     .click(function() {
@@ -885,7 +889,7 @@
             var rndX = (2*abstraxMarginSide) + rightOffset,
                 rndY = (5*r2)+(2*marginBottom),
                 rndModal = function() {
-                    loadModal('Research and Development Division','','');
+                    loadModal('Research and Development Division','','/how-we-work#rnd-divsion');
                 },
                 rndCircle = os.circle(rndX, rndY, r3)
                     .click(function() {
@@ -905,7 +909,7 @@
             var techX = (2*abstraxMarginSide) + rightOffset,
                 techY = (7*r2)+(3*marginBottom),
                 techModal = function() {
-                    loadModal('Technology Division','','');
+                    loadModal('Technology Division','','/how-we-work#tech-division');
                 },
                 techCircle = os.circle(techX, techY, r3)
                     .click(function() {
@@ -925,7 +929,7 @@
             var rdcX = (2*abstraxMarginSide) + rightOffset,
                 rdcY = (11*r2)+(5*marginBottom),
                 rdcModal = function() {
-                    loadModal('Regional Development Compartment','','');
+                    loadModal('Regional Development Compartment','','/how-we-work#regional-development-compartment');
                 },
                 rdcCircle = os.circle(rdcX, rdcY, r3)
                     .click(function() {
@@ -944,7 +948,7 @@
             var shariaX = (2*abstraxMarginSide) + rightOffset,
                 shariaY = (13*r2)+(6*marginBottom),
                 shariaModal = function() {
-                    loadModal('Sharia Banking Compartment','','');
+                    loadModal('Sharia Banking Compartment','','/how-we-work#sharia-banking-compartment');
                 },
                 shariaCircle = os.circle(shariaX, shariaY, r3)
                     .click(function() {
@@ -963,7 +967,7 @@
             var governanceX = (3*abstraxMarginSide) + rightOffset,
                 governanceY = (5*r2)+(2*marginBottom),
                 governanceModal = function() {
-                    loadModal('Governance Division','','');
+                    loadModal('Governance Division','','/how-we-work#governance-division');
                 },
                 governanceCircle = os.circle(governanceX, governanceY, r3)
                     .click(function() {

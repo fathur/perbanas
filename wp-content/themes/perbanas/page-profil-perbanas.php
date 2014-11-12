@@ -336,7 +336,7 @@
             </div>
 
 
-            <div id="vision-mission" class="anchor-with-offset"></div>
+            <div id="vision-mission" class="anchor-with-offset-vision-mission"></div>
             <div class="vision-mission-container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -392,41 +392,43 @@
                     </div>
                 </div>
             </div>
-            <div id="organization-structure" class="anchor-with-offset"></div>
+            <div id="organization-structure" class="anchor-with-offset-organization-structure"></div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="subsection-title text-center hide">
-                        <div class="subsection-title-container">
-                            <h2>Organization</h2>
-                            <hr />
-                            <h2>Structure</h2>
-                        </div>
-                    </div>
-                    <div id="orgstruct"></div>
+                    
+                    <div class="text-center orgstructure-chart ">
                         
-                    <div id="modal-orgstruct" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modallabel">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button class="close" type="button" data-dismiss="modal">
-                                        <span aria-hidden="true">&times;</span>
-                                        <span class="sr-only">Close</span>
-                                    </button>
-                                    
-                                    <!-- Title Here -->
-                                    <h4></h4>
+                        <h2>Struktur Organisasi</h2>
+                        <hr/>
+                        <h3>Perbanas 2012 -2016</h3>
 
-                                </div>
-
-                                <!-- Content here -->
-                                <div class="modal-body"></div>
-
-                                <div class="modal-footer">
-                                    <a class="btn btn-default" target="__blank" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>  
+                        <div id="orgstruct"></div>
+                        
                     </div>
+                </div>
+
+                <div id="modal-orgstruct" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modallabel">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" type="button" data-dismiss="modal">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                
+                                <!-- Title Here -->
+                                <h4></h4>
+
+                            </div>
+
+                            <!-- Content here -->
+                            <div class="modal-body"></div>
+
+                            <div class="modal-footer">
+                                <a class="btn btn-default" target="__blank" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>  
                 </div>
             </div>
             
