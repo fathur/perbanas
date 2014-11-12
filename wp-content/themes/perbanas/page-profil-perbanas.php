@@ -498,14 +498,14 @@
     var supervisoryBoardX = 150,
         supervisoryBoardY = 60 + topOffset,
         supervisoryBoardModal = function() {
-            loadModal('Supervisory Board','Some Content here','/lingkup-kerja#supervisory-board');
+            loadModal('Dewan Penasihat','','/lingkup-kerja#supervisory-board');
         },
         supervisoryBoardCircle = os.circle(supervisoryBoardX, supervisoryBoardY, r1)
             .attr(darkBlueCircleAttr)
             .click(function() {
                 supervisoryBoardModal();
             }),
-        supervisoryBoardText = os.text(supervisoryBoardX,supervisoryBoardY,'Supervisory \n Board')
+        supervisoryBoardText = os.text(supervisoryBoardX,supervisoryBoardY,'Dewan\nPenasihat')
             .attr(darkBlueTextAttr)
             .click(function() {
                 supervisoryBoardModal();
@@ -517,14 +517,14 @@
     var membersX = 60,
         membersY = 180 + topOffset,
         membersModal = function() {
-            loadModal('Members','Some Content here','/lingkup-kerja#members');
+            loadModal('Anggota','Some Content here','/lingkup-kerja#members');
         },
         membersCircle = os.circle(membersX, membersY, r1)
             .attr(darkBlueCircleAttr)
             .click(function() {
                 membersModal();
             }),
-        membersText = os.text(membersX,membersY,'Members')
+        membersText = os.text(membersX,membersY,'Anggota')
             .attr(darkBlueTextAttr)
             .click(function() {
                 membersModal();
@@ -536,14 +536,14 @@
     var chairmanX = 240,
         chairmanY = 180 + topOffset,
         chairmanModal = function() {
-            loadModal('Chairman','','/lingkup-kerja#chairman');
+            loadModal('Ketua Umum','','/lingkup-kerja#chairman');
         },
         chairmanCircle = os.circle(chairmanX, chairmanY, r1)
             .attr(darkBlueCircleAttr)
             .click(function() {
                 chairmanModal();
             }),
-        chairmanText = os.text(chairmanX,chairmanY,'Chairman')
+        chairmanText = os.text(chairmanX,chairmanY,'Ketua\nUmum')
             .attr(darkBlueTextAttr)
             .click(function() {
                 chairmanModal();
@@ -555,14 +555,14 @@
     var advisoryBoardX = 150,
         advisoryBoardY = 300 + topOffset,
         advisoryBoardModal = function() {
-            loadModal('Advisory Board','','/lingkup-kerja#advisory-board');
+            loadModal('Dewan Pengawas','','/lingkup-kerja#advisory-board');
         },
         advisoryBoardCircle = os.circle(advisoryBoardX, advisoryBoardY, r1)
             .attr(darkBlueCircleAttr)
             .click(function() {
                 advisoryBoardModal();
             }),
-        advisoryBoardText = os.text(advisoryBoardX,advisoryBoardY,'Advisory \n Board')
+        advisoryBoardText = os.text(advisoryBoardX,advisoryBoardY,'Dewan\nPengawas')
             .attr(darkBlueTextAttr)
             .click(function() {
                 advisoryBoardModal();
@@ -582,13 +582,13 @@
     var secretaryGeneralX = 0 + rightOffset,
         secretaryGeneralY = r2,
         secretaryModal = function() {
-            loadModal('Secretary General','','/lingkup-kerja#secretary-general');
+            loadModal('Sekretaris Jenderal','','/lingkup-kerja#secretary-general');
         },
         secretaryGeneralCircle = os.circle(secretaryGeneralX, secretaryGeneralY, r2)
             .click(function() {
                 secretaryModal();
             }),
-        secretaryGeneralText = os.text(secretaryGeneralX,secretaryGeneralY,'Secretary \n General')
+        secretaryGeneralText = os.text(secretaryGeneralX,secretaryGeneralY,'Sekretaris\nJenderal')
             .click(function() {
                 secretaryModal();
             });
@@ -605,13 +605,13 @@
     var treasurerX = 0 + rightOffset,
         treasurerY = (3*r2)+marginBottom,
         treasurerModal = function() {
-            loadModal('Trasurer','','/lingkup-kerja#treasurer');
+            loadModal('Bendahara','','/lingkup-kerja#treasurer');
         },
         treasurerCircle = os.circle(treasurerX, treasurerY, r2)
             .click(function() {
                 treasurerModal();
             }),
-        treasurerText = os.text(treasurerX,treasurerY,'Treasurer')
+        treasurerText = os.text(treasurerX,treasurerY,'Bendahara')
             .click(function() {
                 treasurerModal();
             });
@@ -622,18 +622,18 @@
 
 
     // -------------------
-    // Vice Chairman 1
+    // Wakil Ketua Umum 1
     // -------------------
     var viceChairman1X = 0 + rightOffset,
         viceChairman1Y = (5*r2)+(2*marginBottom),
         viceChairman1Modal = function() {
-            loadModal('Vice Chairman 1','','/lingkup-kerja#vice-chairman-1');
+            loadModal('Wakil Ketua Umum 1','','/lingkup-kerja#vice-chairman-1');
         },
         viceChairman1Circle = os.circle(viceChairman1X, viceChairman1Y, r2)
             .click(function() {
                 viceChairman1Modal();
             }),
-        viceChairman1Text = os.text(viceChairman1X,viceChairman1Y,'Vice \n Chairman 1')
+        viceChairman1Text = os.text(viceChairman1X,viceChairman1Y,'Wakil Ketua\nUmum 1')
             .click(function() {
                 viceChairman1Modal();
             });
@@ -649,18 +649,18 @@
         .attr({stroke:darkBlue});
 
     // -------------------
-    // Vice Chairman 2
+    // Wakil Ketua Umum 2
     // -------------------
     var viceChairman2X = 0 + rightOffset,
         viceChairman2Y = (7*r2)+(3*marginBottom),
         viceCHairman2Modal = function() {
-            loadModal('Vice Chairman 2','','/lingkup-kerja#vice-chairman-2');
+            loadModal('Wakil Ketua Umum 2','','/lingkup-kerja#vice-chairman-2');
         },
         viceChairman2Circle = os.circle(viceChairman2X, viceChairman2Y, r2)
             .click(function() {
                 viceCHairman2Modal();
             }),
-        viceChairman2Text = os.text(viceChairman2X,viceChairman2Y,'Vice \n Chairman 2')
+        viceChairman2Text = os.text(viceChairman2X,viceChairman2Y,'Wakil Ketua\nUmum 2')
             .click(function() {
                 viceCHairman2Modal();
             });
@@ -673,18 +673,18 @@
         .attr({stroke:darkBlue});
 
     // -------------------
-    // Vice Chairman 3
+    // Wakil Ketua Umum 3
     // -------------------
     var viceChairman3X = 0 + rightOffset,
         viceChairman3Y = (9*r2)+(4*marginBottom),
         viceChairman3Modal = function() {
-            loadModal('Vice Chairman 3','','/lingkup-kerja#vice-chairman-3');
+            loadModal('Wakil Ketua Umum 3','','/lingkup-kerja#vice-chairman-3');
         },
         viceChairman3Circle = os.circle(viceChairman3X, viceChairman3Y, r2)
             .click(function() {
                 viceChairman3Modal();
             }),
-        viceChairman3Text = os.text(viceChairman3X,viceChairman3Y,'Vice \n Chairman 3')
+        viceChairman3Text = os.text(viceChairman3X,viceChairman3Y,'Wakil Ketua\nUmum 3')
             .click(function() {
                 viceChairman3Modal();
             });
@@ -692,18 +692,18 @@
     os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
 
     // -------------------
-    // Vice Chairman 4
+    // Wakil Ketua Umum 4
     // -------------------
     var viceChairman4X = 0 + rightOffset,
         viceChairman4Y = (11*r2)+(5*marginBottom),
         viceChairman4Modal = function() {
-            loadModal('Vice Chairman 4','','/lingkup-kerja#vice-chairman-4');
+            loadModal('Wakil Ketua Umum 4','','/lingkup-kerja#vice-chairman-4');
         },
         viceChairman4Circle = os.circle(viceChairman4X, viceChairman4Y, r2)
             .click(function() {
                 viceChairman4Modal();
             }),
-        viceChairman4Text = os.text(viceChairman4X,viceChairman4Y,'Vice \n Chairman 4')
+        viceChairman4Text = os.text(viceChairman4X,viceChairman4Y,'Wakil Ketua\nUmum 4')
             .click(function() {
                 viceChairman4Modal();
             });
@@ -716,18 +716,18 @@
         .attr({stroke:darkBlue});
 
     // -------------------
-    // Vice Chairman 5
+    // Wakil Ketua Umum 5
     // -------------------
     var viceChairman5X = 0 + rightOffset,
         viceChairman5Y = (13*r2)+(6*marginBottom),
         viceChairman5Modal = function() {
-            loadModal('Vice Chairman 5','','/lingkup-kerja#vice-chairman-5');
+            loadModal('Wakil Ketua Umum 5','','/lingkup-kerja#vice-chairman-5');
         },
         viceChairman5Circle = os.circle(viceChairman5X, viceChairman5Y, r2)
             .click(function() {
                 viceChairman5Modal();
             }),
-        viceChairman5Text = os.text(viceChairman5X,viceChairman5Y,'Vice \n Chairman 5')
+        viceChairman5Text = os.text(viceChairman5X,viceChairman5Y,'Wakil Ketua\nUmum 5')
             .click(function() {
                 viceChairman5Modal();
             });
@@ -768,13 +768,13 @@
     var secretariatX = abstraxMarginSide + rightOffset,
         secretariatY = r2,
         secretariatModal = function() {
-            loadModal('Secretariat','','/lingkup-kerja#secretariat');
+            loadModal('Sekretariat','','/lingkup-kerja#secretariat');
         },
         secretariatCircle = os.circle(secretariatX, secretariatY, r3)
             .click(function() {
                 secretariatModal();
             }),
-        secretariatText = os.text(secretariatX,secretariatY,'Secretariat')
+        secretariatText = os.text(secretariatX,secretariatY,'Sekretariat')
             .click(function() {
                 secretariatModal();
             });
@@ -788,13 +788,13 @@
     var orgDivisionX = abstraxMarginSide + rightOffset,
         orgDivisionY = (5*r2)+(2*marginBottom),
         orgDivisionModal = function() {
-            loadModal('Organization Division','','/lingkup-kerja#organization-division');
+            loadModal('Bidang Organisasi','','/lingkup-kerja#organization-division');
         },
         orgDivisionCircle = os.circle(orgDivisionX, orgDivisionY, r3)
             .click(function() {
                 orgDivisionModal();
             }),
-        orgDivisionText = os.text(orgDivisionX,orgDivisionY,'Organization\nDivision')
+        orgDivisionText = os.text(orgDivisionX,orgDivisionY,'Bidang\nOrganisasi')
             .click(function() {
                 orgDivisionModal();
             });
@@ -807,13 +807,13 @@
     var acadHRDX = abstraxMarginSide + rightOffset,
         acadHRDY = (7*r2)+(3*marginBottom),
         acadHRDModal = function() {
-            loadModal('Academic and Human Resource Division','','/lingkup-kerja#academic-and-human-resource-division');
+            loadModal('Bidang Pendidikan & Pengembangan SDM','','/lingkup-kerja#academic-and-human-resource-division');
         },
         acadHRDCircle = os.circle(acadHRDX, acadHRDY, r3)
             .click(function() {
                 acadHRDModal();
             }),
-        acadHRDText = os.text(acadHRDX,acadHRDY,'Academic\nand\nHuman\nResource\nDivision')
+        acadHRDText = os.text(acadHRDX,acadHRDY,'Bidang\nPendidikan &\nPengembangan\nSDM')
             .click(function() {
                 acadHRDModal();
             });
@@ -826,13 +826,13 @@
     var lawAndRegulationX = abstraxMarginSide + rightOffset,
         lawAndRegulationY = (9*r2)+(4*marginBottom),
         lawAndRegulationModal = function() {
-            loadModal('Law and Regulation Division','','/lingkup-kerja#law-and-regulation-division');
+            loadModal('Bidang Hukum','','/lingkup-kerja#law-and-regulation-division');
         },
         lawAndRegulationCircle = os.circle(lawAndRegulationX, lawAndRegulationY, r3)
             .click(function() {
                 lawAndRegulationModal();
             }),
-        lawAndRegulationText = os.text(lawAndRegulationX,lawAndRegulationY,'Law and\nRegulation\nDivision')
+        lawAndRegulationText = os.text(lawAndRegulationX,lawAndRegulationY,'Bidang\nHukum')
             .click(function() {
                 lawAndRegulationModal();
             });
@@ -845,13 +845,13 @@
     var foreignAffairsX = abstraxMarginSide + rightOffset,
         foreignAffairsY = (11*r2)+(5*marginBottom),
         foreignAffairsModal = function() {
-            loadModal('Foreign Affairs Division','','/lingkup-kerja#foreign-affairs-division');
+            loadModal('Bidang Luar Negeri','','/lingkup-kerja#foreign-affairs-division');
         },
         foreignAffairsCircle = os.circle(foreignAffairsX, foreignAffairsY, r3)
             .click(function() {
                 foreignAffairsModal();
             }),
-        foreignAffairsText = os.text(foreignAffairsX,foreignAffairsY,'Foreign Affairs\nDivision')
+        foreignAffairsText = os.text(foreignAffairsX,foreignAffairsY,'Bidang\nLuar Negeri')
             .click(function() {
                 foreignAffairsModal();
             });
@@ -864,13 +864,13 @@
     var PRX = abstraxMarginSide + rightOffset,
         PRY = (13*r2)+(6*marginBottom),
         PRModal = function() {
-            loadModal('Public Relation Division','','/lingkup-kerja#pr-division');
+            loadModal('Bidang Hubungan Masyarakat','','/lingkup-kerja#pr-division');
         },
         PRCircle = os.circle(PRX, PRY, r3)
             .click(function() {
                 PRModal();
             }),
-        PRText = os.text(PRX,PRY,'Public Relation\nDivision')
+        PRText = os.text(PRX,PRY,'Bidang\nHubungan\nMasyarakat')
             .click(function() {
                 PRModal();
             });
@@ -883,13 +883,13 @@
     var rndX = (2*abstraxMarginSide) + rightOffset,
         rndY = (5*r2)+(2*marginBottom),
         rndModal = function() {
-            loadModal('Research and Development Division','','/lingkup-kerja#rnd-divsion');
+            loadModal('Bidang Pengkajian & Pengembangan','','/lingkup-kerja#rnd-divsion');
         },
         rndCircle = os.circle(rndX, rndY, r3)
             .click(function() {
                 rndModal();
             }),
-        rndText = os.text(rndX,rndY,'Research and\nDevelopment\nDivision')
+        rndText = os.text(rndX,rndY,'Bidang\nPengkajian &\nPengembangan')
             .click(function() {
                 rndModal();
             });
@@ -903,13 +903,13 @@
     var techX = (2*abstraxMarginSide) + rightOffset,
         techY = (7*r2)+(3*marginBottom),
         techModal = function() {
-            loadModal('Technology Division','','/lingkup-kerja#tech-division');
+            loadModal('Bidang Teknologi','','/lingkup-kerja#tech-division');
         },
         techCircle = os.circle(techX, techY, r3)
             .click(function() {
                 techModal();
             }),
-        techText = os.text(techX,techY,'Technology\nDivision')
+        techText = os.text(techX,techY,'Bidang\nTeknologi')
             .click(function() {
                 techModal();
             });
@@ -923,13 +923,13 @@
     var rdcX = (2*abstraxMarginSide) + rightOffset,
         rdcY = (11*r2)+(5*marginBottom),
         rdcModal = function() {
-            loadModal('Regional Development Compartment','','/lingkup-kerja#regional-development-compartment');
+            loadModal('Kompartemen Pembangunan Daerah','','/lingkup-kerja#regional-development-compartment');
         },
         rdcCircle = os.circle(rdcX, rdcY, r3)
             .click(function() {
                 rdcModal();
             }),
-        rdcText = os.text(rdcX,rdcY,'Regional\nDevelopment\nCompartment')
+        rdcText = os.text(rdcX,rdcY,'Kompartemen\nPembangunan\nDaerah')
             .click(function() {
                 rdcModal();
             });
@@ -942,13 +942,13 @@
     var shariaX = (2*abstraxMarginSide) + rightOffset,
         shariaY = (13*r2)+(6*marginBottom),
         shariaModal = function() {
-            loadModal('Sharia Banking Compartment','','/lingkup-kerja#sharia-banking-compartment');
+            loadModal('Kompartemen Perbankan Syariah','','/lingkup-kerja#sharia-banking-compartment');
         },
         shariaCircle = os.circle(shariaX, shariaY, r3)
             .click(function() {
                 shariaModal();
             }),
-        shariaText = os.text(shariaX,shariaY,'Sharia\nBanking\nCompartment')
+        shariaText = os.text(shariaX,shariaY,'Kompartemen\nPerbankan\nSyariah')
             .click(function() {
                 shariaModal();
             });
@@ -961,13 +961,13 @@
     var governanceX = (3*abstraxMarginSide) + rightOffset,
         governanceY = (5*r2)+(2*marginBottom),
         governanceModal = function() {
-            loadModal('Governance Division','','/lingkup-kerja#governance-division');
+            loadModal('Bidang Governance','','/lingkup-kerja#governance-division');
         },
         governanceCircle = os.circle(governanceX, governanceY, r3)
             .click(function() {
                 governanceModal();
             }),
-        governanceText = os.text(governanceX,governanceY,'Governance\nDivision')
+        governanceText = os.text(governanceX,governanceY,'Bidang\nGovernance')
             .click(function() {
                 governanceModal();
             });
