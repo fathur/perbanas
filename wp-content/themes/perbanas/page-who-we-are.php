@@ -456,12 +456,28 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/raphael-min.js'; ?>"></script>
 <script>
   window.onload = function() {
-    var os = new Raphael('orgstruct','848','1338');
+
+    var vpWidth = window.innerWidth,
+        vpHeight = window.innerHeight,
+        ratio; 
+
+    if (vpWidth < 768) {
+        ratio = 0.47;
+    } else if (vpWidth >= 768 && vpWidth < 992) {
+        ratio = 0.8;
+    } else if (vpWidth >= 992) {
+        ratio = 1;
+    };;
+
+    var canvasWidth = 848 * ratio,
+        canvasHeight = 1338 * ratio;
+
+    var os = new Raphael('orgstruct',canvasWidth,canvasHeight);
 
     // Set variabel
-    var r1  = 60, // radius circle 1
-        r2  = 55, // radius circle 2
-        r3  = 48,
+    var r1  = 60 * ratio, // radius circle 1
+        r2  = 55 * ratio, // radius circle 2
+        r3  = 48 * ratio,
 
         darkBlue    = '#004987',
         lightBlue   = '#009CDF',
@@ -478,7 +494,7 @@
         },
         darkBlueTextAttr = {
             fill: '#FFF',
-            'font-size': 14,
+            'font-size': 14 * (ratio+0.1),
             cursor: 'pointer'
         },
 
@@ -489,12 +505,12 @@
         },
         lightBlueTextAttr = {
             fill: '#FFF',
-            'font-size': 14,
+            'font-size': 14 * (ratio+0.1),
             cursor: 'pointer'
         },
         lightBlueSmallTextAttr = {
             fill: '#FFF',
-            'font-size': 12,
+            'font-size': 12 * (ratio+0.1),
             cursor: 'pointer'
         };
 
@@ -503,8 +519,8 @@
     // -------------------
     // Supervisory Board
     // -------------------
-    var supervisoryBoardX = 150,
-        supervisoryBoardY = 60 + topOffset,
+    var supervisoryBoardX = 150  * ratio,
+        supervisoryBoardY = (60 + topOffset) * ratio,
         supervisoryBoardModal = function() {
             loadModal('Supervisory Board','Some Content here','/en/how-we-work#supervisory-board');
         },
@@ -522,8 +538,8 @@
     // -------------------
     // Members
     // -------------------
-    var membersX = 60,
-        membersY = 180 + topOffset,
+    var membersX = 60 * ratio,
+        membersY = (180 + topOffset) * ratio,
         membersModal = function() {
             loadModal('Members','Some Content here','/en/how-we-work#members');
         },
@@ -541,8 +557,8 @@
     // -------------------
     // Chairman
     // -------------------
-    var chairmanX = 240,
-        chairmanY = 180 + topOffset,
+    var chairmanX = 240 * ratio,
+        chairmanY = (180 + topOffset) * ratio,
         chairmanModal = function() {
             loadModal('Chairman','','/en/how-we-work#chairman');
         },
@@ -560,8 +576,8 @@
     // -------------------
     // Advisory Board
     // -------------------
-    var advisoryBoardX = 150,
-        advisoryBoardY = 300 + topOffset,
+    var advisoryBoardX = 150 * ratio,
+        advisoryBoardY = (300 + topOffset) * ratio,
         advisoryBoardModal = function() {
             loadModal('Advisory Board','','/en/how-we-work#advisory-board');
         },
@@ -580,14 +596,17 @@
     // Line Members to chairman
     os.path("M"+(2*r1)+","+membersY+"H"+(chairmanX-membersX)).attr({stroke:darkBlue});
     os.path("M"+supervisoryBoardX+","+(supervisoryBoardY+r1)+"V"+(advisoryBoardY-r1)).attr({stroke:darkBlue});
-    os.path("M"+(chairmanX+r1)+","+chairmanY+"H"+( (5*r1)+15 ));
+    
+    // chairman to right vertical line
+    os.path("M"+(chairmanX+r1)+","+chairmanY+
+        "H"+( (5*r1)+(15 * ratio) ));
 
 
 
     // -------------------
     // Secretary General
     // -------------------
-    var secretaryGeneralX = 0 + rightOffset,
+    var secretaryGeneralX = (0 + rightOffset) * ratio,
         secretaryGeneralY = r2,
         secretaryModal = function() {
             loadModal('Secretary General','Key Initiatives: 1. Support the Work Programs of all Divisions.','/en/how-we-work#secretary-general');
@@ -602,7 +621,7 @@
             });
     // line
     os.path("M"+(secretaryGeneralX-r2)+","+secretaryGeneralY+
-            "H"+(rightOffset-r2-50)+
+            "H"+(secretaryGeneralX-r2-(50 * ratio))+
             "V"+( (15*r2)+(7*marginBottom) ))
         .attr({stroke:darkBlue});
 
@@ -610,8 +629,8 @@
     // -------------------
     // Treasurer
     // -------------------
-    var treasurerX = 0 + rightOffset,
-        treasurerY = (3*r2)+marginBottom,
+    var treasurerX = (0 + rightOffset) * ratio,
+        treasurerY = (3*r2) + marginBottom,
         treasurerModal = function() {
             loadModal('Trasurer','Key Initiatives: 1. Consolidation of regional financial statements.','/en/how-we-work#treasurer');
         },
@@ -625,15 +644,15 @@
             });
     // line
     os.path("M"+(treasurerX-r2)+","+treasurerY+
-            "H"+(rightOffset-r2-50))
+            "H"+(treasurerX-r2-(50 * ratio)))
         .attr({stroke:darkBlue});
 
 
     // -------------------
     // Vice Chairman 1
     // -------------------
-    var viceChairman1X = 0 + rightOffset,
-        viceChairman1Y = (5*r2)+(2*marginBottom),
+    var viceChairman1X = (0 + rightOffset) * ratio,
+        viceChairman1Y = (5*r2) +(2*marginBottom) ,
         viceChairman1Modal = function() {
             loadModal('Vice Chairman 1','','/en/how-we-work#vice-chairman-1');
         },
@@ -647,19 +666,19 @@
             });
     // line
     os.path("M"+(viceChairman1X-r2)+","+viceChairman1Y+
-            "H"+(rightOffset-r2-25)+
+            "H"+(viceChairman1X - r2 - (25 * ratio))+
             "V"+((13*r2)+(6*marginBottom)))
         .attr({stroke:darkBlue});
     os.path("M"+(viceChairman1X+r2)+","+viceChairman1Y+
-            "H"+(viceChairman1X+r2+7)+
+            "H"+(viceChairman1X+r2+(7 * ratio))+
             "V"+(viceChairman1Y+r3+15)+
-            "H"+((3*abstraxMarginSide) + rightOffset))
+            "H"+((3*abstraxMarginSide) + rightOffset)* ratio)
         .attr({stroke:darkBlue});
 
     // -------------------
     // Vice Chairman 2
     // -------------------
-    var viceChairman2X = 0 + rightOffset,
+    var viceChairman2X = (0 + rightOffset) * ratio,
         viceChairman2Y = (7*r2)+(3*marginBottom),
         viceCHairman2Modal = function() {
             loadModal('Vice Chairman 2','','/en/how-we-work#vice-chairman-2');
@@ -673,17 +692,18 @@
                 viceCHairman2Modal();
             });
     // line
-    os.path("M"+(viceChairman2X-r2)+","+viceChairman2Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman2X-r2)+","+viceChairman2Y+
+            "H"+(viceChairman2X-r2-(25* ratio)) ).attr({stroke:darkBlue});
     os.path("M"+(viceChairman2X+r2)+","+viceChairman2Y+
-            "H"+(viceChairman2X+r2+7)+
+            "H"+(viceChairman2X+r2+(7*ratio))+
             "V"+(viceChairman2Y+r3+15)+
-            "H"+((2*abstraxMarginSide) + rightOffset))
+            "H"+((2*abstraxMarginSide) + rightOffset)* ratio)
         .attr({stroke:darkBlue});
 
     // -------------------
     // Vice Chairman 3
     // -------------------
-    var viceChairman3X = 0 + rightOffset,
+    var viceChairman3X = (0 + rightOffset) * ratio,
         viceChairman3Y = (9*r2)+(4*marginBottom),
         viceChairman3Modal = function() {
             loadModal('Vice Chairman 3','','/en/how-we-work#vice-chairman-3');
@@ -697,12 +717,18 @@
                 viceChairman3Modal();
             });
     // line
-    os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+
+            "H"+(viceChairman3X-r2-(50 * ratio)))
+        .attr({stroke:darkBlue});
+    // line
+    os.path("M"+(viceChairman3X+r2)+","+viceChairman3Y+
+            "H"+(viceChairman3X+r2+(17*ratio)))
+        .attr({stroke:darkBlue});
 
     // -------------------
     // Vice Chairman 4
     // -------------------
-    var viceChairman4X = 0 + rightOffset,
+    var viceChairman4X = (0 + rightOffset) * ratio,
         viceChairman4Y = (11*r2)+(5*marginBottom),
         viceChairman4Modal = function() {
             loadModal('Vice Chairman 4','','/en/how-we-work#vice-chairman-4');
@@ -716,17 +742,18 @@
                 viceChairman4Modal();
             });
     // line
-    os.path("M"+(viceChairman4X-r2)+","+viceChairman4Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman4X-r2)+","+viceChairman4Y+
+            "H"+(viceChairman4X-r2-(25* ratio))).attr({stroke:darkBlue});
     os.path("M"+(viceChairman4X+r2)+","+viceChairman4Y+
-            "H"+(viceChairman4X+r2+7)+
+            "H"+(viceChairman4X+r2+(7 * ratio))+
             "V"+(viceChairman4Y+r3+15)+
-            "H"+((2*abstraxMarginSide) + rightOffset))
+            "H"+((2*abstraxMarginSide) + rightOffset)* ratio)
         .attr({stroke:darkBlue});
 
     // -------------------
     // Vice Chairman 5
     // -------------------
-    var viceChairman5X = 0 + rightOffset,
+    var viceChairman5X = (0 + rightOffset) * ratio,
         viceChairman5Y = (13*r2)+(6*marginBottom),
         viceChairman5Modal = function() {
             loadModal('Vice Chairman 5','','/en/how-we-work#vice-chairman-5');
@@ -740,17 +767,18 @@
                 viceChairman5Modal();
             });
     // line
-    os.path("M"+(viceChairman5X-r2)+","+viceChairman5Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman5X-r2)+","+viceChairman5Y+
+            "H"+(viceChairman5X-r2-(25* ratio))).attr({stroke:darkBlue});
     os.path("M"+(viceChairman5X+r2)+","+viceChairman5Y+
-            "H"+(viceChairman5X+r2+7)+
+            "H"+(viceChairman5X+r2+(7 * ratio))+
             "V"+(viceChairman5Y+r3+15)+
-            "H"+((2*abstraxMarginSide) + rightOffset))
+            "H"+((2*abstraxMarginSide) + rightOffset)* ratio)
         .attr({stroke:darkBlue});
 
     // -------------------
     // KMPP
     // -------------------
-    var kmppX = 0 + rightOffset,
+    var kmppX = (0 + rightOffset) * ratio,
         kmppY = (15*r2)+(7*marginBottom),
         kmppModal = function() {
             loadModal('KMPP','','/en/how-we-work#kmpp');
@@ -764,7 +792,8 @@
                 kmppModal();
             });
     // line
-    os.path("M"+(kmppX-r2)+","+kmppY+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
+    os.path("M"+(kmppX-r2)+","+kmppY+
+            "H"+(kmppX-r2-(50* ratio))).attr({stroke:darkBlue});
 
 
     
@@ -773,7 +802,7 @@
     // -------------------
     // Secretariat
     // -------------------
-    var secretariatX = abstraxMarginSide + rightOffset,
+    var secretariatX = (abstraxMarginSide + rightOffset) * ratio,
         secretariatY = r2,
         secretariatModal = function() {
             loadModal('Secretariat','','/en/how-we-work#secretariat');
@@ -787,13 +816,13 @@
                 secretariatModal();
             });
     // line
-    os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+    os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)* ratio).attr({stroke:darkBlue});
 
 
     // -------------------
     // Organization Division
     // -------------------
-    var orgDivisionX = abstraxMarginSide + rightOffset,
+    var orgDivisionX = (abstraxMarginSide + rightOffset) * ratio,
         orgDivisionY = (5*r2)+(2*marginBottom),
         orgDivisionModal = function() {
             loadModal('Organization Division','Key Initiatives: 1. Discourse to unify all regional banking activities into one organization which is Perbanas.','/en/how-we-work#organization-division');
@@ -812,7 +841,7 @@
     // -------------------
     // Academic and Human Resource Division
     // -------------------
-    var acadHRDX = abstraxMarginSide + rightOffset,
+    var acadHRDX = (abstraxMarginSide + rightOffset) * ratio,
         acadHRDY = (7*r2)+(3*marginBottom),
         acadHRDModal = function() {
             loadModal('Academic and Human Resource Division','Key Initiatives: 1. Optimize the \'link and match\' process with Perbanas Institute and STIE Perbanas Surabaya.','/en/how-we-work#academic-and-human-resource-division');
@@ -831,7 +860,7 @@
     // -------------------
     // Law and Regulation Division
     // -------------------
-    var lawAndRegulationX = abstraxMarginSide + rightOffset,
+    var lawAndRegulationX = (abstraxMarginSide + rightOffset) * ratio,
         lawAndRegulationY = (9*r2)+(4*marginBottom),
         lawAndRegulationModal = function() {
             loadModal('Law and Regulation Division','Key Initiative: 1. Increase legal protection for the banking industry by establishing Perbanas Legal Working Commission and synergize with BI initiatives.','/en/how-we-work#law-and-regulation-division');
@@ -844,13 +873,12 @@
             .click(function() {
                 lawAndRegulationModal();
             });
-    // line
-    os.path("M"+(lawAndRegulationX-r3)+","+lawAndRegulationY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+    
 
     // -------------------
     // Foreign Affairs Division
     // -------------------
-    var foreignAffairsX = abstraxMarginSide + rightOffset,
+    var foreignAffairsX = (abstraxMarginSide + rightOffset) * ratio,
         foreignAffairsY = (11*r2)+(5*marginBottom),
         foreignAffairsModal = function() {
             loadModal('Foreign Affairs Division','Key Initiatives: 1. Establishment of "ASEAN One Integration" Committee','/en/how-we-work#foreign-affairs-division');
@@ -869,7 +897,7 @@
     // -------------------
     // Public Relation Division
     // -------------------
-    var PRX = abstraxMarginSide + rightOffset,
+    var PRX = (abstraxMarginSide + rightOffset) * ratio,
         PRY = (13*r2)+(6*marginBottom),
         PRModal = function() {
             loadModal('Public Relation Division','Key Initiatives: 1. Maintain the image and existence of Perbanas as an organization and become a reliable partner to stakeholders.','/en/how-we-work#pr-division');
@@ -888,7 +916,7 @@
     // -------------------
     // Research and Development Division
     // -------------------
-    var rndX = (2*abstraxMarginSide) + rightOffset,
+    var rndX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         rndY = (5*r2)+(2*marginBottom),
         rndModal = function() {
             loadModal('Research and Development Division','Key Initiatives: 1. Routine FGD (hot issue) once a month','/en/how-we-work#rnd-division');
@@ -908,7 +936,7 @@
     // -------------------
     // Technology Division
     // -------------------
-    var techX = (2*abstraxMarginSide) + rightOffset,
+    var techX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         techY = (7*r2)+(3*marginBottom),
         techModal = function() {
             loadModal('Technology Division','Key Initiatives: 1. Formulate a database for the Indonesian banking industry.','/en/how-we-work#tech-division');
@@ -928,7 +956,7 @@
     // -------------------
     // Regional\nDevelopment\nCompartment
     // -------------------
-    var rdcX = (2*abstraxMarginSide) + rightOffset,
+    var rdcX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         rdcY = (11*r2)+(5*marginBottom),
         rdcModal = function() {
             loadModal('Regional Development Compartment','','/en/how-we-work#regional-development-compartment');
@@ -947,7 +975,7 @@
     // -------------------
     // Sharia Banking Compartment
     // -------------------
-    var shariaX = (2*abstraxMarginSide) + rightOffset,
+    var shariaX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         shariaY = (13*r2)+(6*marginBottom),
         shariaModal = function() {
             loadModal('Sharia Banking Compartment','Key Initiatives: 1. Product Manager Forum.','/en/how-we-work#sharia-banking-compartment');
@@ -966,7 +994,7 @@
     // -------------------
     // Governance Division
     // -------------------
-    var governanceX = (3*abstraxMarginSide) + rightOffset,
+    var governanceX = ((3*abstraxMarginSide) + rightOffset) * ratio,
         governanceY = (5*r2)+(2*marginBottom),
         governanceModal = function() {
             loadModal('Governance Division','Key Initiatives: 1. Socialization on GCG in cooperation with KNKG or BI (3 x a year).','/en/how-we-work#governance-division');

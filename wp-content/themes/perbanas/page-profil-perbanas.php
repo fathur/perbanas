@@ -453,7 +453,7 @@
     var os = new Raphael('orgstruct','848','1338');
 
     // Set variabel
-    var r1  = 60, // radius circle 1
+    var r1  = 30, // radius circle 1
         r2  = 55, // radius circle 2
         r3  = 48,
 
