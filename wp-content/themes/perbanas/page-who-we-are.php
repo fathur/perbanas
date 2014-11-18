@@ -457,8 +457,8 @@
 <script>
   window.onload = function() {
 
-    var vpWidth = window.innerWidth,
-        vpHeight = window.innerHeight,
+    var vpWidth     = window.innerWidth,
+        vpHeight    = window.innerHeight,
         ratio; 
 
     if (vpWidth < 768) {
@@ -469,8 +469,8 @@
         ratio = 1;
     };;
 
-    var canvasWidth = 848 * ratio,
-        canvasHeight = 1338 * ratio;
+    var canvasWidth     = 848 * ratio,
+        canvasHeight    = 1338 * ratio;
 
     var os = new Raphael('orgstruct',canvasWidth,canvasHeight);
 
@@ -519,7 +519,7 @@
     // -------------------
     // Supervisory Board
     // -------------------
-    var supervisoryBoardX = 150  * ratio,
+    var supervisoryBoardX = 150 * ratio,
         supervisoryBoardY = (60 + topOffset) * ratio,
         supervisoryBoardModal = function() {
             loadModal('Supervisory Board','Some Content here','/en/how-we-work#supervisory-board');
@@ -794,10 +794,6 @@
     // line
     os.path("M"+(kmppX-r2)+","+kmppY+
             "H"+(kmppX-r2-(50* ratio))).attr({stroke:darkBlue});
-
-
-    
-
 
     // -------------------
     // Secretariat

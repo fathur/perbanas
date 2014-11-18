@@ -450,12 +450,27 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/raphael-min.js'; ?>"></script>
 <script>
   window.onload = function() {
-    var os = new Raphael('orgstruct','848','1338');
+    var vpWidth     = window.innerWidth,
+        vpHeight    = window.innerHeight,
+        ratio; 
+
+    if (vpWidth < 768) {
+        ratio = 0.47;
+    } else if (vpWidth >= 768 && vpWidth < 992) {
+        ratio = 0.8;
+    } else if (vpWidth >= 992) {
+        ratio = 1;
+    };;
+
+    var canvasWidth     = 848 * ratio,
+        canvasHeight    = 1338 * ratio;
+
+    var os = new Raphael('orgstruct',canvasWidth,canvasHeight);
 
     // Set variabel
-    var r1  = 30, // radius circle 1
-        r2  = 55, // radius circle 2
-        r3  = 48,
+    var r1  = 60 * ratio, // radius circle 1
+        r2  = 55 * ratio, // radius circle 2
+        r3  = 48 * ratio,
 
         darkBlue    = '#004987',
         lightBlue   = '#009CDF',
@@ -472,7 +487,7 @@
         },
         darkBlueTextAttr = {
             fill: '#FFF',
-            'font-size': 14,
+            'font-size': 14 * (ratio+0.1),
             cursor: 'pointer'
         },
 
@@ -483,22 +498,21 @@
         },
         lightBlueTextAttr = {
             fill: '#FFF',
-            'font-size': 14,
+            'font-size': 14 * (ratio+0.1),
             cursor: 'pointer'
         },
         lightBlueSmallTextAttr = {
             fill: '#FFF',
-            'font-size': 12,
+            'font-size': 12 * (ratio+0.1),
             cursor: 'pointer'
         };
-
 
 
     // -------------------
     // Supervisory Board
     // -------------------
-    var supervisoryBoardX = 150,
-        supervisoryBoardY = 60 + topOffset,
+    var supervisoryBoardX = 150 * ratio,
+        supervisoryBoardY = (60 + topOffset) * ratio,
         supervisoryBoardModal = function() {
             loadModal('Dewan Penasihat','','/id/lingkup-kerja#supervisory-board');
         },
@@ -516,8 +530,8 @@
     // -------------------
     // Members
     // -------------------
-    var membersX = 60,
-        membersY = 180 + topOffset,
+    var membersX = 60 * ratio,
+        membersY = (180 + topOffset) * ratio,
         membersModal = function() {
             loadModal('Anggota','Some Content here','/id/lingkup-kerja#members');
         },
@@ -535,8 +549,8 @@
     // -------------------
     // Chairman
     // -------------------
-    var chairmanX = 240,
-        chairmanY = 180 + topOffset,
+    var chairmanX = 240 * ratio,
+        chairmanY = (180 + topOffset) * ratio,
         chairmanModal = function() {
             loadModal('Ketua Umum','','/id/lingkup-kerja#chairman');
         },
@@ -554,8 +568,8 @@
     // -------------------
     // Advisory Board
     // -------------------
-    var advisoryBoardX = 150,
-        advisoryBoardY = 300 + topOffset,
+    var advisoryBoardX = 150 * ratio,
+        advisoryBoardY = (300 + topOffset) * ratio,
         advisoryBoardModal = function() {
             loadModal('Dewan Pengawas','','/id/lingkup-kerja#advisory-board');
         },
@@ -571,17 +585,20 @@
             });
 
 
-    // Line Members to chairman
+     // Line Members to chairman
     os.path("M"+(2*r1)+","+membersY+"H"+(chairmanX-membersX)).attr({stroke:darkBlue});
     os.path("M"+supervisoryBoardX+","+(supervisoryBoardY+r1)+"V"+(advisoryBoardY-r1)).attr({stroke:darkBlue});
-    os.path("M"+(chairmanX+r1)+","+chairmanY+"H"+( (5*r1)+15 ));
+    
+    // chairman to right vertical line
+    os.path("M"+(chairmanX+r1)+","+chairmanY+
+        "H"+( (5*r1)+(15 * ratio) ));
 
 
 
     // -------------------
     // Secretary General
     // -------------------
-    var secretaryGeneralX = 0 + rightOffset,
+    var secretaryGeneralX = (0 + rightOffset) * ratio,
         secretaryGeneralY = r2,
         secretaryModal = function() {
             loadModal('Sekretaris Jenderal','Gagasan Utama: 1. Support program kerja bidang','/id/lingkup-kerja#secretary-general');
@@ -596,7 +613,7 @@
             });
     // line
     os.path("M"+(secretaryGeneralX-r2)+","+secretaryGeneralY+
-            "H"+(rightOffset-r2-50)+
+            "H"+(secretaryGeneralX-r2-(50 * ratio))+
             "V"+( (15*r2)+(7*marginBottom) ))
         .attr({stroke:darkBlue});
 
@@ -604,7 +621,7 @@
     // -------------------
     // Treasurer
     // -------------------
-    var treasurerX = 0 + rightOffset,
+    var treasurerX = (0 + rightOffset) * ratio,
         treasurerY = (3*r2)+marginBottom,
         treasurerModal = function() {
             loadModal('Bendahara','Gagasan Utama: 1. Konsolidasi laporan keuangan daerah.','/id/lingkup-kerja#treasurer');
@@ -619,14 +636,14 @@
             });
     // line
     os.path("M"+(treasurerX-r2)+","+treasurerY+
-            "H"+(rightOffset-r2-50))
+            "H"+(treasurerX-r2-(50 * ratio)))
         .attr({stroke:darkBlue});
 
 
     // -------------------
     // Wakil Ketua Umum 1
     // -------------------
-    var viceChairman1X = 0 + rightOffset,
+    var viceChairman1X = (0 + rightOffset) * ratio,
         viceChairman1Y = (5*r2)+(2*marginBottom),
         viceChairman1Modal = function() {
             loadModal('Wakil Ketua Umum 1','','/id/lingkup-kerja#vice-chairman-1');
@@ -641,19 +658,19 @@
             });
     // line
     os.path("M"+(viceChairman1X-r2)+","+viceChairman1Y+
-            "H"+(rightOffset-r2-25)+
+            "H"+(viceChairman1X - r2 - (25 * ratio))+
             "V"+((13*r2)+(6*marginBottom)))
         .attr({stroke:darkBlue});
     os.path("M"+(viceChairman1X+r2)+","+viceChairman1Y+
-            "H"+(viceChairman1X+r2+7)+
+            "H"+(viceChairman1X+r2+(7 * ratio))+
             "V"+(viceChairman1Y+r3+15)+
-            "H"+((3*abstraxMarginSide) + rightOffset))
+            "H"+((3*abstraxMarginSide) + rightOffset)* ratio)
         .attr({stroke:darkBlue});
 
     // -------------------
     // Wakil Ketua Umum 2
     // -------------------
-    var viceChairman2X = 0 + rightOffset,
+    var viceChairman2X = (0 + rightOffset) * ratio,
         viceChairman2Y = (7*r2)+(3*marginBottom),
         viceCHairman2Modal = function() {
             loadModal('Wakil Ketua Umum 2','','/id/lingkup-kerja#vice-chairman-2');
@@ -667,17 +684,18 @@
                 viceCHairman2Modal();
             });
     // line
-    os.path("M"+(viceChairman2X-r2)+","+viceChairman2Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman2X-r2)+","+viceChairman2Y+
+            "H"+(viceChairman2X-r2-(25* ratio)) ).attr({stroke:darkBlue});
     os.path("M"+(viceChairman2X+r2)+","+viceChairman2Y+
-            "H"+(viceChairman2X+r2+7)+
+            "H"+(viceChairman2X+r2+(7*ratio))+
             "V"+(viceChairman2Y+r3+15)+
-            "H"+((2*abstraxMarginSide) + rightOffset))
+            "H"+((2*abstraxMarginSide) + rightOffset)* ratio)
         .attr({stroke:darkBlue});
 
     // -------------------
     // Wakil Ketua Umum 3
     // -------------------
-    var viceChairman3X = 0 + rightOffset,
+    var viceChairman3X = (0 + rightOffset) * ratio,
         viceChairman3Y = (9*r2)+(4*marginBottom),
         viceChairman3Modal = function() {
             loadModal('Wakil Ketua Umum 3','','/id/lingkup-kerja#vice-chairman-3');
@@ -691,12 +709,18 @@
                 viceChairman3Modal();
             });
     // line
-    os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman3X-r2)+","+viceChairman3Y+
+            "H"+(viceChairman3X-r2-(50 * ratio)))
+        .attr({stroke:darkBlue});
+    // line
+    os.path("M"+(viceChairman3X+r2)+","+viceChairman3Y+
+            "H"+(viceChairman3X+r2+(17*ratio)))
+        .attr({stroke:darkBlue});
 
     // -------------------
     // Wakil Ketua Umum 4
     // -------------------
-    var viceChairman4X = 0 + rightOffset,
+    var viceChairman4X = (0 + rightOffset) * ratio,
         viceChairman4Y = (11*r2)+(5*marginBottom),
         viceChairman4Modal = function() {
             loadModal('Wakil Ketua Umum 4','','/id/lingkup-kerja#vice-chairman-4');
@@ -710,17 +734,18 @@
                 viceChairman4Modal();
             });
     // line
-    os.path("M"+(viceChairman4X-r2)+","+viceChairman4Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman4X-r2)+","+viceChairman4Y+
+            "H"+(viceChairman4X-r2-(25* ratio))).attr({stroke:darkBlue});
     os.path("M"+(viceChairman4X+r2)+","+viceChairman4Y+
-            "H"+(viceChairman4X+r2+7)+
+            "H"+(viceChairman4X+r2+(7 * ratio))+
             "V"+(viceChairman4Y+r3+15)+
-            "H"+((2*abstraxMarginSide) + rightOffset))
+            "H"+((2*abstraxMarginSide) + rightOffset)* ratio)
         .attr({stroke:darkBlue});
 
     // -------------------
     // Wakil Ketua Umum 5
     // -------------------
-    var viceChairman5X = 0 + rightOffset,
+    var viceChairman5X = (0 + rightOffset) * ratio,
         viceChairman5Y = (13*r2)+(6*marginBottom),
         viceChairman5Modal = function() {
             loadModal('Wakil Ketua Umum 5','','/id/lingkup-kerja#vice-chairman-5');
@@ -734,17 +759,18 @@
                 viceChairman5Modal();
             });
     // line
-    os.path("M"+(viceChairman5X-r2)+","+viceChairman5Y+"H"+(rightOffset-r2-25)).attr({stroke:darkBlue});
+    os.path("M"+(viceChairman5X-r2)+","+viceChairman5Y+
+            "H"+(viceChairman5X-r2-(25* ratio))).attr({stroke:darkBlue});
     os.path("M"+(viceChairman5X+r2)+","+viceChairman5Y+
-            "H"+(viceChairman5X+r2+7)+
+            "H"+(viceChairman5X+r2+(7 * ratio))+
             "V"+(viceChairman5Y+r3+15)+
-            "H"+((2*abstraxMarginSide) + rightOffset))
+            "H"+((2*abstraxMarginSide) + rightOffset)* ratio)
         .attr({stroke:darkBlue});
 
     // -------------------
     // KMPP
     // -------------------
-    var kmppX = 0 + rightOffset,
+    var kmppX = (0 + rightOffset) * ratio,
         kmppY = (15*r2)+(7*marginBottom),
         kmppModal = function() {
             loadModal('KMPP','','/id/lingkup-kerja#kmpp');
@@ -758,16 +784,14 @@
                 kmppModal();
             });
     // line
-    os.path("M"+(kmppX-r2)+","+kmppY+"H"+(rightOffset-r2-50)).attr({stroke:darkBlue});
-
-
-    
+    os.path("M"+(kmppX-r2)+","+kmppY+
+            "H"+(kmppX-r2-(50* ratio))).attr({stroke:darkBlue});
 
 
     // -------------------
     // Secretariat
     // -------------------
-    var secretariatX = abstraxMarginSide + rightOffset,
+    var secretariatX = (abstraxMarginSide + rightOffset) * ratio,
         secretariatY = r2,
         secretariatModal = function() {
             loadModal('Sekretariat','','/id/lingkup-kerja#secretariat');
@@ -781,7 +805,7 @@
                 secretariatModal();
             });
     // line
-    os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+    os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)* ratio).attr({stroke:darkBlue});
 
 
     // -------------------
@@ -806,7 +830,7 @@
     // -------------------
     // Academic and Human Resource Division
     // -------------------
-    var acadHRDX = abstraxMarginSide + rightOffset,
+    var acadHRDX = (abstraxMarginSide + rightOffset) * ratio,
         acadHRDY = (7*r2)+(3*marginBottom),
         acadHRDModal = function() {
             loadModal('Bidang Pendidikan & Pengembangan SDM','Gagasan Utama: 1. Meningkatkan proses link and match dengan Perbanas Institute dan STIE Perbanas Surabaya.','/id/lingkup-kerja#academic-and-human-resource-division');
@@ -825,7 +849,7 @@
     // -------------------
     // Law and Regulation Division
     // -------------------
-    var lawAndRegulationX = abstraxMarginSide + rightOffset,
+    var lawAndRegulationX = (abstraxMarginSide + rightOffset) * ratio,
         lawAndRegulationY = (9*r2)+(4*marginBottom),
         lawAndRegulationModal = function() {
             loadModal('Bidang Hukum','Gagasan Utama: 1. Meningkatkan perlindungan hukum bagi industry perbankan dengan membentuk Komisi Kerja Legal Perbanas dan bersinergi dengan inisiatif BI.','/id/lingkup-kerja#law-and-regulation-division');
@@ -844,7 +868,7 @@
     // -------------------
     // Foreign Affairs Division
     // -------------------
-    var foreignAffairsX = abstraxMarginSide + rightOffset,
+    var foreignAffairsX = (abstraxMarginSide + rightOffset) * ratio,
         foreignAffairsY = (11*r2)+(5*marginBottom),
         foreignAffairsModal = function() {
             loadModal('Bidang Luar Negeri','Gagasan Utama: 1. Pembentukan Komite "ASEAN One Integration"','/id/lingkup-kerja#foreign-affairs-division');
