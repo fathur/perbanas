@@ -455,7 +455,7 @@
         ratio; 
 
     if (vpWidth < 768) {
-        ratio = 0.47;
+        ratio = 0.4;
     } else if (vpWidth >= 768 && vpWidth < 992) {
         ratio = 0.8;
     } else if (vpWidth >= 992) {
