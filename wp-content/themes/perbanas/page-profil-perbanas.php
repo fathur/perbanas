@@ -616,6 +616,10 @@
             "H"+(secretaryGeneralX-r2-(50 * ratio))+
             "V"+( (15*r2)+(7*marginBottom) ))
         .attr({stroke:darkBlue});
+    // line
+    os.path("M"+(secretaryGeneralX+r2)+","+secretaryGeneralY+
+            "H"+(secretaryGeneralX+r2+(17 * ratio)))
+        .attr({stroke:darkBlue});
 
 
     // -------------------
@@ -656,7 +660,7 @@
             .click(function() {
                 viceChairman1Modal();
             });
-    // line
+   // line
     os.path("M"+(viceChairman1X-r2)+","+viceChairman1Y+
             "H"+(viceChairman1X - r2 - (25 * ratio))+
             "V"+((13*r2)+(6*marginBottom)))
@@ -804,14 +808,11 @@
             .click(function() {
                 secretariatModal();
             });
-    // line
-    os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)* ratio).attr({stroke:darkBlue});
-
 
     // -------------------
     // Organization Division
     // -------------------
-    var orgDivisionX = abstraxMarginSide + rightOffset,
+    var orgDivisionX = (abstraxMarginSide + rightOffset) * ratio,
         orgDivisionY = (5*r2)+(2*marginBottom),
         orgDivisionModal = function() {
             loadModal('Bidang Organisasi','Gagasan Utama: 1. Wacana untuk menyatukan seluruh kegiatan perbankan daerah dalam satu wadah saja yaitu Perbanas.','/id/lingkup-kerja#organization-division');
@@ -862,8 +863,7 @@
             .click(function() {
                 lawAndRegulationModal();
             });
-    // line
-    os.path("M"+(lawAndRegulationX-r3)+","+lawAndRegulationY+"H"+(rightOffset+r2)).attr({stroke:darkBlue});
+    
 
     // -------------------
     // Foreign Affairs Division
@@ -887,7 +887,7 @@
     // -------------------
     // Public Relation Division
     // -------------------
-    var PRX = abstraxMarginSide + rightOffset,
+    var PRX = (abstraxMarginSide + rightOffset) * ratio,
         PRY = (13*r2)+(6*marginBottom),
         PRModal = function() {
             loadModal('Bidang Hubungan Masyarakat','Gagasan Utama: 1. Menjaga citra dan eksistensi Perbanas sebagai organisasi serta menjadi mitra yang terpercaya bagi stakeholders.','/id/lingkup-kerja#pr-division');
@@ -906,7 +906,7 @@
     // -------------------
     // Research and Development Division
     // -------------------
-    var rndX = (2*abstraxMarginSide) + rightOffset,
+    var rndX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         rndY = (5*r2)+(2*marginBottom),
         rndModal = function() {
             loadModal('Bidang Pengkajian & Pengembangan','Gagasan Utama: 1. FGD rutin (hot issue) setiap bulan sekali','/id/lingkup-kerja#rnd-divsion');
@@ -926,7 +926,7 @@
     // -------------------
     // Technology Division
     // -------------------
-    var techX = (2*abstraxMarginSide) + rightOffset,
+    var techX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         techY = (7*r2)+(3*marginBottom),
         techModal = function() {
             loadModal('Bidang Teknologi','Gagasan Utama: 1. Membentuk Database Perbankan Indonesia.','/id/lingkup-kerja#tech-division');
@@ -946,7 +946,7 @@
     // -------------------
     // Regional\nDevelopment\nCompartment
     // -------------------
-    var rdcX = (2*abstraxMarginSide) + rightOffset,
+    var rdcX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         rdcY = (11*r2)+(5*marginBottom),
         rdcModal = function() {
             loadModal('Kompartemen Pembangunan Daerah','','/id/lingkup-kerja#regional-development-compartment');
@@ -965,7 +965,7 @@
     // -------------------
     // Sharia Banking Compartment
     // -------------------
-    var shariaX = (2*abstraxMarginSide) + rightOffset,
+    var shariaX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         shariaY = (13*r2)+(6*marginBottom),
         shariaModal = function() {
             loadModal('Kompartemen Perbankan Syariah','Gagasan Utama: 1. Forum Product Manager.','/id/lingkup-kerja#sharia-banking-compartment');
@@ -984,7 +984,7 @@
     // -------------------
     // Governance Division
     // -------------------
-    var governanceX = (3*abstraxMarginSide) + rightOffset,
+    var governanceX = ((3*abstraxMarginSide) + rightOffset) * ratio,
         governanceY = (5*r2)+(2*marginBottom),
         governanceModal = function() {
             loadModal('Bidang Governance','Gagasan Utama: 1. Sosialisasi tentang GCG bekerja sama dengan KNKG atau BI (3 x setahun).','/id/lingkup-kerja#governance-division');

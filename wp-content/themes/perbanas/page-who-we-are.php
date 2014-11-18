@@ -624,6 +624,10 @@
             "H"+(secretaryGeneralX-r2-(50 * ratio))+
             "V"+( (15*r2)+(7*marginBottom) ))
         .attr({stroke:darkBlue});
+    // line
+    os.path("M"+(secretaryGeneralX+r2)+","+secretaryGeneralY+
+            "H"+(secretaryGeneralX+r2+(17 * ratio)))
+        .attr({stroke:darkBlue});
 
 
     // -------------------
@@ -811,8 +815,7 @@
             .click(function() {
                 secretariatModal();
             });
-    // line
-    os.path("M"+(secretariatX-r3)+","+secretariatY+"H"+(rightOffset+r2)* ratio).attr({stroke:darkBlue});
+    
 
 
     // -------------------
