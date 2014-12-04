@@ -69,6 +69,8 @@ get_header(); ?>
 				'post_type'			=> get_post_type(),
             	'post__not_in'		=> array($id_post),
 				'posts_per_page'	=> 4,
+                'order'             => 'DESC',
+                'orderby'           => 'date',
 				'ignore_sticky_posts' => TRUE
             ) );
             
