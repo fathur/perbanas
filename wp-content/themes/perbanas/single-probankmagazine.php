@@ -23,11 +23,7 @@ if ('download' == $action) {
 	get_template_part('news','magazine');
 } else {
 	
+	header('Location: '. get_post_type_archive_link( get_post_type() ) ); 
 }
-
-
-
-
-
 
 ?>
