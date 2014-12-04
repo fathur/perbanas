@@ -1,11 +1,11 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) die( "Access denied" );
-//Genetared by Ceceppa Multilingua - 2014-05-28 08:03
-$_cml_settings[ "default_language"] = "";
-$_cml_settings[ "default_language_id"] = "";
-$_cml_settings[ "url_mode_remove_default"] = "";
-$_cml_settings[ "default_language_slug"] = "";
-$_cml_settings[ "default_language_locale"] = "";
+//Genetared by Ceceppa Multilingua - 2014-12-04 03:57
+$_cml_settings[ "default_language"] = "Bahasa Indonesia";
+$_cml_settings[ "default_language_id"] = 2;
+$_cml_settings[ "url_mode_remove_default"] = 0;
+$_cml_settings[ "default_language_slug"] = "id";
+$_cml_settings[ "default_language_locale"] = "id_ID";
 $_cml_settings[ "url_mode"] = 2;
 $_cml_settings[ "cml_show_admin_notice"] = 1;
 $_cml_settings[ "cml_code_optimization"] = 1;
@@ -14,7 +14,7 @@ $_cml_settings[ "cml_option_filter_translations"] = 1;
 $_cml_settings[ "cml_option_filter_search"] = 1;
 $_cml_settings[ "cml_option_filter_form_class"] = "form#searchform";
 $_cml_settings[ "cml_option_filter_query"] = "";
-$_cml_settings[ "cml_option_redirect"] = "auto";
+$_cml_settings[ "cml_option_redirect"] = "default";
 $_cml_settings[ "cml_option_flags_on_post"] = 1;
 $_cml_settings[ "cml_option_flags_on_page"] = 1;
 $_cml_settings[ "cml_option_flags_on_custom_type"] = 0;
@@ -34,8 +34,8 @@ $_cml_settings[ "cml_option_change_locale"] = 1;
 $_cml_settings[ "cml_option_translate_media"] = 1;
 $_cml_settings[ "cml_option_flags_on_size"] = "small";
 $_cml_settings[ "cml_options_flags_on_translations"] = 1;
-$_cml_settings[ "cml_option_notice_page"] = "";
-$_cml_settings[ "cml_option_notice_post"] = "";
+$_cml_settings[ "cml_option_notice_page"] = 0;
+$_cml_settings[ "cml_option_notice_post"] = 0;
 $_cml_settings[ "cml_option_notice_before"] = "<h5 class=\"cml-notice\">";
 $_cml_settings[ "cml_option_notice_after"] = "</h5>";
 $_cml_settings[ "cml_add_items_as"] = 1;
@@ -50,6 +50,7 @@ $_cml_settings[ "cml_force_languge"] = 1;
 $_cml_settings[ "cml_change_date_format"] = 1;
 $_cml_settings[ "cml_show_float_items_style"] = 1;
 $_cml_settings[ "cml_show_html_items_style"] = 1;
+$_cml_settings[ "cml_update_static_page"] = 1;
 
 
 $_cml_language_columns[1] = "lang_1";

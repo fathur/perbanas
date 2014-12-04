@@ -132,10 +132,11 @@ class CMLLanguage {
       self::$_all_others = $others;
       self::$_all_languages = $all_languages_by_keys;
       self::$_all_by_slug = $byslug;
-      
-      if( ! empty( self::$_default_language ) ) {
+    }
+
+    if( ! empty( self::$_default_language ) &&
+        empty( self::$_current_id ) ) {
         self::$_current_id = self::$_default_language->id;
-      }
     }
 
     return self::$_all_languages;
@@ -1370,7 +1371,7 @@ class CMLUtils {
   public static function get_home_url( $slug = null ) {
     $_cml_settings = & $GLOBALS[ '_cml_settings' ];
 
-    if( null === $slug ) $slug = CMLLanguage::get_default()->cml_language_slug;
+    if( null === $slug ) $slug = CMLLanguage::get_current()->cml_language_slug;
 
     switch( CMLUtils::get_url_mode() ) {
     case PRE_PATH:
