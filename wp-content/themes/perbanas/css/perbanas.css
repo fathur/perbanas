@@ -1539,15 +1539,34 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
         margin: 0;
         color: rgb(0, 73, 135);
     }
-    .organization-sector.item-title p {
+    .organization-sector .item-title p {
         margin: 0;
     }
-    .organization-sector.item-logo {
-        margin: 18px 0;
+    .organization-sector .item-logo {
+        margin: 0;
     }
-    .organization-sector .item-logo img {
-        max-width: 100%;
+
+    @media screen and (min-width: 992px ) {
+
+        .organization-sector .item-logo img {
+       
+            max-height: 50px;
+            margin: 3px auto;
+        }
     }
+
+     @media screen and (max-width: 991px ) {
+
+        .organization-sector .item-logo img {
+       
+            margin: 10px auto;
+        }
+
+         .organization-sector .item-address {
+            line-height: 1.4em;       
+        }
+    }
+
     .organization-sector .item-address {
         font-size: 12px;
         color: rgb(0, 73, 135);

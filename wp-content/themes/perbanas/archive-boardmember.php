@@ -71,7 +71,7 @@ get_header(); ?>
 							<p><?php echo get_post_meta( get_the_ID(), 'wpcf-sector-posisi', TRUE ); ?></p>
 						</div>
 						<div class="item-logo">
-							<img class="img-no-responsive" src="<?php echo get_post_meta( get_the_ID(), 'wpcf-sector-logo-bank', TRUE ); ?>" />
+							<img class="img-responsive" src="<?php echo get_post_meta( get_the_ID(), 'wpcf-sector-logo-bank', TRUE ); ?>" />
 						</div>
 						<div class="item-address">
 							<?php echo get_post_meta( get_the_ID(), 'wpcf-sector-alamat', TRUE ); ?>
@@ -91,5 +91,16 @@ get_header(); ?>
         </div>
     </div>
 </div>
+
+<script>
+jQuery(function() {
+
+	var width = jQuery('.organization-sector .item-logo img');
+
+	width.each(function(i, el) {
+		console.log($(this).width());
+	});
+});
+</script>
 
 <?php get_footer(); ?>
