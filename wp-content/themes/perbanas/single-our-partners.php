@@ -1,0 +1,1 @@
+<?php header('Location: '. get_post_type_archive_link( get_post_type() ) ); ?>
