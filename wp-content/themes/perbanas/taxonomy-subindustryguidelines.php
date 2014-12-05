@@ -76,12 +76,13 @@ get_header(); ?>
 						<p class="desc-detailed">
 							<?php the_content(); ?>
 						</p>
-                </div>
-                <div class="col-xs-2 text-center">
-                    <a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE) ; ?>" target="__blank"><img src="<?php echo get_template_directory_uri(); ?>/img/download-button-05.png"></a>
-                </div>
-            </div>
-            <hr />
+                	</div>
+	                <div class="col-xs-2 text-center">
+	                    <a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE) ; ?>" target="__blank"><img src="<?php echo get_template_directory_uri(); ?>/img/download-button-05.png"></a>
+	                </div>
+            	</div>
+           		
+           		<hr />
 				
 			<?php endwhile;
 			else:
