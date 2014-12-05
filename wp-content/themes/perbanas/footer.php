@@ -31,7 +31,7 @@
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-lps.jpg" />
 							</a>
 
-							&nbsp;<span class="footer-B"> <a href="<?php echo get_permalink( get_page_by_title( 'Affiliations' ) )?>"> <?php _e('See more','perbanas'); ?></a></span> 
+							&nbsp;<span class="footer-B"> <a href="<?php echo get_post_type_archive_link('our-partners'); ?>"> <?php _e('See more','perbanas'); ?></a></span> 
 
 					</div>
 					<div class="col-sm-6 block footer-right">
