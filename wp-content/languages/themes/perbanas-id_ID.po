@@ -740,6 +740,30 @@ msgstr "Bidang Pengkajian & Pengembangan"
 msgid "Technology Division"
 msgstr "Bidang Teknologi"
 
+msgid "Academic and Human Resource Comission"
+msgstr "Bidang Pendidikan & Pengembangan SDM"
+
+msgid "Foreign Comission"
+msgstr "Bidang Luar Negeri"
+
+msgid "Governance Comission"
+msgstr "Bidang Governance"
+
+msgid "Law Comission"
+msgstr "Bidang Hukum"
+
+msgid "Organization Comission"
+msgstr "Bidang Organisasi"
+
+msgid "Public Relations Comission"
+msgstr "Bidang Hubungan Masyarakat"
+
+msgid "Research and Development Comission"
+msgstr "Bidang Pengkajian & Pengembangan"
+
+msgid "Technology Comission"
+msgstr "Bidang Teknologi"
+
 msgid "Other Regional Board"
 msgstr "Pengurus Daerah Lainnya"
 
