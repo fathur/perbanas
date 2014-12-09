@@ -24,7 +24,7 @@
             </div>
             <div class="row text-center">
                 <div class="col-xs-12">
-                    <p>PERBANAS merupakan sebuah organisasi yang memayungi industri perbankan nasional, yang dapat menjadi jembatan bagi anggotanya untuk menyalurkan aspirasi perbankan kepada pemerintah, DPR dan Bank Indonesia.</p>
+                    <p>PERBANAS merupakan sebuah organisasi yang memayungi industri perbankan nasional, yang dapat menjadi jembatan bagi anggotanya untuk menyalurkan aspirasi perbankan kepada pemerintah, DPR dan Regulator Industri Perbankan (OJK &amp; Bank Indonesia).</p>
                     <p>Bagi anggotanya, keberadaan PERBANAS dapat menjadi wadah untuk ikut menyehatkan sektor perbankan nasional. Pemikiran-pemikiran aktif dan positif bagi pengembangan industri bukan hanya monopoli Bank Indonesia, tetapi juga dapat datang dari kalangan praktisi, tentunya melalui PERBANAS.</p>
                 </div>
             </div>

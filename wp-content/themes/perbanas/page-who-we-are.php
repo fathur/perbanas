@@ -24,7 +24,7 @@
             </div>
             <div class="row text-center">
                 <div class="col-xs-12">
-                    <p>PERBANAS as the primary organization of the national banking industry, acts as a facilitator for its members to convey its aspirations concerning the banking industry, to the government, House of Representatives and Bank Indonesia. </p>
+                    <p>PERBANAS as the primary organization of the national banking industry, acts as a facilitator for its members to convey its aspirations concerning the banking industry, to the government, House of Representatives and Banking Regulator (Indonesia Financial Services Authority and Central Bank).</p>
                     <p>To its members, PERBANAS is the foundation in which they can contribute to the development of the national banking sector. Active and positive ideas towards the industry’s development should not be monopolized by Bank Indonesia, but also come from practitioners of the industry, through PERBANAS. </p>
                 </div>
             </div>
