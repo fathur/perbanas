@@ -531,7 +531,7 @@ msgid "Divisions"
 msgstr "Bidang"
 
 msgid "Advisory Board"
-msgstr "Dewan Penasehat"
+msgstr "Dewan Penasihat"
 
 msgid "Advisory Boards"
 msgstr "Dewan Penasehat"

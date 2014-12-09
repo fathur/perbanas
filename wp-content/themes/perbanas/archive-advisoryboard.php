@@ -44,7 +44,8 @@ get_header(); ?>
             		
 			<?php $loop = new WP_Query( 
 			array(
-				'post_type' => get_post_type()
+				'post_type' => get_post_type(),
+				'nopaging'	=> true
 			));
 			
 			if( $loop->have_posts() ) :

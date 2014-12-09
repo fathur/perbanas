@@ -37,7 +37,10 @@ get_header(); ?>
             </div>
             <div class="row ">
             		
-			<?php $loop = new WP_Query( array('post_type' => get_post_type()) );
+			<?php $loop = new WP_Query( array(
+				'post_type' => get_post_type(),
+				'nopaging'	=> true
+			) );
 			
 			if( $loop->have_posts() ) :
 				while($loop->have_posts()) : $loop->the_post(); ?>
