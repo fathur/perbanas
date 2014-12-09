@@ -68,7 +68,7 @@ get_header(); ?>
 						</div>
 						<div class="item-logo">
 							
-							<img class="img-no-responsive" src="<?php echo get_post_meta( get_the_ID(), 'wpcf-sector-logo-bank', TRUE ); ?>" />
+							<img class="img-responsive" src="<?php echo get_post_meta( get_the_ID(), 'wpcf-sector-logo-bank', TRUE ); ?>" />
 						</div>
 						<div class="item-address">
 							<?php echo get_post_meta( get_the_ID(), 'wpcf-sector-alamat', TRUE ); ?>
