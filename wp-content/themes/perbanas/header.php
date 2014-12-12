@@ -10,7 +10,8 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/perbanas-logo-scrolled.png" />
 
-<title><?php wp_title( '', TRUE, 'left' ); ?></title>
+<!-- <title><?php _e( wp_title( '', FALSE, 'left' ), 'perbanas'); ?></title> -->
+<title><?php perbanas_wp_title(); ?></title>
     
     <?php wp_head(); ?>
 
