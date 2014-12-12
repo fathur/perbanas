@@ -2444,6 +2444,23 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     display: inline;
     line-height: 1.6em;
 }
+
+.img-listlogo {
+    height: 140px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.img-listlogo img {
+    position: absolute;
+    width: 90%;
+    margin: 0 auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
 /* TEST */
 .news .news-item .news-desc-top .desc{
     color: #262729 !important;

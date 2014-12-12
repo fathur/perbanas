@@ -91,9 +91,9 @@ get_header(); ?>
 
                     endif;
 
-                    echo "<div class=\"col-xs-6 col-sm-3\">
+                    echo "<div class=\"col-xs-6 col-sm-3 img-listlogo\">
                         <a href=\"".get_permalink( $bank['id'] )."\" title='".$bank['title']."' target='__blank'>".
-                            get_the_post_thumbnail( $bank['id'], array(141,141), array('class'=>'img-responsive') )
+                            get_the_post_thumbnail( $bank['id'], 'medium', array('class'=>'img-responsive') )
                         ."</a>
                     </div>";
 

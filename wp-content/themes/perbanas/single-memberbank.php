@@ -33,17 +33,18 @@ get_header(); ?>
                 </div>
             </div>
             <div class="row main-content-pane-logo">
-                <div class="col-xs-12">
+                <div class="col-xs-4">
                 
 					<?php if ( has_post_thumbnail() ) {
 						
-						the_post_thumbnail('',array('class' => "img-no-responsive img-max-100p"));
+						the_post_thumbnail('large',array('class' => "img-responsive"));
 						
 					} else { ?>
 						<img src="<?php echo get_template_directory_uri(); ?>/img/no-news-picture.jpg" class="img-responsive img-max-100p" />
 					<?php } ?>
 					
                 </div>
+                <div class="col-xs-8"></div>
             </div>
             <div class="row">
                 <div class="col-xs-12 main-content-pane-left-column">

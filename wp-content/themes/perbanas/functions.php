@@ -166,7 +166,7 @@ function perbanas_wp_title($display = true)
 		$term = get_queried_object();
 		if ( $term ) {
 			$tax = get_taxonomy( $term->taxonomy );
-			$title = single_term_title( $tax->labels->name . $t_sep, false );
+			$title = single_term_title( '', false );
 		}
 	}
 
