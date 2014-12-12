@@ -530,11 +530,14 @@ msgstr "Bidang"
 msgid "Divisions"
 msgstr "Bidang"
 
+msgid "Comissions"
+msgstr "Bidang"
+
 msgid "Advisory Board"
 msgstr "Dewan Penasihat"
 
 msgid "Advisory Boards"
-msgstr "Dewan Penasehat"
+msgstr "Dewan Penasihat"
 
 msgid "Supervisory Board"
 msgstr "Dewan Pengawas"
