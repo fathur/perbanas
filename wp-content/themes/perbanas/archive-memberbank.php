@@ -91,11 +91,35 @@ get_header(); ?>
 
                     endif;
 
-                    echo "<div class=\"col-xs-6 col-sm-3 img-listlogo\">
-                        <a href=\"".get_permalink( $bank['id'] )."\" title='".$bank['title']."' target='__blank'>".
-                            get_the_post_thumbnail( $bank['id'], 'medium', array('class'=>'img-responsive') )
-                        ."</a>
-                    </div>";
+                    if (has_post_thumbnail( $bank['id'] )) {
+                        # code...
+                        echo "<div class=\"col-xs-6 col-sm-3 img-listlogo\">
+                            <a href=\"".get_permalink( $bank['id'] )."\" title='".$bank['title']."' target='__blank'>".
+                                get_the_post_thumbnail( $bank['id'], 'medium', array('class'=>'img-responsive') )
+                            ."</a>
+                        </div>";
+                    } else {
+                         echo "<div class=\"col-xs-6 col-sm-3 img-listlogo\">
+                            <a href=\"".get_permalink( $bank['id'] )."\" title='".$bank['title']."' target='__blank' style=\"
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 100%;
+    padding: 55px 0;
+    color: #CCCCCC;
+    font-weight: bolder;
+    font-size: 24px;
+\">".
+                                $bank['title'].
+                            "</a>
+                        </div>";
+                    }
+
+                   
 
                 endforeach;
 

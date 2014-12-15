@@ -596,6 +596,15 @@ msgstr "Pedoman Industri"
 msgid "Banking In Indonesia"
 msgstr "Perbankan di Indonesia"
 
+msgid "Syariah Business"
+msgstr "Bisnis Syariah"
+
+msgid "Micro Business"
+msgstr "Bisnis Mikro"
+
+msgid "Indonesia Banking Statistics"
+msgstr "Statistik Perbankan di Indonesia"
+
 msgid "Download"
 msgstr "Unduh"
 
