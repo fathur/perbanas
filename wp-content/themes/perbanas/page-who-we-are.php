@@ -633,12 +633,12 @@
     // -------------------
     // Treasurer
     // -------------------
-    var treasurerX = (0 + rightOffset) * ratio,
+    var treasurerX = (abstraxMarginSide + rightOffset) * ratio, //(abstraxMarginSide + rightOffset) * ratio
         treasurerY = (3*r2) + marginBottom,
         treasurerModal = function() {
             loadModal('Trasurer','Key Initiatives: 1. Consolidation of regional financial statements.','/en/how-we-work#treasurer');
         },
-        treasurerCircle = os.circle(treasurerX, treasurerY, r2)
+        treasurerCircle = os.circle(treasurerX, treasurerY, r3)
             .click(function() {
                 treasurerModal();
             }),
@@ -646,9 +646,9 @@
             .click(function() {
                 treasurerModal();
             });
-    // line
-    os.path("M"+(treasurerX-r2)+","+treasurerY+
-            "H"+(treasurerX-r2-(50 * ratio)))
+ 
+    os.path("M"+(treasurerX-r3)+","+treasurerY+
+            "H"+(treasurerX-r3-((67 + 2*r2) * ratio)))
         .attr({stroke:darkBlue});
 
 
@@ -1014,7 +1014,6 @@
     var lingBiruMudaBesar = os.set();
     lingBiruMudaBesar.push(
         secretaryGeneralCircle,
-        treasurerCircle,
         viceChairman1Circle,
         viceChairman2Circle,
         viceChairman3Circle,
@@ -1027,7 +1026,6 @@
     var txtBiruMudaBesar = os.set();
     txtBiruMudaBesar.push(
         secretaryGeneralText,
-        treasurerText,
         viceChairman1Text,
         viceChairman2Text,
         viceChairman3Text,
@@ -1040,6 +1038,7 @@
     var lingBiruMudaKecil = os.set();
     lingBiruMudaKecil.push(
         secretariatCircle,
+        treasurerCircle,
         orgDivisionCircle,
         acadHRDCircle,
         lawAndRegulationCircle,
@@ -1057,6 +1056,7 @@
     var txtBiruMudaKecil = os.set();
     txtBiruMudaKecil.push(
         secretariatText,
+        treasurerText,
         orgDivisionText,
         acadHRDText,
         lawAndRegulationText,
