@@ -390,6 +390,12 @@ function sort_by_order($a, $b) {
 	return strcasecmp($a['order'], $b['order']);
 }
 
+function redirect($url, $statusCode = 303)
+{
+	header('Location:'.$url, true, $statusCode);
+	die();
+}
+
 /**
  * Include separate function
  * 
