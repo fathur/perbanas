@@ -809,6 +809,9 @@ msgstr "<span class='hidden-sm'>Majalah</span> Perbanas"
 msgid "Other Divisions"
 msgstr "Bidang Lain"
 
+msgid "Other Comissions"
+msgstr "Bidang Lain"
+
 msgid "Bank Name"
 msgstr "Nama Bank Perwakilan"
 
