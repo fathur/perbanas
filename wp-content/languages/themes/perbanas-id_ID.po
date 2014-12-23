@@ -530,7 +530,7 @@ msgstr "Bidang"
 msgid "Divisions"
 msgstr "Bidang"
 
-msgid "Comissions"
+msgid "Commissions"
 msgstr "Bidang"
 
 msgid "Advisory Board"
@@ -752,28 +752,28 @@ msgstr "Bidang Pengkajian & Pengembangan"
 msgid "Technology Division"
 msgstr "Bidang Teknologi"
 
-msgid "Academic and Human Resource Comission"
+msgid "Academic and Human Resource Commission"
 msgstr "Bidang Pendidikan & Pengembangan SDM"
 
-msgid "Foreign Comission"
+msgid "Foreign Commission"
 msgstr "Bidang Luar Negeri"
 
-msgid "Governance Comission"
+msgid "Governance Commission"
 msgstr "Bidang Governance"
 
-msgid "Law Comission"
+msgid "Law Commission"
 msgstr "Bidang Hukum"
 
-msgid "Organization Comission"
+msgid "Organization Commission"
 msgstr "Bidang Organisasi"
 
-msgid "Public Relations Comission"
+msgid "Public Relations Commission"
 msgstr "Bidang Hubungan Masyarakat"
 
-msgid "Research and Development Comission"
+msgid "Research and Development Commission"
 msgstr "Bidang Pengkajian & Pengembangan"
 
-msgid "Technology Comission"
+msgid "Technology Commission"
 msgstr "Bidang Teknologi"
 
 msgid "Other Regional Board"
@@ -809,7 +809,7 @@ msgstr "<span class='hidden-sm'>Majalah</span> Perbanas"
 msgid "Other Divisions"
 msgstr "Bidang Lain"
 
-msgid "Other Comissions"
+msgid "Other Commissions"
 msgstr "Bidang Lain"
 
 msgid "Bank Name"
