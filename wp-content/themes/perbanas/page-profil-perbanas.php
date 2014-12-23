@@ -908,7 +908,7 @@
     var rndX = ((2*abstraxMarginSide) + rightOffset) * ratio,
         rndY = (5*r2)+(2*marginBottom),
         rndModal = function() {
-            loadModal('Bidang Pengkajian & Pengembangan','Gagasan Utama: 1. FGD rutin (hot issue) setiap bulan sekali','/id/lingkup-kerja#rnd-divsion');
+            loadModal('Bidang Pengkajian & Pengembangan','Gagasan Utama: 1. FGD rutin (hot issue) setiap bulan sekali','/id/lingkup-kerja#rnd-division');
         },
         rndCircle = os.circle(rndX, rndY, r3)
             .click(function() {
