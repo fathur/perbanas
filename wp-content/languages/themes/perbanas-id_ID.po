@@ -683,6 +683,9 @@ msgstr "Siaran Pers"
 msgid "Photo Galleries"
 msgstr "Galeri Foto"
 
+msgid "Publications"
+msgstr "Publikasi"
+
 msgid "Perbanas News"
 msgstr "Berita Perbanas"
 
