@@ -58,7 +58,7 @@ get_header(); ?>
                 
 
                 ?>
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-3" style="height:80px;">
                     <?php 
                     
                     $bank_link = get_post_meta(get_the_ID(), 'wpcf-ourpartner-website', true);
