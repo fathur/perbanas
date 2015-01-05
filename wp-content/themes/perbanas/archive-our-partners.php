@@ -29,8 +29,6 @@ get_header(); ?>
                     'hide_empty'    => TRUE
                 ));
 
-                //print_r($sectors);
-
                 foreach ($partners as $partner) : 
             ?>
             <div class="row"> 
@@ -61,7 +59,9 @@ get_header(); ?>
 
                 ?>
                 <div class="col-xs-6 col-sm-3">
+                    <a href="<?php echo get_post_meta(get_the_ID(), 'wpcf-ourpartner-website', true); ?>" target="__blank">
                     <?php the_post_thumbnail('full', array('class'=>'img-responsive')); ?>
+                    </a>
                 </div>
                 <?php
                endwhile;

@@ -15,14 +15,7 @@ get_header(); ?>
         </div>
     </div>
     <div class="row">
-        <!-- <nav class="col-xs-12 col-sm-3 sidebar-affix-container  hidden-xs hidden-sm">
-            <div class="sidebar">
-                <div class="sidebar-title">
-                    <h2><?php _e('Member Banks','perbanas'); ?></h2>
-                </div>
-                <?php echo perbanas_side_menu('member-bank-menu', 'leftMenu'); ?>
-            </div>
-        </nav> -->
+       
         <div class="col-xs-12 col-md-12 main-content-pane">
             <div class="row">
                 <div class="col-xs-12 section-title">
