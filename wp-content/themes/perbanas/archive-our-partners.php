@@ -59,9 +59,22 @@ get_header(); ?>
 
                 ?>
                 <div class="col-xs-6 col-sm-3">
+                    <?php 
+                    
+                    $bank_link = get_post_meta(get_the_ID(), 'wpcf-ourpartner-website', true);
+                    
+                    if ($bank_link != '' || $bank_link != null) { ?>
+                    
                     <a href="<?php echo get_post_meta(get_the_ID(), 'wpcf-ourpartner-website', true); ?>" target="__blank">
-                    <?php the_post_thumbnail('full', array('class'=>'img-responsive')); ?>
+                        <?php the_post_thumbnail('full', array('class'=>'img-responsive')); ?>
                     </a>
+                    
+                    <?php } else { ?>
+
+                    <?php the_post_thumbnail('full', array('class'=>'img-responsive')); ?>
+
+                    <?php } ?>
+                   
                 </div>
                 <?php
                endwhile;
