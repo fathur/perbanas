@@ -41,7 +41,9 @@ get_header(); ?>
             </div>
 
             <?php 
-            $loop = new WP_Query(array('post_type' => get_post_type(),
+            $loop = new WP_Query(array(
+                'post_type' => get_post_type(),
+                'nopaging'  => true,
                 'tax_query' => array(
                     array(
                         'taxonomy'  => 'sub-our-partner',

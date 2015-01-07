@@ -60,7 +60,12 @@ get_header(); ?>
             </div>
             <div class="row">
             
-	            <?php $args['post_type'] = get_post_type();
+	            <?php 
+
+                $args['post_type'] = get_post_type();
+                $args['posts_per_page'] = 12;
+                $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
 	
 	            /**
 	             * Menambahkan argumen untuk wp query berdasarkan custom field
@@ -75,7 +80,12 @@ get_header(); ?>
 				}
 				
 				$loop = new WP_Query($args);
-				
+
+                // Pagination fix
+                $temp_query = $wp_query;
+                $wp_query   = NULL;
+                $wp_query   = $loop;
+    				
 				if( $loop->have_posts() ) :
 					while($loop->have_posts()) : $loop->the_post();
 
@@ -132,7 +142,18 @@ get_header(); ?>
 				endif; 
 				
 				wp_reset_query();
-				wp_reset_postdata(); ?>
+				wp_reset_postdata(); 
+
+                // Custom query loop pagination
+                echo paginate_links(array(
+                    'base'      => get_post_type_archive_link( get_post_type() ) . 'page/%#%',
+                    'total'     => $loop->max_num_pages,
+                    'current'   => $args['paged']
+                ));
+                    
+                // Reset main query object
+                $wp_query = NULL;
+                $wp_query = $temp_query; ?>
 			
             </div>
         </div>

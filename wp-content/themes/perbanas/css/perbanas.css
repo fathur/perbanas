@@ -2153,6 +2153,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
 /* main layout / photo gallery (general) */
 .photo-gallery .photo-gallery-album-item {
     margin-bottom: 30px;
+    height: 300px;
 }
 .photo-gallery .photo-gallery-album-item img {
     margin-bottom: 20px;
