@@ -37,9 +37,10 @@ get_header(); ?>
             <div class="row">
 				<?php $loop = new WP_Query(array(
 					'post_type' => get_post_type(),
-                    'posts_per_page' => 12
+                    'posts_per_page' => 12,
+                    'paged' => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1
 				));
-                $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+                
 				
 				// Pagination fix
                 $temp_query = $wp_query;
@@ -66,19 +67,24 @@ get_header(); ?>
 				endif; 
 				
 				wp_reset_query();
-				wp_reset_postdata(); 
+				wp_reset_postdata(); ?>
 
-                // Custom query loop pagination
-                echo paginate_links(array(
-                    'base'      => get_post_type_archive_link( get_post_type() ) . 'page/%#%',
-                    'total'     => $loop->max_num_pages,
-                    'current'   => $args['paged']
-                ));
-                    
-                // Reset main query object
-                $wp_query = NULL;
-                $wp_query = $temp_query; ?>
-				
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <?php
+
+                     // Custom query loop pagination
+                    echo paginate_links(array(
+                        'base'      => get_post_type_archive_link( get_post_type() ) . 'page/%#%',
+                        'total'     => $loop->max_num_pages,
+                        'current'   => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1
+                    ));
+                        
+                    // Reset main query object
+                    $wp_query = NULL;
+                    $wp_query = $temp_query; ?>
+                </div>
             </div>
         </div>
     </div>

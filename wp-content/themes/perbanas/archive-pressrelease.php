@@ -37,9 +37,9 @@ get_header(); ?>
             
             $press_args = array(
             	'post_type' => get_post_type(),
-            	'posts_per_page' => get_option('posts_per_page')
+            	//'posts_per_page' => get_option('posts_per_page')
+            	'paged'		=> get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1
             );
-            $press_args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
             
             $loop = new WP_Query($press_args);
             
@@ -76,7 +76,7 @@ get_header(); ?>
 			echo paginate_links(array(
 				'base'		=> get_post_type_archive_link( get_post_type() ) . 'page/%#%',
 				'total'		=> $loop->max_num_pages,
-				'current'	=> $news_args['paged']
+				'current'	=> $press_args['paged']
 			));
 
 			// Reset main query object

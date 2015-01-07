@@ -11,7 +11,7 @@ get_header(); ?>
 <div class="container main-layout industry-guidelines-syariah-business">
     <div class="row breadcrumbs hidden-xs hidden-sm">
         <div class="col-xs-12">
-			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
+            <?php if(function_exists('bcn_display')) { bcn_display(); }?>
         </div>
     </div>
     <div class="row">
@@ -31,20 +31,19 @@ get_header(); ?>
             </div>
             
             <?php $args = array(
-            	'post_type' => get_post_type(),
-            	'posts_per_page' => get_option('posts_per_page')
+                'post_type' => get_post_type(),
+                'paged'    => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1 
             );
-            $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-	
-			$loop = new WP_Query($args);
-			
-			// Pagination fix
-			$temp_query = $wp_query;
-			$wp_query   = NULL;
-			$wp_query   = $loop;
-			
-			if( $loop->have_posts() ) :
-				while($loop->have_posts()) : $loop->the_post();
+    
+            $loop = new WP_Query($args);
+            
+            // Pagination fix
+            $temp_query = $wp_query;
+            $wp_query   = NULL;
+            $wp_query   = $loop;
+            
+            if( $loop->have_posts() ) :
+                while($loop->have_posts()) : $loop->the_post();
 
 
 
@@ -64,20 +63,7 @@ get_header(); ?>
                 $format_download    = perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') );
                 
                 ?>
-					
-			<!-- <div class="row perbanas-corner-education-item">
-                <div class="col-xs-12">
-                    <div class="perbanas-corner-education-desc-top">
-                        <h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
-                        <p class="date"><?php echo get_the_date(); ?></p>
-                        <p class="desc"><?php echo get_the_excerpt(''); ?></p>
-                    </div>
-                    <div class="perbanas-corner-education-desc-bottom">
-                        <a href="<?php echo get_permalink(); ?>" class="btn"><?php _e('Read more','perbanas'); ?> <span class="arrow">&rsaquo;</span></a>
-                    </div>
-                </div>
-            </div>
- -->
+                    
             <div class="row industry-guidelines-syariah-business-item">
                 <div class="col-xs-10">
                     <h2><a href="<?php echo get_post_meta( get_the_ID(), 'wpcf-industryguide-attachment', TRUE); ?>" target="__blank"><?php echo esc_attr( get_the_title() ); ?></a></h2>
@@ -92,26 +78,26 @@ get_header(); ?>
                 </div>
             </div>
             <hr />
-				
-			<?php endwhile;
-			else:
-				get_template_part( 'content', 'none' );
-			endif; 
-			
-			wp_reset_query();
-			wp_reset_postdata();
-			
-			// Custom query loop pagination
-			echo paginate_links(array(
-				'base'		=> get_post_type_archive_link( get_post_type() ) . 'page/%#%',
-				'total'		=> $loop->max_num_pages,
-				'current'	=> $args['paged']
-			));
-				
-			// Reset main query object
-			$wp_query = NULL;
-			$wp_query = $temp_query; ?>
-			
+                
+            <?php endwhile;
+            else:
+                get_template_part( 'content', 'none' );
+            endif; 
+            
+            wp_reset_query();
+            wp_reset_postdata();
+            
+            // Custom query loop pagination
+            echo paginate_links(array(
+                'base'      => get_post_type_archive_link( get_post_type() ) . 'page/%#%',
+                'total'     => $loop->max_num_pages,
+                'current'   => $args['paged']
+            ));
+                
+            // Reset main query object
+            $wp_query = NULL;
+            $wp_query = $temp_query; ?>
+            
         </div>
     </div>
 </div>

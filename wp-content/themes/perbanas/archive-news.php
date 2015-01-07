@@ -32,9 +32,8 @@ get_header(); ?>
             
             <?php $args = array(
             	'post_type' => get_post_type(),
-            	'posts_per_page' => get_option('posts_per_page')
+                'paged' => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1
             );
-            $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 	
 			$loop = new WP_Query($args);
 			

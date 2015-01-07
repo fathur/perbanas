@@ -2090,6 +2090,7 @@ a.btn, a.btn:hover, a.btn:active, a.btn:visited {
     position: relative;
     margin-bottom: 30px;
     color: white;
+    height: 350px;
 }
 .probank .main-content-pane .img img {
     min-width: 100%;

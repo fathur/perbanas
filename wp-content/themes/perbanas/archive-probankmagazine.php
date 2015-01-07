@@ -43,13 +43,13 @@ get_header(); ?>
                          * */
                         $tahun = perbanas_get_metaval_by_key('wpcf-magazine-year');
 
-						if ( count($tahun) > 0 ) { // Jika $tahun ada isinya maka ditampilkan, jika tidak ada tidak ditampilkan
-							foreach ( $tahun as $thn ) { ?>
+                        if ( count($tahun) > 0 ) { // Jika $tahun ada isinya maka ditampilkan, jika tidak ada tidak ditampilkan
+                            foreach ( $tahun as $thn ) { ?>
 
-						<option value="<?php echo '?tahun='.$thn; ?>"><?php echo $thn; ?></option>
-						
-						<?php } // End foreach $tahun as $thn
-						} // End if count($tahun) ?> 
+                        <option value="<?php echo '?tahun='.$thn; ?>"><?php echo $thn; ?></option>
+                        
+                        <?php } // End foreach $tahun as $thn
+                        } // End if count($tahun) ?> 
                     </select>
                 </div>
             </div>
@@ -60,56 +60,56 @@ get_header(); ?>
             </div>
             <div class="row">
             
-	            <?php 
+                <?php 
 
                 $args['post_type'] = get_post_type();
-                $args['posts_per_page'] = 12;
+                //$args['posts_per_archive_page'] = 2;
                 $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
-	
-	            /**
-	             * Menambahkan argumen untuk wp query berdasarkan custom field
-	             * */
-				if (isset($_GET['tahun'])) { // Ini get tahun mendapatkan data dari url, harus ada PENYARINGAN DATA supaya tidak terjadi injeksi
-					$args['meta_query'] = array(
-						array(
-							'key'	=> 'wpcf-magazine-year',
-							'value'	=> intval( $_GET['tahun'] )
-						)
-					);
-				}
-				
-				$loop = new WP_Query($args);
+    
+                /**
+                 * Menambahkan argumen untuk wp query berdasarkan custom field
+                 * */
+                if (isset($_GET['tahun'])) { // Ini get tahun mendapatkan data dari url, harus ada PENYARINGAN DATA supaya tidak terjadi injeksi
+                    $args['meta_query'] = array(
+                        array(
+                            'key'   => 'wpcf-magazine-year',
+                            'value' => intval( $_GET['tahun'] )
+                        )
+                    );
+                }
+                
+                $loop = new WP_Query($args);
 
                 // Pagination fix
                 $temp_query = $wp_query;
                 $wp_query   = NULL;
                 $wp_query   = $loop;
-    				
-				if( $loop->have_posts() ) :
-					while($loop->have_posts()) : $loop->the_post();
+                    
+                if( $loop->have_posts() ) :
+                    while($loop->have_posts()) : $loop->the_post();
 
-					/**
-					 * Mencari id file yang akan di unduh
-					 * */
-					$id_download 		= perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment');
-					
-					/**
-					 * Mencari extensi file
-					 * */
-					$format_download 	= perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') );
-					
-					if ( $format_download == '.pdf' ) : ?>
+                    /**
+                     * Mencari id file yang akan di unduh
+                     * */
+                    $id_download        = perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment');
+                    
+                    /**
+                     * Mencari extensi file
+                     * */
+                    $format_download    = perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') );
+                    
+                    if ( $format_download == '.pdf' ) : ?>
 
-				<div class="col-sm-6 col-md-3 block item">
+                <div class="col-sm-6 col-md-3 block item">
                     <div class="overlay-container">
                         <div class="img">
-                        	<?php if ( has_post_thumbnail() ) {
-                        		echo the_post_thumbnail('large',array('class' => 'img-responsive'));
-							} else { ?>
-								<img width="161" height="214" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" class="img-responsive wp-post-image" alt="magazine">
-							<?php }?>
-                        	
+                            <?php if ( has_post_thumbnail() ) {
+                                echo the_post_thumbnail('large',array('class' => 'img-responsive'));
+                            } else { ?>
+                                <img width="161" height="214" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" class="img-responsive wp-post-image" alt="magazine">
+                            <?php }?>
+                            
                         </div>
                         <div class="overlay">
                             <div class="overlay-top-aligned">
@@ -128,33 +128,36 @@ get_header(); ?>
                         <p class="date"><?php echo get_post_meta(get_the_ID(), 'wpcf-magazine-edition', TRUE); ?></p>
                     </div>
                 </div>
-				
-				<?php else:
-						
-						// Perintah jika bukan file pdf
-						// ...
-						
-					endif; // End if $format_download == 'pdf'
-					
-					endwhile;
-				else:
-					get_template_part( 'content', 'none' );
-				endif; 
-				
-				wp_reset_query();
-				wp_reset_postdata(); 
-
-                // Custom query loop pagination
-                echo paginate_links(array(
-                    'base'      => get_post_type_archive_link( get_post_type() ) . 'page/%#%',
-                    'total'     => $loop->max_num_pages,
-                    'current'   => $args['paged']
-                ));
+                
+                <?php else:
+                        
+                        // Perintah jika bukan file pdf
+                        // ...
+                        
+                    endif; // End if $format_download == 'pdf'
                     
-                // Reset main query object
-                $wp_query = NULL;
-                $wp_query = $temp_query; ?>
-			
+                    endwhile;
+                else:
+                    get_template_part( 'content', 'none' );
+                endif; 
+                
+                wp_reset_query();
+                wp_reset_postdata(); ?>
+            
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <?php  // Custom query loop pagination
+                    echo paginate_links(array(
+                        'base'      => get_post_type_archive_link( get_post_type() ) . 'page/%#%',
+                        'total'     => $loop->max_num_pages,
+                        'current'   => $args['paged']
+                    ));
+                        
+                    // Reset main query object
+                    $wp_query = NULL;
+                    $wp_query = $temp_query;  ?>
+                </div>
             </div>
         </div>
     </div>
