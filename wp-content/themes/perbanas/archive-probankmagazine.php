@@ -58,93 +58,117 @@ get_header(); ?>
                     <h1><div></div><span><?php _e('Perbanas Magazine','perbanas'); ?></span></h1>
                 </div>
             </div>
-            <div class="row">
+
+            <?php 
+            $args['post_type'] = get_post_type();
+            //$args['posts_per_archive_page'] = 2;
+            $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+
+            /**
+             * Menambahkan argumen untuk wp query berdasarkan custom field
+             * */
+            if (isset($_GET['tahun'])) { // Ini get tahun mendapatkan data dari url, harus ada PENYARINGAN DATA supaya tidak terjadi injeksi
+                $args['meta_query'] = array(
+                    array(
+                        'key'   => 'wpcf-magazine-year',
+                        'value' => intval( $_GET['tahun'] )
+                    )
+                );
+            }
             
-                <?php 
-
-                $args['post_type'] = get_post_type();
-                //$args['posts_per_archive_page'] = 2;
-                $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
-    
-                /**
-                 * Menambahkan argumen untuk wp query berdasarkan custom field
-                 * */
-                if (isset($_GET['tahun'])) { // Ini get tahun mendapatkan data dari url, harus ada PENYARINGAN DATA supaya tidak terjadi injeksi
-                    $args['meta_query'] = array(
-                        array(
-                            'key'   => 'wpcf-magazine-year',
-                            'value' => intval( $_GET['tahun'] )
-                        )
-                    );
-                }
+            $loop = new WP_Query($args);
+            
+            // Pagination fix
+            $temp_query = $wp_query;
+            $wp_query   = NULL;
+            $wp_query   = $loop;
                 
-                $loop = new WP_Query($args);
+            if( $loop->have_posts() ) :
 
-                // Pagination fix
-                $temp_query = $wp_query;
-                $wp_query   = NULL;
-                $wp_query   = $loop;
-                    
-                if( $loop->have_posts() ) :
-                    while($loop->have_posts()) : $loop->the_post();
+                $all_magazines = array();
 
-                    /**
-                     * Mencari id file yang akan di unduh
-                     * */
-                    $id_download        = perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment');
-                    
-                    /**
-                     * Mencari extensi file
-                     * */
-                    $format_download    = perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') );
-                    
-                    if ( $format_download == '.pdf' ) : ?>
+                while($loop->have_posts()) : $loop->the_post();
 
+                // Mencari id file yang akan di unduh
+                $id_download        = perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment');
+                
+                // Mencari extensi file
+                $format_download    = perbanas_get_postmeta_extension( perbanas_get_metaid_by_key(get_the_ID(), 'wpcf-industryguide-attachment') );
+                
+                if ( $format_download == '.pdf' ) :
+                    if ( has_post_thumbnail() ) {
+
+                        $thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'large' );
+
+                    } else {
+                        $thumbnail_url = array(161,214,get_template_directory_uri() . '/img/probank-magazine-01-05.png');
+                    }
+
+                    $magazine = array(
+                        'thumbnail'     => $thumbnail_url,
+                        'permalink'     => get_permalink(),
+                        'id_download'   => $id_download,
+                        'edition'       => get_post_meta(get_the_ID(), 'wpcf-magazine-edition', TRUE)
+                    );
+
+                    array_push($all_magazines, $magazine);
+
+                else:
+                    
+                    // Perintah jika bukan file pdf
+                    // ...
+                    
+                endif; // End if $format_download == 'pdf'
+                
+                endwhile;
+            else:
+                get_template_part( 'content', 'none' );
+            endif; 
+            
+            wp_reset_query();
+            wp_reset_postdata(); 
+
+
+            // Chunking magazine
+            $data = array_chunk($all_magazines, 4, true);
+
+            foreach ($data as $item):
+
+            ?>
+
+
+            <div class="row">
+
+                <?php foreach ($item as $magz) :  ?>
                 <div class="col-sm-6 col-md-3 block item">
                     <div class="overlay-container">
                         <div class="img">
-                            <?php if ( has_post_thumbnail() ) {
-                                echo the_post_thumbnail('large',array('class' => 'img-responsive'));
-                            } else { ?>
-                                <img width="161" height="214" src="<?php echo get_template_directory_uri(); ?>/img/probank-magazine-01-05.png" class="img-responsive wp-post-image" alt="magazine">
-                            <?php }?>
-                            
+                            <img width="<?php echo $magz['thumbnail'][1]; ?>" height="<?php echo $magz['thumbnail'][2]; ?>" src="<?php echo $magz['thumbnail'][0]; ?>" class="img-responsive wp-post-image" >                            
                         </div>
                         <div class="overlay">
                             <div class="overlay-top-aligned">
-                            
-                                <a href="<?php echo get_permalink(); ?>?action=download&id=<?php echo $id_download; ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-download.png" /></a>
-                                <h3><a href="<?php echo get_permalink(); ?>?action=download&id=<?php echo $id_download; ?>"><?php _e('Download','perbanas'); ?></a></h3>
+
+                                <a href="<?php echo $magz['permalink']; ?>?action=download&amp;id=<?php echo $magz['id_download']; ?>"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-download.png"></a>
+                                <h3><a href="<?php echo $magz['permalink']; ?>?action=download&amp;id=<?php echo $magz['id_download']; ?>">Unduh</a></h3>
                             </div>
                             <div class="overlay-bottom-aligned">
-                                <a href="<?php echo get_permalink(); ?>?action=read&id=<?php echo $id_download; ?>" target="_blank"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-read.png" /></a>
-                                <h3><a href="<?php echo get_permalink(); ?>?action=read&id=<?php echo $id_download; ?>" target="_blank" ><?php _e('Read','perbanas'); ?></a></h3>
+                                <a href="<?php echo $magz['permalink']; ?>?action=read&amp;id=<?php echo $magz['id_download']; ?>" target="_blank"><img class="img-no-responsive" src="<?php echo get_template_directory_uri(); ?>/img/probank-read.png"></a>
+                                <h3><a href="<?php echo $magz['permalink']; ?>?action=read&amp;id=<?php echo $magz['id_download']; ?>" target="_blank">Read</a></h3>
                             </div>
                         </div>
                     </div>
                     <div class="description">
                         <p><?php _e('Edition: ','perbanas'); ?></p>
-                        <p class="date"><?php echo get_post_meta(get_the_ID(), 'wpcf-magazine-edition', TRUE); ?></p>
+                        <p class="date"><?php echo $magz['edition']; ?></p>
                     </div>
                 </div>
-                
-                <?php else:
-                        
-                        // Perintah jika bukan file pdf
-                        // ...
-                        
-                    endif; // End if $format_download == 'pdf'
-                    
-                    endwhile;
-                else:
-                    get_template_part( 'content', 'none' );
-                endif; 
-                
-                wp_reset_query();
-                wp_reset_postdata(); ?>
-            
+                <?php endforeach; ?>
+
             </div>
+
+            <?php endforeach; ?>
+
             <div class="row">
                 <div class="col-xs-12">
                     <?php  // Custom query loop pagination
